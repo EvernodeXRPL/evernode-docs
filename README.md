@@ -1,2 +1,2 @@
-# evernode-docs
-Evernode documentation.
+# Evernode documentation
+Evernode documentation is build with [MkDocs](https://www.mkdocs.org/). The 'src' folder contains the source markdown files for the documentation. The 'docs' folder contains the compiled documentation website. The website is hosted via [github pages](https://pages.github.com/).
