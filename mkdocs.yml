@@ -3,3 +3,6 @@ docs_dir: src
 site_dir: docs
 nav:
     - Home: index.md
+    - Hot Pocket: hot-pocket/index.md
+    - Sashimono: sashimono/index.md
+    - Hook: evernode/hook-spec.md
