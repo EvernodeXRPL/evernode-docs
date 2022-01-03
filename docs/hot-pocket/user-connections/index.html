@@ -1,0 +1,203 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        
+        
+        
+        <link rel="shortcut icon" href="../../img/favicon.ico">
+        <title>Hot Pocket user connection basics - Evernode</title>
+        <link href="../../css/bootstrap.min.css" rel="stylesheet">
+        <link href="../../css/font-awesome.min.css" rel="stylesheet">
+        <link href="../../css/base.css" rel="stylesheet">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.5.0/styles/github.min.css">
+
+        <script src="../../js/jquery-1.10.2.min.js" defer></script>
+        <script src="../../js/bootstrap.min.js" defer></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.5.0/highlight.min.js"></script>
+        <script>hljs.initHighlightingOnLoad();</script> 
+    </head>
+
+    <body>
+        <div class="navbar fixed-top navbar-expand-lg navbar-dark bg-primary">
+            <div class="container">
+                <a class="navbar-brand" href="../..">Evernode</a>
+                <!-- Expander button -->
+                <button type="button" class="navbar-toggler" data-toggle="collapse" data-target="#navbar-collapse">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+
+                <!-- Expanded navigation -->
+                <div id="navbar-collapse" class="navbar-collapse collapse">
+                        <!-- Main navigation -->
+                        <ul class="nav navbar-nav">
+                            <li class="navitem">
+                                <a href="../.." class="nav-link">Home</a>
+                            </li>
+                            <li class="navitem">
+                                <a href="../" class="nav-link">Hot Pocket</a>
+                            </li>
+                            <li class="navitem">
+                                <a href="../../sashimono/" class="nav-link">Sashimono</a>
+                            </li>
+                            <li class="navitem">
+                                <a href="../../evernode/hook-spec/" class="nav-link">Hook</a>
+                            </li>
+                        </ul>
+
+                    <ul class="nav navbar-nav ml-auto">
+                        <li class="nav-item">
+                            <a href="#" class="nav-link" data-toggle="modal" data-target="#mkdocs_search_modal">
+                                <i class="fa fa-search"></i> Search
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <div class="container">
+            <div class="row">
+                    <div class="col-md-3"><div class="navbar-light navbar-expand-md bs-sidebar hidden-print affix" role="complementary">
+    <div class="navbar-header">
+        <button type="button" class="navbar-toggler collapsed" data-toggle="collapse" data-target="#toc-collapse" title="Table of Contents">
+            <span class="fa fa-angle-down"></span>
+        </button>
+    </div>
+
+    
+    <div id="toc-collapse" class="navbar-collapse collapse card bg-secondary">
+        <ul class="nav flex-column">
+            
+            <li class="nav-item" data-level="1"><a href="#hot-pocket-user-connection-basics" class="nav-link">Hot Pocket user connection basics</a>
+              <ul class="nav flex-column">
+            <li class="nav-item" data-level="2"><a href="#user-publicprivate-key-pair" class="nav-link">User public/private key pair</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-level="2"><a href="#making-a-connection" class="nav-link">Making a connection</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-level="2"><a href="#submitting-inputs" class="nav-link">Submitting inputs</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-level="2"><a href="#receiving-outputs" class="nav-link">Receiving outputs</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-level="2"><a href="#read-requests" class="nav-link">Read requests</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-level="2"><a href="#binary-vs-text-protocols" class="nav-link">Binary vs Text Protocols</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+              </ul>
+            </li>
+        </ul>
+    </div>
+</div></div>
+                    <div class="col-md-9" role="main">
+
+<h1 id="hot-pocket-user-connection-basics">Hot Pocket user connection basics</h1>
+<p>Hot Pocket smart contracts are run as a cluster of nodes. As a user, you can connect to any one of the nodes and communicate with the smart contract.</p>
+<h2 id="user-publicprivate-key-pair">User public/private key pair</h2>
+<p>You need to posses a unique public/private assymetric key pair generated using <a href="https://en.wikipedia.org/wiki/EdDSA#Ed25519">EdDSA</a> signing key algorithm. You can use a suitable cryptographic library available on your platform in order to generate a key pair. Client libraries provided by Hot Pocket also contains helper methods which can do this.</p>
+<p><strong><em>It is the user's responsibility to not let the "Private Key" get compromised. If that happens, anyone possessing your Private Key can pretend to be you.</em></strong></p>
+<p><strong><em>On the flip side, if you lose your Private Key, you will be unable to reclaim your user identity on the Hot Pocket platform</em></strong></p>
+<h2 id="making-a-connection">Making a connection</h2>
+<p>In order to initiate a connection to a smart contract instance, you need to know the <strong>address and the port number</strong> of where that instances is hosted. See this <a href="https://github.com/HotPocketDev/hp-js-client/blob/main/example/browser-example.html#L21">Javascript example</a> on how to connect and communicate with a smart contract instance.</p>
+<h2 id="submitting-inputs">Submitting inputs</h2>
+<p>Hot Pocket defines "Inputs" as the messages you (user) send to the smart contract which has the potential to modify the smart contract state (similar to HTTP PUT/POST methods). "Inputs" are subjected to "consensus" (see Hot Pocket basics) and therefore may take longer to be processed. The reason being, even though you submitted the "Input" to a specific Hot Pocket instance (denoted by host address and port), it will propagate this to other nodes. As a group, all the instances in the cluster makes sure "majority" of them got the input.</p>
+<p>Once the above condition (majority instances has received your input) is met, you will get a <strong>"Accepted"</strong> response. This indicates your "Input" got accepted for processing by the entire cluster. However, there are various reasons that your "Input" can be <strong>"Rejected"</strong> as well which will not be explained here.</p>
+<p><strong>Note:</strong>
+<em>Unlike HTTP Rest APIs, it is wrong to assume every 'input' message will get a 'output' message as the response. It is up to the smart contract to decide whether to send a response message or not. If the smart contract actually sends such a response back, it will arrive much later than the "Accepted" response you got upon input submission. <strong>This is very different from how HTTP APIs work where a 'request' will get a immediate 'response'.</strong> This is mainly due to Hot Pocket operating on top of Web Sockets as opposed to HTTP.</em></p>
+<h2 id="receiving-outputs">Receiving outputs</h2>
+<p>"Outputs" are messages sent by the smart contract to the user. "Outputs" might be sent as a response to previously submitted "Inputs" or they might be delivered without any relationship to a previous "Input" (eg. periodic notification messages sent by a smart contract). It is up to the smart contract to decide when and where to send outputs.</p>
+<p>If the smart contract message format specifies that a particular input message will get a response, then it is up to you to wait and grab that response when it arrives. Hot Pocket client library makes this easy (see <a href="https://github.com/HotPocketDev/hp-js-client/blob/main/example/browser-example.html#L57">Javascript example for output capture</a>).</p>
+<h2 id="read-requests">Read requests</h2>
+<p>Hot Pocket "Read requests" are very similar to HTTP GET method. They represent any messages that request information from the smart contract and that DOES NOT modify the smart contract state (read only). They are NOT subjected to consensus and are very much faster in their response time as opposed to "Inputs/Outputs". Unlike "Inputs/Outputs", Read Requests also follow similar request/response pattern like HTTP. Those qualities make them the ideal mechanism to read information out of the smart contract.</p>
+<h2 id="binary-vs-text-protocols">Binary vs Text Protocols</h2>
+<p>Hot Pocket supports binary vs text-mode communication protocols. If the smart contract uses text-based (eg. json) messages, then you should use the Hot Pocket json protocol. Otherwise Hot Pocket supports bson protocol. You can specify this in Hot Pocket client library (<a href="https://github.com/HotPocketDev/hp-js-client/blob/main/example/browser-example.html#L39">Javascript example</a>)</p></div>
+            </div>
+        </div>
+
+        <footer class="col-md-12">
+            <hr>
+            <p>Documentation built with <a href="https://www.mkdocs.org/">MkDocs</a>.</p>
+        </footer>
+        <script>
+            var base_url = "../..",
+                shortcuts = {"help": 191, "next": 78, "previous": 80, "search": 83};
+        </script>
+        <script src="../../js/base.js" defer></script>
+        <script src="../../search/main.js" defer></script>
+
+        <div class="modal" id="mkdocs_search_modal" tabindex="-1" role="dialog" aria-labelledby="searchModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-lg">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h4 class="modal-title" id="searchModalLabel">Search</h4>
+                <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+            </div>
+            <div class="modal-body">
+                <p>From here you can search these documents. Enter your search terms below.</p>
+                <form>
+                    <div class="form-group">
+                        <input type="search" class="form-control" placeholder="Search..." id="mkdocs-search-query" title="Type search term here">
+                    </div>
+                </form>
+                <div id="mkdocs-search-results" data-no-results-text="No results found"></div>
+            </div>
+            <div class="modal-footer">
+            </div>
+        </div>
+    </div>
+</div><div class="modal" id="mkdocs_keyboard_modal" tabindex="-1" role="dialog" aria-labelledby="keyboardModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h4 class="modal-title" id="keyboardModalLabel">Keyboard Shortcuts</h4>
+                <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+            </div>
+            <div class="modal-body">
+              <table class="table">
+                <thead>
+                  <tr>
+                    <th style="width: 20%;">Keys</th>
+                    <th>Action</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td class="help shortcut"><kbd>?</kbd></td>
+                    <td>Open this help</td>
+                  </tr>
+                  <tr>
+                    <td class="next shortcut"><kbd>n</kbd></td>
+                    <td>Next page</td>
+                  </tr>
+                  <tr>
+                    <td class="prev shortcut"><kbd>p</kbd></td>
+                    <td>Previous page</td>
+                  </tr>
+                  <tr>
+                    <td class="search shortcut"><kbd>s</kbd></td>
+                    <td>Search</td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+            <div class="modal-footer">
+            </div>
+        </div>
+    </div>
+</div>
+
+    </body>
+</html>
