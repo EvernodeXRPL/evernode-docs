@@ -4,26 +4,26 @@
         <meta charset="utf-8">
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <meta name="description" content="None">
         
         
-        <link rel="shortcut icon" href="img/favicon.ico">
-        <title>Evernode</title>
-        <link href="css/bootstrap.min.css" rel="stylesheet">
-        <link href="css/font-awesome.min.css" rel="stylesheet">
-        <link href="css/base.css" rel="stylesheet">
+        
+        <link rel="shortcut icon" href="../img/favicon.ico">
+        <title>Sashimono - Evernode</title>
+        <link href="../css/bootstrap.min.css" rel="stylesheet">
+        <link href="../css/font-awesome.min.css" rel="stylesheet">
+        <link href="../css/base.css" rel="stylesheet">
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.5.0/styles/github.min.css">
 
-        <script src="js/jquery-1.10.2.min.js" defer></script>
-        <script src="js/bootstrap.min.js" defer></script>
+        <script src="../js/jquery-1.10.2.min.js" defer></script>
+        <script src="../js/bootstrap.min.js" defer></script>
         <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.5.0/highlight.min.js"></script>
         <script>hljs.initHighlightingOnLoad();</script> 
     </head>
 
-    <body class="homepage">
+    <body>
         <div class="navbar fixed-top navbar-expand-lg navbar-dark bg-primary">
             <div class="container">
-                <a class="navbar-brand" href=".">Evernode</a>
+                <a class="navbar-brand" href="..">Evernode</a>
                 <!-- Expander button -->
                 <button type="button" class="navbar-toggler" data-toggle="collapse" data-target="#navbar-collapse">
                     <span class="navbar-toggler-icon"></span>
@@ -33,17 +33,17 @@
                 <div id="navbar-collapse" class="navbar-collapse collapse">
                         <!-- Main navigation -->
                         <ul class="nav navbar-nav">
+                            <li class="navitem">
+                                <a href=".." class="nav-link">Home</a>
+                            </li>
+                            <li class="navitem">
+                                <a href="../hot-pocket/" class="nav-link">Hot Pocket</a>
+                            </li>
                             <li class="navitem active">
-                                <a href="." class="nav-link">Home</a>
+                                <a href="./" class="nav-link">Sashimono</a>
                             </li>
                             <li class="navitem">
-                                <a href="hot-pocket/" class="nav-link">Hot Pocket</a>
-                            </li>
-                            <li class="navitem">
-                                <a href="sashimono/" class="nav-link">Sashimono</a>
-                            </li>
-                            <li class="navitem">
-                                <a href="evernode/hook-spec/" class="nav-link">Hook</a>
+                                <a href="../evernode/hook-spec/" class="nav-link">Hook</a>
                             </li>
                         </ul>
 
@@ -54,12 +54,12 @@
                             </a>
                         </li>
                             <li class="nav-item">
-                                <a rel="prev" class="nav-link disabled">
+                                <a rel="prev" href="../hot-pocket/" class="nav-link">
                                     <i class="fa fa-arrow-left"></i> Previous
                                 </a>
                             </li>
                             <li class="nav-item">
-                                <a rel="next" href="hot-pocket/" class="nav-link">
+                                <a rel="next" href="../evernode/hook-spec/" class="nav-link">
                                     Next <i class="fa fa-arrow-right"></i>
                                 </a>
                             </li>
@@ -81,24 +81,8 @@
     <div id="toc-collapse" class="navbar-collapse collapse card bg-secondary">
         <ul class="nav flex-column">
             
-            <li class="nav-item" data-level="1"><a href="#evernode" class="nav-link">Evernode</a>
+            <li class="nav-item" data-level="1"><a href="#sashimono" class="nav-link">Sashimono</a>
               <ul class="nav flex-column">
-            <li class="nav-item" data-level="2"><a href="#hot-pocket-smart-contracts" class="nav-link">Hot Pocket smart contracts</a>
-              <ul class="nav flex-column">
-              </ul>
-            </li>
-            <li class="nav-item" data-level="2"><a href="#evernode-hosts" class="nav-link">Evernode Hosts</a>
-              <ul class="nav flex-column">
-              </ul>
-            </li>
-            <li class="nav-item" data-level="2"><a href="#evernode-hook" class="nav-link">Evernode Hook</a>
-              <ul class="nav flex-column">
-              </ul>
-            </li>
-            <li class="nav-item" data-level="2"><a href="#evernode-sdk" class="nav-link">Evernode SDK</a>
-              <ul class="nav flex-column">
-              </ul>
-            </li>
               </ul>
             </li>
         </ul>
@@ -106,18 +90,8 @@
 </div></div>
                     <div class="col-md-9" role="main">
 
-<h1 id="evernode">Evernode</h1>
-<p><a href="https://evernode.wordpress.com/">Evernode</a> is a decentralized smart contract hosting platform composed with <a href="https://hooks-testnet.xrpl-labs.com/">Hooks-enabled XRP Ledger</a>. Evernode brings several decentralized technology innovations together to provide a global network of severs which is capable of hosting <a href="#hot-pocket-smart-contracts">Hot Pocket smart contracts</a>.</p>
-<h2 id="hot-pocket-smart-contracts">Hot Pocket smart contracts</h2>
-<p>Evernode uses <a href="hot-pocket/">Hot Pocket</a> as its smart contract engine. Hot Pocket smart contracts are regular POSIX applications and can be written in any language. When multiple instances of a smart contract is deployed on a cluster of servers, Hot Pocket takes care of consensus and synchronization, letting the smart contract developer to only worry about the contract business logic.</p>
-<h2 id="evernode-hosts">Evernode Hosts</h2>
-<p>Evernode hosts are Linux servers acting as the decentralized infrastructure capable of hosting Hot Pocket smart contracts. Registered Evernode hosts can earn revenue by listing their <strong>hosting tokens</strong> on the <a href="https://xrpl.org/decentralized-exchange.html">XRPL dex</a> so Evernode users can purchase and redeem the tokens to deploy smart contracts. Hosts will also get rewarded with <strong>EVR</strong> tokens, Evernode's native currency, as they get audited for QoS by Evernode Auditors. Anyone can become an Evernode host by installing <a href="sashimono/">Sashimono</a> on their Linux server.</p>
-<p>See how to participate in <a href="https://github.com/HotPocketDev/evernode-host">Evernode beta</a></p>
-<h2 id="evernode-hook">Evernode Hook</h2>
-<p>Evernode uses <a href="https://xrpl.org/">XRP Ledger</a> with <a href="https://hooks-testnet.xrpl-labs.com/">Hooks amendment</a> as the glue to manage the decentralized hosting infrastructure and contract deployment requests. Evernode hook keeps track of registered hosts, QoS audits and hosting rewards. It also governs the servicing of smart contract hosting requests (redeems) submitted by Evernode users.</p>
-<p>See <a href="evernode/hook-spec/">Evernode hook specification</a></p>
-<h2 id="evernode-sdk">Evernode SDK</h2>
-<p>Client or server-side applications can integrate with Evernode using the Evernode <a href="https://github.com/HotPocketDev/evernode-js-lib">javascript client library</a>. The library includes support for all Evernode <a href="evernode/hook-spec/#system-operations">operations</a>.</p></div>
+<h1 id="sashimono">Sashimono</h1>
+<p>Sashimono is the software which runs on all Evernode hosts managing the Hot Pocket smart contract instances running on each host. It handles incoming hosting requests (redeems) and provisions Hot Pocket contract instances in secure silos using <a href="https://www.docker.com/">Docker</a> containers.</p></div>
             </div>
         </div>
 
@@ -126,11 +100,11 @@
             <p>Documentation built with <a href="https://www.mkdocs.org/">MkDocs</a>.</p>
         </footer>
         <script>
-            var base_url = ".",
+            var base_url = "..",
                 shortcuts = {"help": 191, "next": 78, "previous": 80, "search": 83};
         </script>
-        <script src="js/base.js" defer></script>
-        <script src="search/main.js" defer></script>
+        <script src="../js/base.js" defer></script>
+        <script src="../search/main.js" defer></script>
 
         <div class="modal" id="mkdocs_search_modal" tabindex="-1" role="dialog" aria-labelledby="searchModalLabel" aria-hidden="true">
     <div class="modal-dialog modal-lg">
@@ -195,8 +169,3 @@
 
     </body>
 </html>
-
-<!--
-MkDocs version : 1.2.3
-Build Date UTC : 2022-01-03 12:15:28.761508+00:00
--->
