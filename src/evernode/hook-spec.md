@@ -138,7 +138,7 @@ Key: `STP_HOST_ID + last_host_id`
 **Transaction type:** Payment<br>
 **Source:** User<br>
 **Destination:** Hook<br>
-**Currency:** Anything other than XRP or EVR<br>
+**Currency:** hosting_token<br>
 **Min amount:** `CONF_MIN_REDEEM`<br>
 **Memo:**<br>
 Type: `evnRedeem`<br>
