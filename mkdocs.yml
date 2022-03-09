@@ -2,7 +2,8 @@ site_name: Evernode
 docs_dir: src
 site_dir: docs
 nav:
-    - Home: index.md
-    - Hot Pocket: hot-pocket/index.md
-    - Sashimono: sashimono/index.md
-    - Hook: evernode/hook-spec.md
+    - Registry: registry/index.md
+    - Hosts: hosts/index.md
+    - Users: users/index.md
+    - Purchaser: purchaser/index.md
+    - Tokenomics: tokenomics/index.md

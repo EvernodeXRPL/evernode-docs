@@ -1,18 +1,19 @@
 # Evernode
-[Evernode](https://evernode.wordpress.com/) is a decentralized smart contract hosting platform composed with [Hooks-enabled XRP Ledger](https://hooks-testnet.xrpl-labs.com/). Evernode brings several decentralized technology innovations together to provide a global network of severs which is capable of hosting [Hot Pocket smart contracts](#hot-pocket-smart-contracts).
+[Evernode](https://evernode.wordpress.com/) is a decentralized marketplace for hosting smart contracts. Evernode brings several decentralized technology innovations together to provide a global network of severs which is capable of hosting smart contracts. It consists of [Hosts](hosts/index.md), which are Linux servers capable of hosting smart contracts; [Registry](registry/index.md), which maintains a directory of participating hosts; and [Users](users/index.md) who purchase server space from Hosts in order to run smart contracts. The interactions and the financial activities between these parties are facilitated by the [XRP Ledger](https://xrpl.org).
 
-## Hot Pocket smart contracts
-Evernode uses [Hot Pocket](hot-pocket/index.md) as its smart contract engine. Hot Pocket smart contracts are regular POSIX applications and can be written in any language. When multiple instances of a smart contract is deployed on a cluster of servers, Hot Pocket takes care of consensus and synchronization, letting the smart contract developer to only worry about the contract business logic.
+## Financial model
+Evernode finances are modeled using [XRPL tokens](https://xrpl.org/tokens.html). Evernode uses **Evers** (EVR) as its native currency for all financial transactions in the marketplace. Evers are issued by the Evernode Foundation and is guaranteed to be finite in supply. Hosts pay their registration fee in Evers. Hosts value their server space against Evers. Users can purchase hosting using Evers. Hosting is sold and bought on the [XRPL decentralized exchange](https://xrpl.org/decentralized-exchange.html). To facilitate that, a [unit of hosting](hosts/index.md) is represented using **Hosting Tokens** which, like **Evers**, are [XRPL tokens](https://xrpl.org/tokens.html) but are issued and controlled by Hosts.
 
-## Evernode Hosts
-Evernode hosts are Linux servers acting as the decentralized infrastructure capable of hosting Hot Pocket smart contracts. Registered Evernode hosts can earn revenue by listing their **hosting tokens** on the [XRPL dex](https://xrpl.org/decentralized-exchange.html) so Evernode users can purchase and redeem the tokens to deploy smart contracts. Hosts will also get rewarded with **EVR** tokens, Evernode's native currency, as they get audited for QoS by Evernode Auditors. Anyone can become an Evernode host by installing [Sashimono](sashimono/index.md) on their Linux server.
+## Ever distribution
+The initial phase of Evernode will see to it that a portion of the limited Ever supply find its way to the hands of the community by means of airdrops. The community can use these Evers to register as Hosts or to purchase hosting (represented by Hosting Tokens) from registered Hosts. The rest will be progressively distributed by the [Evernode Purchaser Service](purchaser/index.md), as perpetual Hosting Token purchases from all registered Hosts. This ensures early participants of the network will have a steady income for making their server space available on Evernode. See [Evernode tokenomics](tokenomics/index.md).
 
-See how to participate in [Evernode beta](https://github.com/HotPocketDev/evernode-host)
+## Further reading
+- [Registry](registry/index.md)
+- [Hosts](hosts/index.md)
+- [Users](users/index.md)
+- [Purchaser service](purchaser/index.md)
+- [Evernode tokenomics](tokenomics/index.md)
 
-## Evernode Hook
-Evernode uses [XRP Ledger](https://xrpl.org/) with [Hooks amendment](https://hooks-testnet.xrpl-labs.com/) as the glue to manage the decentralized hosting infrastructure and contract deployment requests. Evernode hook keeps track of registered hosts, QoS audits and hosting rewards. It also governs the servicing of smart contract hosting requests (redeems) submitted by Evernode users.
-
-See [Evernode hook specification](evernode/hook-spec.md)
-
-## Evernode SDK
-Client or server-side applications can integrate with Evernode using the Evernode [javascript client library](https://github.com/HotPocketDev/evernode-js-lib). The library includes support for all Evernode [operations](evernode/hook-spec.md#system-operations).
+## Evernode news
+- [@EvernodeXRPL](https://twitter.com/EvernodeXRPL) on Twitter
+- [Evernode website](https://evernode.wordpress.com)

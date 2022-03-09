@@ -5,8 +5,8 @@ Published website: https://hotpocketdev.github.io/evernode-docs
 
 ## Install MkDocs
 ```
-apt install python3-pip
-pip install mkdocs
+sudo apt-get install -y python3-pip
+sudo pip install mkdocs
 ```
 (Do not use mkdocs apt package via `apt install mkdocs` as it's outdated)
 

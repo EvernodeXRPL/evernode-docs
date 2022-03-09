@@ -1,8 +1,8 @@
 # Hot Pocket
-Hot Pocket is a decentralized app (Dapp) development platform. Your can build your app as a "Smart Contract" which runs on a distributed Hot Pocket cluster. Hot Pocket takes care of running instances of your smart contract on all the nodes and perform "consensus" on your smart contract executions.
+Hot Pocket is a smart contract execution and consensus engine. Your can build your "Smart Contract" and run it on a distributed Hot Pocket cluster. Hot Pocket takes care of running instances of your smart contract on all the nodes and perform "consensus" on your smart contract executions.
 
 ## Smart Contract
-Hot Pocket defines the smart contract as a regular POSIX application that can receive **Inputs**, produce **Outputs** and also persist **State** to permenant storage. You can use any programming language to create Hot Pocket smart contracts.
+Hot Pocket defines the smart contract as a regular POSIX application that can receive **Inputs**, produce **Outputs** and also persist **State** to permenant storage. You can use any POSIX-compliant programming platform to create Hot Pocket smart contracts (see [nodejs contract example](https://github.com/HotPocketDev/hp-nodejs-contract/blob/main/example/echo-contract.js)).
 
 ## Consensus
 Because your smart contract instances simultaneously runs on multiple nodes, it needs to be verified that all instances execute under exact same conditions and in the same manner. Hot Pocket makes sure that the MAJORITY of the instances receives the same **inputs**, produces same **outputs** and persists same **state** to the permanent storage. This is known as **consensus** in which **majority of instances** AGREE upon similar behavior of the smart contract.
