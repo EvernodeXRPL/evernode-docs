@@ -1,6 +1,10 @@
 site_name: Evernode
 docs_dir: src
 site_dir: docs
+theme:
+  name: cosmo
+extra_css:     
+  - css/extra.css
 nav:
     - Registry: registry/index.md
     - Hosts: hosts/index.md

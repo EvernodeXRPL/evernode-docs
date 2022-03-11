@@ -7,6 +7,7 @@ Published website: https://hotpocketdev.github.io/evernode-docs
 ```
 sudo apt-get install -y python3-pip
 sudo pip install mkdocs
+sudo pip install mkdocs-bootswatch
 ```
 (Do not use mkdocs apt package via `apt install mkdocs` as it's outdated)
 
@@ -25,3 +26,6 @@ Preview website can then be accessed via http://localhost:8000
 1. `mkdocs build`
 2. Commit the changes in 'docs' folder and merge to 'main' branch.
 3. Github will automatically publish the changes to [documentation website](https://hotpocketdev.github.io/evernode-docs).
+
+## Changing the theme
+Change the theme name in mkdocs.yml to any of the themes [here](https://mkdocs.github.io/mkdocs-bootswatch).
