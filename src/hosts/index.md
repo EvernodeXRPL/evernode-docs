@@ -23,13 +23,13 @@ The amount of hosting token that was "redeemed" defines the lifespan of the prov
 
 [Sashimono](sashimono.md) is the software which manages the contract instances on the host. It is capable of listening to incoming redeem requests from Evernode users on the host's XRPL account and appropriately provisioning contract instances. It uses [Docker](https://www.docker.com) to isolate contract instances from each other.
 
-![Instance creation](/img/host-redeem.png)
+![Instance creation](../img/host-redeem.png)
 
 After the user receives the instance details, direct communication with the instance can be initiated without going through XRP Ledger or Sashimono.
 
-![Instance communication](/img/host-instance-communication.png)
+![Instance communication](../img/host-instance-communication.png)
 
-To learn more about communicating with a contract instance, see [Hot Pocket](hot-pocket/index.md)
+To learn more about communicating with a contract instance, see [Hot Pocket](../hot-pocket/index.md)
 
 ## Installation
-[Evernode setup]() makes the entire process of registering and participating as an Evernode host a hassle free experience. With a guided set of steps, it can automatically register a Linux host on Evernode registry and serve incoming Redeem requests from users. It also installs the ncessary tools for the host administrator to manage the contract instances that have been provisioned on the host.
+[Evernode setup](setup.md) makes the entire process of registering and participating as an Evernode host a hassle free experience. With a guided set of steps, it can automatically register a Linux host on Evernode registry and serve incoming Redeem requests from users. It also installs the ncessary tools for the host administrator to manage the contract instances that have been provisioned on the host.

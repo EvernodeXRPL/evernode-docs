@@ -117,13 +117,13 @@
 <p>After purchasing hosting tokens for a particular host from the dex (or by any other means), users can <strong>Redeem</strong> one or more of the tokens in exchange for a smart contract instance. This is performed as a <a href="https://xrpl.org/cross-currency-payments.html">XRPL token payment</a> from user's XRPL account to the Host Account. If there are unutilized hosting slices, the host provisions a default contract instance on one of them. If no free slice was available, host refunds the token payment with an error code.</p>
 <p>When a contract instance get created, it is assigned a unique <strong>instance name</strong>. This is a <a href="https://en.wikipedia.org/wiki/Universally_unique_identifier">UUID</a> which can be used to identify an instance within the host. This, along with other instance details such as communication port numbers and domain/ip addresses are returned back to the user who redeemed the hosting tokens.</p>
 <p>The amount of hosting token that was "redeemed" defines the lifespan of the provisioned contract instance (1 token = 1 Moment of run time). After the run time "expires", the host deletes the instance and that hosting slice becomes available for future redeems again. The contract instance could be kept alive by redeeming more hosting tokens tagged with the <strong>instance name</strong> before the instance expires.</p>
-<p><a href="sashimono.md">Sashimono</a> is the software which manages the contract instances on the host. It is capable of listening to incoming redeem requests from Evernode users on the host's XRPL account and appropriately provisioning contract instances. It uses <a href="https://www.docker.com">Docker</a> to isolate contract instances from each other.</p>
-<p><img alt="Instance creation" src="/img/host-redeem.png" /></p>
+<p><a href="sashimono/">Sashimono</a> is the software which manages the contract instances on the host. It is capable of listening to incoming redeem requests from Evernode users on the host's XRPL account and appropriately provisioning contract instances. It uses <a href="https://www.docker.com">Docker</a> to isolate contract instances from each other.</p>
+<p><img alt="Instance creation" src="../img/host-redeem.png" /></p>
 <p>After the user receives the instance details, direct communication with the instance can be initiated without going through XRP Ledger or Sashimono.</p>
-<p><img alt="Instance communication" src="/img/host-instance-communication.png" /></p>
-<p>To learn more about communicating with a contract instance, see <a href="hot-pocket/index.md">Hot Pocket</a></p>
+<p><img alt="Instance communication" src="../img/host-instance-communication.png" /></p>
+<p>To learn more about communicating with a contract instance, see <a href="../hot-pocket/">Hot Pocket</a></p>
 <h2 id="installation">Installation</h2>
-<p><a href="">Evernode setup</a> makes the entire process of registering and participating as an Evernode host a hassle free experience. With a guided set of steps, it can automatically register a Linux host on Evernode registry and serve incoming Redeem requests from users. It also installs the ncessary tools for the host administrator to manage the contract instances that have been provisioned on the host.</p></div>
+<p><a href="setup/">Evernode setup</a> makes the entire process of registering and participating as an Evernode host a hassle free experience. With a guided set of steps, it can automatically register a Linux host on Evernode registry and serve incoming Redeem requests from users. It also installs the ncessary tools for the host administrator to manage the contract instances that have been provisioned on the host.</p></div>
             </div>
         </div>
 
