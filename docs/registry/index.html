@@ -41,7 +41,7 @@
                                 <a href="../hosts/" class="nav-link">Hosts</a>
                             </li>
                             <li class="navitem">
-                                <a href="../users/" class="nav-link">Users</a>
+                                <a href="../tenants/" class="nav-link">Tenants</a>
                             </li>
                             <li class="navitem">
                                 <a href="../purchaser/" class="nav-link">Purchaser</a>
@@ -107,9 +107,9 @@
                     <div class="col-md-9" role="main">
 
 <h1 id="registry">Registry</h1>
-<p>Evernode registry maintains the membership listing of all the hosts that have registered on Evernode. It is also the central place of truth about the Evernode network configuration parameters. The hosts interact with the well-known XRPL account denoted by <strong>Registry Address</strong> which is controlled by the Evernode registry service. Users can use the registry to find out latest details about member hosts.</p>
+<p>Evernode registry maintains the membership listing of all the hosts that have registered on Evernode. It is also the central place of truth about the Evernode network configuration parameters. The hosts interact with the well-known XRPL account denoted by <strong>Registry Address</strong> which is controlled by the Evernode registry service. Tenants can use the registry to find out latest details about member hosts.</p>
 <p><img alt="Registry" src="../img/registry-no-hooks.PNG" /></p>
-<p>Registry service interprits the membership management requests arriving at the registry XRPL account while maintaining a database of indexed membership and network configuration data. Users/apps can use indexed data to find out information about registered Evernode hosts.</p>
+<p>Registry service interprits the membership management requests arriving at the registry XRPL account while maintaining a database of indexed membership and network configuration data. Tenants can use indexed data to find out information about registered Evernode hosts.</p>
 <blockquote>
 <p><em>For any party who wishes to interact with Evernode, <strong>Registry Address</strong> is the entry point into the Evernode network.</em></p>
 </blockquote>
@@ -125,7 +125,7 @@
 <h2 id="registry-operations">Registry operations</h2>
 <p>A new host requests for Evernode membership by initiating an XRPL payment of Evers according to the current registration fee. Upon succesful processing, the registry service issues the <strong>Registration NFT</strong> to the host. The Registration NFT acts as proof-of-membership of that host within Evernode. The host can sell the NFT back to registry for half of prevailing registration fee at a later time. At this point, the registry service will <strong>deregister</strong> the host and clear the host data from the registry.</p>
 <h2 id="future">Future</h2>
-<p>In the future, when <a href="https://xrpl-hooks.readme.io">XRPL hooks amendment</a> is finalized, it is anticipated that the Evernode registry service becomes a "Hook" on the XRP Ledger. At this point, the host membership information can be read directly from the XRP Ledger by users.</p></div>
+<p>In the future, when <a href="https://xrpl-hooks.readme.io">XRPL hooks amendment</a> is finalized, it is anticipated that the Evernode registry service becomes a "Hook" on the XRP Ledger. At this point, the host membership information can be read directly from the XRP Ledger by tenants.</p></div>
             </div>
         </div>
 

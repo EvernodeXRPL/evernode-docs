@@ -41,7 +41,7 @@
                                 <a href="./" class="nav-link">Hosts</a>
                             </li>
                             <li class="navitem">
-                                <a href="../users/" class="nav-link">Users</a>
+                                <a href="../tenants/" class="nav-link">Tenants</a>
                             </li>
                             <li class="navitem">
                                 <a href="../purchaser/" class="nav-link">Purchaser</a>
@@ -63,7 +63,7 @@
                                 </a>
                             </li>
                             <li class="nav-item">
-                                <a rel="next" href="../users/" class="nav-link">
+                                <a rel="next" href="../tenants/" class="nav-link">
                                     Next <i class="fa fa-arrow-right"></i>
                                 </a>
                             </li>
@@ -115,28 +115,28 @@
                     <div class="col-md-9" role="main">
 
 <h1 id="hosts">Hosts</h1>
-<p>An Evernode host is a Linux server registered on the Evernode <a href="../registry/">Registry</a> via an <a href="https://xrpl.org/accounts.html">XRPL account</a> owned and controlled by the host. The server runs a piece of Evernode software to open up the server hardware resources in a secure manner for Evernode <a href="../users/">Users</a> to host their smart contracts.</p>
+<p>An Evernode host is a Linux server registered on the Evernode <a href="../registry/">Registry</a> via an <a href="https://xrpl.org/accounts.html">XRPL account</a> owned and controlled by the host. The server runs a piece of Evernode software to open up the server hardware resources in a secure manner for Evernode <a href="../tenants/">Tenants</a> to host their smart contracts.</p>
 <h2 id="registration">Registration</h2>
 <p>The host registers on Evernode <a href="../registry/">Registry</a> by paying the <a href="../tokenomics/#regfee">current registration fee</a> with host metadata included in the payment transaction. Host metadata contains information such host server location, hardware resources and <a href="#hosting-tokens">hosting token</a> currency code. The XRPL account used to make the registration payment is considered the <strong>Host Account</strong>. This account's <a href="https://xrpl.org/accounts.html#addresses">address</a> identifies the host within Evernode.</p>
 <p>Once the registration fee is paid, Evernode registry issues a <strong>Registration NFT</strong> to the host account. The Registration NFT acts as proof-of-membership of that host within Evernode. The host can sell the NFT back to Evernode Registry for half of prevailing registration fee at a later time. Upon this act, the registry will <strong>deregister</strong> the host from the membership registry.</p>
 <h2 id="hosting-slices">Hosting slices</h2>
-<p>A host can choose what amount of its total hardware resources (CPU, RAM, Disk space) is allocated for Evernode smart contract hosting. This resource allocation is further divided into a number of equal-sized "slices" chosen by the host. These <strong>hosting slices</strong> correspond to potential smart contract instances users can purchase (1 slice = 1 instance). They are just a numerical division of the host's total allocated hardware resources and are only actually utilized when smart contract instances get materialized as a result of purchase requests sent by users. In essence, the hosting slices are the product, which get sold at the <a href="https://xrpl.org/decentralized-exchange.html">XRPL decentralized exchange</a>, in exchange for <a href="#hosting-tokens">hosting tokens</a>.</p>
+<p>A host can choose what amount of its total hardware resources (CPU, RAM, Disk space) is allocated for Evernode smart contract hosting. This resource allocation is further divided into a number of equal-sized "slices" chosen by the host. These <strong>hosting slices</strong> correspond to potential smart contract instances tenants can purchase (1 slice = 1 instance). They are just a numerical division of the host's total allocated hardware resources and are only actually utilized when smart contract instances get materialized as a result of purchase requests sent by tenants. In essence, the hosting slices are the product, which get sold at the <a href="https://xrpl.org/decentralized-exchange.html">XRPL decentralized exchange</a>, in exchange for <a href="#hosting-tokens">hosting tokens</a>.</p>
 <h2 id="hosting-tokens">Hosting tokens</h2>
-<p>The host lists hosting tokens at the <a href="https://xrpl.org/decentralized-exchange.html">XRPL decentralized exchange</a> (dex) at a price if its choosing. Hosting tokens are <a href="https://xrpl.org/tokens.html">XRPL tokens</a> that are issued from the <strong>Host Account</strong> and is priced in Evers. They are indivisible and always represented as positive whole numbers. Users discover the hosting tokens from a particular host on the dex by checking the host account address and hosting token currency code recorded in the registry. Owning hosting tokens DOES NOT mean owning a smart contract instance. It simply means the right to request the host to provision an instance.</p>
+<p>The host lists hosting tokens at the <a href="https://xrpl.org/decentralized-exchange.html">XRPL decentralized exchange</a> (dex) at a price if its choosing. Hosting tokens are <a href="https://xrpl.org/tokens.html">XRPL tokens</a> that are issued from the <strong>Host Account</strong> and is priced in Evers. They are indivisible and always represented as positive whole numbers. Tenants discover the hosting tokens from a particular host on the dex by checking the host account address and hosting token currency code recorded in the registry. Owning hosting tokens DOES NOT mean owning a smart contract instance. It simply means the right to request the host to provision an instance.</p>
 <blockquote>
 <p>1 hosting token corresponds to the right to utilize 1 hosting slice for 1 Moment.</p>
 </blockquote>
 <h2 id="smart-contract-instances">Smart contract instances</h2>
-<p>After purchasing hosting tokens for a particular host from the dex (or by any other means), users can <strong>Redeem</strong> one or more of the tokens in exchange for a smart contract instance. This is performed as a <a href="https://xrpl.org/cross-currency-payments.html">XRPL token payment</a> from user's XRPL account to the Host Account. If there are unutilized hosting slices, the host provisions a default contract instance on one of them. If no free slice was available, host refunds the token payment with an error code.</p>
-<p>When a contract instance get created, it is assigned a unique <strong>instance name</strong>. This is a <a href="https://en.wikipedia.org/wiki/Universally_unique_identifier">UUID</a> which can be used to identify an instance within the host. This, along with other instance details such as communication port numbers and domain/ip addresses are returned back to the user who redeemed the hosting tokens.</p>
+<p>After purchasing hosting tokens for a particular host from the dex (or by any other means), tenants can <strong>Redeem</strong> one or more of the tokens in exchange for a smart contract instance. This is performed as a <a href="https://xrpl.org/cross-currency-payments.html">XRPL token payment</a> from tenant's XRPL account to the Host Account. If there are unutilized hosting slices, the host provisions a default contract instance on one of them. If no free slice was available, host refunds the token payment with an error code.</p>
+<p>When a contract instance get created, it is assigned a unique <strong>instance name</strong>. This is a <a href="https://en.wikipedia.org/wiki/Universally_unique_identifier">UUID</a> which can be used to identify an instance within the host. This, along with other instance details such as communication port numbers and domain/ip addresses are returned back to the tenant who redeemed the hosting tokens.</p>
 <p>The amount of hosting token that was "redeemed" defines the lifespan of the provisioned contract instance (1 token = 1 Moment of run time). After the run time "expires", the host deletes the instance and that hosting slice becomes available for future redeems again. The contract instance could be kept alive by redeeming more hosting tokens tagged with the <strong>instance name</strong> before the instance expires.</p>
-<p><a href="sashimono/">Sashimono</a> is the software which manages the contract instances on the host. It is capable of listening to incoming redeem requests from Evernode users on the host's XRPL account and appropriately provisioning contract instances. It uses <a href="https://www.docker.com">Docker</a> to isolate contract instances from each other.</p>
+<p><a href="sashimono/">Sashimono</a> is the software which manages the contract instances on the host. It is capable of listening to incoming redeem requests from Evernode tenants on the host's XRPL account and appropriately provisioning contract instances. It uses <a href="https://www.docker.com">Docker</a> to isolate contract instances from each other.</p>
 <p><img alt="Instance creation" src="../img/host-redeem.png" /></p>
-<p>After the user receives the instance details, direct communication with the instance can be initiated without going through XRP Ledger or Sashimono.</p>
+<p>After the tenant receives the instance details, direct communication with the instance can be initiated without going through XRP Ledger or Sashimono.</p>
 <p><img alt="Instance communication" src="../img/host-instance-communication.png" /></p>
 <p>To learn more about communicating with a contract instance, see <a href="../hot-pocket/">Hot Pocket</a></p>
 <h2 id="installation">Installation</h2>
-<p><a href="setup/">Evernode setup</a> makes the entire process of registering and participating as an Evernode host a hassle free experience. With a guided set of steps, it can automatically register a Linux host on Evernode registry and serve incoming Redeem requests from users. It also installs the ncessary tools for the host administrator to manage the contract instances that have been provisioned on the host.</p></div>
+<p><a href="setup/">Evernode setup</a> makes the entire process of registering and participating as an Evernode host a hassle free experience. With a guided set of steps, it can automatically register a Linux host on Evernode registry and serve incoming Redeem requests from tenants. It also installs the ncessary tools for the host administrator to manage the contract instances that have been provisioned on the host.</p></div>
             </div>
         </div>
 

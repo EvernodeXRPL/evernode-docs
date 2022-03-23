@@ -8,6 +8,6 @@ extra_css:
 nav:
     - Registry: registry/index.md
     - Hosts: hosts/index.md
-    - Users: users/index.md
+    - Tenants: tenants/index.md
     - Purchaser: purchaser/index.md
     - Tokenomics: tokenomics/index.md
