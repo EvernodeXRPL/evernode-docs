@@ -13,13 +13,13 @@ Sashimono possesses access to the keys of the host's XRPL account which represen
 ## Contract instance structure
 Sashimono provisions contract instances in response to leases acquired by tenants. Each leased instance consists of following components:
 
-1. [Hot Pocket](../hot-pocket/index.md) - Evernode's smart contract executation and consensus engine.
-2. [hpws](https://github.com/RichardAH/hpws) - WebSockets protocol software used by Hot Pocket.
-3. hpfs - Filesystem software based on [FUSE](https://www.kernel.org/doc/html/latest/filesystems/fuse.html) used by Hot Pocket to maintain contract state and blockchain.
+1. [HotPocket](../hot-pocket/index.md) - Evernode's smart contract executation and consensus engine.
+2. [hpws](https://github.com/RichardAH/hpws) - WebSockets protocol software used by HotPocket.
+3. hpfs - Filesystem software based on [FUSE](https://www.kernel.org/doc/html/latest/filesystems/fuse.html) used by HotPocket to maintain contract state and blockchain.
 4. Contract binaries - The smart contract application files provided by the tenant.
 5. Contract data - Persisted smart contract data (contract state) and blockchain data files.
 
-Different contract instances on the same host can be leased by different tenants. Hence, Sashimono ensures that the contract instances cannot interfere with each other or the host itself. For that, it uses [Docker](https://www.docker.com) and Linux user account security to isolate contract instances from one another. Furthermore, it also makes sure that the smart contract itself cannot interfere with the infrastructure services within the instance such as Hot Pocket.
+Different contract instances on the same host can be leased by different tenants. Hence, Sashimono ensures that the contract instances cannot interfere with each other or the host itself. For that, it uses [Docker](https://www.docker.com) and Linux user account security to isolate contract instances from one another. Furthermore, it also makes sure that the smart contract itself cannot interfere with the infrastructure services within the instance such as HotPocket.
 
 The following diagram depicts how Sashimono structures the execution of different components of a contract instance.
 

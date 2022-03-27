@@ -105,13 +105,13 @@
 <h2 id="contract-instance-structure">Contract instance structure</h2>
 <p>Sashimono provisions contract instances in response to leases acquired by tenants. Each leased instance consists of following components:</p>
 <ol>
-<li><a href="../../hot-pocket/">Hot Pocket</a> - Evernode's smart contract executation and consensus engine.</li>
-<li><a href="https://github.com/RichardAH/hpws">hpws</a> - WebSockets protocol software used by Hot Pocket.</li>
-<li>hpfs - Filesystem software based on <a href="https://www.kernel.org/doc/html/latest/filesystems/fuse.html">FUSE</a> used by Hot Pocket to maintain contract state and blockchain.</li>
+<li><a href="../../hot-pocket/">HotPocket</a> - Evernode's smart contract executation and consensus engine.</li>
+<li><a href="https://github.com/RichardAH/hpws">hpws</a> - WebSockets protocol software used by HotPocket.</li>
+<li>hpfs - Filesystem software based on <a href="https://www.kernel.org/doc/html/latest/filesystems/fuse.html">FUSE</a> used by HotPocket to maintain contract state and blockchain.</li>
 <li>Contract binaries - The smart contract application files provided by the tenant.</li>
 <li>Contract data - Persisted smart contract data (contract state) and blockchain data files.</li>
 </ol>
-<p>Different contract instances on the same host can be leased by different tenants. Hence, Sashimono ensures that the contract instances cannot interfere with each other or the host itself. For that, it uses <a href="https://www.docker.com">Docker</a> and Linux user account security to isolate contract instances from one another. Furthermore, it also makes sure that the smart contract itself cannot interfere with the infrastructure services within the instance such as Hot Pocket.</p>
+<p>Different contract instances on the same host can be leased by different tenants. Hence, Sashimono ensures that the contract instances cannot interfere with each other or the host itself. For that, it uses <a href="https://www.docker.com">Docker</a> and Linux user account security to isolate contract instances from one another. Furthermore, it also makes sure that the smart contract itself cannot interfere with the infrastructure services within the instance such as HotPocket.</p>
 <p>The following diagram depicts how Sashimono structures the execution of different components of a contract instance.</p>
 <p><img alt="Contract instance structure" src="../../img/contract-instance-structure.png" /></p>
 <p>For each contract instance, Sashimono creates an unpriviledged Linux user and runs all the infrastructure components and custom contract binaries in the context of that tenant. This provides security isolation between components of different contract instances.</p>

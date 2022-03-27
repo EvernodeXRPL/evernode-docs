@@ -8,7 +8,7 @@
         
         
         <link rel="shortcut icon" href="../img/favicon.ico">
-        <title>Hot Pocket - Evernode</title>
+        <title>HotPocket - Evernode</title>
         <link href="../css/bootstrap.min.css" rel="stylesheet">
         <link href="../css/font-awesome.min.css" rel="stylesheet">
         <link href="../css/base.css" rel="stylesheet">
@@ -75,7 +75,7 @@
     <div id="toc-collapse" class="navbar-collapse collapse card bg-secondary">
         <ul class="nav flex-column">
             
-            <li class="nav-item" data-level="1"><a href="#hot-pocket" class="nav-link">Hot Pocket</a>
+            <li class="nav-item" data-level="1"><a href="#hotpocket" class="nav-link">HotPocket</a>
               <ul class="nav flex-column">
             <li class="nav-item" data-level="2"><a href="#smart-contract" class="nav-link">Smart Contract</a>
               <ul class="nav flex-column">
@@ -97,7 +97,7 @@
               <ul class="nav flex-column">
               </ul>
             </li>
-            <li class="nav-item" data-level="2"><a href="#hot-pocket-sdks" class="nav-link">Hot Pocket SDKs</a>
+            <li class="nav-item" data-level="2"><a href="#hotpocket-sdks" class="nav-link">HotPocket SDKs</a>
               <ul class="nav flex-column">
               </ul>
             </li>
@@ -108,22 +108,22 @@
 </div></div>
                     <div class="col-md-9" role="main">
 
-<h1 id="hot-pocket">Hot Pocket</h1>
-<p>Hot Pocket is a smart contract execution and consensus engine. Your can build your "Smart Contract" and run it on a distributed Hot Pocket cluster. Hot Pocket takes care of running instances of your smart contract on all the nodes and perform "consensus" on your smart contract executions.</p>
+<h1 id="hotpocket">HotPocket</h1>
+<p>HotPocket is a smart contract execution and consensus engine. Your can build your "Smart Contract" and run it on a distributed HotPocket cluster. HotPocket takes care of running instances of your smart contract on all the nodes and perform "consensus" on your smart contract executions.</p>
 <h2 id="smart-contract">Smart Contract</h2>
-<p>Hot Pocket defines the smart contract as a regular POSIX application that can receive <strong>Inputs</strong>, produce <strong>Outputs</strong> and also persist <strong>State</strong> to permenant storage. You can use any POSIX-compliant programming platform to create Hot Pocket smart contracts (see <a href="https://github.com/HotPocketDev/hp-nodejs-contract/blob/main/example/echo-contract.js">nodejs contract example</a>).</p>
+<p>HotPocket defines the smart contract as a regular POSIX application that can receive <strong>Inputs</strong>, produce <strong>Outputs</strong> and also persist <strong>State</strong> to permenant storage. You can use any POSIX-compliant programming platform to create HotPocket smart contracts (see <a href="https://github.com/HotPocketDev/hp-nodejs-contract/blob/main/example/echo-contract.js">nodejs contract example</a>).</p>
 <h2 id="consensus">Consensus</h2>
-<p>Because your smart contract instances simultaneously runs on multiple nodes, it needs to be verified that all instances execute under exact same conditions and in the same manner. Hot Pocket makes sure that the MAJORITY of the instances receives the same <strong>inputs</strong>, produces same <strong>outputs</strong> and persists same <strong>state</strong> to the permanent storage. This is known as <strong>consensus</strong> in which <strong>majority of instances</strong> AGREE upon similar behavior of the smart contract.</p>
+<p>Because your smart contract instances simultaneously runs on multiple nodes, it needs to be verified that all instances execute under exact same conditions and in the same manner. HotPocket makes sure that the MAJORITY of the instances receives the same <strong>inputs</strong>, produces same <strong>outputs</strong> and persists same <strong>state</strong> to the permanent storage. This is known as <strong>consensus</strong> in which <strong>majority of instances</strong> AGREE upon similar behavior of the smart contract.</p>
 <h2 id="security-aspect">Security aspect</h2>
 <p>The benefit of consensus is that in order for an intruder to arbitrarily change the behavior of the smart contract or to forcefully tamper the persisted state, they need to be able to do that to a MAJORITY of the instances at the same time, which is practically impossible. If one of the instances gets compromised, the consensus would detect it and apply corrections to the compromised instance.</p>
 <h2 id="decentralized-control">Decentralized control</h2>
 <p>If different instances of the smart contract is owned by multiple parties (eg. different people or organizations), then no single party has ultimate control over the entire cluster. No single party can manipulate the system. It would require collaboration of majority of owners to manipulate the entire system's behaviour in order to make <strong>collective modifications</strong> to the instances owned by them <strong>at the same time</strong>.</p>
 <h2 id="users">Users</h2>
-<p>You can "connect" to any ONE of the smart contract instances of the cluster and communicate with that instance as a "user" (Hot Pocket will subject your communication with that particular instance to inter-node consensus which is hidden from you). For Hot Pocket to distinguish you with other users who are connecting to the same cluster, you need to identify yourself with a unique <strong>Public/Private asymmetric key pair</strong> (generated using <a href="https://en.wikipedia.org/wiki/EdDSA#Ed25519">EdDSA</a> signing key algorithm).</p>
-<p>Upon successful connection, you can communicate with the smart contract using the app-specific message formats defined by the smart contract developer. Hot Pocket acts as a "carrier" of messages between you and the smart contract.</p>
+<p>You can "connect" to any ONE of the smart contract instances of the cluster and communicate with that instance as a "user" (HotPocket will subject your communication with that particular instance to inter-node consensus which is hidden from you). For HotPocket to distinguish you with other users who are connecting to the same cluster, you need to identify yourself with a unique <strong>Public/Private asymmetric key pair</strong> (generated using <a href="https://en.wikipedia.org/wiki/EdDSA#Ed25519">EdDSA</a> signing key algorithm).</p>
+<p>Upon successful connection, you can communicate with the smart contract using the app-specific message formats defined by the smart contract developer. HotPocket acts as a "carrier" of messages between you and the smart contract.</p>
 <p>See <a href="user-connections/">User connection basics</a></p>
-<h2 id="hot-pocket-sdks">Hot Pocket SDKs</h2>
-<p>Hot Pocket provides several libraries to make it easy to write Hot Pocket smart contracts and to connect and communicate with Hot Pocket smart contracts as a user.</p>
+<h2 id="hotpocket-sdks">HotPocket SDKs</h2>
+<p>HotPocket provides several libraries to make it easy to write HotPocket smart contracts and to connect and communicate with HotPocket smart contracts as a user.</p>
 <ul>
 <li>Library for <a href="https://github.com/HotPocketDev/hp-nodejs-contract">NodeJs contracts</a></li>
 <li>Library for <a href="https://github.com/HotPocketDev/hp-js-client">Javascript clients</a></li>

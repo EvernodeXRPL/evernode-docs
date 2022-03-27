@@ -4,7 +4,7 @@
 ![Evernode overview](img/parties.png)
 
 ## Financial model
-Evernode finances are modeled using XRPL [tokens](https://xrpl.org/tokens.html). Evernode uses **Evers** (EVR) as its native currency for all financial transactions in the marketplace. Evers are issued by the Evernode Foundation and is guaranteed to be finite in supply. Hosts pay their registration fee in Evers. Hosts value their server space against Evers. Tenants can lease hosting using Evers.
+Evernode finances are modeled using XRPL [tokens](https://xrpl.org/tokens.html). Evernode uses **Evers** (EVR) as its native currency for all financial transactions in the marketplace. Evers are issued by the Evernode Foundation and is guaranteed to be finite in supply. Hosts pay their registration deposit in Evers. Hosts value their server space against Evers. Tenants can lease hosting using Evers.
 
 The initial phase of Evernode will see to it that a portion of the limited Ever supply find its way to the hands of the community by means of airdrops. The community can use these Evers to register as Hosts or to lease hosting as Tenants from registered Hosts. The rest will be progressively distributed by the [Evernode Purchaser Service](purchaser/index.md), as perpetual hosting lease payments to all registered Hosts in order to host the [Community Contract](purchaser/community-contract.md). This ensures early participants of the network will have a steady income for making their server space available on Evernode. See [Evernode tokenomics](tokenomics/index.md).
 
@@ -17,7 +17,7 @@ The initial phase of Evernode will see to it that a portion of the limited Ever 
 - [Purchaser service](purchaser/index.md)
 - [Evernode tokenomics](tokenomics/index.md)
 - [Sashimono](hosts/sashimono.md)
-- [Hot Pocket](hot-pocket/index.md)
+- [HotPocket](hot-pocket/index.md)
 
 ## Evernode news
 - [@EvernodeXRPL](https://twitter.com/EvernodeXRPL) on Twitter
