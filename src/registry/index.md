@@ -13,11 +13,13 @@ Evernode registry keeps several global configuration parameters that applies to 
 - Ever issuer address
 - Ever issuance limit
 - Current registration fee in Evers
-- Moment window size
-- Target hosting token price of purchaser service
+- Moment duration
+- Base market price of hosting leases
 
 ## Registry operations
-A new host requests for Evernode membership by initiating an XRPL payment of Evers according to the current registration fee. Upon succesful processing, the registry service issues the **Registration NFT** to the host. The Registration NFT acts as proof-of-membership of that host within Evernode. The host can sell the NFT back to registry for half of prevailing registration fee at a later time. At this point, the registry service will **deregister** the host and clear the host data from the registry.
+A new host requests for Evernode membership by initiating an XRPL payment of Evers equal to the current registration fee. Upon succesful processing, the registry service issues the **Registration NFT** to the host. The Registration NFT acts as proof-of-membership of that host within Evernode. The host can sell the NFT back to registry for half of prevailing registration fee at a later time. At this point, the registry service will **deregister** the host and clear the host data from the registry.
 
-## Future
-In the future, when [XRPL hooks amendment](https://xrpl-hooks.readme.io) is finalized, it is anticipated that the Evernode registry service becomes a "Hook" on the XRP Ledger. At this point, the host membership information can be read directly from the XRP Ledger by tenants.
+[Evernode tokenomics](../tokenomics/index.md) dictate that registration fee will reduce (halve) over time as the Host network gets crowded. Which such "halving" happens, all existing members are rebated the fee they are due.
+
+## Future based on XRPL hooks
+In the future, when [XRPL hooks amendment](https://xrpl-hooks.readme.io) is finalized, it is anticipated that the Evernode registry service becomes a "Hook" on the XRP Ledger. WHen this happens, the host membership information can be read directly from the XRP Ledger by tenants.
