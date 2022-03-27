@@ -17,9 +17,11 @@ Evernode registry keeps several global configuration parameters that applies to 
 - Base market price of hosting leases
 
 ## Registry operations
-A new host requests for Evernode membership by initiating an XRPL payment of Evers equal to the current registration deposit. Upon succesful processing, the registry service issues the **Registration NFT** to the host. The Registration NFT acts as proof-of-membership of that host within Evernode. The host can sell the NFT back to registry for half of prevailing registration deposit at a later time. At this point, the registry service will **deregister** the host and clear the host data from the registry.
+A new host requests for Evernode membership by initiating an XRPL payment of Evers equal to the current registration deposit.
 
-[Evernode tokenomics](../tokenomics/index.md) dictate that registration deposit will reduce (halve) over time as the Host network gets crowded. Which such "halving" happens, all existing members are rebated the fee they are due.
+Upon successful processing, the registry service issues the **Registration NFT** to the host. The Registration NFT acts as proof-of-membership of that host within Evernode and confirms the host is legally licensed to run the Evernode software. The host can sell the NFT back to registry for half of prevailing registration deposit at a later time, or it can sell the NFT to another host. At this point, the registry service will **deregister** the host and clear the host data from the registry.
+
+[Evernode tokenomics](../tokenomics/index.md) provides that five (5) Evers of the registration deposit are non-refundable. The remaining deposit is refundable as the network grows.  The registration deposit halves whenever the number hosts grows beyond certain milestones. When such "halving" happens, all existing members are rebated the excess Evers they have on deposit. In this way, all but 5 Evers of the registration deposit will ultimately be refunded to hosts, assuming the network grows to the relevant size.
 
 ## Future based on XRPL hooks
 In the future, when [XRPL hooks amendment](https://xrpl-hooks.readme.io) is finalized, it is anticipated that the Evernode registry service becomes a "Hook" on the XRP Ledger. WHen this happens, the host membership information can be read directly from the XRP Ledger by tenants.
