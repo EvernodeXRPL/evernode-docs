@@ -4,12 +4,9 @@
 ![Evernode overview](img/parties.png)
 
 ## Native currency
-Evernode uses E**vers** (EVR) as its native currency for all financial transactions in the marketplace. Evers are [tokens](https://xrpl.org/tokens.html) issued on the XRP Ledger with a guaranteed finite supply. Hosts make their registration deposit in Evers and price their server space in Evers. Tenants can lease hosting using Evers.
+Evernode uses **Evers** (EVR) as its native currency for all financial transactions in the marketplace. Evers are [tokens](https://xrpl.org/tokens.html) issued on the XRP Ledger with a guaranteed finite supply. Hosts make their registration deposit in Evers and price their server space in Evers. Tenants can lease hosting using Evers.
 
 Initially, all Evers will be airdropped into the community to ensure a circulating supply of Evers for registration and hosting fees. The largest airdrop will go to the Evernode Foundation. The Evernode Foundation will use most of its Evers to purchase hosting services from registered hosts through the [Evernode Purchaser Service](purchaser/index.md) to host the  [Community Contract](purchaser/community-contract.md). In this way, the Evernode Foundation acts as an “anchor tenant” for the Evernode network, guaranteeing early adopters a steady income (in Evers) for making their server space available on Evernode. See [Evernode tokenomics](tokenomics/index.md).
-
-
-![Ever distribution](img/evr-flow.png)
 
 ## Further reading
 - [Registry](registry/index.md)

@@ -84,12 +84,131 @@
     
     <div id="toc-collapse" class="navbar-collapse collapse card bg-secondary">
         <ul class="nav flex-column">
+            
+            <li class="nav-item" data-level="1"><a href="#evernode-tokenomics" class="nav-link">Evernode tokenomics</a>
+              <ul class="nav flex-column">
+            <li class="nav-item" data-level="2"><a href="#airdrops" class="nav-link">Airdrops</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-level="2"><a href="#hosting-purchases" class="nav-link">Hosting purchases</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+              </ul>
+            </li>
         </ul>
     </div>
 </div></div>
                     <div class="col-md-9" role="main">
 
-<p>Not documented yet.</p></div>
+<h1 id="evernode-tokenomics">Evernode tokenomics</h1>
+<p>Evernode uses <strong>Evers</strong> (EVR) as its native currency for all financial transactions in the marketplace. Evers are <a href="https://xrpl.org/tokens.html">tokens</a> issued on the XRP Ledger with a guaranteed finite supply. Evers are minted from a <a href="https://xrpl.org/accounts.html#special-addresses">blackholed</a> XRPL account known as <strong>Ever issuer</strong> which guarantees that no more Evers can be issued after the initial minting. Subsequently, Evers circulated into the market via airdrops and as payments made by <a href="../purchaser/">Evernode purchaser service</a>. The following diagram shows the flow of Evers within Evernode ecosystem.</p>
+<p><img alt="Ever distribution" src="../img/evr-flow.png" /></p>
+<ol>
+<li>Ever issuer mints and transfers 72,253,440 EVR (72.2m) to Evernode Foundation, after which it is blackholed.</li>
+<li>Evernode Foundation allocates 20,643,840 EVR (20.6m) for <a href="#airdrops">airdrops</a>.</li>
+<li>Remaining 51,609,600 EVR (51.6m) are used to progressively purchase hosting from registered hosts as an incentive.</li>
+</ol>
+<h3 id="moment">Moment</h3>
+<p>"Moment" is the measure of time in Evernode. It is calculated using "XRPL ledgers elapsed". Moment is the shortest duration for which a smart contract instance can pay for hosting. Currently, a Moment is defined as <strong>900</strong> XRPL ledgers which is close to 1 hour in real world time.</p>
+<h2 id="airdrops">Airdrops</h2>
+<p>Evernode Foundation has planned to airdrop a portion of its Evers to people who participate in the beta. But the details of any such airdrop are not confirmed. The Foundation reserve the right to, at anytime and without notice, amend the details of any airdrop, include or exclude people or classes of people, or abandon the airdrop entirely. You should participate in the beta because you want to help the Evernode Network succeed, not because you want an airdrop of Evers.</p>
+<h2 id="hosting-purchases">Hosting purchases</h2>
+<p>Evernode Foundation maintains <a href="../purchaser/">Evernode purchaser service</a> to periodically purchase hosting from registered hosts according to predefined set of rules. It is used as a natural means of getting more Evers into the echosystem while incentivising hosts to join the platform. Total purchase fund of 51.6m Evers are equally devided between 10 <strong>epochs</strong> where each epoch sees the same amount of EVR funds being distributed twice as slow as the previous epoch.</p>
+<p>Every passing <a href="#moment">Moment</a>, a target price is decided at which the purchaser will purchase 1 Moment of hosting. This is decided based on per-Moment purchase pool (Moment pool) for current epoch and the number of hosts eligible for hosting purchases. Moment pool is divided between all eligible hosts as hosting purchases. Current epoch ends and a new one starts when the funds for that epoch has been depleted. The Moment pool for the new epoch is set to be half of that of the previous epoch. This process continues until the total allocated purchase funds (51.6m EVR) are depleted.</p>
+<p>Following table shows how the Ever distribution progresses over epochs.</p>
+<table>
+<thead>
+<tr>
+<th><center>Epoch</center></th>
+<th align="right"><center>Moment pool</center></th>
+<th align="right"><center>Funds</center></th>
+<th align="right"><center>Moments</center></th>
+<th align="right"><center>Est. real-world time</center></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>1</td>
+<td align="right">5120 EVR</td>
+<td align="right">5,160,960 EVR</td>
+<td align="right">1008</td>
+<td align="right">0.12 yrs</td>
+</tr>
+<tr>
+<td>2</td>
+<td align="right">2560 EVR</td>
+<td align="right">5,160,960 EVR</td>
+<td align="right">2016</td>
+<td align="right">0.23 yrs</td>
+</tr>
+<tr>
+<td>3</td>
+<td align="right">1280 EVR</td>
+<td align="right">5,160,960 EVR</td>
+<td align="right">4032</td>
+<td align="right">0.46 yrs</td>
+</tr>
+<tr>
+<td>4</td>
+<td align="right">640 EVR</td>
+<td align="right">5,160,960 EVR</td>
+<td align="right">8068</td>
+<td align="right">0.92 yrs</td>
+</tr>
+<tr>
+<td>5</td>
+<td align="right">320 EVR</td>
+<td align="right">5,160,960 EVR</td>
+<td align="right">16136</td>
+<td align="right">1.84 yrs</td>
+</tr>
+<tr>
+<td>6</td>
+<td align="right">160 EVR</td>
+<td align="right">5,160,960 EVR</td>
+<td align="right">32272</td>
+<td align="right">3.68 yrs</td>
+</tr>
+<tr>
+<td>7</td>
+<td align="right">80 EVR</td>
+<td align="right">5,160,960 EVR</td>
+<td align="right">64544</td>
+<td align="right">7.36 yrs</td>
+</tr>
+<tr>
+<td>8</td>
+<td align="right">40 EVR</td>
+<td align="right">5,160,960 EVR</td>
+<td align="right">129088</td>
+<td align="right">14.73 yrs</td>
+</tr>
+<tr>
+<td>9</td>
+<td align="right">20 EVR</td>
+<td align="right">5,160,960 EVR</td>
+<td align="right">258176</td>
+<td align="right">29.46 yrs</td>
+</tr>
+<tr>
+<td>10</td>
+<td align="right">10 EVR</td>
+<td align="right">5,160,960 EVR</td>
+<td align="right">516352</td>
+<td align="right">58.92 yrs</td>
+</tr>
+<tr>
+<td><strong>Totals:</strong></td>
+<td align="right"></td>
+<td align="right"><strong>51,609,600 EVR</strong></td>
+<td align="right"><strong>1031692</strong></td>
+<td align="right"><strong>117.72 yrs</strong></td>
+</tr>
+</tbody>
+</table>
+<p><em>Real-world time per epoch is estimated assuming each XRP ledger takes roughly 4 seconds and a Moment contains 900 ledgers.</em></p></div>
             </div>
         </div>
 

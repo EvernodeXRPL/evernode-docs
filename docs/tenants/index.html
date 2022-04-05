@@ -84,12 +84,26 @@
     
     <div id="toc-collapse" class="navbar-collapse collapse card bg-secondary">
         <ul class="nav flex-column">
+            
+            <li class="nav-item" data-level="1"><a href="#tenants" class="nav-link">Tenants</a>
+              <ul class="nav flex-column">
+            <li class="nav-item" data-level="2"><a href="#contract-clusters" class="nav-link">Contract clusters</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+              </ul>
+            </li>
         </ul>
     </div>
 </div></div>
                     <div class="col-md-9" role="main">
 
-<p>Not documented yet.</p></div>
+<h1 id="tenants">Tenants</h1>
+<p>An Evernode tenant is an entitiy which leases a hosting slot in order to host a smart contract instance. In the real world, tenants can be developers or applications that wants to create and maintain smart contract instances. The tenant must <strong>acquire</strong> a lease a hosting slot with Evers. When the acquisition is complete, the tenant gains access to a freshly-provisioned default <a href="../hot-pocket/">HotPocket</a> smart contract instance. The tenant can alter the default contract to make it do what the tenant wants. Tenant can <strong>extend</strong> the lease by paying in Evers as long as it wants to keep running the smart contract instance.</p>
+<p><img alt="Tenant actions" src="../img/tenant-actions.png" /></p>
+<h2 id="contract-clusters">Contract clusters</h2>
+<p>Using the above flow, a tenant can create multiple contract instances and configure them to talk to each other. Such a group of instances form a contract cluster which can perform <a href="../hot-pocket/#consensus">consensus</a> and synchronize with each other.</p>
+<p><img alt="Contract cluster" src="../img/contract-cluster.png" /></p></div>
             </div>
         </div>
 

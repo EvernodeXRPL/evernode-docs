@@ -10,12 +10,9 @@ Once the registration deposit is paid, Evernode registry issues a **Registration
 A host can choose what amount of its total hardware resources (CPU, RAM, Disk space) is allocated for Evernode smart contract hosting. This resource allocation is further divided into a number of equal-sized "slots" chosen by the host. These **hosting slots** correspond to potential smart contract instances tenants can purchase (1 slot = 1 instance). They are just a numerical division of the host's total allocated hardware resources and are only actually utilized when smart contract instances get materialized as a result of a tenant acquiring a lease. Each hosting slot is represented using a **Hosting NFT** which can be bought for Evers which signifies a lease acquisition.
 
 ## Hosting NFTs
-The host mints and offers hosting NFTs to represent all hosting slots on the host (N slots = N nfts). Hosting NFTs are always priced at the **Lease amount** in Evers, the price of hosting a smart contract for 1 [Moment](#moment). A tenant must purchase a hosting NFTs in order to own a smart contract instance. Upon purchase, the tenant acquires a lease of a hosting slot for 1 Moment. The tenant can extend the lease by paying sufficient Evers to lease any number of future Moments in advance (lease amount = price of 1 Moment of hosting).
+The host mints and offers hosting NFTs to represent all hosting slots on the host (N slots = N nfts). Hosting NFTs are always priced at the **Lease amount** in Evers, the price of hosting a smart contract for 1 [Moment](../tokenomics/index.md#moment). A tenant must purchase a hosting NFTs in order to own a smart contract instance. Upon purchase, the tenant acquires a lease of a hosting slot for 1 Moment. The tenant can extend the lease by paying sufficient Evers to lease any number of future Moments in advance (lease amount = price of 1 Moment of hosting).
 
 > Owning a hosting NFT means the right to own a smart contract instance for 1 Moment and the right to pay for future Moments of that instance.
-
-## Moment
-"Moment" is the measure of time in Evernode. It is calculated using "XRPL ledgers elapsed". Moment is the shortest duration for which a smart contract instance can pay for hosting. Currently, a Moment is defined as 72 XRPL ledgers.
 
 ## Smart contract instances
 When a tenant acquires a lease (purchases a hosting NFT), the host provisions a default contract instance in a hosting slot. The instance is assigned a unique **instance name**, which is derived from the purchased NFT itself. This can be used to identify a particular instance within the host. This, along with other instance details, such as communication port numbers and domain/ip addresses, are returned back to the tenant who acquired the lease.
