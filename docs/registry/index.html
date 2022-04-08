@@ -34,6 +34,9 @@
                 <div id="navbar-collapse" class="navbar-collapse collapse">
                         <!-- Main navigation -->
                         <ul class="nav navbar-nav">
+                            <li class="navitem">
+                                <a href="../evers/" class="nav-link">Evers</a>
+                            </li>
                             <li class="navitem active">
                                 <a href="./" class="nav-link">Registry</a>
                             </li>
@@ -43,11 +46,22 @@
                             <li class="navitem">
                                 <a href="../tenants/" class="nav-link">Tenants</a>
                             </li>
-                            <li class="navitem">
-                                <a href="../purchaser/" class="nav-link">Purchaser</a>
-                            </li>
-                            <li class="navitem">
-                                <a href="../tokenomics/" class="nav-link">Tokenomics</a>
+                            <li class="dropdown">
+                                <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown">more <b class="caret"></b></a>
+                                <ul class="dropdown-menu">
+                                    
+<li>
+    <a href="../anchor-tenant/" class="dropdown-item">Anchor tenant</a>
+</li>
+                                    
+<li>
+    <a href="../hosts/sashimono/" class="dropdown-item">Sashimono</a>
+</li>
+                                    
+<li>
+    <a href="../hotpocket/" class="dropdown-item">HotPocket</a>
+</li>
+                                </ul>
                             </li>
                         </ul>
 
@@ -58,7 +72,7 @@
                             </a>
                         </li>
                             <li class="nav-item">
-                                <a rel="prev" class="nav-link disabled">
+                                <a rel="prev" href="../evers/" class="nav-link">
                                     <i class="fa fa-arrow-left"></i> Previous
                                 </a>
                             </li>
@@ -125,7 +139,7 @@
 <h2 id="registry-operations">Registry operations</h2>
 <p>A new host requests for Evernode membership by initiating an XRPL payment of Evers equal to the current registration deposit.</p>
 <p>Upon successful processing, the registry service issues the <strong>Registration NFT</strong> to the host. The Registration NFT acts as proof-of-membership of that host within Evernode and confirms the host is legally licensed to run the Evernode software. The host can sell the NFT back to registry for half of prevailing registration deposit at a later time, or it can sell the NFT to another host. At this point, the registry service will <strong>deregister</strong> the host and clear the host data from the registry.</p>
-<p><a href="../tokenomics/">Evernode tokenomics</a> provides that five (5) Evers of the registration deposit are non-refundable. The remaining deposit is refundable as the network grows.  The registration deposit halves whenever the number hosts grows beyond certain milestones. When such "halving" happens, all existing members are rebated the excess Evers they have on deposit. In this way, all but 5 Evers of the registration deposit will ultimately be refunded to hosts, assuming the network grows to the relevant size.</p>
+<p>Five (5) Evers of the registration deposit are non-refundable. The remaining deposit is refundable as the network grows.  The registration deposit halves whenever the number hosts grows beyond certain milestones. When such "halving" happens, all existing members are rebated the excess Evers they have on deposit. In this way, all but 5 Evers of the registration deposit will ultimately be refunded to hosts, assuming the network grows to the relevant size.</p>
 <h2 id="future-based-on-xrpl-hooks">Future based on XRPL hooks</h2>
 <p>In the future, when <a href="https://xrpl-hooks.readme.io">XRPL hooks amendment</a> is finalized, it is anticipated that the Evernode registry service becomes a "Hook" on the XRP Ledger. WHen this happens, the host membership information can be read directly from the XRP Ledger by tenants.</p></div>
             </div>

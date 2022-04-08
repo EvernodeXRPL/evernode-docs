@@ -10,7 +10,7 @@ Once the registration deposit is paid, Evernode registry issues a **Registration
 A host can choose what amount of its total hardware resources (CPU, RAM, Disk space) is allocated for Evernode smart contract hosting. This resource allocation is further divided into a number of equal-sized "slots" chosen by the host. These **hosting slots** correspond to potential smart contract instances tenants can purchase (1 slot = 1 instance). They are just a numerical division of the host's total allocated hardware resources and are only actually utilized when smart contract instances get materialized as a result of a tenant acquiring a lease. Each hosting slot is represented using a **Hosting NFT** which can be bought for Evers which signifies a lease acquisition.
 
 ## Hosting NFTs
-The host mints and offers hosting NFTs to represent all hosting slots on the host (N slots = N nfts). Hosting NFTs are always priced at the **Lease amount** in Evers, the price of hosting a smart contract for 1 [Moment](../tokenomics/index.md#moment). A tenant must purchase a hosting NFTs in order to own a smart contract instance. Upon purchase, the tenant acquires a lease of a hosting slot for 1 Moment. The tenant can extend the lease by paying sufficient Evers to lease any number of future Moments in advance (lease amount = price of 1 Moment of hosting).
+The host mints and offers hosting NFTs to represent all hosting slots on the host (N slots = N nfts). Hosting NFTs are always priced at the **Lease amount** in Evers, the price of hosting a smart contract for 1 [Moment](../index.md#moment). A tenant must purchase a hosting NFTs in order to own a smart contract instance. Upon purchase, the tenant acquires a lease of a hosting slot for 1 Moment. The tenant can extend the lease by paying sufficient Evers to lease any number of future Moments in advance (lease amount = price of 1 Moment of hosting).
 
 > Owning a hosting NFT means the right to own a smart contract instance for 1 Moment and the right to pay for future Moments of that instance.
 
@@ -27,7 +27,7 @@ After the tenant receives the instance details, direct communication with the in
 
 ![Instance communication](../img/host-instance-communication.png)
 
-To learn more about communicating with a contract instance, see [HotPocket](../hot-pocket/index.md)
+To learn more about communicating with a contract instance, see [HotPocket](../hotpocket/index.md)
 
 ## Installation
 [Evernode setup](https://github.com/HotPocketDev/evernode-host) makes the entire process of registering and participating as an Evernode host a hassle free experience. With a guided set of steps, it can automatically register a Linux host on Evernode registry and serve lease acquisitions from tenants. It also installs the ncessary tools for the host administrator to manage the contract instances that have been provisioned on the host.

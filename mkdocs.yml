@@ -6,8 +6,11 @@ theme:
 extra_css:     
   - css/extra.css
 nav:
+    - Evers: evers/index.md
     - Registry: registry/index.md
     - Hosts: hosts/index.md
     - Tenants: tenants/index.md
-    - Purchaser: purchaser/index.md
-    - Tokenomics: tokenomics/index.md
+    - more:
+      - Anchor tenant: anchor-tenant/index.md
+      - Sashimono: hosts/sashimono.md
+      - HotPocket: hotpocket/index.md

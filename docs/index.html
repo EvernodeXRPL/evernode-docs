@@ -35,6 +35,9 @@
                         <!-- Main navigation -->
                         <ul class="nav navbar-nav">
                             <li class="navitem">
+                                <a href="evers/" class="nav-link">Evers</a>
+                            </li>
+                            <li class="navitem">
                                 <a href="registry/" class="nav-link">Registry</a>
                             </li>
                             <li class="navitem">
@@ -43,11 +46,22 @@
                             <li class="navitem">
                                 <a href="tenants/" class="nav-link">Tenants</a>
                             </li>
-                            <li class="navitem">
-                                <a href="purchaser/" class="nav-link">Purchaser</a>
-                            </li>
-                            <li class="navitem">
-                                <a href="tokenomics/" class="nav-link">Tokenomics</a>
+                            <li class="dropdown">
+                                <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown">more <b class="caret"></b></a>
+                                <ul class="dropdown-menu">
+                                    
+<li>
+    <a href="anchor-tenant/" class="dropdown-item">Anchor tenant</a>
+</li>
+                                    
+<li>
+    <a href="hosts/sashimono/" class="dropdown-item">Sashimono</a>
+</li>
+                                    
+<li>
+    <a href="hotpocket/" class="dropdown-item">HotPocket</a>
+</li>
+                                </ul>
                             </li>
                         </ul>
 
@@ -81,11 +95,7 @@
               <ul class="nav flex-column">
               </ul>
             </li>
-            <li class="nav-item" data-level="2"><a href="#further-reading" class="nav-link">Further reading</a>
-              <ul class="nav flex-column">
-              </ul>
-            </li>
-            <li class="nav-item" data-level="2"><a href="#evernode-news" class="nav-link">Evernode news</a>
+            <li class="nav-item" data-level="2"><a href="#moment" class="nav-link">Moment</a>
               <ul class="nav flex-column">
               </ul>
             </li>
@@ -101,18 +111,20 @@
 <p><img alt="Evernode overview" src="img/parties.png" /></p>
 <h2 id="native-currency">Native currency</h2>
 <p>Evernode uses <strong>Evers</strong> (EVR) as its native currency for all financial transactions in the marketplace. Evers are <a href="https://xrpl.org/tokens.html">tokens</a> issued on the XRP Ledger with a guaranteed finite supply. Hosts make their registration deposit in Evers and price their server space in Evers. Tenants can lease hosting using Evers.</p>
-<p>Initially, all Evers will be airdropped into the community to ensure a circulating supply of Evers for registration and hosting fees. The largest airdrop will go to the Evernode Foundation. The Evernode Foundation will use most of its Evers to purchase hosting services from registered hosts through the <a href="purchaser/">Evernode Purchaser Service</a> to host the  <a href="purchaser/community-contract/">Community Contract</a>. In this way, the Evernode Foundation acts as an “anchor tenant” for the Evernode network, guaranteeing early adopters a steady income (in Evers) for making their server space available on Evernode. See <a href="tokenomics/">Evernode tokenomics</a>.</p>
-<h2 id="further-reading">Further reading</h2>
+<p>Initially, all Evers will be airdropped into the community to ensure a circulating supply of Evers for registration and hosting fees. The largest airdrop will go to the Evernode Foundation. The Evernode Foundation will use most of its Evers to purchase hosting services from registered hosts through the <a href="anchor-tenant/">Anchor tenant procurement program</a> to host the <a href="anchor-tenant/community-contract/">Community Contract</a>. In this way, the Evernode Foundation acts as an “anchor tenant” for the Evernode network, guaranteeing early adopters a steady income (in Evers) for making their server space available on Evernode. See <a href="evers/">Evers</a>.</p>
+<h2 id="moment">Moment</h2>
+<p>Tenants pay for hosting per "Moment". A moment is the shortest duration for which a smart contract instance can pay for hosting. Moments are calculated using "XRPL ledgers elapsed". Currently, a Moment is defined as 900 XRPL ledgers which is close to 1 hour in real world time.</p>
+<h3 id="further-reading">Further reading</h3>
 <ul>
+<li><a href="evers/">Evers</a></li>
 <li><a href="registry/">Registry</a></li>
 <li><a href="hosts/">Hosts</a></li>
 <li><a href="tenants/">Tenants</a></li>
-<li><a href="purchaser/">Purchaser service</a></li>
-<li><a href="tokenomics/">Evernode tokenomics</a></li>
+<li><a href="anchor-tenant/">Anchor tenant procurement program</a></li>
 <li><a href="hosts/sashimono/">Sashimono</a></li>
-<li><a href="hot-pocket/">HotPocket</a></li>
+<li><a href="hotpocket/">HotPocket</a></li>
 </ul>
-<h2 id="evernode-news">Evernode news</h2>
+<h3 id="evernode-news">Evernode news</h3>
 <ul>
 <li><a href="https://twitter.com/EvernodeXRPL">@EvernodeXRPL</a> on Twitter</li>
 <li><a href="https://evernode.wordpress.com">Evernode website</a></li>
@@ -197,5 +209,5 @@
 
 <!--
 MkDocs version : 1.2.3
-Build Date UTC : 2022-04-05 15:50:05.778951+00:00
+Build Date UTC : 2022-04-08 12:57:10.475133+00:00
 -->

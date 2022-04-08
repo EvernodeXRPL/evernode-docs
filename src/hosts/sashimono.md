@@ -13,7 +13,7 @@ Sashimono possesses access to the keys of the host's XRPL account which represen
 ## Contract instance structure
 Sashimono provisions contract instances in response to leases acquired by tenants. Each leased instance consists of following components:
 
-1. [HotPocket](../hot-pocket/index.md) - Evernode's smart contract executation and consensus engine.
+1. [HotPocket](../hotpocket/index.md) - Evernode's smart contract executation and consensus engine.
 2. [hpws](https://github.com/RichardAH/hpws) - WebSockets protocol software used by HotPocket.
 3. hpfs - Filesystem software based on [FUSE](https://www.kernel.org/doc/html/latest/filesystems/fuse.html) used by HotPocket to maintain contract state and blockchain.
 4. Contract binaries - The smart contract application files provided by the tenant.

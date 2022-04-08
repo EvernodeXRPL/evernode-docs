@@ -8,7 +8,7 @@
         
         
         <link rel="shortcut icon" href="../img/favicon.ico">
-        <title>Tokenomics - Evernode</title>
+        <title>Evers - Evernode</title>
         <link href="../css/bootstrap.min.css" rel="stylesheet">
         <link href="../css/font-awesome.min.css" rel="stylesheet">
         <link href="../css/base.css" rel="stylesheet">
@@ -34,6 +34,9 @@
                 <div id="navbar-collapse" class="navbar-collapse collapse">
                         <!-- Main navigation -->
                         <ul class="nav navbar-nav">
+                            <li class="navitem active">
+                                <a href="./" class="nav-link">Evers</a>
+                            </li>
                             <li class="navitem">
                                 <a href="../registry/" class="nav-link">Registry</a>
                             </li>
@@ -43,11 +46,22 @@
                             <li class="navitem">
                                 <a href="../tenants/" class="nav-link">Tenants</a>
                             </li>
-                            <li class="navitem">
-                                <a href="../purchaser/" class="nav-link">Purchaser</a>
-                            </li>
-                            <li class="navitem active">
-                                <a href="./" class="nav-link">Tokenomics</a>
+                            <li class="dropdown">
+                                <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown">more <b class="caret"></b></a>
+                                <ul class="dropdown-menu">
+                                    
+<li>
+    <a href="../anchor-tenant/" class="dropdown-item">Anchor tenant</a>
+</li>
+                                    
+<li>
+    <a href="../hosts/sashimono/" class="dropdown-item">Sashimono</a>
+</li>
+                                    
+<li>
+    <a href="../hotpocket/" class="dropdown-item">HotPocket</a>
+</li>
+                                </ul>
                             </li>
                         </ul>
 
@@ -58,12 +72,12 @@
                             </a>
                         </li>
                             <li class="nav-item">
-                                <a rel="prev" href="../purchaser/" class="nav-link">
+                                <a rel="prev" class="nav-link disabled">
                                     <i class="fa fa-arrow-left"></i> Previous
                                 </a>
                             </li>
                             <li class="nav-item">
-                                <a rel="next" class="nav-link disabled">
+                                <a rel="next" href="../registry/" class="nav-link">
                                     Next <i class="fa fa-arrow-right"></i>
                                 </a>
                             </li>
@@ -85,13 +99,17 @@
     <div id="toc-collapse" class="navbar-collapse collapse card bg-secondary">
         <ul class="nav flex-column">
             
-            <li class="nav-item" data-level="1"><a href="#evernode-tokenomics" class="nav-link">Evernode tokenomics</a>
+            <li class="nav-item" data-level="1"><a href="#evers" class="nav-link">Evers</a>
               <ul class="nav flex-column">
-            <li class="nav-item" data-level="2"><a href="#airdrops" class="nav-link">Airdrops</a>
+            <li class="nav-item" data-level="2"><a href="#minting-evers" class="nav-link">Minting Evers</a>
               <ul class="nav flex-column">
               </ul>
             </li>
-            <li class="nav-item" data-level="2"><a href="#hosting-purchases" class="nav-link">Hosting purchases</a>
+            <li class="nav-item" data-level="2"><a href="#uses-of-evers" class="nav-link">Uses of Evers</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-level="2"><a href="#getting-evers" class="nav-link">Getting Evers</a>
               <ul class="nav flex-column">
               </ul>
             </li>
@@ -102,113 +120,23 @@
 </div></div>
                     <div class="col-md-9" role="main">
 
-<h1 id="evernode-tokenomics">Evernode tokenomics</h1>
-<p>Evernode uses <strong>Evers</strong> (EVR) as its native currency for all financial transactions in the marketplace. Evers are <a href="https://xrpl.org/tokens.html">tokens</a> issued on the XRP Ledger with a guaranteed finite supply. Evers are minted from a <a href="https://xrpl.org/accounts.html#special-addresses">blackholed</a> XRPL account known as <strong>Ever issuer</strong> which guarantees that no more Evers can be issued after the initial minting. Subsequently, Evers circulated into the market via airdrops and as payments made by <a href="../purchaser/">Evernode purchaser service</a>. The following diagram shows the flow of Evers within Evernode ecosystem.</p>
+<h1 id="evers">Evers</h1>
+<p>Evernode uses <strong>Evers</strong> (EVR) as its native currency for all financial transactions in the marketplace. Evers are <a href="https://xrpl.org/tokens.html">tokens</a> issued on the XRP Ledger with a guaranteed finite supply.</p>
+<h2 id="minting-evers">Minting Evers</h2>
+<p>Evers are minted from a <a href="https://xrpl.org/accounts.html#special-addresses">blackholed</a> XRPL account known as <strong>Ever issuer</strong> which guarantees that no more Evers can be issued after the initial minting. At launch, all Evers will be issued to the Evernode Foundation. The number of Evers to be minted is still to be confirmed.</p>
 <p><img alt="Ever distribution" src="../img/evr-flow.png" /></p>
-<ol>
-<li>Ever issuer mints and transfers 72,253,440 EVR (72.2m) to Evernode Foundation, after which it is blackholed.</li>
-<li>Evernode Foundation allocates 20,643,840 EVR (20.6m) for <a href="#airdrops">airdrops</a>.</li>
-<li>Remaining 51,609,600 EVR (51.6m) are used to progressively purchase hosting from registered hosts as an incentive.</li>
-</ol>
-<h3 id="moment">Moment</h3>
-<p>"Moment" is the measure of time in Evernode. It is calculated using "XRPL ledgers elapsed". Moment is the shortest duration for which a smart contract instance can pay for hosting. Currently, a Moment is defined as <strong>900</strong> XRPL ledgers which is close to 1 hour in real world time.</p>
-<h2 id="airdrops">Airdrops</h2>
-<p>Evernode Foundation has planned to airdrop a portion of its Evers to people who participate in the beta. But the details of any such airdrop are not confirmed. The Foundation reserve the right to, at anytime and without notice, amend the details of any airdrop, include or exclude people or classes of people, or abandon the airdrop entirely. You should participate in the beta because you want to help the Evernode Network succeed, not because you want an airdrop of Evers.</p>
-<h2 id="hosting-purchases">Hosting purchases</h2>
-<p>Evernode Foundation maintains <a href="../purchaser/">Evernode purchaser service</a> to periodically purchase hosting from registered hosts according to predefined set of rules. It is used as a natural means of getting more Evers into the echosystem while incentivising hosts to join the platform. Total purchase fund of 51.6m Evers are equally devided between 10 <strong>epochs</strong> where each epoch sees the same amount of EVR funds being distributed twice as slow as the previous epoch.</p>
-<p>Every passing <a href="#moment">Moment</a>, a target price is decided at which the purchaser will purchase 1 Moment of hosting. This is decided based on per-Moment purchase pool (Moment pool) for current epoch and the number of hosts eligible for hosting purchases. Moment pool is divided between all eligible hosts as hosting purchases. Current epoch ends and a new one starts when the funds for that epoch has been depleted. The Moment pool for the new epoch is set to be half of that of the previous epoch. This process continues until the total allocated purchase funds (51.6m EVR) are depleted.</p>
-<p>Following table shows how the Ever distribution progresses over epochs.</p>
-<table>
-<thead>
-<tr>
-<th><center>Epoch</center></th>
-<th align="right"><center>Moment pool</center></th>
-<th align="right"><center>Funds</center></th>
-<th align="right"><center>Moments</center></th>
-<th align="right"><center>Est. real-world time</center></th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>1</td>
-<td align="right">5120 EVR</td>
-<td align="right">5,160,960 EVR</td>
-<td align="right">1008</td>
-<td align="right">0.12 yrs</td>
-</tr>
-<tr>
-<td>2</td>
-<td align="right">2560 EVR</td>
-<td align="right">5,160,960 EVR</td>
-<td align="right">2016</td>
-<td align="right">0.23 yrs</td>
-</tr>
-<tr>
-<td>3</td>
-<td align="right">1280 EVR</td>
-<td align="right">5,160,960 EVR</td>
-<td align="right">4032</td>
-<td align="right">0.46 yrs</td>
-</tr>
-<tr>
-<td>4</td>
-<td align="right">640 EVR</td>
-<td align="right">5,160,960 EVR</td>
-<td align="right">8068</td>
-<td align="right">0.92 yrs</td>
-</tr>
-<tr>
-<td>5</td>
-<td align="right">320 EVR</td>
-<td align="right">5,160,960 EVR</td>
-<td align="right">16136</td>
-<td align="right">1.84 yrs</td>
-</tr>
-<tr>
-<td>6</td>
-<td align="right">160 EVR</td>
-<td align="right">5,160,960 EVR</td>
-<td align="right">32272</td>
-<td align="right">3.68 yrs</td>
-</tr>
-<tr>
-<td>7</td>
-<td align="right">80 EVR</td>
-<td align="right">5,160,960 EVR</td>
-<td align="right">64544</td>
-<td align="right">7.36 yrs</td>
-</tr>
-<tr>
-<td>8</td>
-<td align="right">40 EVR</td>
-<td align="right">5,160,960 EVR</td>
-<td align="right">129088</td>
-<td align="right">14.73 yrs</td>
-</tr>
-<tr>
-<td>9</td>
-<td align="right">20 EVR</td>
-<td align="right">5,160,960 EVR</td>
-<td align="right">258176</td>
-<td align="right">29.46 yrs</td>
-</tr>
-<tr>
-<td>10</td>
-<td align="right">10 EVR</td>
-<td align="right">5,160,960 EVR</td>
-<td align="right">516352</td>
-<td align="right">58.92 yrs</td>
-</tr>
-<tr>
-<td><strong>Totals:</strong></td>
-<td align="right"></td>
-<td align="right"><strong>51,609,600 EVR</strong></td>
-<td align="right"><strong>1031692</strong></td>
-<td align="right"><strong>117.72 yrs</strong></td>
-</tr>
-</tbody>
-</table>
-<p><em>Real-world time per epoch is estimated assuming each XRP ledger takes roughly 4 seconds and a Moment contains 900 ledgers.</em></p></div>
+<h2 id="uses-of-evers">Uses of Evers</h2>
+<p>Hosts use Evers to pay for their registration on the network. Tenants use Evers to pay hosts for hosting services.</p>
+<h2 id="getting-evers">Getting Evers</h2>
+<p>There are three ways of getting Evers: Airdrops, Hosting Fees, &amp; Market Purchases.</p>
+<h3 id="1-airdrops">1. Airdrops</h3>
+<p>Evernode Foundation plans to airdrop a portion (roughly 25%) of its Evers at launch to various ecosystem participants, including hosts and tenants who participate in the beta. The details of any such airdrop are not confirmed, but will be designed to ensure a sufficient supply of Evers for enthusiastic hosts and tenants to obtain the Evers they need to pay for registrations fees and hosting services. The Foundation reserves the right to, at any time and without notice, amend the details of any airdrop, include or exclude people or classes of people, or abandon the airdrop entirely (because, for example, the beta might fail and the network might never launch). You should participate in the beta because you want to help the Evernode Network succeed, not because you want an airdrop of Evers.</p>
+<h3 id="2-earning-evers-through-hosting-fees">2. Earning Evers through Hosting Fees</h3>
+<p>Hosts can earn Evers by providing <a href="../hosts/">hosting services</a>. Initially, the Foundation will act as anchor tenant to provide a reliable Hosting fee market through its <a href="../anchor-tenant/">anchor tenant procurement program</a>.</p>
+<h4 id="foundation-as-anchor-tenant">Foundation as "Anchor Tenant"</h4>
+<p>Evernode Foundation plans to use most of its Evers to fund its <a href="../anchor-tenant/">anchor tenant procurement program</a>. Under this service, the Evernode Foundation plans to purchase hosting for one or more community contracts from registered hosts according to published procurement rules. Any registered host that wishes to be paid the nominated fee(s) – in Evers - to host the community contract(s) will be able to participate. In this way, the Evernode Foundation will act as an anchor tenant for the network, providing early-adopting hosts with an option for a reliable stream of Evers income. The Foundation will publish its community contract procurement rules in due course. Those rules are, of course, subject to change depending on whether the Foundation believes its role as anchor tenant is appropriately underpinning the stable growth of the network.</p>
+<h3 id="3-market-purchases">3. Market Purchases</h3>
+<p>Since Evers are issued on the XRPL, anybody who wants to buy and/or sell Evers will be able to do so on the XRPL's native DEX. This is also the place where people can trade Hosting NFTs and Registration NFTs. While there is no reason why centralised exchanges might not list Evers, the Foundation has no plans to promote or secure the listing Evers on any exchange other than the XRPL's DEX.</p></div>
             </div>
         </div>
 

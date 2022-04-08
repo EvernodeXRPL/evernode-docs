@@ -8,7 +8,7 @@
         
         
         <link rel="shortcut icon" href="../../img/favicon.ico">
-        <title>HotPocket user connection basics - Evernode</title>
+        <title>Community contract - Evernode</title>
         <link href="../../css/bootstrap.min.css" rel="stylesheet">
         <link href="../../css/font-awesome.min.css" rel="stylesheet">
         <link href="../../css/base.css" rel="stylesheet">
@@ -35,6 +35,9 @@
                         <!-- Main navigation -->
                         <ul class="nav navbar-nav">
                             <li class="navitem">
+                                <a href="../../evers/" class="nav-link">Evers</a>
+                            </li>
+                            <li class="navitem">
                                 <a href="../../registry/" class="nav-link">Registry</a>
                             </li>
                             <li class="navitem">
@@ -43,11 +46,22 @@
                             <li class="navitem">
                                 <a href="../../tenants/" class="nav-link">Tenants</a>
                             </li>
-                            <li class="navitem">
-                                <a href="../../purchaser/" class="nav-link">Purchaser</a>
-                            </li>
-                            <li class="navitem">
-                                <a href="../../tokenomics/" class="nav-link">Tokenomics</a>
+                            <li class="dropdown">
+                                <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown">more <b class="caret"></b></a>
+                                <ul class="dropdown-menu">
+                                    
+<li>
+    <a href="../" class="dropdown-item">Anchor tenant</a>
+</li>
+                                    
+<li>
+    <a href="../../hosts/sashimono/" class="dropdown-item">Sashimono</a>
+</li>
+                                    
+<li>
+    <a href="../../hotpocket/" class="dropdown-item">HotPocket</a>
+</li>
+                                </ul>
                             </li>
                         </ul>
 
@@ -75,32 +89,8 @@
     <div id="toc-collapse" class="navbar-collapse collapse card bg-secondary">
         <ul class="nav flex-column">
             
-            <li class="nav-item" data-level="1"><a href="#hotpocket-user-connection-basics" class="nav-link">HotPocket user connection basics</a>
+            <li class="nav-item" data-level="1"><a href="#community-contract" class="nav-link">Community contract</a>
               <ul class="nav flex-column">
-            <li class="nav-item" data-level="2"><a href="#user-publicprivate-key-pair" class="nav-link">User public/private key pair</a>
-              <ul class="nav flex-column">
-              </ul>
-            </li>
-            <li class="nav-item" data-level="2"><a href="#making-a-connection" class="nav-link">Making a connection</a>
-              <ul class="nav flex-column">
-              </ul>
-            </li>
-            <li class="nav-item" data-level="2"><a href="#submitting-inputs" class="nav-link">Submitting inputs</a>
-              <ul class="nav flex-column">
-              </ul>
-            </li>
-            <li class="nav-item" data-level="2"><a href="#receiving-outputs" class="nav-link">Receiving outputs</a>
-              <ul class="nav flex-column">
-              </ul>
-            </li>
-            <li class="nav-item" data-level="2"><a href="#read-requests" class="nav-link">Read requests</a>
-              <ul class="nav flex-column">
-              </ul>
-            </li>
-            <li class="nav-item" data-level="2"><a href="#binary-vs-text-protocols" class="nav-link">Binary vs Text Protocols</a>
-              <ul class="nav flex-column">
-              </ul>
-            </li>
               </ul>
             </li>
         </ul>
@@ -108,26 +98,8 @@
 </div></div>
                     <div class="col-md-9" role="main">
 
-<h1 id="hotpocket-user-connection-basics">HotPocket user connection basics</h1>
-<p>HotPocket smart contracts are run as a cluster of nodes. As a user, you can connect to any one of the nodes and communicate with the smart contract.</p>
-<h2 id="user-publicprivate-key-pair">User public/private key pair</h2>
-<p>You need to posses a unique public/private assymetric key pair generated using <a href="https://en.wikipedia.org/wiki/EdDSA#Ed25519">EdDSA</a> signing key algorithm. You can use a suitable cryptographic library available on your platform in order to generate a key pair. Client libraries provided by HotPocket also contains helper methods which can do this.</p>
-<p><strong><em>It is the user's responsibility to not let the "Private Key" get compromised. If that happens, anyone possessing your Private Key can pretend to be you.</em></strong></p>
-<p><strong><em>On the flip side, if you lose your Private Key, you will be unable to reclaim your user identity on the HotPocket platform</em></strong></p>
-<h2 id="making-a-connection">Making a connection</h2>
-<p>In order to initiate a connection to a smart contract instance, you need to know the <strong>address and the port number</strong> of where that instances is hosted. See this <a href="https://github.com/HotPocketDev/hp-js-client/blob/main/example/browser-example.html#L21">Javascript example</a> on how to connect and communicate with a smart contract instance.</p>
-<h2 id="submitting-inputs">Submitting inputs</h2>
-<p>HotPocket defines "Inputs" as the messages you (user) send to the smart contract which has the potential to modify the smart contract state (similar to HTTP PUT/POST methods). "Inputs" are subjected to "consensus" (see HotPocket basics) and therefore may take longer to be processed. The reason being, even though you submitted the "Input" to a specific HotPocket instance (denoted by host address and port), it will propagate this to other nodes. As a group, all the instances in the cluster makes sure "majority" of them got the input.</p>
-<p>Once the above condition (majority instances has received your input) is met, you will get a <strong>"Accepted"</strong> response. This indicates your "Input" got accepted for processing by the entire cluster. However, there are various reasons that your "Input" can be <strong>"Rejected"</strong> as well which will not be explained here.</p>
-<p><strong>Note:</strong>
-<em>Unlike HTTP Rest APIs, it is wrong to assume every 'input' message will get a 'output' message as the response. It is up to the smart contract to decide whether to send a response message or not. If the smart contract actually sends such a response back, it will arrive much later than the "Accepted" response you got upon input submission. <strong>This is very different from how HTTP APIs work where a 'request' will get a immediate 'response'.</strong> This is mainly due to HotPocket operating on top of Web Sockets as opposed to HTTP.</em></p>
-<h2 id="receiving-outputs">Receiving outputs</h2>
-<p>"Outputs" are messages sent by the smart contract to the user. "Outputs" might be sent as a response to previously submitted "Inputs" or they might be delivered without any relationship to a previous "Input" (eg. periodic notification messages sent by a smart contract). It is up to the smart contract to decide when and where to send outputs.</p>
-<p>If the smart contract message format specifies that a particular input message will get a response, then it is up to you to wait and grab that response when it arrives. HotPocket client library makes this easy (see <a href="https://github.com/HotPocketDev/hp-js-client/blob/main/example/browser-example.html#L57">Javascript example for output capture</a>).</p>
-<h2 id="read-requests">Read requests</h2>
-<p>HotPocket "Read requests" are very similar to HTTP GET method. They represent any messages that request information from the smart contract and that DOES NOT modify the smart contract state (read only). They are NOT subjected to consensus and are very much faster in their response time as opposed to "Inputs/Outputs". Unlike "Inputs/Outputs", Read Requests also follow similar request/response pattern like HTTP. Those qualities make them the ideal mechanism to read information out of the smart contract.</p>
-<h2 id="binary-vs-text-protocols">Binary vs Text Protocols</h2>
-<p>HotPocket supports binary vs text-mode communication protocols. If the smart contract uses text-based (eg. json) messages, then you should use the HotPocket json protocol. Otherwise HotPocket supports bson protocol. You can specify this in HotPocket client library (<a href="https://github.com/HotPocketDev/hp-js-client/blob/main/example/browser-example.html#L39">Javascript example</a>)</p></div>
+<h1 id="community-contract">Community contract</h1>
+<p>Not documented yet.</p></div>
             </div>
         </div>
 
