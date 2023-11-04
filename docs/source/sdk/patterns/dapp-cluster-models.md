@@ -9,7 +9,7 @@ In Evernode, a dapp cluster should usually go through following activities.
 
 Above activities can be managed in different ways based on the usage purpose and the business model of the dapp. Evernode does not enforce you to stick to any particular way of doing things. But the following patterns can become useful in deciding management strategies of your dapp.
 
-**Note:** Due to the trustless nature of Evernode hosting, it is recommended to purchase the hosting leases in shorter intervals and keep exending the lease before expiry of the lease as required.
+`Note: Due to the trustless nature of Evernode hosting, it is recommended to purchase the hosting leases in shorter intervals and keep exending the lease before expiry of the lease as required.`
 
 ## Centralized model
 
@@ -17,7 +17,7 @@ In this model, a single party chooses to act as the "owner" of the entire cluste
 
 ## Membership model
 
-In membership model, each node of the cluster is owned by an independent party. All UNL nodes are running the same dapp code but individual nodes' lifecytcle is controlled by the respective "owner" of that node. In such a model, the dapp code would have some governance logic for accepting new member nodes into the UNL (eg. paying a membership fee). The dapp would also take care of evicting bad/misbehaving member nodes according to some elgiability criteria. Each owner of the member nodes are responsible for extending the lease of their own node. This model is fully decentralized but relies on individual stakeholders for the upkeep of the cluster. See [membership contract](https://github.com/EvernodeXRPL/membership-contract) for more details.
+In membership model, each node of the cluster is owned by an independent party. All UNL nodes are running the same dapp code but individual nodes' lifecytcle is controlled by the respective "owner" of that node. In such a model, the dapp code would have some governance logic for accepting new member nodes into the UNL (eg. paying a membership fee). The dapp would also take care of evicting bad/misbehaving member nodes according to some elgiability criteria. Each owner of the member nodes is responsible for extending the lease of their own node. This model is fully decentralized but relies on individual stakeholders for the upkeep of the cluster. See [membership contract](https://github.com/EvernodeXRPL/membership-contract) for more details.
 
 ## Nomad model
 
