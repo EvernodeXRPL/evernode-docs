@@ -62,17 +62,17 @@ Follow [installation instructions](../evdevkit/overview.md#installation) to inst
      }
      ```
    - See [Hotpocket configuration reference](../../hotpocket/reference/configuration) for more details.
-   - Now set the json file path as `HP_INIT_CFG_PATH_TEXT` [environment variable](../evdevkit/overview.md#environment-variables).
+   - Now set the json file path as `EV_HP_INIT_CFG_PATH` [environment variable](../evdevkit/overview.md#environment-variables).
 
      ```bash
      # Windows (command prompt)
-     set HP_INIT_CFG_PATH_TEXT=<Path to your initial HotPocket configuration file>
+     set EV_HP_INIT_CFG_PATH=<Path to your initial HotPocket configuration file>
 
      # Windows (powershell)
-     $env:HP_INIT_CFG_PATH_TEXT=<Path to your initial HotPocket configuration file>
+     $env:EV_HP_INIT_CFG_PATH=<Path to your initial HotPocket configuration file>
 
      # Linux (bash)
-     export HP_INIT_CFG_PATH_TEXT=<Path to your initial HotPocket configuration file>
+     export EV_HP_INIT_CFG_PATH=<Path to your initial HotPocket configuration file>
      ```
 
 5. Now you are ready to acquire an Evernode instance.
@@ -118,17 +118,17 @@ Follow [installation instructions](../evdevkit/overview.md#installation) to inst
      }
      ```
    - See [Hotpocket configuration reference](../../hotpocket/reference/configuration) for more details.
-   - Now set the json file path as `HP_OVERRIDE_CFG_PATH_TEXT` [environment variable](../evdevkit/overview.md#environment-variables).
+   - Now set the json file path as `EV_HP_OVERRIDE_CFG_PATH` [environment variable](../evdevkit/overview.md#environment-variables).
 
      ```bash
      # Windows (command prompt)
-     set HP_OVERRIDE_CFG_PATH_TEXT=<Path to your override HotPocket configuration file>
+     set EV_HP_OVERRIDE_CFG_PATH=<Path to your override HotPocket configuration file>
 
      # Windows (powershell)
-     $env:HP_OVERRIDE_CFG_PATH_TEXT=<Path to your override HotPocket configuration file>
+     $env:EV_HP_OVERRIDE_CFG_PATH=<Path to your override HotPocket configuration file>
 
      # Linux (bash)
-     export HP_OVERRIDE_CFG_PATH_TEXT=<Path to your override HotPocket configuration file>
+     export EV_HP_OVERRIDE_CFG_PATH=<Path to your override HotPocket configuration file>
      ```
 
 4. Now you can create the dapp package
