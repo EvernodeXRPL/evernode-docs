@@ -47,3 +47,4 @@ External resources
    Overview <sdk/overview>
    sdk/hotpocket/index
    sdk/evernode/index
+   sdk/patterns/index
