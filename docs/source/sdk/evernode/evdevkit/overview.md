@@ -19,8 +19,8 @@ _**NOTE:** In Linux platforms, installation requires root privileges. Hence, add
 ## Acquiring instance from Evernode
 You can use the Evernode developer kit to acquire instances from Evernode. This will create you a fresh Evernode instance where you can deploy your dapps.
 - You are required to set `EV_TENANT_SECRET` and `EV_USER_PRIVATE_KEY` [environment variables](#environment-variables) before acquiring the instance.
-- To override Evernode instance's configuration You can create a [HotPocket configuration](../../hotpocket/reference/configuration.md) file and set its path as `EV_INSTANCE_CONFIG_PATH` [environment variable](#environment-variables).
-- Following command will create an instance in a random host. Given configurations will be populated if `EV_INSTANCE_CONFIG_PATH` is given.
+- To override configurations of Evernode instance's You can create a [HotPocket configuration](../../hotpocket/reference/configuration.md) file and set its path as `EV_HP_INIT_CFG_PATH` [environment variable](#environment-variables).
+- Following command will create an instance in a random host. Given configurations will be populated if `EV_HP_INIT_CFG_PATH` is given.
 ```
 evdevkit acquire
 ```
@@ -31,7 +31,7 @@ You can deploy your already implemented [dapp](../../../platform/hotpocket/overv
 
 ### Creating the deployable contract package
 You can package your contract using evdevkit.
-- To override Evernode instance's contract configurations You can create a [Contract configuration](../../hotpocket/reference/configuration.md#contract) file and set its path as `EV_CONTRACT_CONFIG_PATH` [environment variable](#environment-variables).
+- To override Evernode instance's configurations when you are deploying (Note: Currently this supports only `contract` and `mesh.known_peers` sections). You can create a [Contract configuration](../../hotpocket/reference/configuration.md#contract) file and set its path as `EV_HP_OVERRIDE_CFG_PATH` [environment variable](#environment-variables).
 ```
 # evdevkit bundle <path to contract directory> <public key of the instance> <contract binary> -a <contract binary arguments>
 evdevkit bundle $HOME/contract ed060a4aae0ec9183e4869e1490e908c9a9a3fd72816021c823ecd7d052e6e02d2 /usr/bin/node -a index.js
@@ -136,12 +136,12 @@ evdevkit audit -h <host XRPL address>
 ## Environment variables
 `evdevkit` CLI supports the following environment variables:
 
-| Name                    | Description                                                                    |
-| ----------------------- | ------------------------------------------------------------------------------ |
-| EV_TENANT_SECRET        | Tenant XRPL account secret.                                                    |
-| EV_USER_PRIVATE_KEY     | Private key of the contract client (Can be generated using "evdevkit keygen"). |
-| EV_INSTANCE_CONFIG_PATH | (Optional) Path of the locally created HotPocket instance configuration file.  |
-| EV_CONTRACT_CONFIG_PATH | (Optional) Path of the locally created HotPocket contract configuration file.  |
+| Name                    | Description                                                                         |
+| ----------------------- | ----------------------------------------------------------------------------------- |
+| EV_TENANT_SECRET        | Tenant XRPL account secret.                                                         |
+| EV_USER_PRIVATE_KEY     | Private key of the contract client (Can be generated using "evdevkit keygen").      |
+| EV_HP_INIT_CFG_PATH     | (Optional) File path of the HotPocket configuration for the instance creation.      |
+| EV_HP_OVERRIDE_CFG_PATH | (Optional) File path of the HotPocket configuration for the contract bundle upload. |
 
 ## Updates
 Run following command to update `evdevkit` to the latest version:

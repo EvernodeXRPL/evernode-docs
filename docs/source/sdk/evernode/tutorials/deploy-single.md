@@ -62,17 +62,17 @@ Follow [installation instructions](../evdevkit/overview.md#installation) to inst
      }
      ```
    - See [Hotpocket configuration reference](../../hotpocket/reference/configuration) for more details.
-   - Now set the json file path as `EV_INSTANCE_CONFIG_PATH` [environment variable](../evdevkit/overview.md#environment-variables).
+   - Now set the json file path as `HP_INIT_CFG_PATH_TEXT` [environment variable](../evdevkit/overview.md#environment-variables).
 
      ```bash
      # Windows (command prompt)
-     set EV_INSTANCE_CONFIG_PATH=<Path to your HotPocket instance configuration file>
+     set HP_INIT_CFG_PATH_TEXT=<Path to your initial HotPocket configuration file>
 
      # Windows (powershell)
-     $env:EV_INSTANCE_CONFIG_PATH=<Path to your HotPocket instance configuration file>
+     $env:HP_INIT_CFG_PATH_TEXT=<Path to your initial HotPocket configuration file>
 
      # Linux (bash)
-     export EV_INSTANCE_CONFIG_PATH=<Path to your HotPocket instance configuration file>
+     export HP_INIT_CFG_PATH_TEXT=<Path to your initial HotPocket configuration file>
      ```
 
 5. Now you are ready to acquire an Evernode instance.
@@ -117,18 +117,18 @@ Follow [installation instructions](../evdevkit/overview.md#installation) to inst
        }
      }
      ```
-   - See [Hotpocket contract configuration reference](../../hotpocket/reference/configuration) for more details.
-   - Now set the json file path as `EV_CONTRACT_CONFIG_PATH` [environment variable](../evdevkit/overview.md#environment-variables).
+   - See [Hotpocket configuration reference](../../hotpocket/reference/configuration) for more details.
+   - Now set the json file path as `HP_OVERRIDE_CFG_PATH_TEXT` [environment variable](../evdevkit/overview.md#environment-variables).
 
      ```bash
      # Windows (command prompt)
-     set EV_CONTRACT_CONFIG_PATH=<Path to your contract configuration json file>
+     set HP_OVERRIDE_CFG_PATH_TEXT=<Path to your override HotPocket configuration file>
 
      # Windows (powershell)
-     $env:EV_CONTRACT_CONFIG_PATH=<Path to your contract configuration json file>
+     $env:HP_OVERRIDE_CFG_PATH_TEXT=<Path to your override HotPocket configuration file>
 
      # Linux (bash)
-     export EV_CONTRACT_CONFIG_PATH=<Path to your contract configuration json file>
+     export HP_OVERRIDE_CFG_PATH_TEXT=<Path to your override HotPocket configuration file>
      ```
 
 4. Now you can create the dapp package
