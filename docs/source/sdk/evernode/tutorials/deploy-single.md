@@ -110,13 +110,15 @@ Follow [installation instructions](../evdevkit/overview.md#installation) to inst
 
    - Create a new json file anywhere you prefer.
    - Add following content inside the file.
-     ```json
-     {
-       "consensus": {
-         "roundtime": 2000
-       }
-     }
-     ```
+      ```json
+      {
+        "contract": {
+          "consensus": {
+            "roundtime": 2000
+          }
+        }
+      }
+      ```
    - See [Hotpocket configuration reference](../../hotpocket/reference/configuration) for more details.
    - Now set the json file path as `EV_HP_OVERRIDE_CFG_PATH` [environment variable](../evdevkit/overview.md#environment-variables).
 

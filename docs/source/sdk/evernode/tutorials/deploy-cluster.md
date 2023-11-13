@@ -64,42 +64,44 @@ In Evernode developer kit, single command does the cluster creation and the depl
      }
      ```
    - See [Hotpocket configuration reference](../../hotpocket/reference/configuration.md) for more details.
-   - Now set the json file path as `EV_INSTANCE_CONFIG_PATH` [environment variable](../evdevkit/overview.md#environment-variables).
+   - Now set the json file path as `EV_HP_INIT_CFG_PATH` [environment variable](../evdevkit/overview.md#environment-variables).
 
      ```bash
      # Windows (command prompt)
-     set EV_INSTANCE_CONFIG_PATH=<Path to your instance configuration json file>
+     set EV_HP_INIT_CFG_PATH=<Path to your initial HotPocket configuration file>
 
      # Windows (powershell)
-     $env:EV_INSTANCE_CONFIG_PATH=<Path to your instance configuration json file>
+     $env:EV_HP_INIT_CFG_PATH=<Path to your initial HotPocket configuration file>
 
      # Linux (bash)
-     export EV_INSTANCE_CONFIG_PATH=<Path to your instance configuration json file>
+     export EV_HP_INIT_CFG_PATH=<Path to your initial HotPocket configuration file>
      ```
 
 4. Now let's override the contract section of the HotPocket configuration in the Evernode instance. This section will be identical in each HotPocket instance in the cluster as the contract configuration is synchronized within the cluster. If you do not want, you can skip this step as well. However you can set the original `roundtime` you are intending to give for your smart contract here in the `consensus.roundtime` section.
 
    - Create a new json file anywhere you prefer.
    - Add following content inside the file.
-     ```json
-     {
-       "consensus": {
-         "roundtime": 2000
-       }
-     }
-     ```
+      ```json
+      {
+        "contract": {
+          "consensus": {
+            "roundtime": 2000
+          }
+        }
+      }
+      ```
    - See [HotPocket contract configuration reference](../../hotpocket/reference/configuration.md#contract) for more details.
-   - Now set the json file path as `EV_CONTRACT_CONFIG_PATH` [environment variable](../evdevkit/overview.md#environment-variables).
+   - Now set the json file path as `EV_HP_OVERRIDE_CFG_PATH` [environment variable](../evdevkit/overview.md#environment-variables).
 
      ```bash
      # Windows (command prompt)
-     set EV_CONTRACT_CONFIG_PATH=<Path to your contract configuration json file>
+     set EV_HP_OVERRIDE_CFG_PATH=<Path to your override HotPocket configuration file>
 
      # Windows (powershell)
-     $env:EV_CONTRACT_CONFIG_PATH=<Path to your contract configuration json file>
+     $env:EV_HP_OVERRIDE_CFG_PATH=<Path to your override HotPocket configuration file>
 
      # Linux (bash)
-     export EV_CONTRACT_CONFIG_PATH=<Path to your contract configuration json file>
+     export EV_HP_OVERRIDE_CFG_PATH=<Path to your override HotPocket configuration file>
      ```
 5. You need to create the Preferred Hosts file that includes the host addresses to acquire instances from when creating a cluster. You can check the available hosts by using the [hosts page](https://dashboard.evernode.org/#/hosts) or the [`list` command](../evdevkit/overview.md#advanced-usage). 
 

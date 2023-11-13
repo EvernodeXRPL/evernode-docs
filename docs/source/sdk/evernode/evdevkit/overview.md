@@ -82,7 +82,7 @@ evdevkit keygen
 evdevkit cluster-create <cluster size> <path to contract directory> <contract binary> <preferred hosts file path> -a <contract binary arguments>
 ```
 
-An example HotPocket configuration:
+An example HotPocket configuration for the instance creation:
 ```json
 {
     "contract": {
@@ -99,11 +99,13 @@ An example HotPocket configuration:
 }
 ```
 
-An example HotPocket contract configuration:
+An example HotPocket configuration for the contract bundle upload:
 ```json
 {
-    "consensus": {
-        "roundtime": 2000
+    "contract": {
+        "consensus": {
+            "roundtime": 2000
+        }
     }
 }
 ```
