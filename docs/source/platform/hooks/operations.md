@@ -27,7 +27,7 @@ Manages heartbeats and rewards.
 
 ### Heartbeat
 - Every host must send a heartbeat at every moment to prove that the host is alive and functioning. A host is considered alive if it has sent a heartbeat in the previous moment.
-- Rewards are distributed based on the host's aliveness. The rewards are accumulated in the hook, and accumulated rewards will be sent to the host within 24 moment intervals.
+- Rewards are distributed based on the host's aliveness and the reputation. Host reputation will be updated by a p2p reputation system with voting. Reputation should exceed 200 to be eligible for rewards. The rewards are accumulated in the hook, and accumulated rewards will be sent to the host within 24 moment intervals.
 - If the host is going to vote for a governance candidate, it needs to be sent with the heartbeat.
 
 ### Foundation Vote
