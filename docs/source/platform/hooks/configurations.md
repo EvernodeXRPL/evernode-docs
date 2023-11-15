@@ -1,0 +1,48 @@
+# Configurations
+
+Evernode has set of configurations that a predefined on the hooks deployment.
+
+- **Moment size - 3600** (1 hour)
+  - Size of a moment.
+- **Moment type - Seconds**
+  - Metric of the moment size.
+- **Mint limit - 72253440**
+  - Total number of EVRs issued.
+- **Host registration fee - 500**
+  - Registration fee in EVRs.
+- **Fixed reg fee - 5**
+  - EVR amount reserved by foundation on a registration.
+- **Max registrants - 14112**
+  - Host registration will be halved when the total host count reaches half of this value. And at that time this value gets doubled.
+- **Host heartbeat frequency - 1**
+  - How often (In moments) the host should send a heartbeat to be marked as alive
+- **Lease acquire window - 160**
+  - Maximum timeout (In seconds) the host should send the response with instance details for a lease acquire.
+- **Max tolerable downtime - 240**
+  - If host has been inactive for this period (In moments 10 days), Anybody can send a request to prune that host and the hook will prune the host.
+- **Epoch count - 10**
+  - Total number of epochs Evernode reward cycles would exists. Epoch will come to an end when it's allocated reward EVR amount is over.
+- **First epoch reward quota - 512**
+  - Amount of EVRs per moment distributed as rewards in the first epoch. This is getting halved when epoch increases.
+- **First epoch reward amount - 5160960**
+  - Amount of EVRs allocated for the first epoch to be distributed as rewards. This is getting halved when epoch increases.
+- **Reward start moment - 0**
+  - In which moment the reward distribution is started.
+- **Emit fee threshold - 1000**
+  - Maximum native currency limit in drop that can be allocated as fee for a outgoing transaction from a hook.
+- **Governance eligibility period - 86400**
+  - Maturity period in seconds (1 day) for a host to be part of the network to get eligible for governance game.
+- **Candidate life period - 604800**
+  - Life time in seconds (1 week) of a governance candidate.
+- **Candidate election period - 172800**
+  - Period in seconds (2 days) for a candidate to have consecutive support vote average to get elected.
+- **Candidate support average - 80**
+  - Percentage (80%) of votes to consider a candidate as supported.
+- **Accumulated reward frequency - 24**
+  - Frequency in moments a host will receive accumulated rewards. Even though a host is eligible for rewards it won't receive rewards straight away, rewards will be accumulated and sent at once.
+- **Network busyness detect period - 604800**
+  - Period in seconds (1 week) network busyness is determined.
+- **Network busyness detect average - 50**
+  - Percentage (50%) to adapt the network busyness params.
+- **Host reputation threshold - 200**
+  - Minimum reputation score for a host to be eligible for rewards.
