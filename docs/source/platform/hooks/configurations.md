@@ -22,7 +22,7 @@ Evernode has a set of configurations that a predefined on the hooks deployment.
   - If a host has been inactive for this period (In moments 10 days), Anybody can send a request to prune that host and the hook will prune the host.
 - **Epoch count - 10**
   - Total number of epochs Evernode reward cycles would exist. Epoch will come to an end when it is allocated reward EVR amount is over.
-- **First epoch reward quota - 512**
+- **First epoch reward quota - 5120**
   - Amount of EVRs per moment distributed as rewards in the first epoch. This is getting halved when the epoch increases.
 - **First epoch reward amount - 5160960**
   - Amount of EVRs allocated for the first epoch to be distributed as rewards. This is getting halved when the epoch increases.
