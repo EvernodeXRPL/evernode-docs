@@ -2,8 +2,8 @@
 
 Evernode has set of configurations that a predefined on the hooks deployment.
 
-- **Moment size - 3600** (1 hour)
-  - Size of a moment.
+- **Moment size - 3600**
+  - Size of a moment (1 hour).
 - **Moment type - Seconds**
   - Metric of the moment size.
 - **Mint limit - 72253440**
