@@ -30,12 +30,12 @@ Evernode has set of configurations that a predefined on the hooks deployment.
   - In which moment the reward distribution is started.
 - **Emit fee threshold - 1000**
   - Maximum native currency limit in drop that can be allocated as fee for a outgoing transaction from a hook.
-- **Governance eligibility period - 86400**
-  - Maturity period in seconds (1 day) for a host to be part of the network to get eligible for governance game.
-- **Candidate life period - 604800**
-  - Life time in seconds (1 week) of a governance candidate.
-- **Candidate election period - 172800**
-  - Period in seconds (2 days) for a candidate to have consecutive support vote average to get elected.
+- **Governance eligibility period - 7884000**
+  - Maturity period in seconds (3 months) for a host to be part of the network to get eligible for governance game.
+- **Candidate life period - 7884000**
+  - Life time in seconds (3 months) of a governance candidate.
+- **Candidate election period - 1209600**
+  - Period in seconds (2 weeks) for a candidate to have consecutive support vote average to get elected.
 - **Candidate support average - 80**
   - Percentage (80%) of votes to consider a candidate as supported.
 - **Accumulated reward frequency - 24**
