@@ -45,4 +45,4 @@ Evernode has a set of configurations that a predefined on the hooks deployment.
 - **Network busyness detect average - 50**
   - Average percentage to identify a network busy condition, when the current fee exceeds 50% of the base fee.
 - **Host reputation threshold - 200**
-  - Minimum reputation score for a host to be eligible for rewards.
+  - Minimum reputation score for a host to be eligible for rewards. Host's reputation value will defaults to this at the registration and it can be changed later.
