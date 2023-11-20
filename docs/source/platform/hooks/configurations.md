@@ -27,7 +27,7 @@ Evernode has set of configurations that a predefined on the hooks deployment.
 - **First epoch reward amount - 5160960**
   - Amount of EVRs allocated for the first epoch to be distributed as rewards. This is getting halved when epoch increases.
 - **Reward start moment - 0**
-  - In which moment the reward distribution is started.
+  - In which moment the reward distribution is started. 0 means rewards will start just after the hooks are deployed.
 - **Emit fee threshold - 1000**
   - Maximum native currency limit in drop that can be allocated as fee for a outgoing transaction from a hook.
 - **Governance eligibility period - 7884000**
