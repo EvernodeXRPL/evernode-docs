@@ -41,7 +41,7 @@ Evernode has a set of configurations that a predefined on the hooks deployment.
 - **Accumulated reward frequency - 24**
   - Frequency in moments a host will receive accumulated rewards. Even though a host is eligible for rewards it won't receive rewards straight away, rewards will be accumulated and sent at once.
 - **Network busyness detect period - 604800**
-  - Period, in seconds (1 week) during which the transaction fee must remain at the threshold to confirm that the network is busy.
+  - Period in seconds (1 week) during which the transaction fee must remain at the threshold to confirm that the network is busy.
 - **Network busyness detect average - 50**
   - Average percentage to identify a network busy condition, when the current fee exceeds 50% of the base fee.
 - **Host reputation threshold - 200**
