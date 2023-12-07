@@ -10,7 +10,19 @@ Follow [installation instructions](../evdevkit/overview.md#installation) to inst
 
 ## Acquire an instance
 
-1. First you need to have an XRPL account with EVRs for the tenant. You can generate a testnet account with 6000 EVRs from [here](https://dashboard.evernode.org/#/testnet-faucet).
+**Note:** For following steps you can choose either `mainnet` or `testnet`. Default will be `mainnet`, If you want change you need to set the environment variable as follows.
+```bash
+# Windows (command prompt)
+set EV_NETWORK=testnet
+
+# Windows (powershell)
+$env:EV_NETWORK=testnet
+
+# Linux (bash)
+export EV_NETWORK=testnet
+``` 
+
+1. First you need to have an XRPL account with EVRs for the tenant. (For the **Evernode testnet** You can generate an account with 6000 EVRs from [here](https://dashboard.evernode.org/#/testnet-faucet)).
 
 2. Then you need to prepare a user key pair for the Evernode instance.
 

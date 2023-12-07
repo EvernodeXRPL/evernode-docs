@@ -41,6 +41,6 @@ You can use the Evernode CLI to manage and monitor your Evernode host.
 
 - `evernode delete <instance name>` - Remove an existing smart contract instance and cancels the lease. Any payments made for lost lease duration are not refunded.
     - `<instance name>` Name of the smart contract instance to be deleted. Use `evernode list` to find out instance name.
-- `evernode update` - Apply Evernode beta software updates. You don't really need to use this as the auto-updater takes care of this. Requires sudo.
+- `evernode update` - Apply Evernode software updates. You don't really need to use this as the auto-updater takes care of this. Requires sudo.
 - `evernode uninstall` - Uninstall and deregister from Evernode. Requires sudo.
 - `sashi` - Sashimono CLI for advanced operations and monitoring. Use `sashi -h` for help.

@@ -8,13 +8,11 @@
 
 _All of the above are automated by [Sashimono](../platform/sashimono/overview), Evernode host management software which gets installed when you run the Evernode [installer](#system-requirements)._
 
-## Evernode beta
+## Evernode
 
-We are inviting interested enthusiasts to register as an Evernode host. As an Evernode beta host, your Linux server will be registered on the [XRPL Hooks v3 testnet](https://hooks-testnet-v3.xrpl-labs.com/). During the installation, you can choose how much system resources you wish to allocate for smart contract hosting. After everything is setup, your server will start leasing hosting space to Evernode tenants.
+We are inviting interested enthusiasts to register as an Evernode host. As an Evernode host, your Linux server will be registered on the [XAHAU](https://xahau.network/). During the installation, you can choose how much system resources you wish to allocate for smart contract hosting. After everything is setup, your server will start leasing hosting space to Evernode tenants.
 
-> **Testnet warning:** Since Evernode beta uses [XRPL Hooks v3 testnet](https://hooks-testnet-v3.xrpl-labs.com/), it is subjected to any changes/downtime imposed by the hooks testnet.
-
-### Evernode beta licence
+### Evernode licence
 
 Permission is hereby granted, free of charge, to any person obtaining a copy of this software and associated documentation files (the "Software"), to use the software for, or in connection, with the Evernode network for the duration of the beta test.
 
@@ -29,7 +27,7 @@ Evernode Foundation may, in its absolute discretion, airdrop a portion of its Ev
 
 ## System requirements
 
-To intsall Evernode, you server must meet following requirements:
+To install Evernode, you server must meet following requirements:
 
 - Operating system: **Ubuntu 20.04** 64 bit (M1/ARM CPUs not supported. Any other Ubuntu versions are not supported.)
 - RAM: **2 GB** minimum
@@ -37,13 +35,13 @@ To intsall Evernode, you server must meet following requirements:
 - Disk space: **4 GB** minimum free disk space for `/home`
 - [Domain name](#domain-name) for your host
 - Public [email address](#email-address) to be used as the public contact method
-- Existing XRPL account with an EVR balance greater than 5120 (use [this page](https://dashboard.evernode.org/#/testnet-faucet) to generate a testnet account with EVR balance).
+- Existing XAHAU account with an EVR balance greater than 500
 
 ## Important tips for installation
 
 ### Hosting options
 
-You can use a phyisical or virtual (VPS) Linux server as your Evernode host. **[WSL](https://docs.microsoft.com/en-us/windows/wsl/about) or [Containers](https://linuxcontainers.org/) are not supported**. It's recommended that you use a server which DOES NOT contain other workloads important to you. It's best if you can provision a fresh VPS from a cloud provider which you can dedicate for Evernode beta and dispose of easily when no longer required.
+You can use a phyisical or virtual (VPS) Linux server as your Evernode host. **[WSL](https://docs.microsoft.com/en-us/windows/wsl/about) or [Containers](https://linuxcontainers.org/) are not supported**. It's recommended that you use a server which DOES NOT contain other workloads important to you. It's best if you can provision a fresh VPS from a cloud provider which you can dedicate for Evernode and dispose of easily when no longer required.
 
 ### Domain name
 
@@ -67,8 +65,9 @@ Evernode software itself does not require any ports to be opened. However SSL se
 
 ## Installation
 
-Make sure you read the information above before installing. Run the following command to install Evernode beta on your Linux server. You need root (sudo) access for this.
+Make sure you read the information above before installing. Run the following command to install Evernode on your Linux server. You need root (sudo) access for this.
 
+ <!-- TODO: Update setup URL -->
 ```
 curl -fsSL https://stevernode.blob.core.windows.net/evernode-beta-v3/setup.sh | sudo bash -s install
 ```

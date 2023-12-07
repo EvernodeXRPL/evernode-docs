@@ -12,7 +12,7 @@ If you need to transfer existing registration to another XRPL account or replaci
     - Moving your registration to a different host
     - Reinstalling the host OS
     - Replacing a damaged host.
-    - Transfering the ownership to a different XRPL account.
+    - Transferring the ownership to a different XRPL account.
 
 In the above cases you can initiate an evernode transfer from your original account and then install Evernode on the new Host using the transfer information. The re-installation will not cost the regular host registration fee. It will just be a 1 Now(1*10<sup>-8</sup> EVRs)).
 
@@ -24,6 +24,7 @@ You can use below command to initiate a transfer of the registration NFT.
 
 However, if you have lost access to your original host (eg. damaged host), you can use the following command in any Linux terminal. You are required to possess the XRPL account address and secret of your original host.
 
+ <!-- TODO: Update setup URL -->
  ```
  curl -fsSL https://stevernode.blob.core.windows.net/evernode-beta-v3/setup.sh | sudo bash -s transfer -i
  ```

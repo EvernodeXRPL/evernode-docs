@@ -10,9 +10,21 @@ Using Evernode developer kit, you can create an instance cluster in Evernode and
 
 ## Deploy smart contract
 
+**Note:** For following steps you can choose either `mainnet` or `testnet`. Default will be `mainnet`, If you want change you need to set the environment variable as follows.
+```bash
+# Windows (command prompt)
+set EV_NETWORK=testnet
+
+# Windows (powershell)
+$env:EV_NETWORK=testnet
+
+# Linux (bash)
+export EV_NETWORK=testnet
+``` 
+
 In Evernode developer kit, single command does the cluster creation and the deployment. You need to do following preparations before same as you did in ["Acquire an instance"](./deploy-single.md#acquire-an-instance)
 
-- First you need to have a tenant XRPL account. You can generate an XRPL faucet account with 6000 EVRs on [hooks-testnet-v3](https://xrpl-hooks.readme.io/) from [here](https://dashboard.evernode.org/#/testnet-faucet).
+- First you need to have a tenant XRPL account. (For the **Evernode testnet** You can generate an account with 6000 EVRs on [hooks-testnet-v3](https://xrpl-hooks.readme.io/) from [here](https://dashboard.evernode.org/#/testnet-faucet)).
 
 1. Then you need to prepare a user key pair for the Evernode instance.
 
