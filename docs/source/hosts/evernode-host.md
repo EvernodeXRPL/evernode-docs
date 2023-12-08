@@ -91,3 +91,7 @@ Please report any issues and error logs [here](https://github.com/EvernodeXRPL/e
 ## Global hosts dashboard
 
 We maintain a dashboard containing all registered Evernode hosts. You can access it at [dashboard.evernode.org](https://dashboard.evernode.org/) ([source code](https://github.com/EvernodeXRPL/evernode-dashboard)).
+
+## Evernode testnet
+
+_You can contribute to the Evernode testnet and become a [testnet host](evernode-testnet-host.md)._
