@@ -6,7 +6,7 @@ Governance Game allows eligible participants in the Evernode network to propose 
 
 There are two classes of participants in the Governance Game.
 
-- **The Foundation**: The Foundation always has 1 vote and has special rights in Piloted and Co-Piloted modes and has no special rights over Auto-Piloted mode.
+- **Evernode Labs**: Evernode Labs always has 1 vote and has special rights in Piloted and Co-Piloted modes and has no special rights over Auto-Piloted mode.
 - **Valid Hosts**: Accounts that hold a registration token for the previous 3 continuous months and are not eligible to be pruned due to unreliability.
 
 ## Governance
@@ -59,20 +59,20 @@ There are two classes of participants in the Governance Game.
 - If a Proposal succeeds all other existing Proposals for that Hook are Purged and their staked EVRs are added to the Epoch’s reward pool.
 - The Proposer of the successful proposal gets all their staked EVRs back.
 
-### The Foundation Special Rights
+### Evernode Labs Special Rights
 
-- These rules apply when determining the Foundation vote.
+- These rules apply when determining Evernode Labs vote.
 
-  - Always Eligible: Foundation is always eligible to vote.
-  - Fall-Back Option: If there are no other eligible Participants, the Foundation vote is determinative.
+  - Always Eligible: Evernode Labs is always eligible to vote.
+  - Fall-Back Option: If there are no other eligible Participants, Evernode Labs vote is determinative.
 
-- In addition, the Foundation vote carries special weight depending upon the status of the game.
+- In addition, Evernode Labs vote carries special weight depending upon the status of the game.
 - The Governance Game has three statuses.
 
-  - Piloted: The Foundation vote determines the outcome of all Proposals.
-  - Co-Piloted: No Proposal can succeed unless the Foundation Supports it and it fails if the Foundation opposes it.
-  - Auto-Piloted: The standard voting rules apply with the Foundation being treated equally with any other Participant.
+  - Piloted: Evernode Labs vote determines the outcome of all Proposals.
+  - Co-Piloted: No Proposal can succeed unless Evernode Labs Supports it and it fails if Evernode Labs opposes it.
+  - Auto-Piloted: The standard voting rules apply with Evernode Labs being treated equally with any other Participant.
 
-- The game begins Piloted and becomes Co-Piloted at the election of the Foundation.
-- If it is Co-Piloted, it becomes Auto-Piloted at the election of the Foundation.
+- The game begins Piloted and becomes Co-Piloted at the election of Evernode Labs.
+- If it is Co-Piloted, it becomes Auto-Piloted at the election of Evernode Labs.
 - If the game is Auto-Piloted, Participants can vote under standard rules to return the game to Piloted or Co-Piloted Status.
