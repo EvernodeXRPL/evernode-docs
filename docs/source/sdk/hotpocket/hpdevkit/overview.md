@@ -117,14 +117,14 @@ You can inspect the files of all the nodes of the cluster using Docker Desktop.
 
 `hpdevkit` CLI supports the following environment variables:
 
-| Name               | Description                                                                      | Default value                                   |
-| ------------------ | -------------------------------------------------------------------------------- | ----------------------------------------------- |
-| HP_CLUSTER_SIZE    | The number of nodes in the cluster. This only takes effect with a fresh cluster. | `3`                                             |
-| HP_DEFAULT_NODE    | The node which the 'deploy' command uses to display logs.                        | `1`                                             |
-| HP_DEVKIT_IMAGE    | The Docker image to be used for devkit cluster management.                       | `evernodedev/hpdevkit`                          |
-| HP_INSTANCE_IMAGE  | The Docker image to be used for HotPocket instances.                             | `evernodedev/hotpocket:latest-ubt.20.04-njs.20` |
-| HP_USER_PORT_BEGIN | The starting user port number for the cluster.                                   | `8081`                                          |
-| HP_PEER_PORT_BEGIN | The starting peer port number for the cluster.                                   | `22861`                                         |
+| Name               | Description                                                                      | Default value                                |
+| ------------------ | -------------------------------------------------------------------------------- | -------------------------------------------- |
+| HP_CLUSTER_SIZE    | The number of nodes in the cluster. This only takes effect with a fresh cluster. | `3`                                          |
+| HP_DEFAULT_NODE    | The node which the 'deploy' command uses to display logs.                        | `1`                                          |
+| HP_DEVKIT_IMAGE    | The Docker image to be used for devkit cluster management.                       | `evernode/hpdevkit`                          |
+| HP_INSTANCE_IMAGE  | The Docker image to be used for HotPocket instances.                             | `evernode/hotpocket:latest-ubt.20.04-njs.20` |
+| HP_USER_PORT_BEGIN | The starting user port number for the cluster.                                   | `8081`                                       |
+| HP_PEER_PORT_BEGIN | The starting peer port number for the cluster.                                   | `22861`                                      |
 
 ## Updates
 
