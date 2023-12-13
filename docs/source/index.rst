@@ -12,6 +12,10 @@ Start reading with :doc:`platform overview </platform/overview>`.
 
 Report issues about Evernode documentation `here <https://github.com/EvernodeXRPL/evernode-docs/issues>`_.
 
+Evernode licence
+^^^^^^^^^^^^^^^^
+Please find the Evernode license [here](https://raw.githubusercontent.com/EvernodeXRPL/evernode-resources/main/license/evernode-license.pdf).
+
 External resources
 ^^^^^^^^^^^^^^^^^^
 * `Website <https://evernode.org>`_

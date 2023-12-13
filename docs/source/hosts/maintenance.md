@@ -1,5 +1,9 @@
 # Host maintenance
 
+## Transaction costs
+
+As mentioned in [System requirements](evernode-host.md#in-addition-to-the-above-you-need-to-posses-following), you need to keep sufficient XAH balance in the host account to cover the transaction fees for your host. Transaction feed originate from [Heartbeat](../platform/hooks/operations.md#heartbeat) transactions sent to the hook as well as instance creation replies sent back to tenants.
+
 ## Purging bad actors
 
 It cannot be avoided that some dapp instances running on your host will misbehave or perform malicious activities across internet. They cannot harm the operation of other dapps or your Host but they can utilize your network bandwidth or may engage in unethical behaviour. When you identify such dapp instances You can use `evernode list` and `evernode delete` cli commands to purge them from your host. See [evernode CLI](evernode-cli).
