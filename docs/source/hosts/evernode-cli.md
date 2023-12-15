@@ -40,7 +40,16 @@ You can use the Evernode CLI to manage and monitor your Evernode host.
     - `evernode governance help` - Print the command information.
 
 - `evernode delete <instance name>` - Remove an existing smart contract instance and cancels the lease. Any payments made for lost lease duration are not refunded.
-    - `<instance name>` Name of the smart contract instance to be deleted. Use `evernode list` to find out instance name.
-- `evernode update` - Apply Evernode software updates. You don't really need to use this as the auto-updater takes care of this. Requires sudo.
+    - `<instance name>`: Name of the smart contract instance to be deleted. Use `evernode list` to find out instance name.
+- `evernode update` - Apply Evernode software updates. You don't really need to use this if the Evernode auto-updater service is enabled. Requires sudo.
+- `evernode auto-update <operation_type>` - Manages the Evernode auto-updater service. When enabled, the auto-updater will periodically check for Evernode software updates and automatically apply them.
+    - `<operation_type>` must be either `enable` or `disable`. Both of these operations require sudo.
+    - `evernode auto-update enable` - Enables the Evernode auto-updater service.
+    - `evernode auto-update disable` - Disables the Evernode auto-updater service.
+- `evernode regkey <operation_type>` - Manages the Regular Key of the host's XRPL account.
+    - `<operation_type>` must be either `set` or `delete`. Both of these operations require sudo.
+    - `evernode regkey set <regular_key>`: Assigns or updates the regular key associated with your host's XRPL account address.
+        - `<regular key>`: The XRPL address that indicates the regular key pair to be assigned to the host XRPL account.
+    - `evernode regkey delete`: Deletes the regular key associated with your host's XRPL account address.
 - `evernode uninstall` - Uninstall and deregister from Evernode. Requires sudo.
 - `sashi` - Sashimono CLI for advanced operations and monitoring. Use `sashi -h` for help.
