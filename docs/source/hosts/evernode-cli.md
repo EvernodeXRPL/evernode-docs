@@ -45,6 +45,7 @@ You can use the Evernode CLI to manage and monitor your Evernode host.
 - `evernode auto-update <operation_type>` - Manages the Evernode auto-updater service. When enabled, the auto-updater will periodically check for Evernode software updates and automatically apply them.
     - `<operation_type>` must be either `enable` or `disable`. Both of these operations require sudo.
     - `evernode auto-update enable` - Enables the Evernode auto-updater service.
+        - _**NOTE:** The auto-updater service is offered subject to the terms set out in the [Evernode Software Licence](https://raw.githubusercontent.com/EvernodeXRPL/evernode-resources/main/license/evernode-license.pdf)._
     - `evernode auto-update disable` - Disables the Evernode auto-updater service.
 - `evernode regkey <operation_type>` - Manages the Regular Key of the host's XRPL account.
     - `<operation_type>` must be either `set` or `delete`. Both of these operations require sudo.
