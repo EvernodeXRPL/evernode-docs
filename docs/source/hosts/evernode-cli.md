@@ -21,7 +21,7 @@ You can use the Evernode CLI to manage and monitor your Evernode host.
     - `evernode config leaseamt <lease amount>`
         - `<lease amount>`: Per Moment per contract lease amount to charge in Evers (EVR).
     - `evernode config rippled <server url>`
-        - `<server url>`: Rippled server websocket url (wss://) you want to use to interact with XRPL.
+        - `<server url>`: Rippled server websocket url (wss://) you want to use to interact with Xahau.
     - `evernode config email <email address>`
         - `<email address>`: Contact email address for the host (this will be published on the host registry and is publicly visible to anyone).
 - `evernode governance <operation_type> <arguments (optional)>` - Manages the governance candidates related to the host.
@@ -36,7 +36,7 @@ You can use the Evernode CLI to manage and monitor your Evernode host.
     - `evernode governance unvote <candidate id>` - Remove vote from voted governance candidate.
     - `evernode governance status` - Get governance information of the host.
       - This also helps to find proposed and voted `candidate_id`s by the host.
-    - `evernode governance report <dud host address>` - Propose a dud host candidate using its XRPL account address. 
+    - `evernode governance report <dud host address>` - Propose a dud host candidate using its Xahau account address. 
     - `evernode governance help` - Print the command information.
 
 - `evernode delete <instance name>` - Remove an existing smart contract instance and cancels the lease. Any payments made for lost lease duration are not refunded.

@@ -6,6 +6,6 @@ Sashimono
    :maxdepth: 1
 
    overview
-   xrpl-interaction
+   xahau-interaction
    dapp-provisioning
    ssl

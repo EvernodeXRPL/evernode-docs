@@ -35,11 +35,11 @@ HotPocket enables you to create decentralized apps. In order to run them you nee
 
 Evernode uses a set of [XRPL hooks](hooks/overview) to coordinate its decentralized marketplace activities. **Hosts** can register themselves on the marketplace by installing [Sashimono](sashimono/overview) on their Linux servers. **Tenants** can lease dApp hosting resources from any of the hosts using **Evers** (Evernode's native currency - EVR). Each leased hosting instance is a HotPocket node. The tenant deploys their dApp files into the HotPocket node. Leasing and deploying into multiple such HotPocket nodes creates a dApp cluster.
 
-- Evernode **Hosts** and **Tenants** are represented by XRPL accounts.
+- Evernode **Hosts** and **Tenants** are represented by Xahau accounts.
 - Marketplace information and rules are goverened by [XRPL hooks](https://hooks.xrpl.org/).
 - Marketplace operations (host registration, leasing etc...) are represented by XRPL transactions.
 - A single host can make many dApp nodes available for lease using its hardware resources.
-- dApp operations (deployment, consensus, user interaction) happen directly between HotPocket nodes and users via websockets. They are NOT dependent on the XRPL network. They simply use the network "ports" allocated by the Host (Read [more](https://github.com/EvernodeXRPL/evernode-host#firewalls-and-ports)).
+- dApp operations (deployment, consensus, user interaction) happen directly between HotPocket nodes and users via websockets. They are NOT dependent on the Xahau network. They simply use the network "ports" allocated by the Host (Read [more](https://github.com/EvernodeXRPL/evernode-host#firewalls-and-ports)).
 
 The following diagram shows how different HotPocket dApps would be distributed across many Evernode hosts. Each dApp forms its own mesh network.
 

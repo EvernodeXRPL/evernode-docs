@@ -27,7 +27,7 @@ There are two classes of participants in the Governance Game.
 - New Hook candidate Proposal represents the hashes `<governance_hooks_hash><registry_hook_hash><heartbeat_hook_hash>` of the new Hook to replace an existing Hook.
 - Any Participant can submit a Proposal for a new Hook.
 - Proposer must collateralize their Proposal with EVR rewards equivalent to the current moment's reward quota.
-- The hooks which bear the proposed hashes must be deployed to some existing XRPL account.
+- The hooks which bear the proposed hashes must be deployed to some existing Xahau account.
 
 #### Dud Host Candidate
 - Dud host removal Proposal represents XRP Address of the malfunctioning host to be removed from the platform. 

@@ -3,7 +3,7 @@
 [Evernode](https://evernode.org/) enables HotPocket smart contracts to be hosted on a global network of decentralized hosts through [XRP Hooks](https://hooks.xrpl.org/).
 
 - Anyone can become an **Evernode host** by installing the Evernode setup on their compatible Linux server.
-- Hosts register on the **Evernode registry**, a well-known XRPL account published by Evernode Labs.
+- Hosts register on the **Evernode registry**, a well-known Xahau account published by Evernode Labs.
 - Hosts lease smart contract hosting to **Evernode tenants** in exchange for **Evers (EVR)**.
 
 _All of the above are automated by [Sashimono](../platform/sashimono/overview), Evernode host management software which gets installed when you run the Evernode [installer](#system-requirements)._

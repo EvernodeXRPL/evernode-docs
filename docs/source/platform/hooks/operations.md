@@ -39,7 +39,7 @@ Manages host registrations and issuance of registration tokens.
 
 ### Register Host
 - A host registers in the Evernode network by sending its host specs and information via this request. The host must pay an EVR amount as a registration fee. Five EVRs from the registration fee will be kept in Evernode Labs wallet, and the rest will be staked.
-- During registration, Evernode will mint a registration token that needs to be in the host's XRPL account to prove the registration.
+- During registration, Evernode will mint a registration token that needs to be in the host's Xahau account to prove the registration.
 
 ### Deregister Host
 - A host can deregister from the Evernode network. At the time of deregistration, half of its registration EVR stake will be refunded. Along with this refund, it will receive any pending rebates or rewards that it should have received during its time in the Evernode network.

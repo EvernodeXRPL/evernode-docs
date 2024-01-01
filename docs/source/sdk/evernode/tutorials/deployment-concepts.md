@@ -9,11 +9,11 @@ After developing and testing your dapp in your local PC (see [HotPocket tutorial
 Since Evernode is a decentralized hosting platform, the above steps takes place in the following way:
 
 1. You lease a HotPocket instance on one of the [hosts](https://dashboard.evernode.org/#/) using Evers in your Xahau account (wallet).
-   - Lease purchase happens as a XRPL transaction on the Xahau network.
+   - Lease purchase happens as a Xahau transaction on the Xahau network.
    - You specify the period of the lease in Moments (1 Moment = roughly 1 hour).
    - The transaction cost in Evers is decided by the per-Moment charge by the Host and how many Moments your lease is.
    - Later, before the lease expires, you can chose to "extend" the lease by paying relevant cost in Evers.
-2. The host sends you the provisioned HotPocket instance connection details as a XRPL transaction to your Xahau account (Tenant wallet).
+2. The host sends you the provisioned HotPocket instance connection details as a Xahau transaction to your Xahau account (Tenant wallet).
 3. The dapp instance is already running the Evernode default "bootstrap" contract.
 4. You connect to the bootstrap contract instance via websockets and upload your dapp files as the authorized user.
 5. Bootstrap contract rplaces itself with your dapp so now its your dapp running on the provisioned instance.
