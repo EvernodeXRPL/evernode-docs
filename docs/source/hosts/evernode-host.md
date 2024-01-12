@@ -71,7 +71,7 @@ Make sure you read the above sections before installing. Run the following comma
 
  <!-- TODO: Update setup URL -->
 ```
-curl -fsSL https://stevernode.blob.core.windows.net/evernode-beta-v3/setup.sh | sudo bash -s install
+Installation link will be published in the future..
 ```
 
 ## Maintaining your host

@@ -34,5 +34,5 @@ However, if you have lost access to your original host (eg. damaged host), you c
 
  <!-- TODO: Update setup URL -->
  ```
- curl -fsSL https://stevernode.blob.core.windows.net/evernode-beta-v3/setup.sh | sudo bash -s transfer -i
+ Transfer link will be published in the future..
  ```
