@@ -1,6 +1,6 @@
 # Possible Errors
 
-If you have came through any issues while installing Evernode, Check if you error is one of the following. If not, Please create an issue [here](https://github.com/EvernodeXRPL/evernode-host/issues).
+If you have encountered any issues while installing Evernode, Check if your error is one of the following. If not, Please create an issue [here](https://github.com/EvernodeXRPL/evernode-host/issues).
 
 ## Error 1: REG_FAILURE, Host is not registered
 - Check if there's an existing URI token offer created for your account from Evernode registry account. _(You can check this either from the Xahau explorer by querying for the registry account or from Xaman wallet)_
@@ -16,7 +16,7 @@ If you have came through any issues while installing Evernode, Check if you erro
   - You can find how to transfer your host from [here](maintenance.md#transfer-the-host-registration).
       
 ## Error 2: Transfer failure
-  - If you have transferred your account and failed while re installing Evernode, [Error 1](#error-1-reg_failure-not-registered) instructions are valid in this situation too. So, please go through them and check wether it has the solution for your issue.
+  - If you have transferred your account and failed while re installing Evernode, [Error 1](#error-1-reg_failure-not-registered) instructions are valid in this situation too. So, please go through them and check whether it has the solution for your issue.
       
 ## Error 3: Evernode update failure
   - If you failed in either manual `evernode update` command or Evernode automatic update.
@@ -30,5 +30,5 @@ If you have came through any issues while installing Evernode, Check if you erro
   - You can find how to transfer your host from [here](maintenance.md#transfer-the-host-registration).
     
 ## Error 5: Stuck installation
-  - If your installation is stuck on `Checking server wss:\\....` this could mean you have some broken package dependencies.
-  - Try removing `rm -r /tmp/evernode-setup-helpers` and install Evernode again
+  - If your installation is stuck on `Checking server wss:\\....` this could indicate you have some broken package dependencies.
+  - Try removing `rm -r /tmp/evernode-setup-helpers` and install Evernode again.

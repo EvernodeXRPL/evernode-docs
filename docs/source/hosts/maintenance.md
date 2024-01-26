@@ -55,4 +55,4 @@ However, if you have lost access to your original host (eg. damaged host), you c
 
 ## Possible Errors
 
- [Here](possible-errors.md) we have documented some solutions for some possible issues that you might come through on Installation, Update or Transfer.
+ [Here](possible-errors.md) we have documented some solutions for some possible issues that you might come cross on Installation, Update or Transfer.
