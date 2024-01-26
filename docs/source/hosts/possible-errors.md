@@ -2,7 +2,7 @@
 
 If you have came through any issues while installing Evernode, Check if you error is one of the following. If not, Please create an issue [here](https://github.com/EvernodeXRPL/evernode-host/issues).
 
-## Error 1: REG_FAILURE, Not registered
+## Error 1: REG_FAILURE, Host is not registered
 - Check if there's an existing URI token offer created for your account from Evernode registry account. _(You can check this either from the Xahau explorer by querying for the registry account or from Xaman wallet)_
   - If there's such token offer, then your token has been minted but it's failed to claim.
   - So you have to claim your token and then transfer and re install Evernode.
