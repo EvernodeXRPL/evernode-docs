@@ -8,10 +8,6 @@ As mentioned in [System requirements](evernode-host.md#in-addition-to-the-above-
 
 If you haven't enabled the auto updater, you can run `evernode update` to check and install updates to Evernode.
 
-**Auto Updating the Evernode software**
-
-Automatic updates are not recommended because they can fail due to their non-interactive nature. You can opt in for automatic updates with `evernode auto-update` command. The auto-update service is offered subject to the terms set out in the [Evernode Software Licence](https://raw.githubusercontent.com/EvernodeXRPL/evernode-resources/main/license/evernode-license.pdf).
-
 **Recovering from a Failed Update**
 
 In the event of a failure, the secret will not be deleted and will remain at the default secret file location or the custom location you have specified. If you wish to reinstall, use the following command and transfer the registration using the same account on a separate machine. Then try re-installing on your machine.

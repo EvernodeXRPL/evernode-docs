@@ -41,11 +41,12 @@ You can use the Evernode CLI to manage and monitor your Evernode host.
 
 - `evernode delete <instance name>` - Remove an existing smart contract instance and cancels the lease. Any payments made for lost lease duration are not refunded.
     - `<instance name>`: Name of the smart contract instance to be deleted. Use `evernode list` to find out instance name.
-- `evernode update` - Apply Evernode software updates. You don't really need to use this if the Evernode auto-updater service is enabled. Requires sudo.
-- `evernode regkey <operation_type>` - Manages the Regular Key of the host's XRPL account.
+- `evernode update` - Apply Evernode software updates. Requires sudo.
+- `evernode regkey <operation_type>` - Manages the Regular Key of the host's Xahau account.
     - `<operation_type>` must be either `set` or `delete`. Both of these operations require sudo.
-    - `evernode regkey set <regular_key>`: Assigns or updates the regular key associated with your host's XRPL account address.
-        - `<regular key>`: The XRPL address that indicates the regular key pair to be assigned to the host XRPL account.
-    - `evernode regkey delete`: Deletes the regular key associated with your host's XRPL account address.
+    - `evernode regkey set <regular_key>`: Assigns or updates the regular key associated with your host's Xahau account address.
+        - `<regular key>`: The Xahau address that indicates the regular key pair to be assigned to the host Xahau account.
+    - `evernode regkey delete`: Deletes the regular key associated with your host's Xahau account address.
+- `evernode offerlease` - Create Lease offers for the instances. Requires sudo.
 - `evernode uninstall` - Uninstall and deregister from Evernode. Requires sudo.
 - `sashi` - Sashimono CLI for advanced operations and monitoring. Use `sashi -h` for help.

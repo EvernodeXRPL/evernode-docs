@@ -16,7 +16,7 @@ There are two classes of participants in the Governance Game.
 - Proposal for a New Hook Candidate (All three hooks will be affected).
   - The Participant can submit a Proposal with new Hook hashes of above mentioned 3 Hooks. Once that Proposal is continuously supported by 80% of eligible Participants for 2 weeks, the existing hooks will be replaced by the proposed hooks.
 - Proposal for removing a Dud Host.
-  - The Participant can submit a Proposal with the XRP address of the host which is determined as a dud.
+  - The Participant can submit a Proposal with the Xahau address of the host which is determined as a dud.
 - Proposal for changing the governance mode. 
   - This proposal type will be created and handled automatically inside the hooks according to the current governing mode.
 
@@ -30,7 +30,7 @@ There are two classes of participants in the Governance Game.
 - The hooks which bear the proposed hashes must be deployed to some existing Xahau account.
 
 #### Dud Host Candidate
-- Dud host removal Proposal represents XRP Address of the malfunctioning host to be removed from the platform. 
+- Dud host removal Proposal represents Xahau Address of the malfunctioning host to be removed from the platform. 
 - Any Participant can submit this kind of proposal. 
 - Proposer must collateralize their Proposal with EVR rewards worth 25% of the current moment's reward quota.
 

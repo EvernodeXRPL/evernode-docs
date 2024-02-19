@@ -19,7 +19,7 @@ If you have encountered any issues while installing Evernode, Check if your erro
   - If you have transferred your account and failed while re installing Evernode, [Error 1](#error-1-reg_failure-not-registered) instructions are valid in this situation too. So, please go through them and check whether it has the solution for your issue.
       
 ## Error 3: Evernode update failure
-  - If you failed in either manual `evernode update` command or Evernode automatic update.
+  - You will encounter this if the `evernode update` command has failed.
   - **Do not deregister or uninstall.** Even if your update failed your registration with Evernode will remain intact.
   - In this case you can transfer your previous registration and re install.
   - You can find how to transfer your host from [here](maintenance.md#transfer-the-host-registration).

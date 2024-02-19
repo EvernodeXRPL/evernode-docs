@@ -37,7 +37,7 @@ Evernode uses a set of [XRPL hooks](hooks/overview) to coordinate its decentrali
 
 - Evernode **Hosts** and **Tenants** are represented by Xahau accounts.
 - Marketplace information and rules are goverened by [XRPL hooks](https://hooks.xrpl.org/).
-- Marketplace operations (host registration, leasing etc...) are represented by XRPL transactions.
+- Marketplace operations (host registration, leasing etc...) are represented by Xahau transactions.
 - A single host can make many dApp nodes available for lease using its hardware resources.
 - dApp operations (deployment, consensus, user interaction) happen directly between HotPocket nodes and users via websockets. They are NOT dependent on the Xahau network. They simply use the network "ports" allocated by the Host (Read [more](https://github.com/EvernodeXRPL/evernode-host#firewalls-and-ports)).
 

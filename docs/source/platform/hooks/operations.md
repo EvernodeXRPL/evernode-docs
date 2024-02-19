@@ -17,7 +17,7 @@ Manages the governance game.
 - In Piloted mode, Evernode Labs has the authority to change the governance mode to Co-Piloted mode or to Auto-Piloted mode.
 
 ### Report Dud Host
-- Hosts or Evernode Labs can report dud hosts. In this case, the proposer should provide the XRP address of the dud host and pay an EVR amount equal to 25% of the current moment's reward quota.
+- Hosts or Evernode Labs can report dud hosts. In this case, the proposer should provide the Xahau address of the dud host and pay an EVR amount equal to 25% of the current moment's reward quota.
 - The same rules for purging, accepting, or withdrawing apply to dud host reports as for new hook proposals.
 - If a host is pruned due to an elected dud host report, that particular host will receive half of its registration EVR stake and any pending rebates or rewards that it should have received during its time in the Evernode network.
 

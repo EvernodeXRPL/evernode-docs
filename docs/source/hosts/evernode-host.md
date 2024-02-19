@@ -63,6 +63,12 @@ Evernode software itself does not require any ports to be opened. However SSL se
 - The smart contracts that are getting hosted on your host require certain ports to be opened and incoming traffic be allowed. There are two port ranges which by default starts at 26201 and 22861. If your host supports `n` contract instances, the port ranges to allow would be `26201 to 26201+n` and `22861 to 22861+n`.
 - Evernode's automatic SSL setup requires port 80 to be free and incoming traffic be allowed to it. Without this, the initial SSL setup and subsequent SSL renewals will fail. (If you are running a web server like Apache or nginx on the same host, they will cause SSL setup to fail. You can stop them or either configure them to not to use port 80 to overcome this problem.)
 
+### Creating Lease Offers
+
+After the installation, `offerlease command` should be used to invoke the offer creation process. See [evernode CLI](evernode-cli).
+
+_**NOTE:** Heartbeats won't be sent until all the leases are offered._
+
 ## Installation
 
 Make sure you read the above sections before installing. Run the following command to install Evernode on your Linux server. You need root (sudo) access for this.
@@ -75,7 +81,7 @@ curl -fsSL https://raw.githubusercontent.com/EvernodeXRPL/evernode-resources/mai
 
 ## Maintaining your host
 
-Once Evernode is installed, Evernode will automatically use your server to fullfil leasing requests from Evernode tenants. You will earn Evers (EVR) as tenants lease hosting. You are responsible for [managing the funds](maintenance.md#transaction-costs) in your host account.
+Once Evernode is installed and lease offers are created using `sudo evernode offerlease`, Evernode will automatically use your server to fullfil leasing requests from Evernode tenants. You will earn Evers (EVR) as tenants lease hosting. You are responsible for [managing the funds](maintenance.md#transaction-costs) in your host account.
 
 For monitoring and maintenance, see [maintenance tips](maintenance).
 
