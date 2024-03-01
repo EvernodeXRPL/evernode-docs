@@ -12,7 +12,7 @@ As an Evernode host, your Linux server will be registered on the [XAHAU](https:/
 
 ### Evernode licence
 
-Please find the Evernode license [here](https://raw.githubusercontent.com/EvernodeXRPL/evernode-resources/main/license/evernode-license.pdf).
+Please find the Evernode license [here](https://raw.githubusercontent.com/EvernodeXRPL/evernode-test-resources/main/license/evernode-license.pdf).
 
 ## System requirements
 
@@ -76,7 +76,7 @@ Make sure you read the above sections before installing. Run the following comma
 **Read the above [System requirements](#system-requirements) and [Important tips](#important-tips-for-installation) even if you think you're familiar with the beta setup. Some details have changed compared to the beta.**
 
 ```
-curl -fsSL https://raw.githubusercontent.com/EvernodeXRPL/evernode-resources/main/sashimono/installer/evernode.sh | sudo bash -s install
+curl -fsSL https://raw.githubusercontent.com/EvernodeXRPL/evernode-test-resources/main/sashimono/installer/evernode.sh | sudo bash -s install
 ```
 
 ## Maintaining your host

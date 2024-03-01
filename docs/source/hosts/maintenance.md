@@ -13,7 +13,7 @@ If you haven't enabled the auto updater, you can run `evernode update` to check 
 In the event of a failure, the secret will not be deleted and will remain at the default secret file location or the custom location you have specified. If you wish to reinstall, use the following command and transfer the registration using the same account on a separate machine. Then try re-installing on your machine.
 
  ```
- curl -fsSL https://raw.githubusercontent.com/EvernodeXRPL/evernode-resources/main/sashimono/installer/evernode.sh | sudo bash -s transfer
+ curl -fsSL https://raw.githubusercontent.com/EvernodeXRPL/evernode-test-resources/main/sashimono/installer/evernode.sh | sudo bash -s transfer
  ```
 
 ## Purging bad actors
@@ -41,7 +41,7 @@ You can use below command to initiate a transfer of the registration NFT.
 However, if you have lost access to your original host (eg. damaged host), you can use the following command in any Linux terminal. You are required to possess the Xahau account address and secret of your original host.
 
  ```
- curl -fsSL https://raw.githubusercontent.com/EvernodeXRPL/evernode-resources/main/sashimono/installer/evernode.sh | sudo bash -s transfer
+ curl -fsSL https://raw.githubusercontent.com/EvernodeXRPL/evernode-test-resources/main/sashimono/installer/evernode.sh | sudo bash -s transfer
  ```
 
 **_Note: Make sure your secret key file is in following format when you are specifying key file path to Evernode._**
