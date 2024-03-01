@@ -6,15 +6,20 @@ As mentioned in [System requirements](evernode-host.md#in-addition-to-the-above-
 
 ## Updating the Evernode software
 
-If you haven't enabled the auto updater, you can run `evernode update` to check and install updates to Evernode.
+You can run `evernode update` to check and install updates to Evernode.
+
+**It is recommended to use following command for an independent Evernode update.**
+```
+curl -fsSL https://raw.githubusercontent.com/EvernodeXRPL/evernode-test-resources/main/sashimono/installer/evernode.sh | sudo bash -s update
+```
 
 **Recovering from a Failed Update**
 
 In the event of a failure, the secret will not be deleted and will remain at the default secret file location or the custom location you have specified. If you wish to reinstall, use the following command and transfer the registration using the same account on a separate machine. Then try re-installing on your machine.
 
- ```
- curl -fsSL https://raw.githubusercontent.com/EvernodeXRPL/evernode-test-resources/main/sashimono/installer/evernode.sh | sudo bash -s transfer
- ```
+```
+curl -fsSL https://raw.githubusercontent.com/EvernodeXRPL/evernode-test-resources/main/sashimono/installer/evernode.sh | sudo bash -s transfer
+```
 
 ## Purging bad actors
 
@@ -23,7 +28,6 @@ It cannot be avoided that some dapp instances running on your host will misbehav
 ## Transfer the host registration
 
 If you need to transfer existing registration to another Xahau account or replacing your host, you can use this. This is useful in several scenarios:
-
     - Upgrading the hardware of your host
     - Moving your registration to a different host
     - Reinstalling the host OS
@@ -34,34 +38,29 @@ In the above cases you can initiate an evernode transfer from your original acco
 
 You can use below command to initiate a transfer of the registration NFT.
 
- ```
- evernode transfer
- ```
+```
+evernode transfer
+```
 
 However, if you have lost access to your original host (eg. damaged host), you can use the following command in any Linux terminal. You are required to possess the Xahau account address and secret of your original host.
 
- ```
- curl -fsSL https://raw.githubusercontent.com/EvernodeXRPL/evernode-test-resources/main/sashimono/installer/evernode.sh | sudo bash -s transfer
- ```
-
-**_Note: Make sure your secret key file is in following format when you are specifying key file path to Evernode._**
 ```
-{ "xrpl": { "secret": "<your-secret>" } }
+curl -fsSL https://raw.githubusercontent.com/EvernodeXRPL/evernode-test-resources/main/sashimono/installer/evernode.sh | sudo bash -s transfer
 ```
 
 ## Deregister a host
 
- ```
-`curl -fsSL https://raw.githubusercontent.com/EvernodeXRPL/evernode-test-resources/main/sashimono/installer/evernode.sh | sudo bash -s deregister`
- ```
+```
+curl -fsSL https://raw.githubusercontent.com/EvernodeXRPL/evernode-test-resources/main/sashimono/installer/evernode.sh | sudo bash -s deregister
+```
 
-**_Note: If you have already installed evernode, you cannot use deregister command. Use `evernode uninstall` to uninstall Evernode. Use the 'evernode' command to manage your host._**
+**_Note: If you have already installed evernode, you cannot use deregister command. Use `evernode uninstall` to uninstall Evernode._**
 
 **Recovering EVRs from a failed Installation**
 
-In the event of a failure, you can use deregister command from a seperate machine where evernode is not installed to recover your EVRs. Then try re-installing on your machine.
+In the event of a failure, you can use deregister command from a separate machine where evernode is not installed to recover your EVRs. Then try re-installing on your machine.
 
 
-## Possible Errors
+## Diagnostics
 
- [Here](possible-errors.md) we have documented some solutions for some possible issues that you might come cross on Installation, Update or Transfer.
+ [Here](evernode-diagnostics.md) we have documented some solutions for some possible issues that you might come cross on Installation, Update or Transfer.
