@@ -49,6 +49,19 @@ However, if you have lost access to your original host (eg. damaged host), you c
 { "xrpl": { "secret": "<your-secret>" } }
 ```
 
+## Deregister a host
+
+ ```
+`curl -fsSL https://raw.githubusercontent.com/EvernodeXRPL/evernode-test-resources/main/sashimono/installer/evernode.sh | sudo bash -s deregister`
+ ```
+
+**_Note: If you have already installed evernode, you cannot use deregister command. Use `evernode uninstall` to uninstall Evernode. Use the 'evernode' command to manage your host._**
+
+**Recovering EVRs from a failed Installation**
+
+In the event of a failure, you can use deregister command from a seperate machine where evernode is not installed to recover your EVRs. Then try re-installing on your machine.
+
+
 ## Possible Errors
 
  [Here](possible-errors.md) we have documented some solutions for some possible issues that you might come cross on Installation, Update or Transfer.

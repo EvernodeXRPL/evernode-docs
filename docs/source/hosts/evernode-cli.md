@@ -20,10 +20,16 @@ You can use the Evernode CLI to manage and monitor your Evernode host.
         - `<instance count>`: Maximum number of contract instances that can be leased. Hardware resources will get evenly distributed between contract instances.
     - `evernode config leaseamt <lease amount>`
         - `<lease amount>`: Per Moment per contract lease amount to charge in Evers (EVR).
-    - `evernode config rippled <server url>`
-        - `<server url>`: Rippled server websocket url (wss://) you want to use to interact with Xahau.
+    - `evernode config xahaud <server url>`
+        - `<server url>`: Xahaud server websocket url (wss://) you want to use to interact with Xahau.
+    - `evernode config xahaud-fallback <server url>`
+        - `<server url>`: Comma separated list of xahaud fallback server websocket urls (wss://).
     - `evernode config email <email address>`
         - `<email address>`: Contact email address for the host (this will be published on the host registry and is publicly visible to anyone).
+    - `evernode config extrafee <fee>`
+        - `<fee>`: Affordable extra transaction fee amount in XAH Drops.
+    - `evernode config instance <ipv6>`
+        - `<ipv6>`: ipv6 address for the instance.
 - `evernode governance <operation_type> <arguments (optional)>` - Manages the governance candidates related to the host.
     - `<operation_type>` must be one of operation types: `propose`, `withdraw`, `vote`, `unvote`, `status`, `report` and `help`.
     - `propose`, `withdraw`, `vote`, `unvote` and `report` operations require sudo.
