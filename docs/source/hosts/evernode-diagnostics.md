@@ -32,14 +32,23 @@ _Note: If any of the following doesn't help in your situation please send it to 
 - **Do not deregister or uninstall.** Even if your update failed your registration with Evernode will remain intact.
 - If you are still encountering problems with update, You can transfer your previous registration and re install.
 - You can find how to transfer your host from [here](maintenance.md#transfer-the-host-registration).
+
+## 6. No offered lease after installation
+- Not the Evernode installation will only mint the leases, It won't create lease offers for you.
+- You have to run `evernode offerlease` to offer the minted leases.
+
+## 7. No rewards even if the Host is active
+- Case 1: In the latest version you won't rewards if your host has unoffered leases.
+- Case 2: Your reputation will be set to 0, if your host has less than 3 instances.
+- Case 3: Your reputation will be set to 0, if your host's lease fee is more than what you are getting as rewards for the moment.
   
-## 6. Lease offer creation failure
+## 8. Lease offer creation failure
 - If your lease offering failed when you run `evernode offerlease`, Executing the command again would offer the remaining leases.
     
-## 7. Stuck installation
+## 9. Stuck installation
 - If your installation is stuck on `Checking server wss:\\....` this could indicate you have some broken package dependencies.
 - Try removing `rm -r /tmp/evernode-setup-helpers` and install Evernode again.
 
-## 8. Re-config failure
+## 10. Re-config failure
 - If `evernode config` command failed in any reconfiguration, retry executing it again.
 - If retry doesn't help change the value back to original using the `evernode config` and change back to new value again using the same command.
