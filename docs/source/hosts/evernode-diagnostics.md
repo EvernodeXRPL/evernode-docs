@@ -7,7 +7,7 @@ _Note: If any of the following doesn't help in your situation please send it to 
 ## 1. Keeps on retry loop
 - Abort and try again
   - This won't rollback your installation. The next try will resume from where you've aborted.
-- Rolling back won't deregister your account you'll have to use [deregister command](./maintenance.md#deregister-a-host) to deregister from Evernode.
+- Rolling back will clear installation files but won't deregister your account. You'll have to use [deregister command](./maintenance.md#deregister-a-host) to deregister from Evernode.
 - If this doesn't help check for the installation error log for the error and send it to Evernode support team as a GitHub issue [here](https://github.com/EvernodeXRPL/evernode-host/issues).
 
 ## 2. Uninstall failure
