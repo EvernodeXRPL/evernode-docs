@@ -65,7 +65,7 @@ Evernode software itself does not require any ports to be opened. However SSL se
 
 ### Creating Lease Offers
 
-After the installation, the `offerlease command` should be used to invoke the offer creation process. See [evernode CLI](evernode-cli).
+After the installation, the `offerlease` command should be used to invoke the offer creation process. If the lease offer failed in the middle. Executing this command will only offer the remaining leases. See [evernode CLI](evernode-cli).
 
 _**NOTE:** Heartbeats won't be sent until all the leases are offered._
 
@@ -99,7 +99,7 @@ Once Evernode is installed and lease offers are created using `sudo evernode off
 
 For monitoring and maintenance, see [maintenance tips](maintenance).
 
-At any time, you can uninstall and deregister from Evernode with `sudo evernode uninstall`. If you deregister, you will only receive half of the registration fee you paid at the registration. Also make sure you safeguard the [secret key file](#xahau-accounts-and-secret-keys) before uninstalling.
+At any time, you can uninstall and deregister from Evernode with `sudo evernode uninstall`. If you deregister, you will only receive half of the registration fee you paid at the registration. Also, make sure you safeguard the [secret key file](#xahau-accounts-and-secret-keys) before uninstalling.
 
 ## Governance game
 
