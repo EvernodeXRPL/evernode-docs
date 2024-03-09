@@ -11,7 +11,7 @@ You can use the Evernode CLI to manage and monitor your Evernode host.
     - `<cert file>`: Path to the tls cert file (public key).
     - `<ca bundle file (optional)>`: Path to the tls certificate authority file. Optional.
 - `evernode config <type> <arguments (optional)>` - View and update host configuration. Requires sudo.
-    - `<type>` must be one of configuration types: `resources`, `leaseamt`, `rippled`.
+    - `<type>` must be one of configuration types: `resources`, `leaseamt`, `xahaud`.
     - If you don't specify any arguments, it will print the current configuration value.
     - `evernode config resources <ram> <swap> <disk> <Instance count>`: Configure hardware resource allocation for contracts.
         - `<ram>`: Total RAM to use for contracts in MegaBytes.
