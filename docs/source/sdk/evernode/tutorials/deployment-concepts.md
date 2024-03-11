@@ -8,7 +8,7 @@ After developing and testing your DApp in your local PC (see [HotPocket tutorial
 
 Since Evernode is a decentralized hosting platform, the above steps takes place in the following way:
 
-1. You lease a HotPocket instance on one of the [hosts](https://dashboard.evernode.org/#/) using Evers in your Xahau account (wallet).
+1. You lease a HotPocket instance on one of the [hosts](https://dashboard.evernode.org) using Evers in your Xahau account (wallet).
    - Lease purchase happens as a Xahau transaction on the Xahau network.
    - You specify the period of the lease in Moments (1 Moment = roughly 1 hour).
    - The transaction cost in Evers is decided by the per-Moment charge by the Host and how many Moments your lease is.

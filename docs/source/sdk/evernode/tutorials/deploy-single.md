@@ -22,7 +22,7 @@ $env:EV_NETWORK=testnet
 export EV_NETWORK=testnet
 ``` 
 
-1. First you need to have an Xahau account with EVRs for the tenant. (For the **Evernode testnet** You can generate an account with 6000 EVRs from [here](https://dashboard.evernode.org/#/testnet-faucet)).
+1. First you need to have an Xahau account with EVRs for the tenant.
 
 2. Then you need to prepare a user key pair for the Evernode instance.
 
@@ -87,7 +87,7 @@ export EV_NETWORK=testnet
      export EV_HP_INIT_CFG_PATH=<Path to your initial HotPocket configuration file>
      ```
 
-5. Now you are ready to acquire an Evernode instance. Use the `acquire` command and pass the Xahau address of the host to acquire an instance from as a parameter. You can check the available hosts by using the [hosts page](https://dashboard.evernode.org/#/hosts) or the [`list` command](../evdevkit/overview.md#advanced-usage).
+5. Now you are ready to acquire an Evernode instance. Use the `acquire` command and pass the Xahau address of the host to acquire an instance from as a parameter. You can check the available hosts by using the [Community Dashboards](https://dashboard.evernode.org) or the [`list` command](../evdevkit/overview.md#advanced-usage).
 
    - Run the following command to acquire. Replace `<host Xahau address>` with the host address.
      ```bash
@@ -186,7 +186,7 @@ export EV_NETWORK=testnet
 Using Evernode devkit you can acquire and deploy Evenode instances using one command.
 
 1. First you need to follow the same 1, 2, 3 steps in ["Acquire an instance"](#acquire-an-instance) here as well.
-2. Pick a host to acquire an instance from. You can check the available hosts by using the [hosts page](https://dashboard.evernode.org/#/hosts) or the [`list` command](../evdevkit/overview.md#advanced-usage). 
+2. Pick a host to acquire an instance from. You can check the available hosts by using the [Community Dashboards](https://dashboard.evernode.org) or the [`list` command](../evdevkit/overview.md#advanced-usage). 
 3. If you are going to override HotPocket config contract section, follow 3rd step in ["Create deployable DApp package"](#create-deployable-dapp-package).
 4. Now you can just run the following command to acquire and deploy.
    - Run this command.

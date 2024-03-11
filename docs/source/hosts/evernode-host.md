@@ -45,7 +45,7 @@ You can use a physical or virtual (VPS) Linux server as your Evernode host. **[W
 You must possess a domain name (eg. `myhost.myhosting.com`) which is used to reach your host. This is required for proper SSL support for communicating with smart contracts hosted in your host. Evernode uses [Let's Encrypt](https://letsencrypt.org/) for automatic free SSL setup for your domain name. Domain names that map to multiple IP addresses (round-robin DNS) should not be used.
 
 ### Email address
-You must provide an email address during the installation of your host. The email address will be published on your host registration entry on the Hook which makes it **publicly visible to anyone**. It is put on display at the [dashboard](https://dashboard.evernode.org/) page for your host. There are two purposes for this email address:
+You must provide an email address during the installation of your host. The email address will be published on your host registration entry on the Hook which makes it **publicly visible to anyone**. It is put on display at the [Community Dashboards](https://dashboard.evernode.org/). There are two purposes for this email address:
   - It is intended to be used as a public contact email for your host so that the general public can inquire about or report issues about your host.
   - If you opt-in for [Let's Encrypt](https://letsencrypt.org/) automatic free SSL setup during the installation, this email is used for your host's SSL certificate registration with Let'sEncrypt. Let'sEncrypt will send email notifications about automatic SSL renewals periodically.
 
@@ -126,9 +126,9 @@ The Governance game allows eligible participants in the Evernode host network to
 
 Please report any issues and error logs [here](https://github.com/EvernodeXRPL/evernode-host/issues).
 
-## Global hosts dashboard
+## Global hosts dashboards
 
-We maintain a dashboard containing all registered Evernode hosts. You can access it at [dashboard.evernode.org](https://dashboard.evernode.org/) ([source code](https://github.com/EvernodeXRPL/evernode-dashboard)).
+Evernode community maintains dashboards containing all registered Evernode hosts. You can access them at [dashboard.evernode.org](https://dashboard.evernode.org/).
 
 ## Evernode testnet
 
