@@ -42,6 +42,7 @@ External resources
    Become a host <hosts/evernode-host>
    Host maintenance <hosts/maintenance>
    CLI <hosts/evernode-cli>
+   Diagnostics <hosts/evernode-diagnostics>
 
 .. toctree::
    :titlesonly:

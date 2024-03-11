@@ -1,6 +1,6 @@
 # DApp deployment concepts
 
-After developing and testing your DApp in your local PC (see [HotPocket tutorials](../../hotpocket/tutorials/index.rst)), you need to deploy it to one or more of Evernode hosts to make it available to users. This is somewhat akin to deploying a tradditional application into cloud.
+After developing and testing your DApp in your local PC (see [HotPocket SDK](../../hotpocket/index.rst)), you need to deploy it to one or more of Evernode hosts to make it available to users. This is somewhat akin to deploying a tradditional application into cloud.
 
 1. You purchase a hosting space from a cloud hosting provider.
 2. The hosting provider gives you required details for connecting to the hosting space. The provider also make sure only YOU possess the permission to upload application files to the hosting space.

@@ -1,6 +1,6 @@
 # Working with multiple nodes
 
-This tutorial is a continuation of [HotPocket basics tutorial](basics).
+This tutorial is a continuation of [HotPocket basics](basics).
 
 So far we have interacted with a single HotPocket node. HotPocket developer kit by default creates a cluster with 3 nodes. We can interact with different nodes at different times to better mimic real world use cases.
 
