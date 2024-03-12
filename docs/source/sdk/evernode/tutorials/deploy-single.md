@@ -216,7 +216,7 @@ Using Evernode devkit you can acquire and deploy Evenode instances using one com
      Contract bundle uploaded!
      Contract deployed!
      ```
-   - You can specify more options (Ex: `-h` specify a host) to the `acquire-and-deploy` command. Check the supported options using below command.
+   - You can specify more options (Ex: `-c` specify a Contract id) to the `acquire-and-deploy` command. Check the supported options using below command.
      ```bash
      evdevkit acquire-and-deploy --help
      ```
