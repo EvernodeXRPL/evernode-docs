@@ -1,34 +1,34 @@
 # Deploying a smart contract to an Evernode cluster
 
-Using Evernode developer kit, you can create an instance cluster in Evernode and deploy your smart contract, like you did locally in ["HotPocket tutorial - multiple nodes"](../../hotpocket/tutorials/multinode.md). Even though you can give a single command and create an up and running cluster with your smart contract running on it, it's important to have an understanding about what it does internally when creating the cluster. So, these are the steps it follow.
+Using Evernode developer kit, you can create an instance cluster in Evernode and deploy your smart contract, as you did locally in ["HotPocket tutorial - multiple nodes"](../../hotpocket/tutorials/multinode.md). Even though you can give a single command and create an up and running cluster with your smart contract running on it, it's important to have an understanding of what it does internally when creating the cluster. So, these are the steps it follows.
 
 1. Creates a single node in one of Evernode hosts.
-2. Creates rest of the nodes with only first node's public key in their [UNL](../../../platform/hotpocket/consensus.md#unl---unique-node-list).
-3. Creates a contract bundle with your smart contract binaries and HotPocket contract configuration containing list of all the nodes public key as the [UNL](../../../platform/hotpocket/consensus.md#unl---unique-node-list).
+2. Creates the rest of the nodes with only the first node's public key in their [UNL](../../../platform/hotpocket/consensus.md#unl---unique-node-list).
+3. Creates a contract bundle with your smart contract binaries and HotPocket contract configuration containing a list of all the nodes public keys as the [UNL](../../../platform/hotpocket/consensus.md#unl---unique-node-list).
 4. Upload the bundle to the first node.
-   - The other nodes which are listening to the first node will receive the same bundle and all nodes will update their contracts themselves.
+   - The other nodes that are listening to the first node will receive the same bundle and all nodes will update their contracts themselves.
 
 ## Deploy smart contract
 
-**Note:** For following steps you can choose either `mainnet` or `testnet`. Default will be `mainnet`, If you want change you need to set the environment variable as follows.
+**Note:** For the following steps you can choose either `mainnet` or `testnet`. The default will be `mainnet`, If you want to change you need to set the environment variable as follows.
 ```bash
 # Windows (command prompt)
 set EV_NETWORK=testnet
 
-# Windows (powershell)
+# Windows (Powershell)
 $env:EV_NETWORK=testnet
 
 # Linux (bash)
 export EV_NETWORK=testnet
 ``` 
 
-In Evernode developer kit, single command does the cluster creation and the deployment. You need to do following preparations before same as you did in ["Acquire an instance"](./deploy-single.md#acquire-an-instance)
+In the Evernode developer kit, a single command does the cluster creation and the deployment. You need to do the following preparations before same as you did in ["Acquire an instance"](./deploy-single.md#acquire-an-instance)
 
 - First you need to have a tenant Xahau account with EVRs for the tenant.
 
 1. Then you need to prepare a user key pair for the Evernode instance.
 
-- Run below command to prepare a new key pair.
+- Run the below command to prepare a new key pair.
   ```bash
   evdevkit keygen
   ```
@@ -59,7 +59,7 @@ In Evernode developer kit, single command does the cluster creation and the depl
 3. Let's override the HotPocket configuration in the Evernode instance. You can skip this step if you do not want to but we recommend you to give some large value as `6000` to the `contract.consensus.roundtime` if you are going to deploy a large smart contract bundle.
 
    - Create a new json file anywhere you prefer.
-   - Add following content inside the file.
+   - Add the following content inside the file.
      ```json
      {
        "contract": {
@@ -89,10 +89,10 @@ In Evernode developer kit, single command does the cluster creation and the depl
      export EV_HP_INIT_CFG_PATH=<Path to your initial HotPocket configuration file>
      ```
 
-4. Now let's override the contract section of the HotPocket configuration in the Evernode instance. This section will be identical in each HotPocket instance in the cluster as the contract configuration is synchronized within the cluster. If you do not want, you can skip this step as well. However you can set the original `roundtime` you are intending to give for your smart contract here in the `consensus.roundtime` section.
+4. Now let's override the contract section of the HotPocket configuration in the Evernode instance. This section will be identical in each HotPocket instance in the cluster as the contract configuration is synchronized within the cluster. If you do not want, you can skip this step as well. However, you can set the original `roundtime` you are intending to give for your smart contract here in the `consensus.roundtime` section.
 
    - Create a new json file anywhere you prefer.
-   - Add following content inside the file.
+   - Add the following content inside the file.
       ```json
       {
         "contract": {
@@ -134,7 +134,7 @@ In Evernode developer kit, single command does the cluster creation and the depl
      ```
    - Note:
      - `5` Is the cluster size.
-     - Replace `$HOME/contract` with your contract directory path (Path to build directory of contract binaries).
+     - Replace `$HOME/contract` with your contract directory path (Path to build a directory of contract binaries).
      - Replace `$HOME/hosts.txt` with your preferred hosts file path (Path to the Preferred Hosts file created in the previous step).
      - Replace `/usr/bin/node` and `index.js` with your binary path and arguments.
    - This will create an Evernode cluster in the preferred hosts and outputs the instance details.
@@ -193,8 +193,8 @@ In Evernode developer kit, single command does the cluster creation and the depl
         }
      ]
      ```
-   - You can specify more options (Ex: `-m` specify life moments) to the `cluster-create` command. Check the supported options using below command.
+   - You can specify more options (Ex: `-m` specify life moments) to the `cluster-create` command. Check the supported options using the below command.
      ```bash
      evdevkit cluster-create --help
      ```
-7. At this point you have created an Evernode cluster successfully and you have details of all the instances including public key, IP, ports etc. Now you can test the uploaded contract by implementing a user client same as you did in [hpdevkit basic tutorial](../../hotpocket/tutorials/basics.md#create-the-client-application).
+7. At this point, you have created an Evernode cluster successfully and you have details of all the instances including public key, IP, ports, etc. Now you can test the uploaded contract by implementing a user client same as you did in [hpdevkit basic tutorial](../../hotpocket/tutorials/basics.md#create-the-client-application).

@@ -48,11 +48,11 @@ The HotPocket consensus engine passes context parameters in `JSON` format as com
 - **timestamp** - Consensus timestamp of the last closed ledger in UNIX epoch milliseconds.
 - **lcl_seq_no** - Last closed ledger sequence number. (Not available in read-only mode.)
 - **lcl_hash** - Last closed ledger hash in hexadecimal. (Not available in read-only mode.)
-- **npl_fd** - NPL file descriptor for the current contract invocation. Provides a channel sending/receiving messages to other contracts during consensus execution. (Not available in read-only mode.)
+- **npl_fd** - NPL file descriptor for the current contract invocation. Provides a channel for sending/receiving messages to other contracts during consensus execution. (Not available in read-only mode.)
 - **control_fd** - File descriptor for the contract to communicate with HotPocket.
 - **user_in_fd** - File descriptor containing all consensed user inputs.
-- **users** - List of connected users public keys, file descriptors for writing user outputs and their corresponding user input offsets from `user_in_fd`.
-- **unl** - Information about list of nodes which participated in consensus (Unique Node List).
+- **users** - List of connected users public keys, file descriptors for writing user outputs, and their corresponding user input offsets from `user_in_fd`.
+- **unl** - Information about the list of nodes that participated in consensus (Unique Node List).
 
 ## Control channel
 
@@ -122,7 +122,7 @@ Once a node receives NPL messages, the NPL inputs are fed into the contract as s
 
 ### Send NPL messages
 
-When sending a message, the content is written into the NPL file descriptor. This message length should also not exceed 128KB. You can write inputs such as text inputs and `JSON` objects (after converting into strings) to this file descriptor as buffers.
+When sending a message, the content is written into the NPL file descriptor. This message length should also not exceed 128KB. You can write inputs such as text inputs and `JSON` objects (after converting them into strings) to this file descriptor as buffers.
 
 ## Note :
 

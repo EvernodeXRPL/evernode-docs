@@ -2,7 +2,7 @@
 
 This tutorial is a continuation of [working with multiple nodes](multinode).
 
-Because HotPocket smart contracts are regular Linux applications, they have direct access to on-device file storage. Therefore, you can use regular filesystem operations to save data onto disk and access them between subsequent executions of the smart contract.
+Because HotPocket smart contracts are regular Linux applications, they have direct access to on-device file storage. Therefore, you can use regular filesystem operations to save data onto the disk and access them between subsequent executions of the smart contract.
 
 ## State vs Private data
 
@@ -77,14 +77,14 @@ Run `npm start` and verify the smart contract is deployed and running. If you ha
 
 Let's see what the client application sees now, when it submits a user input into the smart contract.
 
-Connect the client application to node 1 with `node myclient.js 8081`. You should see following output from the smart contract.
+Connect the client application to node 1 with `node myclient.js 8081`. You should see the following output from the smart contract.
 
 ```
 You said 'hello'
 Thanks for talking to me 1 times
 ```
 
-Exit and run the client application again. This time you should see following output.
+Exit and run the client application again. This time you should see the following output.
 
 ```
 You said 'hello'
@@ -122,13 +122,13 @@ You said 'hello'
 Thanks for talking to me 4 times
 ```
 
-As you can see, our HotPocket smart contract keeps users' input data independently of each other and the respective users can access their information using the correct key pair. This is the basis of maintaining 'user accounts' in HotPocket smart contracts.
+As you can see, our HotPocket smart contract keeps users' input data independent of each other and the respective users can access their information using the correct key pair. This is the basis of maintaining 'user accounts' in HotPocket smart contracts.
 
-_In above examples, we are using simple text files to maintain saved data. But you can use any local database provider like SQLite according to your preference. As long as the files are maintained within the current working directory of the app, HotPocket will keep them in-sync across the cluster according to its consensus mechanism._
+_In the above examples, we are using simple text files to maintain saved data. But you can use any local database provider like SQLite according to your preference. As long as the files are maintained within the current working directory of the app, HotPocket will keep them in-sync across the cluster according to its consensus mechanism._
 
 ## Saving non-consensus (private) data
 
-As mentioned earlier, your smart contract have access to "up one level" from the current working directory and any data you persist outside of the current working directory is private to that node.
+As mentioned earlier, your smart contract has access to "up one level" from the current working directory and any data you persist outside of the current working directory is private to that node.
 
 For example, in your smart contract, you can use the location `../` to maintain a private event log for your application like this:
 
@@ -140,6 +140,6 @@ await fs.appendFile(
 );
 ```
 
-Please note that, normally, it is not recommended to use non-deterministic values like system timestamps or random-generated values in your smart contract since that would cause consensus to fail. However, in this case you can do that since this data is not subjected to consensus. The data in the file `../my-node-specific-data.log` is available to each individual node only.
+Please note that, normally, it is not recommended to use non-deterministic values like system timestamps or random-generated values in your smart contract since that would cause consensus to fail. However, in this case, you can do that since this data is not subjected to consensus. The data in the file `../my-node-specific-data.log` is available to each individual node only.
 
 Next: [Read requests](readreq)

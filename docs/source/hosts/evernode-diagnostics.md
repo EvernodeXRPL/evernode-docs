@@ -2,30 +2,30 @@
 
 If you have encountered any issues while installing Evernode, Check if your error is one of the following.
 
-_Note: If any of the following doesn't help in your situation please send it to Evernode support team as a GitHub issue [here](https://github.com/EvernodeXRPL/evernode-host/issues)._
+_Note: If any of the following doesn't help in your situation please send it to the Evernode support team as a GitHub issue [here](https://github.com/EvernodeXRPL/evernode-host/issues)._
 
 ## 1. Keeps on retry loop
 - Abort and try again
   - This won't rollback your installation. The next try will resume from where you've aborted.
 - Rolling back will clear installation files but won't deregister your account. You'll have to use [deregister command](./maintenance.md#deregister-a-host) to deregister from Evernode.
-- If this doesn't help check for the installation error log for the error and send it to Evernode support team as a GitHub issue [here](https://github.com/EvernodeXRPL/evernode-host/issues).
+- If this doesn't help check for the installation error log for the error and send it to the Evernode support team as a GitHub issue [here](https://github.com/EvernodeXRPL/evernode-host/issues).
 
 ## 3. Asking to re-check the balance
 - If the installer is asking `Do you want to re-check the balance`, when you are installing or transferring to a VM.
 - This means you do not have enough balance in your Host Xahau account to install and maintain a host.
-- Please check your Host Xahau account whether it has following XAH and EVR balances. If not, fund your account and retry.
-  - You should have minimum XAH balance in your account to maintain your host for 3 months.
-    - This is to pay your upcoming heartbeats, reserves etc, It won't be expend at the installation.
+- Please check your Host Xahau account whether it has the following XAH and EVR balances. If not, fund your account and retry.
+  - You should have the minimum XAH balance in your account to maintain your host for 3 months.
+    - This is to pay your upcoming heartbeats, reserves etc, It won't be expended at the installation.
     - The value is at around `18 XAH` when this documentation is last updated.
-  - You should have minimum EVR balance in your account to do **register (on fresh install)** or **re-register (on transfer install)** transactions.
-    - If you are doing a register (on fresh install) - You should have `<Registration Fee> EVRs` in your account (`500 EVRs` when this documentation is last updated).
+  - You should have the minimum EVR balance in your account to do **register (on a fresh install)** or **re-register (on transfer install)** transactions.
+    - If you are doing a register (on a fresh install) - You should have `<Registration Fee> EVRs` in your account (`500 EVRs` when this documentation is last updated).
     - If you are doing a re-register (on transfer install) - You should have `0.00000001 EVRs` in your account.
 
 ## 4. CLI_OUT: INVALID_REG error on installation
 - If your installation is failing with `CLI_OUT: INVALID_REG`.
 - This means your host is already registered in Evernode but now you are trying to install again with different host specifications.
 - So you can [transfer](maintenance.md#transfer-the-host-registration) your registration and re-install again.
-- **Not recommended:** You can also uninstall/deregister and install again. But it will only refund you half of registration fee, if you have already been in Evernode network. So we recommend not to do this if you are not intending to permanently leave the network.
+- **Not recommended:** You can also uninstall/deregister and install again. But it will only refund you half of the registration fee, if you have already been in the Evernode network. So we recommend not to do this if you are not intending to permanently leave the network.
 
 ## 5. Uninstall failure
 - If your uninstall process failed at any point you can abort it and retry again.
@@ -57,10 +57,10 @@ Sashimono null not found.
 ```
 or
 ```
-Failed to retrieve latest version data.
+Failed to retrieve the latest version data.
 ```
-- If you are getting above error when running the Evernode commands.
-- This could mean you got a connection issue, or your IP is blocked by Github due to exceeding request limitations.
+- If you are getting the above error when running the Evernode commands.
+- This could mean you have got a connection issue, or your IP is blocked by Github due to exceeding request limitations.
 - Wait for some time and try again, Your limitation will be lifted and you'll be able to successfully execute the command again.
 
 ## 10. No offered lease after installation
@@ -68,7 +68,7 @@ Failed to retrieve latest version data.
 - You have to run `evernode offerlease` to offer the minted leases.
 
 ## 11. No rewards even if the Host is active
-- **Case 1:** In the version 0.8.2 you won't rewards if your host has unoffered leases.
+- **Case 1:** In version 0.8.2 you won't rewards if your host has unoffered leases.
 - **Case 2:** Your reputation will be set to 0, if your host has less than 3 instances.
 - **Case 3:** Your reputation will be set to 0, if your host's lease fee is more than `(reward distribution for the moment / host count) * 110%`
 - **Case 4:** Your reputation will be set to 0, if you haven't upgraded to v0.8.2 within **one week**.
@@ -76,7 +76,7 @@ Failed to retrieve latest version data.
   
 ## 12. Lease offer creation failure
 - **Case 1:** If your lease offering failed when you run `evernode offerlease`, Executing the command again would offer the remaining leases.
-- **Case 2:** If `evernode status` shows unoffered lease, but still you are getting following error when executing `evernode offerlease`.
+- **Case 2:** If `evernode status` shows an unoffered lease, but still you are getting the following error when executing `evernode offerlease`.
   - `evernode status` output :
     ```
     Available Lease offers: 3 out of 6
@@ -99,5 +99,5 @@ Failed to retrieve latest version data.
 - Try removing `rm -r /tmp/evernode-setup-helpers` and install Evernode again.
 
 ## 14. Re-config failure
-- If `evernode config` command failed in any reconfiguration, retry executing it again.
+- If the `evernode config` command failed in any reconfiguration, retry executing it again.
 - If retry doesn't help change the value back to the original using the `evernode config` and change back to the new value again using the same command.

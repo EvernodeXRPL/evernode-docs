@@ -13,7 +13,7 @@ The HotPocket developer kit requires you to install [Docker Engine](https://docs
 
 ### Cross-platform support
 
-The HotPocket developer kit is a [global npm package](https://www.npmjs.com/package/hpdevkit) which supports both Linux and Windows operating systems.
+The HotPocket developer kit is a [global npm package](https://www.npmjs.com/package/hpdevkit) that supports both Linux and Windows operating systems.
 
 1. Install [prerequisites](#prerequisites).
 2. Run the following command to install hpdevkit on your machine:
@@ -22,7 +22,7 @@ The HotPocket developer kit is a [global npm package](https://www.npmjs.com/pack
    ```
 
 _**NOTE:** In Linux platforms, installation requires root privileges. Hence, add `sudo` to the above command.
-Final contract bundles are deployed and run in Linux environment. Binary outputs built in windows environments might cause errors. Hence the recommended development platform is Linux_
+Final contract bundles are deployed and run in Linux environment. Binary outputs built-in Windows environments might cause errors. Hence the recommended development platform is Linux_
 
 ## Creating a HotPocket smart contract
 
@@ -74,7 +74,7 @@ npm install
 node myclient.js
 ```
 
-This will start the client application and connect a HotPocket node listening to port 8081. Also note that you need to have HotPocket nodes running on your machine for the client to connect.
+This will start the client application and connect a HotPocket node listening to port 8081. Also, note that you need to have HotPocket nodes running on your machine for the client to connect.
 
 ## Advanced usage
 

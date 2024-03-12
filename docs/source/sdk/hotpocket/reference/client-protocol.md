@@ -1,10 +1,10 @@
 # Client (user) protocol
-Users communicate with Hotpocket via [WebSockets](https://en.wikipedia.org/wiki/WebSocket). There is no direct communication between [users](../../../platform/hotpocket/users) and [DApps](../../../platform/hotpocket/overview.md#dapp). Instead, the user communicates with HotPocket, and HotPocket serves as an intermediary between the user and the DApp. There is a  special protocol for this communication.<br><br> Every message that is being sent to and from HotPocket contains a type field. User messages can be sent and received in [json](https://en.wikipedia.org/wiki/JSON) or [bson](https://en.wikipedia.org/wiki/BSON) formats, where the format is decided when the initial handshake happens with the user. The handshake messages will be in json format. The message protocol is described below in a detailed manner.
+Users communicate with Hotpocket via [WebSockets](https://en.wikipedia.org/wiki/WebSocket). There is no direct communication between [users](../../../platform/hotpocket/users) and [DApps](../../../platform/hotpocket/overview.md#dapp). Instead, the user communicates with HotPocket, and HotPocket serves as an intermediary between the user and the DApp. There is a special protocol for this communication.<br><br> Every message that is being sent to and from HotPocket contains a type field. User messages can be sent and received in [json](https://en.wikipedia.org/wiki/JSON) or [bson](https://en.wikipedia.org/wiki/BSON) formats, where the format is decided when the initial handshake happens with the user. The handshake messages will be in json format. The message protocol is described below in a detailed manner.
 
 ## Initiating a user connection
 
 ### User challenge
-When a user establishes a WebSoket connection to HotPocket, a user challenge is sent to the user from HotPocket.
+When a user establishes a WebSocket connection to HotPocket, a user challenge is sent to the user from HotPocket.
 This message includes the HotPocket version, the running DApp's id, the running DApp's version, and a user challenge hex string.
 ```
     {
@@ -29,7 +29,7 @@ The user then signs the challenge and sends back the handshake response to HotPo
 ```
 
 ### Server challenge response
-Upon receiving the handshake response, HotPocket verifies the handshake signature and accepts the user connection and sends the server challenge response to the user with the following data: the signature of the concatenated (server challenge + contract id + contract version), the public key, and a list of hex public keys ([UNL](../../../platform/hotpocket/consensus.md#unl---unique-node-list)). HotPocket decides the message protocol (json|bson) from the user's handshake request.
+Upon receiving the handshake response, HotPocket verifies the handshake signature and accepts the user connection, and sends the server challenge response to the user with the following data: the signature of the concatenated (server challenge + contract id + contract version), the public key, and a list of hex public keys ([UNL](../../../platform/hotpocket/consensus.md#unl---unique-node-list)). HotPocket decides the message protocol (json|bson) from the user's handshake request.
 ```
     {
         "type": "server_challenge_response",
@@ -73,7 +73,7 @@ HotPocket will send back the status response with the details of the connected n
 Users can request the connected HotPocket node's [LCL](../../../platform/hotpocket/consensus.md#lcl---last-closed-ledger).
 
 ### LCL request
-Users can request the current ledger's info from the HotPocket node by sending a LCL request.
+Users can request the current ledger's info from the HotPocket node by sending an LCL request.
 ```
     {
         "type": "lcl"
@@ -104,7 +104,7 @@ The input is sent with a nonce and maximum [ledger sequence](../../../platform/h
 ```
 
 ### Signed input
-The input container is stringified, signed, and then both the input and the signature are sent to HotPocket.
+The input container is stringified, and signed, and then both the input and the signature are sent to HotPocket.
 ```
     {
         "type": "contract_input",
@@ -141,7 +141,7 @@ HotPocket sends the [user output](../../../platform/hotpocket/users.md#user-outp
 ```
 
 ## Read request
-Users send [read requests](../../../platform/hotpocket/read-req.md) when they need an immediate response. Read requests execute contracts in read-only mode and returns an output to the user.
+Users send [read requests](../../../platform/hotpocket/read-req.md) when they need an immediate response. Read requests execute contracts in read-only mode and return an output to the user.
 
 ### Read request
 This contains the input content and an id.

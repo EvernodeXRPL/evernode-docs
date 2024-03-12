@@ -1,6 +1,6 @@
 # Node Party Line (NPL)
 
-Node Party Line offers a way for DApp instances (nodes) of a cluster to exchange information among themselves in realtime. This is useful in cases where DApp needs to make decisions based on differing information provided by individual nodes.
+Node Party Line offers a way for DApp instances (nodes) of a cluster to exchange information among themselves in real time. This is useful in cases where DApp needs to make decisions based on differing information provided by individual nodes.
 
 Examples:
 
@@ -8,7 +8,7 @@ Examples:
 - Nominating a single node (leader-election) from the cluster to communicate with an external service.
 - Agreeing upon a piece of information to go forward with based on different information gathered by individual nodes.
 
-NPL messages does not go through [consensus](consensus) which makes them real-time. NPL messages sent by a DApp instance are immediately received by currently-executing DApp instances on other nodes.
+NPL messages do not go through [consensus](consensus) which makes them real-time. NPL messages sent by a DApp instance are immediately received by currently-executing DApp instances on other nodes.
 
 ## Privacy
 

@@ -2,7 +2,7 @@
 
 ## Evernode Javascript client
 
-Evernode client library for for nodejs and browser.
+Evernode client library for nodejs and browser.
 
 - [evernode-js-client (npm)](https://www.npmjs.com/package/evernode-js-client)
 - [Usage examples](https://github.com/EvernodeXRPL/evernode-js-client/blob/main/test/test.js)

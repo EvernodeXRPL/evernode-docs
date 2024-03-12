@@ -6,7 +6,7 @@ Manages the governance game.
 
 ### Propose
 - Hosts or Evernode Labs can propose governance candidates. With this proposal, the proposer should provide the hook hashes and pay an EVR amount equal to the current moment's reward quota.
-- If a proposal is purged (life period has passed or another proposal is already approved), the proposer will lose the EVR stake spent on the proposal.
+- If a proposal is purged (the life period has passed or another proposal is already approved), the proposer will lose the EVR stake spent on the proposal.
 - If the proposal is accepted, the proposer will receive the entire amount of the stake spent on the proposal.
 
 ### Withdraw
@@ -27,7 +27,7 @@ Manages heartbeats and rewards.
 
 ### Heartbeat
 - Every host must send a heartbeat at every moment to prove that the host is alive and functioning. A host is considered alive if it has sent a heartbeat in the previous moment.
-- Rewards are distributed based on the host's aliveness and the reputation. Host reputation will be updated by a p2p reputation system with voting. Reputation should exceed 200 to be eligible for rewards. The rewards are accumulated in the hook, and accumulated rewards will be sent to the host within 24 moment intervals.
+- Rewards are distributed based on the host's aliveness and reputation. Host reputation will be updated by a p2p reputation system with voting. Reputation should exceed 200 to be eligible for rewards. The rewards are accumulated in the hook, and accumulated rewards will be sent to the host within 24 moment intervals.
 - If the host is going to vote for a governance candidate, it needs to be sent with the heartbeat.
 
 ### Evernode Labs Vote
@@ -38,7 +38,7 @@ Manages heartbeats and rewards.
 Manages host registrations and issuance of registration tokens.
 
 ### Register Host
-- A host registers in the Evernode network by sending its host specs and information via this request. The host must pay an EVR amount as a registration fee. Five EVRs from the registration fee will be kept in Evernode Labs wallet, and the rest will be staked.
+- A host registers in the Evernode network by sending its host specs and information via this request. The host must pay an EVR amount as a registration fee. Five EVRs from the registration fee will be kept in the Evernode Labs wallet, and the rest will be staked.
 - During registration, Evernode will mint a registration token that needs to be in the host's Xahau account to prove the registration.
 
 ### Deregister Host

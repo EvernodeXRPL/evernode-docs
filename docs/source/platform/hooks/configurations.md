@@ -21,13 +21,13 @@ Evernode has a set of configurations that a predefined on the hooks deployment.
 - **Max tolerable downtime - 240**
   - If a host has been inactive for this period (In moments 10 days), Anybody can send a request to prune that host and the hook will prune the host.
 - **Epoch count - 10**
-  - Total number of epochs Evernode reward cycles would exist. Epoch will come to an end when it is allocated reward EVR amount is over.
+  - The total number of epochs Evernode reward cycles would exist. Epoch will come to an end when it is allocated reward EVR amount is over.
 - **First epoch reward quota - 5120**
   - Amount of EVRs per moment distributed as rewards in the first epoch. This is getting halved when the epoch increases.
 - **First epoch reward amount - 5160960**
   - Amount of EVRs allocated for the first epoch to be distributed as rewards. This is getting halved when the epoch increases.
 - **Reward start moment - 0**
-  - In which moment the reward distribution is started. 0 means rewards will start just after the hooks are deployed.
+  - At which moment the reward distribution is started. 0 means rewards will start just after the hooks are deployed.
 - **Emit fee threshold - 1000**
   - Maximum native currency limit in drop that can be allocated as the fee for an outgoing transaction from a hook.
 - **Governance eligibility period - 7884000**
@@ -45,4 +45,4 @@ Evernode has a set of configurations that a predefined on the hooks deployment.
 - **Network busyness detect average - 50**
   - Average percentage to identify a network busy condition, when the current fee exceeds 50% of the base fee.
 - **Host reputation threshold - 200**
-  - Minimum reputation score for a host to be eligible for rewards. Host's reputation value will defaults to this at the registration and it can be changed later.
+  - Minimum reputation score for a host to be eligible for rewards. The host's reputation value will default to this at the registration and it can be changed later.

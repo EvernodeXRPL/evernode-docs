@@ -63,13 +63,13 @@ Press Ctrl+C to exit from the log output.
 
 ## Spawn a new node
 
-What we are going to do now is to create a completely new/blank node which does not have any files/configuration from the colors contract cluster but still get it to become a clone of that cluster eventually. To make this work, the new node must have the following information:
+What we are going to do now is to create a completely new/blank node that does not have any files/configuration from the colors contract cluster but still get it to become a clone of that cluster eventually. To make this work, the new node must have the following information:
 
 1. The [contract id](contract-context) of the existing contract.
 2. The IP/domain address and the peer port of at least one of the existing nodes.
-3. At least one public key of the existing UNL nodes (this does not ncessaraily need to be the same node as [2]).
+3. At least one public key of the existing UNL nodes (this does not necessarily need to be the same node as [2]).
 
-When the new node is created, it is capable of using the limited information available to it and discover the existing contract cluster and sync with it. So the expectation is for the new node to eventually behave exactly the same as existing nodes and execute the same contract code.
+When the new node is created, it is capable of using the limited information available to it, discovering the existing contract cluster, and syncing with it. So the expectation is for the new node to eventually behave exactly the same as existing nodes and execute the same contract code.
 
 However, even if the new node becomes a "clone", it should be noted that the existing nodes will not know about the new node and hence will not include it in their UNL. We should be able to see this via the new node's contract log output indicating its UNL status.
 
@@ -86,11 +86,11 @@ I'm NOT in the UNL. My public key: edecee17cf622edfe35a6850c462ed86bde9952ecf217
 ...
 ```
 
-As you can see the new node is capable of requesting canonical configuration and "state" from the existing cluster and become a "clone". The contract code files (in this case, "index.js") also lives in the filesystem "state" hence we get a copy of the contract code itself. The key difference is that the new node is NOT in the cluster UNL as shown by its log output.
+As you can see the new node is capable of requesting canonical configuration and "state" from the existing cluster and become a "clone". The contract code files (in this case, "index.js") also live in the filesystem "state" hence we get a copy of the contract code itself. The key difference is that the new node is NOT in the cluster UNL as shown by its log output.
 
 ## UNL acceptance logic
 
-At this point, it is up to you to build up the ncessary governance mechanism on how would a new node get "accepted" into the UNL. You must device some form of communication so the UNL cluster gets to know the new node's public key and a cretieria to accept it into the UNL. Please note that following is not possible:
+At this point, it is up to you to build up the necessary governance mechanism on how would a new node get "accepted" into the UNL. You must devise some form of communication so the UNL cluster gets to know the new node's public key and the criteria to accept it into the UNL. Please note that the following is not possible:
 
 1. UNL nodes cannot receive NPL messages from non-UNL nodes.
 2. UNL nodes cannot receive consensus proposals from non-UNL nodes.
@@ -164,7 +164,7 @@ HotPocket Connected.
 Submitting UNL request.
 ```
 
-Meanwhile in the node 4 log output, you should see following:
+Meanwhile, in the node 4 log output, you should see the following:
 
 ```
 20230527 00:59:40.644 [inf][hpc] ****Ledger created**** (lcl:55-eee7c852 state:3c90183b patch:35968a27)
@@ -180,9 +180,9 @@ These are my cli args [ 'red', 'green', 'blue' ]
 I'm in the UNL.
 ```
 
-Here you can see upon receiving the user input, the cluster added the new public key to the UNL. `[inf][hpc] Contract config updated from patch file.` denotes when HotPocket recognized the UNL update from the **configuration patch file**, which is used to subject the contract configuration to consensus. In subsequent executions of the contract in node 4, it is recognizing itself as being in the UNL.
+Here you can see upon receiving the user input, the cluster added the new public key to the UNL. `[inf][hpc] Contract config updated from patch file.` denotes when HotPocket recognized the UNL update from the **configuration patch file**, which is used to subject the contract configuration to consensus. In subsequent executions of the contract in node 4, it recognizes itself as being in the UNL.
 
-_**NOTE**: If you cluster is small enough, adding a wrong public key to the UNL can halt the forward progress of the cluster irrecoverably, since it will no longer be able to reach majotiry (usually 80%) UNL agreement._
+_**NOTE**: If your cluster is small enough, adding a wrong public key to the UNL can halt the forward progress of the cluster irrecoverably, since it will no longer be able to reach the majority (usually 80%) UNL agreement._
 
 ## Mesh network
 

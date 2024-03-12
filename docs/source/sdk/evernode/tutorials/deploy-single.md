@@ -57,7 +57,7 @@ export EV_NETWORK=testnet
 4. Let's override the HotPocket configuration in the Evernode instance. You can skip this step if you do not want to.
 
    - Create a new json file anywhere you prefer.
-   - Add following content inside the file.
+   - Add following the content inside the file.
      ```json
      {
        "contract": {
@@ -87,7 +87,7 @@ export EV_NETWORK=testnet
      export EV_HP_INIT_CFG_PATH=<Path to your initial HotPocket configuration file>
      ```
 
-5. Now you are ready to acquire an Evernode instance. Use the `acquire` command and pass the Xahau address of the host to acquire an instance from as a parameter. You can check the available hosts by using the [Community Dashboards](https://dashboard.evernode.org) or the [`list` command](../evdevkit/overview.md#advanced-usage).
+5. Now you are ready to acquire an Evernode instance. Use the `acquire` command and pass the Xahau address of the host as a parameter to acquire an instance. You can check the available hosts by using the [Community Dashboards](https://dashboard.evernode.org) or the [`list` command](../evdevkit/overview.md#advanced-usage).
 
    - Run the following command to acquire. Replace `<host Xahau address>` with the host address.
      ```bash
@@ -112,11 +112,11 @@ export EV_NETWORK=testnet
      evdevkit acquire --help
      ```
 
-6. At this point you have acquired an Evernode instance successfully and you have the instance details including public key, IP, ports etc.
+6. At this point, you have acquired an Evernode instance successfully and you have the instance details including public key, IP, ports etc.
 
 ## Create deployable DApp package
 
-1. If you have already implemented the DApp, you can proceed. Otherwise go through [HotPocket tutorials](../../hotpocket/tutorials/index).
+1. If you have already implemented the DApp, you can proceed. Otherwise, go through [HotPocket tutorials](../../hotpocket/tutorials/index).
 2. Build your DApp and note down the build path.
 3. Let's override the contract section HotPocket configuration in the Evernode instance. You can skip this step if you do not want to.
 
@@ -165,7 +165,7 @@ export EV_NETWORK=testnet
 1. Now you have the deployable contract bundle, We can deploy this bundle to the acquired Evernode instance.
 2. `EV_USER_PRIVATE_KEY` is required for this step. Since we've already set this in [acquire instance](#acquire-an-instance) step, we do not need to set this again.
 
-   - Make sure you use the same user keys which you've set when acquiring the instance, Otherwise you wont be allowed to upload this bundle.
+   - Make sure you use the same user keys that you've set when acquiring the instance, Otherwise you won't be allowed to upload this bundle.
 
 3. Now let's upload the bundle to the Evernode instance.
 
@@ -187,7 +187,7 @@ Using Evernode devkit you can acquire and deploy Evenode instances using one com
 
 1. First you need to follow the same 1, 2, 3 steps in ["Acquire an instance"](#acquire-an-instance) here as well.
 2. Pick a host to acquire an instance from. You can check the available hosts by using the [Community Dashboards](https://dashboard.evernode.org) or the [`list` command](../evdevkit/overview.md#advanced-usage). 
-3. If you are going to override HotPocket config contract section, follow 3rd step in ["Create deployable DApp package"](#create-deployable-dapp-package).
+3. If you are going to override the HotPocket config contract section, follow 3rd step in ["Create deployable DApp package"](#create-deployable-dapp-package).
 4. Now you can just run the following command to acquire and deploy.
    - Run this command.
      ```bash
@@ -196,8 +196,8 @@ Using Evernode devkit you can acquire and deploy Evenode instances using one com
      - Note:
        - Replace `$HOME/contract` with your contract directory path (Path to build directory of contract binaries).
        - Replace `/usr/bin/node` `index.js` with your binary path and arguments.
-       - Replace `r9kCyGhhwGj3KaSGemFrrPVpXkzVtT2b1N` with the Xahau address of host you want to acquire an instance from.
-   - This will output following after deploying the contract.
+       - Replace `r9kCyGhhwGj3KaSGemFrrPVpXkzVtT2b1N` with the Xahau address of the host you want to acquire an instance from.
+   - This will output the following after deploying the contract.
      ```bash
      ...
      Instance created! {

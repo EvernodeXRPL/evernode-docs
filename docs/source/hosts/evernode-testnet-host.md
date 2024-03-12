@@ -1,6 +1,6 @@
 ## Evernode beta
 
-We are inviting interested enthusiasts to register as an Evernode host. As an Evernode beta host, your Linux server will be registered on the [XRPL Hooks v3 testnet](https://hooks-testnet-v3.xrpl-labs.com/). **Same rules and requirements as [mainnet](evernode-host.md) applies for the testnet hsost as well**
+We are inviting interested enthusiasts to register as an Evernode host. As an Evernode beta host, your Linux server will be registered on the [XRPL Hooks v3 testnet](https://hooks-testnet-v3.xrpl-labs.com/). **Same rules and requirements as [mainnet](evernode-host.md) applies for the testnet hosts as well**
 
 > **Testnet warning:** Since Evernode beta uses [XRPL Hooks v3 testnet](https://hooks-testnet-v3.xrpl-labs.com/), it is subjected to any changes/downtime imposed by the hooks testnet.
 

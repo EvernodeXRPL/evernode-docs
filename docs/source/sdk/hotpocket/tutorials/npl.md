@@ -39,13 +39,13 @@ The following output would then be generated:
 
 This actually causes the entire cluster to go out of sync, and consensus will break.
 
-To avoid this problem, [NPL messaging](../../../platform/hotpocket/npl) can be used. Using NPL messaging, nodes can come to a collective decision and break of consensus can be avoided.
+To avoid this problem, [NPL messaging](../../../platform/hotpocket/npl) can be used. Using NPL messaging, nodes can come to a collective decision and a break of consensus can be avoided.
 
 Let's try to get a basic understanding of how NPL can be used.
 
 ## Sending messages within the UNL of the HotPocket cluster
 
-If a particular node is able to listen to at least a single message from the others nodes in the UNL, it will log the message.
+If a particular node is able to listen to at least a single message from the other nodes in the UNL, it will log the message.
 
 [HotPocket config](../reference/configuration) specifies `npl` mode as `private` by default, so NPL messages can only be passed between UNL nodes. Setting `npl` to `public` will enable any connected node (non-UNL) to receive NPL messages. However, HotPocket will reject NPL messages that are sent by non-UNL nodes.
 

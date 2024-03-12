@@ -8,7 +8,7 @@ As mentioned in [System requirements](evernode-host.md#system-requirements), you
 
 You can run `evernode update` to check and install updates to Evernode.
 
-**Note: For Evernode 0.8.2 update `evernode update` command would not show any pending updates for your Sashimono. To update to v0.8.2, run below command. It is recommended to use the following command for an independent Evernode update.**
+**Note: For the Evernode 0.8.2 update `evernode update` command would not show any pending updates for your Sashimono. To update to v0.8.2, run the below command. It is recommended to use the following command for an independent Evernode update.**
 ```
 curl -fsSL https://raw.githubusercontent.com/EvernodeXRPL/evernode-test-resources/main/sashimono/installer/evernode.sh | sudo bash -s update
 ```

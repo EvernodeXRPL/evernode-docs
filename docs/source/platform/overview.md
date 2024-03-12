@@ -2,7 +2,7 @@
 
 ## Apps vs DApps
 
-We can think of an app as something which can process **Inputs** and produce **Outputs** while reading/updating **State**. Many traditional apps fall into this category and they can be implemented with many programming languages and platforms on the market.
+We can think of an app as something that can process **Inputs** and produce **Outputs** while reading/updating **State**. Many traditional apps fall into this category and they can be implemented with many programming languages and platforms on the market.
 
 ![Structure of a DApp](../assets/dapp.png)
 
@@ -10,15 +10,15 @@ We can make a **decentralized** app (DApp a.k.a smart contract) by making multip
 
 ![A DApp cluster](../assets/dapp-cluster.png)
 
-The process of communicating and verifying each other's behaviour and agreeing upon the correct results is called **Consensus**. There is no leader/coordinator to conduct this process. Every app instance must perform this activity invidividually. HotPocket provides this ability to your app in order to make it a "decentralized" app.
+The process of communicating and verifying each other's behaviour and agreeing upon the correct results is called **Consensus**. There is no leader/coordinator to conduct this process. Every app instance must perform this activity individually. HotPocket provides this ability to your app in order to make it a "decentralized" app.
 
 ## HotPocket consensus engine - for decentralized apps
 
 [HotPocket](hotpocket/overview) is a consensus engine which helps decentralize POSIX-compliant apps written in traditional programming platforms. In HotPocket terminology, each application instance is a "**node**". Each node contains a copy of the HotPocket software and your application. Your app contains the application logic and some integration points that can be used by HotPocket to control and communicate with it. See [tutorials](https://github.com/EvernodeXRPL/evernode-sdk#tutorials) on how to create HotPocket DApps.
 
-- Users interacts with HotPocket via websockets in order to communicate with your app.
+- Users interacts with HotPocket via WebSockets in order to communicate with your app.
 
-- HotPocket takes care of the consensus process with other HotPocket nodes via websockets.
+- HotPocket takes care of the consensus process with other HotPocket nodes via WebSockets.
 
 - Your app is free to do anything a POSIX application software can do.
 
@@ -39,7 +39,7 @@ Evernode uses a set of [XRPL hooks](hooks/overview) to coordinate its decentrali
 - Marketplace information and rules are goverened by [XRPL hooks](https://hooks.xrpl.org/).
 - Marketplace operations (host registration, leasing etc...) are represented by Xahau transactions.
 - A single host can make many DApp nodes available for lease using its hardware resources.
-- DApp operations (deployment, consensus, user interaction) happen directly between HotPocket nodes and users via websockets. They are NOT dependent on the Xahau network. They simply use the network "ports" allocated by the Host (Read [more](https://github.com/EvernodeXRPL/evernode-host#firewalls-and-ports)).
+- DApp operations (deployment, consensus, user interaction) happen directly between HotPocket nodes and users via WebSockets. They are NOT dependent on the Xahau network. They simply use the network "ports" allocated by the Host (Read [more](https://github.com/EvernodeXRPL/evernode-host#firewalls-and-ports)).
 
 The following diagram shows how different HotPocket DApps would be distributed across many Evernode hosts. Each DApp forms its own mesh network.
 

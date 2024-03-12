@@ -305,7 +305,7 @@ Received input: hello
 
 Now our client application is capable of sending user inputs and our DApp can receive them. Next, let's add the ability for the DApp to reply to the user in the form of ['outputs'](../../../platform/hotpocket/users.md#user-outputs).
 
-Update the DApp with following code.
+Update the DApp with the following code.
 
 ```javascript
 // Loop through inputs sent by the user.
@@ -319,9 +319,9 @@ for (const input of user.inputs) {
 }
 ```
 
-As you can see, our contract actually replies with 2 outputs upon receiving an input from a user. In HotPocket, there's no requirement for outputs to be associated with any inputs. The DApp can decide to not send any outputs at all, send one or more outputs as response to an input, or send outputs without having any inputs at all. It's up to you to model your application behaviour according to your liking.
+As you can see, our contract actually replies with 2 outputs upon receiving an input from a user. In HotPocket, there's no requirement for outputs to be associated with any inputs. The DApp can decide to not send any outputs at all, send one or more outputs as a response to an input, or send outputs without having any inputs at all. It's up to you to model your application behavior according to your liking.
 
-Update the client application with following code to receive outputs.
+Update the client application with the following code to receive outputs.
 
 ```javascript
 console.log("HotPocket Connected.");
@@ -338,7 +338,7 @@ await client.submitContractInput("hello");
 
 Here, we register an event handler so that when the HotPocket client receives outputs sent by the contract, our handler is invoked. It's good practice to register the output handler before we start sending inputs so we don't miss any outputs. Each output result can contain multiple outputs sent by HotPocket.
 
-Run the DApp and the client application. Client application should print a log like this:
+Run the DApp and the client application. The client application should print a log like this:
 
 ```
 HotPocket Connected.
@@ -348,11 +348,11 @@ You said 'hello'
 Thanks for talking to me!
 ```
 
-Please note that HotPocket client does not associate any outputs with a corresponding input. This is because HotPocket does not enforce any relationship between inputs and outputs. As also explained above, a HotPocket DApp can send outputs even without receiving any inputs as well. This is specially useful in sending notifications to users without them having to request first.
+Please note that the HotPocket client does not associate any outputs with a corresponding input. This is because HotPocket does not enforce any relationship between inputs and outputs. As also explained above, a HotPocket DApp can send outputs even without receiving any inputs as well. This is especially useful in sending notifications to users without them having to request first.
 
 ## Terminating HotPocket connection
 
-Currently, our client application keeps running after it does its job, which is sending user input and receiving output. This is due to it has an active connection to HotPocket. We can close that connection if we think that it's no longer needed. Let's modify the client application to close the connection soon after it receives any outputs from the user.
+Currently, our client application keeps running after it does its job, which is sending user input and receiving the output. This is due to it having an active connection to HotPocket. We can close that connection if we think that it's no longer needed. Let's modify the client application to close the connection soon after it receives any outputs from the user.
 
 ```javascript
 client.on(HotPocket.events.contractOutput, (result) => {
@@ -375,7 +375,7 @@ const userKeyPair = await HotPocket.generateKeys();
 
 The key pair object contains `publicKey` and `privateKey` components in binary format. The critical component is the `privateKey` because it inherently includes the public key as well. Therefore, we can preserve the private key for later restoration of the key pair.
 
-Update the 'myclient.js' with following code.
+Update the 'myclient.js' with the following code.
 
 ```javascript
 const HotPocket = require('hotpocket-js-client');
@@ -400,9 +400,9 @@ async function clientApp() {
 
 In the above example, we are maintaining a key file to preserve the user's key data. If the file does not exist, we generate a new key pair and save the private key component in hexadecimal (text) format. Subsequently, we read the saved private key data from the file and restore the key pair using the `HotPocket.generateKeys()` function.
 
-_Private keys are considered **sensitive data** (similar to a password in a traditional application) and proper security practices must be followed when preserving a private key for later use. It is a outside the scope of this guide and is the responsibility of the application developer. The above example simply serves as a rudimentary example to showcase the scenario._
+_Private keys are considered **sensitive data** (similar to a password in a traditional application) and proper security practices must be followed when preserving a private key for later use. It is outside the scope of this guide and is the responsibility of the application developer. The above example simply serves as a rudimentary example to showcase the scenario._
 
-Run the the client application with `node myclient.js` several times. You will notice HotPocket identifies the user as having the same public key even in different executions of the client app shown in following DApp log.
+Run the client application with `node myclient.js` several times. You will notice HotPocket identifies the user as having the same public key even in different executions of the client app shown in the following DApp log.
 
 ```
 20220831 14:57:39.504 [inf][hpc] ****Ledger created**** (lcl:9-8ff821d4 state:86fd529c patch:1dea7287)

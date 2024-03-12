@@ -30,7 +30,7 @@ const client = await HotPocket.createClient(
 );
 ```
 
-This client will drop the connection if the contract id presented by the HotPocket instance its connecting to does not match.
+This client will drop the connection if the contract id presented by the HotPocket instance it's connecting to does not match.
 
 ## publicKey and privateKey
 
@@ -52,7 +52,7 @@ const client = await HotPocket.createClient(
 
 ## readonly
 
-A boolean indicating whether the contract is being invoked due to a consensus execution or a [read request](readreq). In readonly mode, the filesystem is readonly and represents the last consensus state. At any given time, multiple readonly executions of the contract can happen. However only one consensus execution will happen at any given time.
+A boolean indicating whether the contract is being invoked due to a consensus execution or a [read request](readreq). In readonly mode, the filesystem is readonly and represents the last consensus state. At any given time, multiple readonly executions of the contract can happen. However, only one consensus execution will happen at any given time.
 
 ## timestamp
 

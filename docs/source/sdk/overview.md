@@ -12,7 +12,7 @@ For deploying and running DApps on the global decentralized hosting infrastructu
 
 ## Issues and feedback
 
-Please post any issues and feedback about the SDK in our [github issues](https://github.com/EvernodeXRPL/evernode-sdk/issues).
+Please post any issues and feedback about the SDK in our [GitHub issues](https://github.com/EvernodeXRPL/evernode-sdk/issues).
 
 ## Announcements
 

@@ -58,10 +58,10 @@ Based on the smart contracts that are hosted on your server, your server will ac
 
 ### Firewalls and ports
 
-Evernode software itself does not require any ports to be opened. However SSL setup and hosted smart contracts require the following conditions to be met. Please note that Evernode automatically adds the required allow-rules for these ports to the operating system firewall. But if your host is behind an external firewall, you need to allow incoming TCP traffic to them yourself.
+Evernode software itself does not require any ports to be opened. However, SSL setup and hosted smart contracts require the following conditions to be met. Please note that Evernode automatically adds the required allow-rules for these ports to the operating system firewall. But if your host is behind an external firewall, you need to allow incoming TCP traffic to them yourself.
 
 - The smart contracts that are getting hosted on your host require certain ports to be opened and incoming traffic to be allowed. There are two port ranges which by default start at 26201 and 22861. If your host supports `n` contract instances, the port ranges to allow would be `26201 to 26201+n` and `22861 to 22861+n`.
-- Evernode's automatic SSL setup requires port 80 to be free and incoming traffic to be allowed to it. Without this, the initial SSL setup and subsequent SSL renewals will fail. (If you are running a web server like Apache or nginx on the same host, they will cause the SSL setup to fail. You can stop them or configure them to not use port 80 to overcome this problem.)
+- Evernode's automatic SSL setup requires port 80 to be free and incoming traffic to be allowed to it. Without this, the initial SSL setup and subsequent SSL renewals will fail. (If you are running a web server like Apache or Nginx on the same host, they will cause the SSL setup to fail. You can stop them or configure them to not use port 80 to overcome this problem.)
 
 ### Creating Lease Offers
 
@@ -107,12 +107,12 @@ You can change your host's configurations using [Evernode CLI](evernode-cli.md)
 ### Important optional configs
 - Affordable extra transaction fee
   - This represents how much more you are willing to pay extra as the transaction fee.
-    - If you specify this as 10000 drops and the base fee is 2000 drop. Your fee will be maxed out at 12000 drop in case of network congestion.
-    - Basically it'll try incrementing the fee up to 12000 drops and won't go beyond that.
-  - It'll start at base fee and gets incremented in 10% of the value you have specified as extra fee.
+    - If you specify this as 10000 drops and the base fee is 2000 drops. Your fee will be maxed out at 12000 drop in case of network congestion.
+    - Basically, it'll try incrementing the fee up to 12000 drops and won't go beyond that.
+  - It'll start at a base fee and gets incremented in 10% of the value you have specified as an extra fee.
 - Fallback servers
   - This represents the xahaud servers to fallback the connection when the primary server you have specified is unusable.
-  - You can specify list of servers which gets randomly picked for the fallback connection.
+  - You can specify a list of servers that get randomly picked for the fallback connection.
 
 ## Governance game
 
@@ -128,7 +128,7 @@ Please report any issues and error logs [here](https://github.com/EvernodeXRPL/e
 
 ## Global hosts dashboards
 
-Evernode community maintains dashboards containing all registered Evernode hosts. You can access them at [dashboard.evernode.org](https://dashboard.evernode.org/).
+The Evernode community maintains dashboards containing all registered Evernode hosts. You can access them at [dashboard.evernode.org](https://dashboard.evernode.org/).
 
 ## Evernode testnet
 

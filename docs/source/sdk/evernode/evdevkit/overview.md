@@ -1,5 +1,5 @@
 # Evernode developer kit
-Evernode uses HotPocket as its DApp engine. Once you have developed a HotPocket DApp on your PC, you can deploy it to Evernode using Evernode developer kit.
+Evernode uses HotPocket as its DApp engine. Once you have developed a HotPocket DApp on your PC, you can deploy it to the Evernode using Evernode developer kit.
 
 ## Installation
 
@@ -7,7 +7,7 @@ Evernode uses HotPocket as its DApp engine. Once you have developed a HotPocket 
 Evernode developer kit requires you to install [NodeJs](https://nodejs.org/en/) on your development machine.
 
 ### Supports cross platform
-This is an npm global package which supports both Linux and Windows
+This is an npm global package that supports both Linux and Windows
 1. Install [prerequisites](#prerequisites).
 2. Run the following command to install `evdevkit` on your machine.
     ```
@@ -21,7 +21,7 @@ You can use the Evernode developer kit to acquire instances from Evernode. This 
 - You are required to set `EV_TENANT_SECRET` and `EV_USER_PRIVATE_KEY` [environment variables](#environment-variables) before acquiring the instance.
 - To override configurations of Evernode instance's You can create a [HotPocket configuration](../../hotpocket/reference/configuration.md) file and set its path as `EV_HP_INIT_CFG_PATH` [environment variable](#environment-variables).
 - You can set `EV_NETWORK` "(mainnet|testnet)" to override the Evernode network used for instance creation, Otherwise defaults to "mainnet".
-- Following command will create an instance in the given host. Given configurations will be populated if `EV_HP_INIT_CFG_PATH` is given.
+- The following command will create an instance in the given host. Given configurations will be populated if `EV_HP_INIT_CFG_PATH` is given.
 ```
 evdevkit acquire <host Xahau address>
 ```
@@ -41,7 +41,7 @@ evdevkit bundle $HOME/contract ed060a4aae0ec9183e4869e1490e908c9a9a3fd72816021c8
 
 ### Uploading a contract to Evernode
 You can upload your contract bundle to the Evernode instance
-- You are required to set `EV_USER_PRIVATE_KEY` [environment variable](#environment-variables) before upload the contract.
+- You are required to set `EV_USER_PRIVATE_KEY` [environment variable](#environment-variables) before uploading the contract.
 ```
 # evdevkit deploy <path to contract bundle> <IP of the instance> <User port of the instance>
 evdevkit deploy $HOME/bundle/bundle.zip 45.76.238.97 26201
@@ -63,7 +63,7 @@ In order to change the tenant info you need to override the [environment variabl
     export EV_TENANT_SECRET=snmyH19JLWVaUJKtM4cNxTT6t38eA
     export EV_USER_PRIVATE_KEY=ed7b78ba4ffc9b7a55e427ff1ddb799ab1af59c6a9ab92e5f227815b04ab70e346831653e22c8293afac43694879c4083e1d7581b4326fcba423e3392e068028fe
     ```
-3. Now if you [acquire](#acquiring-instance-from-evernode) instance, Instance will be created using the from the new tenant.
+3. Now if you [acquire](#acquiring-instance-from-evernode) instance, An instance will be created using the from the new tenant.
 
 ## Advanced usage
 ```
