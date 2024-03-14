@@ -47,51 +47,57 @@ Same as cluster deployment, follow the [1-6] steps in cluster deployment [tutori
      Created the 3 node cluster! [
          {
             host: 'rH8oZBoCQJE1aGwdNRH7icr93RrZkbVaaa',
-            userKeys: {
-               privateKey: 'ed797ecd191b0364db559896c648c21cda7763db551a97577ed9ffb0ebb41881d8f9d1af6ff29af9287b0411758aac472016fb186220ef39db7959294c28857909',
-               publicKey: 'edf9d1af6ff29af9287b0411758aac472016fb186220ef39db7959294c28857909'
-            },
-            name: '22EEDAB02134E83CB6DFAC0C7B5E31B2563F80C428287E58380E22F3B10115E9',
-            pubkey: 'ed16c8e6594c15d19db313e3a1f5ae61f199408fa00ab77cf7a2c39144ba797a65',
-            contract_id: 'c8fcc2d7-63d8-4040-a618-4b354f58284a',
-            peer_port: '22865',
-            user_port: '26205',
-            domain: '45.77.199.188',
-            outbound_ip: '2001:19F0:9002:18D1:0000:0000:0000:0003',
-            created_timestamp: 1710426541356,
-            life_moments: 1
-         },
-         {
-            host: 'rH8oZBoCQJE1aGwdNRH7icr93RrZkbVaaa',
-            userKeys: {
-               privateKey: 'ed797ecd191b0364db559896c648c21cda7763db551a97577ed9ffb0ebb41881d8f9d1af6ff29af9287b0411758aac472016fb186220ef39db7959294c28857909',
-               publicKey: 'edf9d1af6ff29af9287b0411758aac472016fb186220ef39db7959294c28857909'
-            },
-            name: '3C73B8F6B8866880A732B9B4C78CCA0951AC641E041F572D6071323B822BF3AB',
-            pubkey: 'ed1dbb157bbb7c2241a29f5a10e3891ed664ea96e2a14199d113535c4438af09ac',
-            contract_id: 'c8fcc2d7-63d8-4040-a618-4b354f58284a',
-            peer_port: '22866',
-            user_port: '26206',
-            domain: '45.77.199.188',
-            outbound_ip: '2001:19F0:9002:18D1:0000:0000:0000:0006',
-            created_timestamp: 1710426581720,
-            life_moments: 1
-         },
-         {
-            host: 'rH8oZBoCQJE1aGwdNRH7icr93RrZkbVaaa',
-            userKeys: {
-               privateKey: 'ed797ecd191b0364db559896c648c21cda7763db551a97577ed9ffb0ebb41881d8f9d1af6ff29af9287b0411758aac472016fb186220ef39db7959294c28857909',
-               publicKey: 'edf9d1af6ff29af9287b0411758aac472016fb186220ef39db7959294c28857909'
-            },
-            name: '8A72D7430ACE8699B324B1DCCC5FDDABC69F00589206CC859C9F77917B60973E',
-            pubkey: 'ed777e90ebda7e3efaca05780207a1e820938afbf31453a87722a304c652147939',
-            contract_id: 'c8fcc2d7-63d8-4040-a618-4b354f58284a',
+            name: '086D3B9FDF60EDCDB2291FD0844FC602235200C839BF8BE14EA91BA82A2B105B',
+            pubkey: 'edd5cebbbd56984a1e728ec16b0f38d048bcc10bef00699c3db0b7b6440f10c1e2',
+            contract_id: '0621b671-8497-49d2-bd4a-5286d38351c0',
             peer_port: '22867',
             user_port: '26207',
             domain: '45.77.199.188',
             outbound_ip: '2001:19F0:9002:18D1:0000:0000:0000:0004',
-            created_timestamp: 1710426624809,
-            life_moments: 1
+            created_timestamp: 1710428235311,
+            signer_detail: {
+               account: 'r4KsqnUjUTqLhPxQdKMACVCmmZp2JRNwWA',
+               secret: 'spFA5X1rDNbjRv2aNvpzbfRPBd9Xv',
+               weight: 1
+            },
+            life_moments: 1,
+            uploaded: true
+         },
+         {
+            host: 'rH8oZBoCQJE1aGwdNRH7icr93RrZkbVaaa',
+            name: '3335FB10C49796FC9DF172C6C1122A27FC9D79B6964214A71EFE06C51AB59911',
+            pubkey: 'edaef7bd1250af4c71353d7a237bfd8973d55605a4a324c9881870341c96ac574c',
+            contract_id: '0621b671-8497-49d2-bd4a-5286d38351c0',
+            peer_port: '22866',
+            user_port: '26206',
+            domain: '45.77.199.188',
+            outbound_ip: '2001:19F0:9002:18D1:0000:0000:0000:0002',
+            created_timestamp: 1710428271929,
+            signer_detail: {
+               account: 'r1CW4YKJzUddKTg76St1wcm9wqxsD7iAq',
+               secret: 'sp8jToG54fTEJ4C4Xdti7yPtjSjE8',
+               weight: 1
+            },
+            life_moments: 1,
+            uploaded: true
+         },
+         {
+            host: 'rH8oZBoCQJE1aGwdNRH7icr93RrZkbVaaa',
+            name: 'A8C76E7F0A90B0385244F5BAEA8AA971FF4F4569029FE67926EBC4983B9A88F5',
+            pubkey: 'ed6f417fa7d7aa9c65b52d5e17d50290c1574eaabf7bba2dcd2d7dbf93adc83ee0',
+            contract_id: '0621b671-8497-49d2-bd4a-5286d38351c0',
+            peer_port: '22865',
+            user_port: '26205',
+            domain: '45.77.199.188',
+            outbound_ip: '2001:19F0:9002:18D1:0000:0000:0000:0003',
+            created_timestamp: 1710428312388,
+            signer_detail: {
+               account: 'rB2kjE5YcLZtpqfFqmmp219L1QfHHZEwnR',
+               secret: 'ssA2fsawnm8zJEsA8V1M4qqo8tXH7',
+               weight: 1
+            },
+            life_moments: 1,
+            uploaded: true
          }
       ]
      ```
