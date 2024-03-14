@@ -69,12 +69,12 @@ In the Evernode developer kit, a single command does the cluster creation and th
        },
        "mesh": {
          "peer_discovery": {
-           "enabled": true,
-           "interval": 10000
+           "enabled": false
          }
        }
      }
      ```
+     **Note: `peer_discovery` should be disabled, Otherwise evdevkit would not be able to update the peer list after creating the cluster.**
    - See [Hotpocket configuration reference](../../hotpocket/reference/configuration.md) for more details.
    - Now set the json file path as `EV_HP_INIT_CFG_PATH` [environment variable](../evdevkit/overview.md#environment-variables).
 
@@ -198,3 +198,5 @@ In the Evernode developer kit, a single command does the cluster creation and th
      evdevkit cluster-create --help
      ```
 7. At this point, you have created an Evernode cluster successfully and you have details of all the instances including public key, IP, ports, etc. Now you can test the uploaded contract by implementing a user client same as you did in [hpdevkit basic tutorial](../../hotpocket/tutorials/basics.md#create-the-client-application).
+   
+Next: [Deploying a Xahau transaction enabled cluster](deploy-multisig)

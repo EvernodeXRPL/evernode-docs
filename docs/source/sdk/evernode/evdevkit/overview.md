@@ -124,12 +124,12 @@ An example HotPocket configuration for the instance creation:
     },
     "mesh": {
         "peer_discovery": {
-            "enabled": true,
-            "interval": 10000
+            "enabled": false
         }
     }
 }
 ```
+**Note: `peer_discovery` should be disabled, Otherwise evdevkit would not be able to update the peer list after creating the cluster.**
 
 An example HotPocket configuration for the contract bundle upload:
 ```json

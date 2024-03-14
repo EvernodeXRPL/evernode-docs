@@ -69,3 +69,5 @@ Contains information about the nodes that participate in consensus. Via this you
 ## lclSeqNo and lclHash
 
 This is the last closed ledger sequence number and the hexadecimal hash. During consensus, the ledger data is salted with an agreed-upon random value. Therefore, you could use the lcl hash as a deterministic random seed for your contract.
+
+Next: [Dealing with xahau transactions](multisig)

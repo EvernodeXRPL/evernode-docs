@@ -10,3 +10,4 @@ HotPocket Tutorials
    npl
    instance-sync
    contract-context
+   multisig

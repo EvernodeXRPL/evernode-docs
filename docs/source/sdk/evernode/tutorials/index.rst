@@ -6,3 +6,4 @@ Evernode Tutorials
 
    deploy-single
    deploy-cluster
+   deploy-multisig
