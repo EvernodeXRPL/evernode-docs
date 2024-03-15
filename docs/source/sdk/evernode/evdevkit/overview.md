@@ -23,7 +23,7 @@ You can use the `evdevkit list` command to list active hosts from Evernode.
 evdevkit list
 ```
 
-The command supports following options for sorting and filtering the output.
+This command supports following options for sorting and filtering the output.
 
 | Name      | Description                       |
 | -------------------------- | ---------------------------------- |
@@ -120,6 +120,7 @@ evdevkit cluster-create <cluster-size > <path-to-contract-directory> <contract-b
 | `--signer-life`           | Life moments for the signers                                                                              |
 | `--signer-quorum`         | Quorum of the cluster with multiple signer nodes (within the valid range (0,1])                           |
 | `-e, --evr-limit`         | Maximum amount of EVRs to be spent on instance acquisitions                                               |
+|  `-h, --help`              | Display help for command                                                                                  |
 
 An example HotPocket configuration for the instance creation:
 ```json
@@ -200,14 +201,25 @@ evdevkit audit -h <host Xahau address>
 | EV_NETWORK              | (Optional) Evernode network to be used `(mainnet\|testnet)`. Default would be `mainnet`. |
 
 ## Advanced usage
+
+### Acquire and Deploy
+
+The `evdevkit acquire-and-deploy` command is used to execute [acquire](#acquiring-instance-from-evernode), [bundle](#creating-the-deployable-contract-package) and [deploy](#uploading-a-contract-to-evernode) processes together. The arguments and options used in this command is similar to the ones used in [`evdevkit acquire`](#acquiring-instance-from-evernode) and [`evdevkit deploy`](#uploading-a-contract-to-evernode) commands.
 ```
-# Do [acquire](#acquiring-instance-from-evernode), [bundle](#creating-the-deployable-contract-package) and [deploy](#uploading-a-contract-to-evernode) in one command
-evdevkit acquire-and-deploy <path to contract directory> <contract binary> <host Xahau address> -a <contract binary arguments>
+evdevkit acquire-and-deploy <path to contract directory> <contract binary> <host-xahau-address> -a <contract binary arguments>
+```
 
-# See host info
-evdevkit host <host Xahau address>
+### View host info
 
-# Generate user key pair
+The `evdevkit host` command is used to retireve configuration information on a specific host. 
+```
+evdevkit host <host-xahau-address>
+```
+### Generate user key pair
+
+The `evdevkit keygen` command is used to generate user key pairs for HotPocket. Generated private keys can be used to set the [`EV_USER_PRIVATE_KEY`](#environment-variables) environment variable for future operations.
+
+```
 evdevkit keygen
 ```
 
