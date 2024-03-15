@@ -76,6 +76,15 @@ node myclient.js
 
 This will start the client application and connect a HotPocket node listening to port 8081. Also, note that you need to have HotPocket nodes running on your machine for the client to connect.
 
+## Listing available code templates
+
+You can use the `hpdevkit list` command to list all available comtract and client code templates. 
+
+```
+hpdevkit list <platform>
+```
+- `<platform>` is an optional parameter that can be used to filter code templates based on the platform they are designed for.
+
 ## Advanced usage
 
 ```

@@ -24,7 +24,7 @@ export EV_NETWORK=testnet
 
 In the Evernode developer kit, a single command does the cluster creation and the deployment. You need to do the following preparations before same as you did in ["Acquire an instance"](./deploy-single.md#acquire-an-instance)
 
-- First you need to have a tenant Xahau account with EVRs for the tenant.
+- First you need to have a tenant Xahau account with EVRs for the tenant. For the Evernode testnet You can generate an account with 6000 EVRs using the [test account generator](../../../assets/test-account-generator.zip).
 
 1. Then you need to prepare a user key pair for the Evernode instance.
 

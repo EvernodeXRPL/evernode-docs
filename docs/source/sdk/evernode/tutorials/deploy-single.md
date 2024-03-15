@@ -22,7 +22,7 @@ $env:EV_NETWORK=testnet
 export EV_NETWORK=testnet
 ``` 
 
-1. First you need to have an Xahau account with EVRs for the tenant.
+1. First you need to have an Xahau account with EVRs for the tenant. For the Evernode testnet You can generate an account with 6000 EVRs using the [test account generator](../../../assets/test-account-generator.zip).
 
 2. Then you need to prepare a user key pair for the Evernode instance.
 
