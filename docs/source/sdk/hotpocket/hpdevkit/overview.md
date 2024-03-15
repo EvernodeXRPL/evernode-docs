@@ -85,12 +85,26 @@ hpdevkit list <platform>
 ```
 - `<platform>` is an optional parameter that can be used to filter code templates based on the platform they are designed for.
 
+## Deploying contract files directory to the cluster
+
+You can use the `hpdevkit deploy` command to deploy a specified contract file directory to a HotPocket cluster.
+
+```
+hpdevkit deploy <contract-files-directory>
+```
+- `<contract-files-directory>` should contain the path of the contract directory to be deployed.
+- The following options can be specified with this command:
+
+  | Name                              | Description                         |
+  | --------------------------------- | ----------------------------------- |
+  | `-m, --multi-sig [multi-sig]`     | Multi signing enabled.            |
+  | `-a, --master-addr [master-addr]` | Master address for multi signing. |
+  | `-s, --master-sec [master-sec]`   | Master secret for multi signing.  |
+
+
 ## Advanced usage
 
 ```
-# Deploy contract files directory to the cluster (`npm start` internally uses this command to deploy)
-hpdevkit deploy <contract files directory>
-
 # Stop and clean-up everything (required for changing cluster size)
 hpdevkit clean
 

@@ -117,7 +117,7 @@ After executing above command contract will be deployed locally and you will be 
 
 `hpdevkit` also has a pre implemented client for your multisig-contract. Execute `hpdevkit gen nodejs multisig-client myclient`. It will create a directory named `myclient` with client files.
 
-This is a very basic client which has a readline to take user inputs. And according to inputs it will prepare the contract input wit type `makePayment` and sends to the contract.
+This is a very basic client which has a readline to take user inputs. And according to inputs it will prepare the contract input with type `makePayment` and sends to the contract.
 
 And it also listens to contract output and logs them in the console.
 

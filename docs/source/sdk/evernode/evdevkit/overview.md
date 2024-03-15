@@ -29,7 +29,7 @@ The command supports following options for sorting and filtering the output.
 | -------------------------- | ---------------------------------- |
 | `-l, --limit [limit]`       | List limit                         |
 |  `-o, --order-by [order-by]` | Order by key                       |
-| `-d, --desc [desc] `        | Order by descending manor          |
+| `-d, --desc [desc] `        | Order by descending manner          |
 | `-p, --props [props] `      | Comma separated properties to show |
 
 ## Acquiring instance from Evernode
