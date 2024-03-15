@@ -10,6 +10,18 @@ Let's go through a example using [hpdevkit](../hpdevkit/overview.md). We will ac
 
 **hpdevkit** has a predeveloped template including sample code to multi sign and submit a transaction. Lets go through following steps to prepare a cluster with that template and deep dive into the code. (We will use the default parameters for the cluster creation, If you want to change them refer [this](../hpdevkit/overview.md#advanced-usage))
 
+**Note:** For the following steps you can choose either `mainnet` or `testnet`. The default will be `mainnet`, If you want to change you need to set the environment variable as follows.
+```bash
+# Windows (command prompt)
+set HP_EV_NETWORK=testnet
+
+# Windows (Powershell)
+$env:HP_EV_NETWORK=testnet
+
+# Linux (bash)
+export HP_EV_NETWORK=testnet
+``` 
+
 ## Generating the contract
 Generate a multi sign enabled dapp project with `hpdevkit gen nodejs multisig-contract mycontract`. It will create a directory named `mycontract` with contract files. Let’s have a look at them.
 
