@@ -119,7 +119,7 @@ Run `npm i && npm run build` inside `mycontract` directory to prepare your binar
 
 You can run `hpdevkit deploy <contract-path> -m -s <master-secret>` to prepare multi sign enabled cluster.
 
-Execute `hpdevkit deploy mycontract/dist -m -s <master-secret>` and this will generate a new accounts for all the nodes in the cluster and set them as signer list for the master account given. (Default wight per signer will be 1 and quorum will be 80 of all the weights)
+Execute `hpdevkit deploy mycontract/dist -m -s <master-secret>` and this will generate a new accounts for all the nodes in the cluster and set them as signer list for the master account given. (Default wight per signer will be 1 and quorum will be 80% of all the weights)
 
 We cannot keep the secrets in state directory because each node has a dedicated signer. So it will copy each nodes signer details into non consensused directory. `everpocket-nodejs-contract` requires you to have each node's signer details in `../<master-address>.key` so they won't be subjected to consensus. So above command will adhere to that rule and signer details will be saved
 

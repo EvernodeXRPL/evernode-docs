@@ -2,8 +2,8 @@
 
 Using Evernode developer kit, you can create an [everpocket-nodejs-contract](https://www.npmjs.com/package/everpocket-nodejs-contract) supported multi sign enabled instance cluster in Evernode and deploy your smart contract with Xahau transactions, as you did locally in ["HotPocket tutorial - Xahau transactions"](../../hotpocket/tutorials/multisig.md).
 
-- This will create a Evernode cluster with given specs.
-- Then, as it did in [hpdevkit](../../hotpocket/hpdevkit/overview.md), this will also generate signer list for the provided master account and uploads them severalty to each node in the cluster 
+- This will create an Evernode cluster with given specs.
+- Then, as it did in [hpdevkit](../../hotpocket/hpdevkit/overview.md), this will also generate signer list for the provided master account and uploads them to each node in the cluster 
 
 ## Deploy smart contract
 
@@ -23,9 +23,9 @@ In the Evernode developer kit, a single command does the cluster creation and th
 
 - First you need to have a tenant Xahau account with EVRs for the tenant.
 
-Same as cluster deployment, follow the [1-6] steps in cluster deployment [tutorial](deploy-cluster.md#deploy-smart-contract)
+Same as cluster deployment, follow the [1-5] steps in cluster deployment [tutorial](deploy-cluster.md#deploy-smart-contract)
 
-1. Now you are ready to deploy the smart contract to an Evernode cluster.
+6. Now you are ready to deploy the smart contract to an Evernode cluster.
    - Let's create a 5 node cluster. Run following command to create the cluster.
      ```bash
      evdevkit cluster-create 3 $HOME/contract /usr/bin/node $HOME/hosts.txt -a index.js --signer-count 3
@@ -105,4 +105,4 @@ Same as cluster deployment, follow the [1-6] steps in cluster deployment [tutori
      ```bash
      evdevkit cluster-create --help
      ```
-2. At this point, you have created an Evernode cluster successfully and you have details of all the instances including public key, IP, ports, etc. Now you can test the uploaded contract by implementing a user client same as you did in [hpdevkit Xahau transaction tutorial](../../hotpocket/tutorials/multisig.md#testing-the-client). You will need to point your client to one of resulted cluster nodes.
+7. At this point, you have created an Evernode cluster successfully and you have details of all the instances including public key, IP, ports, etc. Now you can test the uploaded contract by implementing a user client same as you did in [hpdevkit Xahau transaction tutorial](../../hotpocket/tutorials/multisig.md#testing-the-client). You will need to point your client to one of resulted cluster nodes.
