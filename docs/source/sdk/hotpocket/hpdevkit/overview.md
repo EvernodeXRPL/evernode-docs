@@ -97,9 +97,9 @@ hpdevkit deploy <contract-files-directory>
 
   | Name                              | Description                         |
   | --------------------------------- | ----------------------------------- |
-  | `-m, --multi-sig [multi-sig]`     | Multi signing enabled.            |
-  | `-a, --master-addr [master-addr]` | Master address for multi signing. |
-  | `-s, --master-sec [master-sec]`   | Master secret for multi signing.  |
+  | `-m, --multi-sig [multi-sig]`     | Multi-signing enabled.            |
+  | `-a, --master-addr [master-addr]` | Master address for multi-signing. |
+  | `-s, --master-sec [master-sec]`   | Master secret for multi-signing.  |
 
 
 ## Advanced usage
