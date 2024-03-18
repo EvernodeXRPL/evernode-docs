@@ -3,7 +3,7 @@
 Using the Evernode developer kit, you can create an [everpocket-nodejs-contract](https://www.npmjs.com/package/everpocket-nodejs-contract) supported multi-signing enabled instance cluster in Evernode and deploy your smart contract with Xahau transactions, as you did locally in ["HotPocket tutorial - Xahau transactions"](../../hotpocket/tutorials/multisig.md).
 
 - This will create an Evernode cluster with the given specs.
-- Then, as it did in [hpdevkit](../../hotpocket/hpdevkit/overview.md), this will also generate a signer list for the provided master account and upload them severally to each node in the cluster 
+- Then, as it did in [hpdevkit](../../hotpocket/hpdevkit/overview.md), this will also generate a signer list for the provided master account and upload them to each node in the cluster 
 
 ## Deploy smart contract
 
