@@ -93,6 +93,8 @@ ed66bcc2578ec0aca85868256431cdc7485afb5af5696203035e02a6aae382b7b2 said Hello to
 
 The duration of the timeout (in milliseconds) is determined with the use of [roundtime](../reference/configuration.md#contract) of the consensus:
 
+**_NOTE :_** _When a timeout is used, the `forceTermination=true` argument should be passed in the HotPocket Contract `init` function. This will terminate the contract forcefully after the contract execution handler is completed, irrespective of any active listeners present._
+
 ```javascript
 const HotPocket = require("hotpocket-nodejs-contract");
 
@@ -136,7 +138,7 @@ const myContract = async (ctx) => {
 };
 
 const hpc = new HotPocket.Contract();
-hpc.init(myContract);
+hpc.init(myContract, undefined, true);
 ```
 
 The following output will be generated:
@@ -167,6 +169,8 @@ Let's go back to the example of random number generation:
 - The node then tries to save the maximum value in the `data.txt` file in its state.
 
 **_NOTE :_** _A stringified JSON object is used as the message in the example below._
+
+**_NOTE :_** _When a timeout is used, the `forceTermination=true` argument should be passed in the HotPocket Contract `init` function. This will terminate the contract forcefully after the contract execution handler is completed, irrespective of any active listeners present._
 
 ```javascript
 const HotPocket = require("hotpocket-nodejs-contract");
@@ -241,7 +245,7 @@ const myContract = async (ctx) => {
 };
 
 const hpc = new HotPocket.Contract();
-hpc.init(myContract);
+hpc.init(myContract, undefined, true);
 ```
 
 The following output will be generated:
