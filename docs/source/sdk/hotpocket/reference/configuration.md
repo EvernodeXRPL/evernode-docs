@@ -26,7 +26,7 @@ Following is a sample `hp.cfg` file:
         "version": "1.0",
         "unl": [
             "edd35f188660785b631bd3a3cb00ac6d518aa71d85b69968dd85757fb97b28cb46",
-            "edbdb14d3d56766dc73338d99da5f450952f6ab4763b612251e5761df11aa36a76"
+            "edbdb14d3d56766dc73338d99da5f450952f6ab4763b612251e5761df11aa36a76",
             "ed9935dfcac9da0ffb499f02a4bd8143dcad6bf1948a02fde8ac58feb3d9c76a68"
         ],
         "bin_path": "/usr/bin/node",
