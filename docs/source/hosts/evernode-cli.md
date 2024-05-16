@@ -54,5 +54,10 @@ You can use the Evernode CLI to manage and monitor your Evernode host.
         - `<regular key>`: The Xahau address that indicates the regular key pair to be assigned to the host Xahau account.
     - `evernode regkey delete`: Deletes the regular key associated with your host's Xahau account address.
 - `evernode offerlease` - Create Lease offers for the instances. Requires sudo.
+- `evernode reputaiond <operation_type>` - Manages the Evernode ReputationD for reward distribution.
+    - `<operation_type>` must be `opt-in`, `opt-out` or `status`. All of these operations require sudo.
+    - `evernode reputaiond opt-in`: Opt in to the Evernode reputation for reward distribution.
+    - `evernode reputaiond opt-out`: Opt out from the Evernode reputation for reward distribution.
+    - `evernode reputaiond status`: Check the status of Evernode reputation for reward distribution.
 - `evernode uninstall` - Uninstall and deregister from Evernode. Requires sudo.
 - `sashi` - Sashimono CLI for advanced operations and monitoring. Use `sashi -h` for help.
