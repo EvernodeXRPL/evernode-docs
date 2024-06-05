@@ -1,4 +1,4 @@
-# Deploying contract instances with custom docker images
+# Deploying contract instances with a custom docker image
 
 You can implement your own docker images using a default Sashimono docker image and then deploy it into your contract instance.
 - Sashimono docker images
