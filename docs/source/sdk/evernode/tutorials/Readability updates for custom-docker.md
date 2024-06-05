@@ -16,8 +16,8 @@ You can implement your own docker images using a default Sashimono docker image 
 In summary when you are creating your own docker image, You'll have to modify files or entrypoint inside the docker image.
 
 ## Lets create a sample Evernode instance with a customized docker image.
-In this sample, smart contract will write last closed ledger sequence and hash to a non consensus location.
-Then there will be a long running process watching that file and it'll publish that file to a webhook in each minute.
+In this sample, smart contract will write last closed ledger sequence and hash to a location where it's not been subjected to consensus.
+Then there will be a long running process watching that file and it'll publish that file content to a webhook in each minute.
 
 Let's get started with implementation,
 
@@ -36,34 +36,33 @@ FROM evernode/sashimono:hp.latest-ubt.20.04-njs.20
 
 ### Step 3
 - After above step, You can do any changes inside your Dockerfile to override and add customizations to inherited docker image.
-- So, our task is to create a long NodeJs running process to watch the file updated by the contract.
-- So, lets get started by implementing the long running program. Then you should tell the Dockerfile how to run it on the container.
+- So, our task is to create a long running NodeJs process to watch the file updated by the contract.
+- So, let's get started by implementing the long running program. Then you should tell the Dockerfile how to run it on the container.
 - Create a directory called `watchdog` inside the `my-docker-sample` directory.
   - This will be the project directory for watchdog long running process.
-- Go to watchdog directory and run `npm init` and proceed with defaults to create a simple node js program.
+- Go to watchdog directory and run `npm init` and proceed with defaults to create a simple NodeJs program.
 
 ### Step 4
 - Create an `index.js` file inside watchdog directory.
 - You should know following facts before starting the implementation.
   - As we learnt above, the contract folder for the instance is `/contract` where it keeps the contract related content.
-  - From the smart contract's perspective working directory `./` for the smart contract is `/contract/contract_fs/mnt/rw/state`.
-  - If you write anything beyond `../`, They won't be subjected to consensus. But one problem here, `/contract/contract_fs/mnt/rw/` is a mount which gets mounted and unmounted in each smart contract consensus round when smart contract is running.
-  - So, to be accessed by your long running process, You'll have to write your contract from smart contract inside `../../../` location which will be `/contract/contract_fs/` for the outside world.
-- Considering above facts let's create our shared file as `/contract/contract_fs/status.log`.
-  - So the long running process should keep checking that file in every minute and send the file to the webhook.
+  - From the smart contract's perspective, Working directory (`./`) for the smart contract is `/contract/contract_fs/mnt/rw/state`.
+  - If you write anything beyond `../`, They won't be subjected to consensus. But one problem here is, `/contract/contract_fs/mnt/rw/` is a mount which gets mounted and unmounted in each smart contract consensus round.
+  - So, to be accessed by your long running process, You'll have to write your contract from smart contract inside `../../../` location which will be `/contract/contract_fs/` for the outside world. Note that beyond this location nothing will be subjected to consensus.
+- Considering above facts let's consider our shared file as `/contract/contract_fs/status.log`, Which is `../../../status.log` for the contract.
+  - So the long running process should keep checking that file in every minute and send the file content to the webhook.
 
 ### Step 5
-- Let's first create a test webhook to report to. Go to https://webhook-test.com/ and open up your test webhook.
-- Then, Check following code and past it inside `index.js` you hae created in previous step.
+- Let's first create a test webhook to report to.
+  - Go to https://webhook-test.com/, It'll open up a test webhook for you and you can see the webhook URL there.
+- Then, Go throgh and understand following code and paste it inside `index.js` you have created in the previous step.
+  - Replace the webhook URL constant value with yours.
 ```js
 const fs = require('fs');
 
 // Constants to keep status file and webhook url.
-const fs = require('fs');
-
-// Constants to keep status file and webhook url.
 const STATUS_FILE = '/contract/contract_fs/status.log';
-const WEBHOOK = 'https://webhook-test.com/36ce017c4e12ea4d07606cb93f5b354d';
+const WEBHOOK = '<webhook_URL_you_got_from_webhook_test>';
 
 // Function to check for status file and send to webhook.
 function sendStatus() {
@@ -103,14 +102,14 @@ function scheduler() {
 
 // Send status now.
 sendStatus();
-// Start the scheduler.
+// Start the scheduler to send in every minute.
 scheduler();
 ```
 
 ### Step 6
 - Now run `npm i` to install required packages.
 - Let's build your program to a single file so it's easier to move into docker container.
-- To do that, First install [npx](https://www.npmjs.com/package/npx) and [ncc](https://www.npmjs.com/package/@vercel/ncc) package globally to build your program
+- To do that, First install [ncc](https://www.npmjs.com/package/@vercel/ncc) package build your program
 - Inside the package.json lets create a script to build the program into a single file.
 - Add script `"build": "npx ncc build index.js -o dist"` inside the `"scripts"` section in `package.json`
 - Now run `npm run build` to generate single file executable inside the dist directory.
@@ -139,6 +138,7 @@ COPY watchdog/dist/* /usr/local/bin/hotpocket/watchdog
 /usr/bin/node /usr/local/bin/hotpocket/watchdog &
 
 # Set the HotPocket binary as entry point.
+# $@ is used to pass all the commandline arguments fed to this script into hpcore.
 /usr/local/bin/hotpocket/hpcore $@
 ```
 
@@ -150,7 +150,7 @@ RUN chmod +x /usr/local/bin/hotpocket/start.sh
 ```
 
 ### Step 10
-- By following line override entrypoint to run both watchdog and HotPocket.
+- By following line override entrypoint to `start.sh` instead of hpcore.
 ```
 ENTRYPOINT ["/usr/local/bin/hotpocket/start.sh"]
 ```
@@ -171,11 +171,11 @@ ENTRYPOINT ["/usr/local/bin/hotpocket/start.sh"]
 - Now let's build the docker image, Run following command.
 - Specify your image name and tag you are going to use. Replace <your_docker_account> with your docker hub account name.
 ```bash
-docker build -t <your_docker_account>/test-image:latest -f ./Dockerfile .
+docker build -t <your_docker_account>/evenode-custom:latest -f ./Dockerfile .
 ```
 - Then publish the docker image to your repository.
 ```bash
-docker image push --all-tags <your_docker_account>/test-image
+docker image push --all-tags <your_docker_account>/evenode-custom
 ```
 - Now your image will published in your repository and it can be specified when you are deploying your Evernode cluster or instance.
 
@@ -190,13 +190,13 @@ const fs = require("fs");
 
 const mycontract = async (ctx) => {
   // Append last closed ledger sequence and hash to status file.
-  fs.appendFileSync('../../../status.log', `${ctx.lclSeqNo}-${ctx.lclHash}`);
+  fs.appendFileSync('../../../status.log', `${ctx.lclSeqNo}-${ctx.lclHash}\n`);
 };
 
 const hpc = new HotPocket.Contract();
 hpc.init(mycontract);
 ```
-- Once done, Test it on local cluster following the above tutorial.
+- Now go inside `mycontract` director and run `npm i` and then `npm run build:prod`
 
 ### Step 13
 - Now all you have to do is deploy the contract using evdevkit.
@@ -204,7 +204,7 @@ hpc.init(mycontract);
   - Follow [this](deploy-cluster.md) to create a cluster with above contract.
 - While following one of above tutorials you should specify your custom docker image as follows.
   - Specify your custom docker image into -i, --image options of `evdevkit acquire` or `evdevkit cluster-create` commands.
-    - Ex: `evdevkit acquire -i <your_docker_account>/test-image ....`
+    - Ex: `evdevkit acquire -i <your_docker_account>/evenode-custom ....`
 
 - Now check the webhook for updates from the watchdog program.
 
