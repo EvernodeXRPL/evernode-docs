@@ -200,7 +200,7 @@ hpc.init(mycontract);
 
 ### Step 13
 - Now all you have to do is deploy the contract using evdevkit.
-- Follow [this](deploy-single.md) to deploy an instance with above program and watchdog process monitoring it.
+- Follow [this tutorial](deploy-single.md) to deploy an instance with above program and watchdog process monitoring it.
   - Note that. When following above tutorial, Specify your custom docker image into -i, --image option of `evdevkit acquire` command.
     - Ex: `evdevkit acquire -i <your_docker_account>/evenode-custom ....`
 
