@@ -55,7 +55,7 @@ FROM evernode/sashimono:hp.latest-ubt.20.04-njs.20
 ### Step 5
 - Let's first create a test webhook to report to.
   - Go to https://webhook-test.com/, It'll open up a test webhook for you and you can see the webhook URL there.
-- Then, Go throgh and understand following code and paste it inside `index.js` you have created in the previous step.
+- Then, Go through and understand the following code and paste it inside `index.js` you have created in the previous step.
   - Replace the webhook URL constant value with yours.
 ```js
 const fs = require('fs');
@@ -74,7 +74,7 @@ function sendStatus() {
         content = 'Contract is not running';
     }
 
-    // Send tha status file content to webhook
+    // Send the status file content to webhook
     fetch(WEBHOOK, {
         method: 'POST',
         headers: {
@@ -200,10 +200,8 @@ hpc.init(mycontract);
 
 ### Step 13
 - Now all you have to do is deploy the contract using evdevkit.
-  - Follow [this](deploy-single.md) to create a single node with above contract.
-  - Follow [this](deploy-cluster.md) to create a cluster with above contract.
-- While following one of above tutorials you should specify your custom docker image as follows.
-  - Specify your custom docker image into -i, --image options of `evdevkit acquire` or `evdevkit cluster-create` commands.
+- Follow [this](deploy-single.md) to deploy an instance with above program and watchdog process monitoring it.
+  - Note that. When following above tutorial, Specify your custom docker image into -i, --image option of `evdevkit acquire` command.
     - Ex: `evdevkit acquire -i <your_docker_account>/evenode-custom ....`
 
 - Now check the webhook for updates from the watchdog program.
