@@ -111,7 +111,7 @@ scheduler();
 
 ### Step 6
 - Now run `npm i` to install the required packages.
-- Let's build your program to a single file so it's easier to move into a Docker container.
+- Let's build your program to a single file so it's easier to move into the Docker container.
 - To do that, First install [ncc](https://www.npmjs.com/package/@vercel/ncc) package build your program
 - Inside the package.json let's create a script to build the program into a single file.
 - Add script `"build": "npx ncc build index.js -o dist"` inside the `"scripts"` section in `package.json`
@@ -122,7 +122,7 @@ scheduler();
 ### Step 7
 - Now let's get back to Docker container creation again.
 - Go to `my-docker-sample` directory.
-- Add the following line, It'll create a directory to keep a watchdog program inside the Docker container.
+- Add the following line, It'll create a directory to keep the watchdog program inside the Docker container.
 ```
 RUN mkdir -p /usr/local/bin/hotpocket/watchdog
 ```
@@ -140,7 +140,7 @@ COPY watchdog/dist/* /usr/local/bin/hotpocket/watchdog
 # Run watchdog
 /usr/bin/node /usr/local/bin/hotpocket/watchdog &
 
-# Set the HotPocket binary as an entry point.
+# Set the HotPocket binary as the entry point.
 # $@ is used to pass all the commandline arguments fed to this script into hpcore.
 /usr/local/bin/hotpocket/hpcore $@
 ```
