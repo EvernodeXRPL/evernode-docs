@@ -19,6 +19,8 @@ In summary when you are creating your own docker image, You'll have to modify fi
 In this sample, smart contract will write last closed ledger sequence and hash to a location where it's not been subjected to consensus.
 Then there will be a long running process watching that file and it'll publish that file content to a webhook in each minute.
 
+***Note that. In this tutorial we'll keep the implementation to a very basic primitive level, for better understandability. The main goal of this tutorial is to guide you to come up with advanced solutions suitable for your product.***
+
 Let's get started with implementation,
 
 ### Step 1
