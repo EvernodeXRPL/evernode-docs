@@ -112,7 +112,7 @@ scheduler();
 ### Step 6
 - Now run `npm i` to install the required packages.
 - Let's build your program to a single file so it's easier to move into the Docker container.
-- To do that, First install [ncc](https://www.npmjs.com/package/@vercel/ncc) package build your program
+- To do that, First install [ncc](https://www.npmjs.com/package/@vercel/ncc) package and build your program
 - Inside the package.json let's create a script to build the program into a single file.
 - Add script `"build": "npx ncc build index.js -o dist"` inside the `"scripts"` section in `package.json`
 - Now run `npm run build` to generate a single file executable inside the dist directory.
@@ -199,7 +199,7 @@ const mycontract = async (ctx) => {
 const hpc = new HotPocket.Contract();
 hpc.init(mycontract);
 ```
-- Now go inside `mycontract` director and run `npm i` and then `npm run build:prod`
+- Now go inside `mycontract` directory and run `npm i` and then `npm run build:prod`
 
 ### Step 13
 - Now all you have to do is deploy the contract using evdevkit.
