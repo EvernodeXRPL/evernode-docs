@@ -121,9 +121,3 @@ Failed to retrieve the latest version data.
 - Ensure that your reputation account is sufficiently funded.
 - Additionally, if your host account has not offered leases for minted lease tokens, it will be considered inactive. The reputation service cannot acquire an instance without available offers at that time. Ensure that you create offers for your lease tokens using the `evernode offerlease` command.
 
-
-
-
-
-
-
