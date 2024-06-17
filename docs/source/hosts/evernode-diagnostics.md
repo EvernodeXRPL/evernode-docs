@@ -101,3 +101,29 @@ Failed to retrieve the latest version data.
 ## 14. Re-config failure
 - If the `evernode config` command failed in any reconfiguration, retry executing it again.
 - If retry doesn't help change the value back to the original using the `evernode config` and change back to the new value again using the same command.
+
+## 15. Handling Reputation Assessment Observations
+
+### a. Issues with Reputation Sending Every Other Hour.
+- Typically, a host that registers for a reputation assessment sends the reputation scores at the end of the assessment period.
+- If the host is part of a "bad universe" (a group of underperforming hosts), the reputation contract may fail to execute correctly or reach consensus.
+- As a result, the host may be unable to send scores for that assessment round.
+- This will cause the Evernode Reputation Hook to reject the transaction, even if the host was registered for that period.
+- Consequently, the host will not be registered for the next period, causing it to miss that assessment as well.
+- As the universe assignment is an random process, we do not have a control over that, however the model always try to omit mal functioning nodes.
+
+### b. Continuous Failures in Sending Reputation.
+- Continuous failures can occur due to insufficient XAH balance in your reputation account, preventing the invocation of the Evernode Reputation Account.
+- Ensure that your reputation account is adequately funded to avoid this issue.
+
+### c. No Relevant Instance Acquisition.
+- Insufficient EVR balance in your reputation account can prevent the purchase of an instance of your host machine necessary for deploying the reputation contract.
+- Ensure that your reputation account is sufficiently funded.
+- Additionally, if your host account has not offered leases for minted lease tokens, it will be considered inactive. The reputation service cannot acquire an instance without available offers at that time. Ensure that you create offers for your lease tokens using the `evernode offerlease` command.
+
+
+
+
+
+
+

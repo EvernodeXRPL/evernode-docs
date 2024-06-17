@@ -19,7 +19,7 @@ Hosts need to maintain a separate Xahau account for Reputation Assessment. Durin
 - When specifying an existing account, it will act as a delegate for the reputation assessment process.
 - If managing `multiple hosts`, a SINGLE reputation account can be used for all, with a separate `DELEGATE HOOK` integrated into the reputation account.
 - Host will be responsible for covering the cost of invoking this hook, which triggers upon specific transaction called `ttACCOUNT_SET`.
-
+- Furthermore in this setup process, it asks to reimburse the EVRs received for the host account via reputation instance acquisition. As a result, the EVRs used for reputation assessment purposes will be recycled between the two accounts.
 
 ## Universe Assignment
 
