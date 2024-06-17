@@ -121,3 +121,15 @@ Failed to retrieve the latest version data.
 - Ensure that the host reputation account is sufficiently funded.
 - Additionally, if the host account has not offered leases for minted lease tokens, it will be considered inactive. The reputation service cannot acquire an instance without available offers at that time. Ensure that you create offers for the lease tokens using the `evernode offerlease` command.
 
+### d. Health of ReputationD Service
+- ReputationD is a `systemd` service running inside the host, responsible for managing reputation assessment-related operations.
+- You can check the status of this service using the following command:
+  ```bash
+  sudo -u sashireputationd XDG_RUNTIME_DIR="/run/user/$(id -u sashireputationd)" systemctl --user status sashimono-reputationd.service
+  ```
+- To analyze the logs related to this service, use the following command:
+  ```bash 
+  sudo -u sashireputationd bash -c 'journalctl --user -u sashimono-reputationd | tail -n <number of lines>'
+  ```
+- However, these commands are integrated into the `evernode reputationd status` and `evernode log` commands in an abstract manner.
+

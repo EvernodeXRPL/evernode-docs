@@ -81,6 +81,9 @@ curl -fsSL https://raw.githubusercontent.com/EvernodeXRPL/evernode-resources/mai
 
 ## Host Reputation
 - **Reputation Management:** Host reputation is dynamically adjusted based on specified guidelines, ensuring fairness and reliability within the Evernode network.
+- **Reputation Assessment Process:** The host must undergo a specific process to prove its active participation and earn rewards accordingly. The following link provides a detailed explanation of this process. However, it is not yet fully integrated into the Evernode Reward system. Once the model is stable, we will proceed with the integration.
+
+  - [Checkout Evernode Reputation Assessment](evernode-host-reputationd)
 - **Reward Eligibility:** Hosts with a reputation of 0 are not eligible for rewards in upcoming moments, incentivizing adherence to network standards.
 - **Reputation guidelines are rolled out in Sashimono v0.8.2**
 - **Your reputation will be set to 0 based on:**
