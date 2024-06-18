@@ -133,3 +133,6 @@ Failed to retrieve the latest version data.
   ```
 - However, these commands are integrated into the `evernode reputationd status` and `evernode log` commands in an abstract manner.
 
+
+### e. When your host account's reputation score is zero
+- If your host account's reputation score is zero, it may lead to meeting conditions where the reputation value of the host is turned to zero. Please review the [reputation deduction criteria](evernode-host/#host-reputation) carefully.

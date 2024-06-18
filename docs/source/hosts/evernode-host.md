@@ -85,7 +85,7 @@ curl -fsSL https://raw.githubusercontent.com/EvernodeXRPL/evernode-resources/mai
 
   - [Checkout Evernode Reputation Assessment](evernode-host-reputationd)
 - **Reward Eligibility:** Hosts with a reputation of 0 are not eligible for rewards in upcoming moments, incentivizing adherence to network standards.
-- **Reputation criteria:** Your reputation will be reset to 0, if any of the following conditions are met.
+- **Reputation deduction criteria:** Your reputation will be reset to 0, if any of the following conditions are met.
 
   - Instance Count
     - If your host has a capacity of fewer than 3 instances. This means that the number of instances your host machine can support must be at least 3 to maintain a positive reputation.
