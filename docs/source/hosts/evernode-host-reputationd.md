@@ -14,16 +14,16 @@ Hosts need to maintain a separate Xahau account for Reputation Assessment. Durin
 - EVR covers the hourly self-HotPocket instance acquisition for running the Evernode Reputation Contract. The amount required may vary based on the instance's per-moment price.
 
 #### NOTES 
-- Initially, hosts must deposit sufficient XAH funds for intial account setup.
+- Hosts are required to initially deposit adequate XAH funds for setting up their account.
 - Please ensure the secret for this account and the host registration account are backed up to safeguard against any issues with the host machine.
 - When specifying an existing account, it will act as a delegate for the reputation assessment process.
 - If managing `multiple hosts`, a SINGLE reputation account can be used for all, with a separate `DELEGATE HOOK` integrated into the reputation account.
-- Host will be responsible for covering the cost of invoking this hook, which triggers upon specific transaction called `ttACCOUNT_SET`.
-- Furthermore in this setup process, it asks to reimburse the EVRs received for the host account via reputation instance acquisition. As a result, the EVRs used for reputation assessment purposes will be recycled between the two accounts.
+The host will be responsible for covering the cost of invoking this hook, which triggers upon a specific transaction called `ttACCOUNT_SET`.
+- Furthermore, this setup process asks to reimburse the EVRs received for the host account via reputation instance acquisition. As a result, the EVRs used for reputation assessment purposes will be recycled between the two accounts.
 
 ## Universe Assignment
 
-Once registered, the host is assigned to a universe comprising 64 nodes. Within this universe, the host spins up a contract instance and joins the associated cluster to execute the reputation contract. The universe serves as a controlled environment where the reputation assessment activities take place, ensuring a fair and consistent evaluation process.
+Once registered, the host is assigned to a universe comprising 64 nodes. Within this universe, the host spins up a contract instance and joins the associated cluster to execute the reputation contract. The universe serves as a controlled environment where reputation assessment activities take place, ensuring a fair and consistent evaluation process.
 
 ## Contract Execution Status
 
@@ -31,7 +31,7 @@ In each round of the reputation assessment, the reputation contract performs a s
 
 ## Score Update
 
-Upon receiving the shared results, a node verifies that the proof of work has been performed as expected. If the verification is successful, the node increments the score of the peer by one. These updated scores are stored in a separate JSON file named `opinion.json`, which is kept outside the state directory in the contract instance. This file serves as a record of the scores, reflecting each node's evaluation of its peers' performance.
+Upon receiving the shared results, a node verifies that the proof of work has been performed as expected. If the verification is successful, the node increments the peer score by one. These updated scores are stored in a separate JSON file named `opinion.json`, which is kept outside the state directory in the contract instance. This file serves as a record of the scores, reflecting each node's evaluation of its peers' performance.
 
 ## Score Reporting
 
