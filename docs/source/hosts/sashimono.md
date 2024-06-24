@@ -48,19 +48,19 @@ Sashimono agent is the core software which manages your Evernode host. This has 
 
 #### HotPocket instance config (`hp`)
 Settings related to the HotPocket instance parameters.
-- **host_address**: The domain address of the host.
-- **init_peer_port**: Start port for peer port range.
-- **init_user_port**: Start port for user port range.
-- **init_gp_tcp_port**:  Start port for general purpose tcp port range.
-- **init_gp_udp_port**: Start port for general purpose udp port range.
+- **host_address**: The domain address which the host is reachable at.
+- **init_peer_port**: Start port for peer port range. (`init_peer_port` to `init_peer_port + max_instance_count` range will be assigned for peer ports if all the instances are occupied)
+- **init_user_port**: Start port for user port range. (`init_user_port` to `init_user_port + max_instance_count` range will be assigned for user ports if all the instances are occupied)
+- **init_gp_tcp_port**:  Start port for general purpose tcp port range. 2 ports will be assigned per instance. (`init_gp_tcp_port` to `init_gp_tcp_port + (max_instance_count x 2)` range will be assigned for general purpose tcp ports if all the instances are occupied)
+- **init_gp_udp_port**: Start port for general purpose udp port range. 2 ports will be assigned per instance. (`init_gp_udp_port` to `init_gp_udp_port + (max_instance_count x 2)` range will be assigned for general purpose udp ports if all the instances are occupied)
 
 #### System Parameters (`system`)
 Settings related to the system resources. These resources will be equally shared and limited between all instances.
-- **max_mem_kbytes**: Maximum memory in kilobytes.
-- **max_swap_kbytes**: Maximum swap space in kilobytes.
-- **max_cpu_us**: Maximum CPU usage in microseconds.
-- **max_storage_kbytes**: Maximum storage in kilobytes.
-- **max_instance_count**: Maximum number of instances allowed.
+- **max_mem_kbytes**: Maximum memory in kilobytes that can be allocated for all the instances.
+- **max_swap_kbytes**: Maximum swap space in kilobytes that can be allocated for all the instances.
+- **max_cpu_us**: Maximum CPU usage in microseconds that can be allocated for all the instances.
+- **max_storage_kbytes**: Maximum storage in kilobytes that can be allocated for all the instances.
+- **max_instance_count**: Total number of instances allowed in the host.
 
 #### Docker Configuration (`docker`)
 Settings related to Docker.
