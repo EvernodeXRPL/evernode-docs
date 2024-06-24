@@ -102,6 +102,8 @@ export EV_NETWORK=testnet
         contract_id: '020e552d-11f9-4707-a8c0-eecd6f4289da',
         peer_port: '22861',
         user_port: '8081',
+        gp_tcp_port: '36525',
+        gp_udp_port: '39064',
         domain: 'node2.aksumwealth.xyz',
         outbound_ip: '5.78.76.104',
         created_timestamp: 1695605217865

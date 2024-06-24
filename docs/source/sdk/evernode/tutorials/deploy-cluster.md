@@ -153,7 +153,9 @@ In the Evernode developer kit, a single command does the cluster creation and th
            pubkey: 'ed0b77366a0202a1573d83ea3c18f73bda23592f190165abb9e82ee03379978014',
            contract_id: 'eb051608-c916-4f48-a8dc-a906b6e1f19d',
            peer_port: '22861',
-           user_port: '8081'
+           user_port: '8081',
+           gp_tcp_port: '36525',
+           gp_udp_port: '39064'
         },
         {
            host: 'rKRjgkwZABgh6e38cES7aor6cLjFETkpBA',
@@ -162,7 +164,9 @@ In the Evernode developer kit, a single command does the cluster creation and th
            pubkey: 'ed3bd71ef91da28eb4e704ca41618a059e2effabd064c49b226d2edec6cbc5b40b',
            contract_id: 'eb051608-c916-4f48-a8dc-a906b6e1f19d',
            peer_port: '22861',
-           user_port: '26201'
+           user_port: '26201',
+           gp_tcp_port: '36525',
+           gp_udp_port: '39064'
         },
         {
            host: 'rn49hoLXBY2AnZG4d2EvqVQGLfWaExh9eE',
@@ -171,7 +175,9 @@ In the Evernode developer kit, a single command does the cluster creation and th
            pubkey: 'ed0d1f25e338cc9531130d5c590bdd118b677eec9d4796868128543aaad1ccdbdf',
            contract_id: 'eb051608-c916-4f48-a8dc-a906b6e1f19d',
            peer_port: '22861',
-           user_port: '26201'
+           user_port: '26201',
+           gp_tcp_port: '36525',
+           gp_udp_port: '39064'
         },
         {
            host: 'rBWAXbwQSGwYg5NPmdVWsQkXTS7fdRhCXL',
@@ -180,7 +186,9 @@ In the Evernode developer kit, a single command does the cluster creation and th
            pubkey: 'ed1f802792d9e5b4dc8b9a73d93689fb9321a993afdb8077f91611695137be87cd',
            contract_id: 'eb051608-c916-4f48-a8dc-a906b6e1f19d',
            peer_port: '22861',
-           user_port: '26200'
+           user_port: '26200',
+           gp_tcp_port: '36525',
+           gp_udp_port: '39064'
         },
         {
            host: 'rKQyXCJGv1B3cqkpykvHYM97H2mVSqJkP9',
@@ -189,7 +197,9 @@ In the Evernode developer kit, a single command does the cluster creation and th
            pubkey: 'edaa2f1705f2182e49902544a2ff1433dd745185b42c4857fd7b244eace86e0da1',
            contract_id: 'eb051608-c916-4f48-a8dc-a906b6e1f19d',
            peer_port: '22861',
-           user_port: '26201'
+           user_port: '26201',
+           gp_tcp_port: '36525',
+           gp_udp_port: '39064'
         }
      ]
      ```

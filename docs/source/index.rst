@@ -14,7 +14,7 @@ Report issues about Evernode documentation `here <https://github.com/EvernodeXRP
 
 Evernode licence
 ^^^^^^^^^^^^^^^^
-Please find the Evernode license `here <(https://raw.githubusercontent.com/EvernodeXRPL/evernode-resources/main/license/evernode-license.pdf>`_.
+Please find the Evernode license `here <(https://raw.githubusercontent.com/EvernodeXRPL/evernode-test-resources/main/license/evernode-license.pdf>`_.
 
 External resources
 ^^^^^^^^^^^^^^^^^^
@@ -42,6 +42,7 @@ External resources
    Become a host <hosts/evernode-host>
    Host maintenance <hosts/maintenance>
    CLI <hosts/evernode-cli>
+   Sashimono <hosts/sashimono>
    Diagnostics <hosts/evernode-diagnostics>
 
 .. toctree::
