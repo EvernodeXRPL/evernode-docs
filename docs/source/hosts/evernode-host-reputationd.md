@@ -42,7 +42,7 @@ In each round of the reputation assessment, the reputation contract performs a s
 ## Score Update
 
 Upon receiving the shared results, a node verifies that the proof of work has been performed as expected. If the verification is successful, the node increments the peer score by one.
-It's basically like will you be able to prove your worth by doing this resource intensive hash calculation withing this given time. If you are able to do so, Then do it and share your result with other peers. So other's will receive your answer and check whether the answer is right or wrong. You'll have to do this POW in each consensus round within the moment. More rounds you success more score you get.
+The assessment is to prove that you are worthy by doing a resource intensive hash calculation withing a given time frame. If you are able to do so, Then share your result with other peers. So other's will receive your answer and check whether the answer is right or wrong. You'll have to do this POW in each consensus round within the moment. Peers keeps accumulating your score based on validity of your POW. This accumulated score is the assessment that each peer has made during the moment and will be reported to the reputation hook at the end. So more rounds you succeed more score you get.
 These updated scores are stored in a separate JSON file named `opinion.json`, which is kept outside the state directory in the contract instance. This file serves as a record of the scores, reflecting each node's evaluation of its peers' performance.
 
 ## Score Reporting
