@@ -115,7 +115,8 @@ Failed to retrieve the latest version data.
 - Check HotPocket log by executing `cat /home/<user>/<name>/log/hp.log` command (Replace `user` and `name` respectively from the output of `evernode list`) and see it is completing consensus rounds using `****Ledger created****` log line.
   - If it is reporting `Not enough peers` check whether your domain name is correct and peer ports are reachable by outside.
 - Check contract logs by `cat /home/<user>/<name>/log/contract/rw.stdout.log` and `cat /home/<user>/<name>/log/contract/rw.stderr.log`
-  - `rw.stdout.log` should print logs of hash file creation and JSON containing the received scores against the peer public keys in the cluster. It will forcefully terminate if your host lacks minimum requirements. (Let's refer to the minimum requirement section in evernode-host page [here](evernode-host.md/#system-requirements), and also add a point there that min requirement per instance should be `mentioned min req / 3 (min to receive rewards)` to be able to run a reputation contract properly).
+  - `rw.stdout.log` should print logs of hash file creation and JSON containing the received scores against the peer public keys in the cluster. It will forcefully terminate if your host lacks [minimum requirements](evernode-host.md/#system-requirements).
+    - Minimum requirements per instance should be `mentioned minimum requirement / 3` (`3` is the minimum number of instances that should be there to receive rewards) to be able to run a reputation contract properly.
 
 ### b. Continuous Failures in Sending Reputation.
 - Continuous failures can occur due to insufficient XAH balance in the host reputation account, preventing the invocation of the Evernode Reputation Account.
