@@ -110,11 +110,11 @@ Failed to retrieve the latest version data.
 - As a result, the host may be unable to send scores for that assessment round.
 - This will cause the Evernode Reputation Hook to reject the transaction, even if the host was registered for that moment.
 - Consequently, the host will not be registered for the next moment, causing it to miss that assessment as well.
-- As the universe assignment is an random process, we do not have a control over that, however the model always try to omit mal functioning nodes.
+- As the universe assignment is a random process, we do not have control over that, however, the model always tries to omit malfunctioning nodes.
 
 ### b. Continuous Failures in Sending Reputation.
-- Continuous failures can occur due to insufficient XAH balance in host reputation account, preventing the invocation of the Evernode Reputation Account.
-- Ensure that host reputation account is adequately funded to avoid this issue.
+- Continuous failures can occur due to insufficient XAH balance in the host reputation account, preventing the invocation of the Evernode Reputation Account.
+- Ensure that the host reputation account is adequately funded to avoid this issue.
 
 ### c. No Relevant Instance Acquisition.
 - Insufficient EVR balance in the host reputation account can prevent the purchase of an instance of the host machine necessary for deploying the reputation contract.
