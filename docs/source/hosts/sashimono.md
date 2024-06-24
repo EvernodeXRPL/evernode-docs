@@ -1,9 +1,9 @@
 # Sashimono
-Sashimono is the software which gets installed in your host and responsible of host management. This consist of 4 main components.
-Sashimono binaries and located in `/usr/bin/sashimono` and configuration and data are located in `/etc/sashimono`
+Sashimono is the software that gets installed in your host and is responsible of host management. This consists of 4 main components.
+Sashimono binaries are located in `/usr/bin/sashimono` and configuration and data are located in `/etc/sashimono`
 - Sashimono agent - Agent tool for instance and resource management
 - Sashi CLI - CLI interface for Sashimono agent
-- Message board - Middleman between xahau ledger and Sashimono
+- Message board - Middleman between Xahau ledger and Sashimono
 - ReputationD - Host reputation management tool
 
 
@@ -48,11 +48,11 @@ Sashimono agent is the core software which manages your Evernode host. This has 
 
 #### HotPocket instance config (`hp`)
 Settings related to the HotPocket instance parameters.
-- **host_address**: The domain address which the host is reachable at.
+- **host_address**: The domain address at which the host is reachable.
 - **init_peer_port**: Start port for peer port range. (`init_peer_port` to `init_peer_port + max_instance_count` range will be assigned for peer ports if all the instances are occupied)
 - **init_user_port**: Start port for user port range. (`init_user_port` to `init_user_port + max_instance_count` range will be assigned for user ports if all the instances are occupied)
-- **init_gp_tcp_port**:  Start port for general purpose tcp port range. 2 ports will be assigned per instance. (`init_gp_tcp_port` to `init_gp_tcp_port + (max_instance_count x 2)` range will be assigned for general purpose tcp ports if all the instances are occupied)
-- **init_gp_udp_port**: Start port for general purpose udp port range. 2 ports will be assigned per instance. (`init_gp_udp_port` to `init_gp_udp_port + (max_instance_count x 2)` range will be assigned for general purpose udp ports if all the instances are occupied)
+- **init_gp_tcp_port**:  Start port for general purpose TCP port range. Two ports will be assigned per instance. (`init_gp_tcp_port` to `init_gp_tcp_port + (max_instance_count x 2)` range will be assigned for general purpose TCP ports if all the instances are occupied)
+- **init_gp_udp_port**: Start port for general purpose UDP port range. Two ports will be assigned per instance. (`init_gp_udp_port` to `init_gp_udp_port + (max_instance_count x 2)` range will be assigned for general purpose UDP ports if all the instances are occupied)
 
 #### System Parameters (`system`)
 Settings related to the system resources. These resources will be equally shared and limited between all instances.
@@ -70,7 +70,7 @@ Settings related to Docker.
 Settings related to logging.
 - **log_level**: Level of logging.
   - Values: `"dbg", "inf", "wrn", "err"`
-- **max_mbytes_per_file**: Maximum size of a log file in megabytes. New log file will be created after this limit reached
+- **max_mbytes_per_file**: Maximum size of a log file in megabytes. A new log file will be created after this limit is reached
 - **max_file_count**: Maximum number of log files to keep. Older fill will be removed at this limit.
 - **loggers**: List of loggers to use.
   - Values:`"console"`
