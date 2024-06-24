@@ -8,7 +8,7 @@ The journey begins with the host opting into the reputation assessment process. 
 
 ### Setting Up Accounts
 
-Hosts need to maintain a separate Xahau account for Reputation Assessment. During the opt-in process, hosts have the flexibility to either generate a new reputation account or specify an existing one. Similar to funding the host account during installation, hosts must fund this account with deposits in both XAH and EVR:
+Hosts need to maintain a separate Xahau account for Reputation Assessment. During the opt-in process, hosts have the flexibility to either generate a new reputation account or specify an existing one. Similar to funding the host account during installation, hosts must fund the required XAH amount for account setup. Furthermore, even though hosts are not forced to opt into the process, they are expected to cover the following expenses to maintain an uninterrupted reputation execution.
 
 - XAH covers transaction fees.
 - EVR covers the hourly self-HotPocket instance acquisition for running the Evernode Reputation Contract. The amount required may vary based on the instance's per-moment price.
@@ -19,7 +19,15 @@ Hosts need to maintain a separate Xahau account for Reputation Assessment. Durin
 - When specifying an existing account, it will act as a delegate for the reputation assessment process.
 - If managing `multiple hosts`, a SINGLE reputation account can be used for all, with a separate `DELEGATE HOOK` integrated into the reputation account.
 The host will be responsible for covering the cost of invoking this hook, which triggers upon a specific transaction called `ttACCOUNT_SET`.
-- Furthermore, this setup process asks to reimburse the EVRs received for the host account via reputation instance acquisition. As a result, the EVRs used for reputation assessment purposes will be recycled between the two accounts.
+- The relationship between the host registration account address and reputation address is mapped in the `WalletLocator` field. And it's in the following format.
+
+  - Format: `<mode (1byte)><mapped-account-id (20bytes)>`
+  - One to One mapping:
+    - Host account: `<01><reputation-account-id>`
+    - Reputation account: `<01><host-account-id>`
+  - One to Many mapping:
+    - Host account: `<02><reputation-account-id>`
+    - Reputation account: `<02><this-will-be-empty (0's)>`
 
 ## Universe Assignment
 

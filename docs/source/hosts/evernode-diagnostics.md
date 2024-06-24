@@ -111,6 +111,11 @@ Failed to retrieve the latest version data.
 - This will cause the Evernode Reputation Hook to reject the transaction, even if the host was registered for that moment.
 - Consequently, the host will not be registered for the next moment, causing it to miss that assessment as well.
 - As the universe assignment is a random process, we do not have control over that, however, the model always tries to omit malfunctioning nodes.
+- This could also mean that you are a bad actor. When there's a reputation contract running on your machine (You can check by `evernode list` command).
+- Check HotPocket log by executing `cat /home/<user>/<name>/log/hp.log` command (Replace `user` and `name` respectively from the output of `evernode list`) and see it is completing consensus rounds using `****Ledger created****` log line.
+  - If it is reporting `Not enough peers` check whether your domain name is correct and peer ports are reachable by outside.
+- Check contract logs by `cat /home/<user>/<name>/log/contract/rw.stdout.log` and `cat /home/<user>/<name>/log/contract/rw.stderr.log`
+  - `rw.stdout.log` should print logs of hash file creation and JSON containing the received scores against the peer public keys in the cluster. It will forcefully terminate if your host lacks minimum requirements. (Let's refer to the minimum requirement section in evernode-host page [here](evernode-host.md/#system-requirements), and also add a point there that min requirement per instance should be `mentioned min req / 3 (min to receive rewards)` to be able to run a reputation contract properly).
 
 ### b. Continuous Failures in Sending Reputation.
 - Continuous failures can occur due to insufficient XAH balance in the host reputation account, preventing the invocation of the Evernode Reputation Account.

@@ -93,6 +93,8 @@ curl -fsSL https://raw.githubusercontent.com/EvernodeXRPL/evernode-resources/mai
   - Lease Amount
     - If your lease fee is more than 110% of the average reward distribution per host. This is calculated using the formula: `(current reward distribution / total number of hosts) * 110%`. If your lease fee exceeds this amount, your reputation will be set to 0.
 
+**NOTES:** You won't be able to install a new host if your machine is from one of the **Sanctioned Entities** mentioned in the [Evernode license](https://raw.githubusercontent.com/EvernodeXRPL/evernode-test-resources/main/license/evernode-license.pdf).
+
 Ensure that your instance capacity and lease fees meet these criteria to maintain a positive reputation.
 
 ## Maintaining your host
