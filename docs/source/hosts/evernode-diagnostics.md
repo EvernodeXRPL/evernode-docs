@@ -102,7 +102,7 @@ Failed to retrieve the latest version data.
 - If the `evernode config` command failed in any reconfiguration, retry executing it again.
 - If retry doesn't help change the value back to the original using the `evernode config` and change back to the new value again using the same command.
 
-## 15. Handling Reputation Assessment Observations
+## 15. Handling reputation assessment observations
 
 ### a. Issues with Reputation Sending Every Other Hour.
 - Typically, a host that registers for a reputation assessment sends the reputation scores at the end of the assessment period.
