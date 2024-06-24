@@ -76,7 +76,7 @@ Make sure you read the above sections before installing. Run the following comma
 **Read the above [System requirements](#system-requirements) and [Important tips](#important-tips-for-installation) even if you think you're familiar with the beta setup. Some details have changed compared to the beta.**
 
 ```
-curl -fsSL https://raw.githubusercontent.com/EvernodeXRPL/evernode-resources/main/sashimono/installer/evernode.sh | sudo bash -s install
+curl -fsSL https://raw.githubusercontent.com/EvernodeXRPL/evernode-test-resources/main/sashimono/installer/evernode.sh | sudo bash -s install
 ```
 
 ## Host Reputation
