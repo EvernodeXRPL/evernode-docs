@@ -17,7 +17,8 @@ Hosts need to maintain a separate Xahau account for Reputation Assessment. Durin
 - Hosts are required to initially deposit adequate XAH funds for setting up their account.
 - Please ensure the secret for this account and the host registration account are backed up to safeguard against any issues with the host machine.
 - When specifying an existing account, it will act as a delegate for the reputation assessment process.
-- If managing `multiple hosts`, a SINGLE reputation account can be used for all, with a separate `DELEGATE HOOK` integrated into the reputation account.
+- If managing `multiple hosts`, a SINGLE reputation account can be used for all, with a separate `DELEGATE HOOK` integrated into the reputation account. This is not the reputation hook which manages all the host's reputations. This will be a separate light weighted hook running in host reputation account.
+- If you are opted in as one-to-many reputation account mode. It's recommended not to assign large number of hosts to your reputation account as it would cause account sequence conflicts. Even though the transactions are submitted parallel for hosts in their ReputationD services, they are submitted in randomized manor. But since the reputation preparation happens withing last 10% of the moment, due to this small time window. Higher the number of hosts higher the possibility of getting same account sequence.
 The host will be responsible for covering the cost of invoking this hook, which triggers upon a specific transaction called `ttACCOUNT_SET`.
 - The relationship between the host registration account address and reputation address is mapped in the `WalletLocator` field. And it's in the following format.
 
@@ -32,6 +33,7 @@ The host will be responsible for covering the cost of invoking this hook, which 
 ## Universe Assignment
 
 Once registered, the host is assigned to a universe comprising 64 nodes. Within this universe, the host spins up a contract instance and joins the associated cluster to execute the reputation contract. The universe serves as a controlled environment where reputation assessment activities take place, ensuring a fair and consistent evaluation process.
+Since you are being assigned to a cluster with 63 other random peers there's a possibility that you are getting assigned with dud hosts which aren't actually running reputation contract instances. If the majority of the cluster is like this even though you are running a fully able host, your reputation contract will fail to execute due to lack of majority in consensus. So this round of reputation will be skipped, but reputation score you have maintained so far won't get affected.
 
 ## Contract Execution Status
 

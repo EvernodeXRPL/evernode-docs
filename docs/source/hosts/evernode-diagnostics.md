@@ -111,6 +111,7 @@ Failed to retrieve the latest version data.
 - This will cause the Evernode Reputation Hook to reject the transaction, even if the host was registered for that moment.
 - Consequently, the host will not be registered for the next moment, causing it to miss that assessment as well.
 - As the universe assignment is a random process, we do not have control over that, however, the model always tries to omit malfunctioning nodes.
+- But if you were to be in a "bad universe" your reputation round will be missed but you the reputation score you have maintained so far won't be affected.
 - This could also mean that you are a bad actor. When there's a reputation contract running on your machine (You can check by `evernode list` command).
 - Check HotPocket log by executing `cat /home/<user>/<name>/log/hp.log` command (Replace `user` and `name` respectively from the output of `evernode list`) and see it is completing consensus rounds using `****Ledger created****` log line.
   - If it is reporting `Not enough peers` check whether your domain name is correct and peer ports are reachable by outside.
