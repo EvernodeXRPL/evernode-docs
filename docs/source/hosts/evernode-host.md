@@ -49,6 +49,11 @@ You must provide an email address during the installation of your host. The emai
   - It is intended to be used as a public contact email for your host so that the general public can inquire about or report issues about your host.
   - If you opt-in for [Let's Encrypt](https://letsencrypt.org/) automatic free SSL setup during the installation, this email is used for your host's SSL certificate registration with Let'sEncrypt. Let'sEncrypt will send email notifications about automatic SSL renewals periodically.
 
+### Resource limits
+- Resource limits are specified as a cumulative figure for all the instances configured on your machine.
+- The minimum resource requirements per instance should be calculated as `mentioned minimum requirement / maximum instance count` to properly run the reputation contract.
+- Find the `mentioned minimum requirement` at [here](#system-requirements)
+
 ### Xahau accounts and secret keys
 As the [System requirements](#system-requirements) specifies, you need sufficient EVR and XAH funds to register and keep running a host. The exact account address and secret of your host will be generated inside your host during the setup. You are given the ability to send the funds you possess to the generated host account via a QR code mechanism during the setup. Any income your host earns will arrive at this account. **It is your responsibility to manage the funds in the host account and safeguard its secret key** (by default, the secret key is stored at `/home/sashimbxrpl/.evernode-host/.host-account-secret.key` on your host). If this file is lost due to any reason (operating system or software bugs, or hardware failures of the host) you will lose access to your host account including any funds in it. NO ONE can recover it. Therefore it'd be best to keep a backup copy of the secret key in your possession in a secure manner.
 
