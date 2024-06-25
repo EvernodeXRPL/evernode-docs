@@ -10,7 +10,7 @@ We can make a **decentralized** app (DApp a.k.a smart contract) by making multip
 
 ![A DApp cluster](../assets/dapp-cluster.png)
 
-The process of communicating and verifying each other's behaviour and agreeing upon the correct results is called **Consensus**. There is no leader/coordinator to conduct this process. Every app instance must perform this activity individually. HotPocket provides this ability to your app in order to make it a "decentralized" app.
+The process of communicating and verifying each others behavior and agreeing upon the correct results is called **Consensus**. There is no leader/coordinator to conduct this process. Every app instance must perform this activity individually. HotPocket provides this ability to your app in order to make it a "decentralized" app.
 
 ## HotPocket consensus engine - for decentralized apps
 
