@@ -104,7 +104,7 @@ Failed to retrieve the latest version data.
 
 ## 15. Handling reputation assessment observations
 
-### a. Health of ReputationD Service
+### a. Health of ReputationD service
 - ReputationD is a `systemd` service running inside the host, responsible for managing reputation assessment-related operations.
 - You can check the status of this service using the following command:
   ```bash
@@ -116,7 +116,7 @@ Failed to retrieve the latest version data.
   ```
 - However, these commands are integrated into the `evernode reputationd status` and `evernode log` commands in an abstract manner.
 
-### b. Issues with Reputation Sending Every Other Hour.
+### b. Issues with reputation sending every other hour.
 - Typically, a host that registers for a reputation assessment sends the reputation scores at the end of the assessment period.
 - If the host is part of a "bad universe" (a group of underperforming hosts), the reputation contract may fail to execute correctly or reach consensus.
 - As a result, the host may be unable to send scores for that assessment round.
@@ -126,7 +126,7 @@ Failed to retrieve the latest version data.
 - But if you were to be in a "bad universe" your reputation round will be missed but the reputation score you have maintained so far won't be affected.
 - **This could also mean that you are a bad actor**, check the [below point](#c-scorenumerator-sits-at-a-very-low-value) to investigate on that.
 
-### c. `scoreNumerator` Sits at a Very Low Value
+### c. `scoreNumerator` sits at a very low value
 - Check your [reputation logs](#a-health-of-reputationd-service)
 - Check if reputation contract is getting deployed in every hour.
 - If there's a reputation contract running on your machine (You can check by `evernode list` command).
@@ -136,7 +136,7 @@ Failed to retrieve the latest version data.
   - `rw.stdout.log` should print logs of hash file creation and JSON containing the received scores against the peer public keys in the cluster. It will forcefully terminate if your host lacks minimum requirements.
   - Find the `minimum requirement` of resources under the `Resource limits` section at [here](./evernode-host.md#important-tips-for-installation).
 
-### d. Continuous Failures in Sending Reputation.
+### d. Continuous failures in sending reputation.
 - Continuous failures can occur due to insufficient XAH balance in the host reputation account, preventing the invocation of the Evernode Reputation Account.
 - Ensure that the host reputation account is adequately funded to avoid this issue.
 
