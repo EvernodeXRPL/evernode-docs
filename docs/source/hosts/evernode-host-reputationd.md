@@ -17,8 +17,11 @@ Hosts need to maintain a separate Xahau account for Reputation Assessment. Durin
 - Hosts are required to initially deposit adequate XAH funds for setting up their account.
 - Please ensure the secret for this account and the host registration account are backed up to safeguard against any issues with the host machine.
 - When specifying an existing account, it will act as a delegate for the reputation assessment process.
-- If managing `multiple hosts`, a SINGLE reputation account can be used for all, with a separate `DELEGATE HOOK` integrated into the reputation account.
-The host will be responsible for covering the cost of invoking this hook, which triggers upon a specific transaction called `ttACCOUNT_SET`.
+- If managing `multiple hosts`, a SINGLE reputation account can be used for all, with a separate `DELEGATE HOOK` integrated into the reputation account. This is not the reputation hook which manages all the host's reputations. This will be a separate lightweight hook running in the host reputation account.
+- If you are opted in as a one-to-many reputation account mode. It's recommended not to assign a large number of hosts to your reputation account as it would cause account sequence conflicts. Even though the transactions are submitted parallel for hosts in their ReputationD services, they are submitted in a randomized manner. However, since the reputation preparation happens within the last 10% of the moment, due to this small time window. The higher the number of hosts higher the possibility of getting same account sequence.
+- Changing the modes of existing reputation account could lead to some temporary consequences for already configured hosts which are opted in.
+  - For example if you set reputation to manage `multiple hosts`, And if you have already opted in same reputation account for a single host there is a chance of missing the current reputation assessment of the existing host.
+- The host will be responsible for covering the cost of invoking this hook, which triggers upon a specific transaction called `ttACCOUNT_SET`.
 - The relationship between the host registration account address and reputation address is mapped in the `WalletLocator` field. And it's in the following format.
 
   - Format: `<mode (1byte)><mapped-account-id (20bytes)>`
@@ -32,6 +35,7 @@ The host will be responsible for covering the cost of invoking this hook, which 
 ## Universe Assignment
 
 Once registered, the host is assigned to a universe comprising 64 nodes. Within this universe, the host spins up a contract instance and joins the associated cluster to execute the reputation contract. The universe serves as a controlled environment where reputation assessment activities take place, ensuring a fair and consistent evaluation process.
+Since you are being assigned to a cluster with 63 other random peers there's a possibility that you are getting assigned with dud hosts which aren't actually running reputation contract instances. If the majority of the cluster is like this even though you are running a fully able host, your reputation contract will fail to execute due to lack of majority in consensus. So this round of reputation will be skipped, but the reputation score you have maintained so far won't get affected.
 
 ## Contract Execution Status
 
@@ -39,7 +43,9 @@ In each round of the reputation assessment, the reputation contract performs a s
 
 ## Score Update
 
-Upon receiving the shared results, a node verifies that the proof of work has been performed as expected. If the verification is successful, the node increments the peer score by one. These updated scores are stored in a separate JSON file named `opinion.json`, which is kept outside the state directory in the contract instance. This file serves as a record of the scores, reflecting each node's evaluation of its peers' performance.
+Upon receiving the shared results, a node verifies that the proof of work has been performed as expected. If the verification is successful, the node increments the peer score by one.
+The assessment is to prove that you are worthy by doing a resource-intensive hash calculation within a given time frame. If you are able to do so, Then share your result with other peers. So others will receive your answer and check whether the answer is right or wrong. You'll have to do this POW in each consensus round within the moment. Peers keep accumulating your score based on the validity of your POW. This accumulated score is the assessment that each peer has made during the moment and will be reported to the reputation hook at the end. So the more rounds you succeed the higher score you get.
+These updated scores are stored in a separate JSON file named `opinion.json`, which is kept outside the state directory in the contract instance. This file serves as a record of the scores, reflecting each node's evaluation of its peers' performance.
 
 ## Score Reporting
 

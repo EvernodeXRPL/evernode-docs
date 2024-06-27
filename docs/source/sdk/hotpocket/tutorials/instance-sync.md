@@ -48,7 +48,7 @@ In order to pass CLI arguments to our app, we need to edit the contract configur
 
 As you can see we are passing 'red green blue' as arguments to index.js which represents the nodejs script for our contract at run time.
 
-Run `npm start`. As expected, you will see following output from **node 1** which is showing the colors we are passing in "bin_args" property of our contract configuration. It is also indicating that the node 1 is in fact a part of the UNL. This is because when hpdevkit creates a cluster, it configures all the nodes to be in each other's UNL.
+Run `npm start`. As expected, you will see following output from **node 1** which is showing the colors we are passing in "bin_args" property of our contract configuration. It is also indicating that the node 1 is in fact a part of the UNL. This is because when hpdevkit creates a cluster, it configures all the nodes to be in each others UNL.
 
 ```
 20230527 00:58:46.650 [inf][hpc] ****Ledger created**** (lcl:1-f192e9d1 state:3c90183b patch:35968a27)

@@ -182,7 +182,7 @@ clientApp();
 
 With `HotPocket.generateKeys()`, we first generate a new 'key pair' which cryptographically identifies a unique user to a HotPocket DApp. Then we create a HotPocket client object by passing the HotPocket server address and the key pair. In the server address `wss://localhost:8081`, we specify `wss://` because HotPocket uses [WebSockets](https://en.wikipedia.org/wiki/WebSocket) for communication. `localhost` is used because we need to connect to a HotPocket node running inside our own PC and port `8081` is used because the HotPocket node running our contract was configured by the developer kit to listen on port 8081 for user connections.
 
-With `client.connect()` the client application will actually establish a WebSocket connection with the HotPocket node running in your PC. Behind the scenes, HotPocket node and the client application goes through a handshake process to cryptographically verify each other's identity. Once the handshake is complete, your client application is considered 'connected' to HotPocket.
+With `client.connect()` the client application will actually establish a WebSocket connection with the HotPocket node running in your PC. Behind the scenes, HotPocket node and the client application goes through a handshake process to cryptographically verify each others identity. Once the handshake is complete, your client application is considered 'connected' to HotPocket.
 
 _`HotPocket.generateKeys()` will generate a new random key pair by default. We will learn how to preserve and reuse the same key pair further into this tutorial._
 

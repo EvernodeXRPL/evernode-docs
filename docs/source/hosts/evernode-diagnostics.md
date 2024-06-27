@@ -104,30 +104,7 @@ Failed to retrieve the latest version data.
 
 ## 15. Handling reputation assessment observations
 
-### a. Issues with Reputation Sending Every Other Hour.
-- Typically, a host that registers for a reputation assessment sends the reputation scores at the end of the assessment period.
-- If the host is part of a "bad universe" (a group of underperforming hosts), the reputation contract may fail to execute correctly or reach consensus.
-- As a result, the host may be unable to send scores for that assessment round.
-- This will cause the Evernode Reputation Hook to reject the transaction, even if the host was registered for that moment.
-- Consequently, the host will not be registered for the next moment, causing it to miss that assessment as well.
-- As the universe assignment is a random process, we do not have control over that, however, the model always tries to omit malfunctioning nodes.
-- This could also mean that you are a bad actor. When there's a reputation contract running on your machine (You can check by `evernode list` command).
-- Check HotPocket log by executing `cat /home/<user>/<name>/log/hp.log` command (Replace `user` and `name` respectively from the output of `evernode list`) and see it is completing consensus rounds using `****Ledger created****` log line.
-  - If it is reporting `Not enough peers` check whether your domain name is correct and peer ports are reachable by outside.
-- Check contract logs by `cat /home/<user>/<name>/log/contract/rw.stdout.log` and `cat /home/<user>/<name>/log/contract/rw.stderr.log`
-  - `rw.stdout.log` should print logs of hash file creation and JSON containing the received scores against the peer public keys in the cluster. It will forcefully terminate if your host lacks minimum requirements.
-  - Find the `minimum requirement` of resources under the `Resource limits` section at [here](./evernode-host.md#important-tips-for-installation).
-
-### b. Continuous Failures in Sending Reputation.
-- Continuous failures can occur due to insufficient XAH balance in the host reputation account, preventing the invocation of the Evernode Reputation Account.
-- Ensure that the host reputation account is adequately funded to avoid this issue.
-
-### c. No Relevant Instance Acquisition.
-- Insufficient EVR balance in the host reputation account can prevent the purchase of an instance of the host machine necessary for deploying the reputation contract.
-- Ensure that the host reputation account is sufficiently funded.
-- Additionally, if the host account has not offered leases for minted lease tokens, it will be considered inactive. The reputation service cannot acquire an instance without available offers at that time. Ensure that you create offers for the lease tokens using the `evernode offerlease` command.
-
-### d. Health of ReputationD Service
+### a. Health of ReputationD service
 - ReputationD is a `systemd` service running inside the host, responsible for managing reputation assessment-related operations.
 - You can check the status of this service using the following command:
   ```bash
@@ -139,6 +116,39 @@ Failed to retrieve the latest version data.
   ```
 - However, these commands are integrated into the `evernode reputationd status` and `evernode log` commands in an abstract manner.
 
+### b. Issues with reputation sending every other hour.
+- Typically, a host that registers for a reputation assessment sends the reputation scores at the end of the assessment period.
+- If the host is part of a "bad universe" (a group of underperforming hosts), the reputation contract may fail to execute correctly or reach consensus.
+- As a result, the host may be unable to send scores for that assessment round.
+- This will cause the Evernode Reputation Hook to reject the transaction, even if the host was registered for that moment.
+- Consequently, the host will not be registered for the next moment, causing it to miss that assessment as well.
+- As the universe assignment is a random process, we do not have control over that, however, the model always tries to omit malfunctioning nodes.
+- But if you were to be in a "bad universe" your reputation round will be missed but the reputation score you have maintained so far won't be affected.
+- **This could also mean that you are a bad actor**, check the [below point](#c-scorenumerator-sits-at-a-very-low-value) to investigate on that.
 
-### e. When your host account's reputation score is zero
+### c. `scoreNumerator` sits at a very low value
+- Check your [reputation logs](#a-health-of-reputationd-service)
+- Check if reputation contract is getting deployed in every hour.
+- If there's a reputation contract running on your machine (You can check by `evernode list` command).
+- Check HotPocket log by executing `cat /home/<user>/<name>/log/hp.log` command (Replace `user` and `name` respectively from the output of `evernode list`) and see it is completing consensus rounds using `****Ledger created****` log line.
+  - If it is reporting `Not enough peers` check whether your domain name is correct and peer ports are reachable by outside.
+- Check contract logs by `cat /home/<user>/<name>/log/contract/rw.stdout.log` and `cat /home/<user>/<name>/log/contract/rw.stderr.log`
+  - `rw.stdout.log` should print logs of hash file creation and JSON containing the received scores against the peer public keys in the cluster. It will forcefully terminate if your host lacks minimum requirements.
+  - Find the `minimum requirement` of resources under the `Resource limits` section at [here](./evernode-host.md#important-tips-for-installation).
+
+### d. Continuous failures in sending reputation.
+- Continuous failures can occur due to insufficient XAH balance in the host reputation account, preventing the invocation of the Evernode Reputation Account.
+- Ensure that the host reputation account is adequately funded to avoid this issue.
+
+### e. Seeing `tefPAST_SEQ` (This sequence number has already passed.) too often.
+- That means that the number of reputation transactions that reputation account has to bear within reputation preparation time is high due to the high number of hosts assigned to it.
+- So it's hard for ReputationD to automatically randomize the transactions due to the load.
+- Solution for this is distributing the hosts with more reputation accounts.
+
+### f. No Relevant Instance Acquisition.
+- Insufficient EVR balance in the host reputation account can prevent the purchase of an instance of the host machine necessary for deploying the reputation contract.
+- Ensure that the host reputation account is sufficiently funded.
+- Additionally, if the host account has not offered leases for minted lease tokens, it will be considered inactive. The reputation service cannot acquire an instance without available offers at that time. Ensure that you create offers for the lease tokens using the `evernode offerlease` command.
+
+### g. When your host account's reputation score is zero
 - If your host account's reputation score is zero, it may lead to meeting conditions where the reputation value of the host is turned to zero. Please review the [reputation deduction criteria](./evernode-host.md#host-reputation) carefully.
