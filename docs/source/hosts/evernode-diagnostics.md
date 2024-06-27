@@ -140,10 +140,15 @@ Failed to retrieve the latest version data.
 - Continuous failures can occur due to insufficient XAH balance in the host reputation account, preventing the invocation of the Evernode Reputation Account.
 - Ensure that the host reputation account is adequately funded to avoid this issue.
 
-### e. No Relevant Instance Acquisition.
+### e. Seeing `tefPAST_SEQ` (This sequence number has already passed.) too often.
+- That means that the number of reputation transactions that reputation account has to bear within reputation preparation time is high due to the high number of hosts assigned to it.
+- So it's hard for ReputationD to automatically randomize the transactions due to the load.
+- Solution for this is distributing the hosts with more reputation accounts.
+
+### f. No Relevant Instance Acquisition.
 - Insufficient EVR balance in the host reputation account can prevent the purchase of an instance of the host machine necessary for deploying the reputation contract.
 - Ensure that the host reputation account is sufficiently funded.
 - Additionally, if the host account has not offered leases for minted lease tokens, it will be considered inactive. The reputation service cannot acquire an instance without available offers at that time. Ensure that you create offers for the lease tokens using the `evernode offerlease` command.
 
-### f. When your host account's reputation score is zero
+### g. When your host account's reputation score is zero
 - If your host account's reputation score is zero, it may lead to meeting conditions where the reputation value of the host is turned to zero. Please review the [reputation deduction criteria](./evernode-host.md#host-reputation) carefully.
