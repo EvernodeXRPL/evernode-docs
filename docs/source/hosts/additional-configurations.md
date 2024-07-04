@@ -1,4 +1,4 @@
-# Host configuration
+# Additional host configurations
 
 ## Enabling IPv4 support
 
@@ -32,7 +32,7 @@ Most modern VPS providers offer IPv6 support due to its expanded address space. 
 This depends on VPS provider, Go to your VPS provider dashboard and search for IP settings and there you'll be able to find how to enable IPv4.
 If you can't find where to do this configuration please contact the VPS service provider.
 
-### Change the DNS
+### Changing the DNS
 If you have added an IPv4, Then you'll have to change your DNS to your IPv4 address.
 - Go to your DNS provider and find for the domain you have given your Host for the Evernode.
   - Check it's destination IP address, Check if it's an IPv4 address. If it's IPv4, then compare it with your host's public IP which you can find [here](#checking-whether-you-already-have-ipv4-support) and you don't have to do anything they are the same.

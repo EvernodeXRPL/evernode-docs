@@ -43,6 +43,7 @@ External resources
    Host maintenance <hosts/maintenance>
    CLI <hosts/evernode-cli>
    Sashimono <hosts/sashimono>
+   Additional host configurations <hosts/additional-configurations>
    Diagnostics <hosts/evernode-diagnostics>
 
 .. toctree::
