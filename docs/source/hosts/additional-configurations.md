@@ -26,7 +26,9 @@ There are several ways to check if your VPS has IPv4 support
 
 ### Configuring IPv4 in your VPS
 You'll only have to do this if you find out that you don't have IPv4 support by running the above commands.
+
 Most modern VPS providers offer IPv6 support due to its expanded address space. However, many applications and services still rely on IPv4. So even if they have only given you IPv6 still you'll be able to configure IPv6 from your VPS dashboard.
+
 This depends on the VPS provider, Go to your VPS provider dashboard and search for IP settings and there you'll be able to enable IPv4. If you have trouble with this configuration, please contact your VPS service provider.
 
 ### Changing the DNS
