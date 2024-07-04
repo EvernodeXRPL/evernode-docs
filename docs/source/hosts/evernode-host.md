@@ -46,9 +46,9 @@ You are required to have IPv4 support in your VPS to install Evernode because al
 
 But it's optional to have IPv6 support. Having IPv6 support lets you to allow IPv6 outgoing connections to the clusters hosted on your Host.
 
-Creating dApp on an IPv6 only instance would limit the contracts from connecting to majority of IPv4 peers. Which makes the host unreliable. Due to this nature if you support only IPv6 this would cause your reputation scores to sit at a lower value or even can be '0' due to inability of reaching the peers.
+Creating dApp on an IPv6-only instance would limit the contracts from connecting to the majority of IPv4 peers, which makes the host unreliable. Due to this nature if you support only IPv6 this would cause your reputation scores to sit at a lower value or even can be '0' due to the inability to reach your peers.
 
-If you aren't having IPv4 support in your Host please follow [this guild](./configuration.md#enabling-ipv4-support) to setup IPv4.
+If you don't have IPv4 support in your Host please follow [this guild](./configuration.md#enabling-ipv4-support) to set up IPv4.
 
 ### Domain name
 
