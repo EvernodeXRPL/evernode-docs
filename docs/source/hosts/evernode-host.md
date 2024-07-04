@@ -40,7 +40,7 @@ To install Evernode, your server must meet the following requirements:
 
 You can use a physical or virtual (VPS) Linux server as your Evernode host. **[WSL](https://docs.microsoft.com/en-us/windows/wsl/about) or [Containers](https://linuxcontainers.org/) are not supported**. It's recommended that you use a server that DOES NOT contain other workloads important to you. It's best if you can provision a fresh server from a cloud provider that you can dedicate to Evernode.
 
-### Hosting options
+### IPv4 requirement
 
 You are required to have IPv4 support in your VPS to install Evernode because all the HotPocket incoming connections are made through IPv4.
 
