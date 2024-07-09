@@ -73,9 +73,9 @@ Based on the smart contracts that are hosted on your server, your server will ac
 
 ### Firewalls and ports
 
-Evernode software itself does not require any ports to be opened. However, SSL setup and hosted smart contracts require the following conditions to be met. Please note that Evernode automatically adds the required allow-rules for these ports to the operating system firewall. But if your host is behind an external firewall, you need to allow incoming TCP traffic to them yourself.
-
-- The smart contracts that are getting hosted on your host require certain ports to be opened and incoming traffic to be allowed. There are two port ranges which by default start at 26201 and 22861. If your host supports `n` contract instances, the port ranges to allow would be `26201 to 26201+n` and `22861 to 22861+n`.
+Evernode software itself does not require any ports to be opened. However, SSL setup and hosted smart contracts require the following conditions to be met. Please note that Evernode automatically adds the required allow-rules for these ports to the operating system firewall. But if your host is behind an external firewall, you need to allow incoming TCP traffic for peer, user, general purpose TCP ports and UDP traffic for general purpose UDP ports yourself.
+- **User and Peer ports:** The smart contracts that are getting hosted on your host require certain ports to be opened and incoming traffic to be allowed. There are two port ranges for peer and user connections which by default start at 26201 and 22861. If your host supports `n` contract instances, the port ranges to allow would be `26201 to 26201+n` and `22861 to 22861+n`.
+- **General purpose ports:** Evernode instances additionally allocate another two port ranges for general purpose TCP and UDP connections (2 TCP and 2 UDP per instance). This requires these ports to be opened and incoming traffic to be allowed. There port ranges which by default start at 36525 and 39064. If your host supports `n` contract instances, the port ranges to allow would be `36525 to 36525+2n` and `39064 to 39064+2n`.
 - Evernode's automatic SSL setup requires port 80 to be free and incoming traffic to be allowed to it. Without this, the initial SSL setup and subsequent SSL renewals will fail. (If you are running a web server like Apache or Nginx on the same host, they will cause the SSL setup to fail. You can stop them or configure them to not use port 80 to overcome this problem.)
 
 ### Creating Lease Offers

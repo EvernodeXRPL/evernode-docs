@@ -125,6 +125,7 @@ Failed to retrieve the latest version data.
 - As the universe assignment is a random process, we do not have control over that, however, the model always tries to omit malfunctioning nodes.
 - But if you were to be in a "bad universe" your reputation round will be missed but the reputation score you have maintained so far won't be affected.
 - **This could also mean that you are a bad actor**, check the [below point](#c-scorenumerator-sits-at-a-very-low-value) to investigate on that.
+- Note: If you are seeing this behavior more often, it means you are having issues with running reputation contract and you'll be getting lower reputation scores. Check [this](#c-scorenumerator-sits-at-a-very-low-value) for diagnostics.
 
 ### c. `scoreNumerator` sits at a very low value
 - Check your [reputation logs](#a-health-of-reputationd-service)
@@ -135,6 +136,13 @@ Failed to retrieve the latest version data.
 - Check contract logs by `cat /home/<user>/<name>/log/contract/rw.stdout.log` and `cat /home/<user>/<name>/log/contract/rw.stderr.log`
   - `rw.stdout.log` should print logs of hash file creation and JSON containing the received scores against the peer public keys in the cluster. It will forcefully terminate if your host lacks minimum requirements.
   - Find the `minimum requirement` of resources under the `Resource limits` section at [here](./evernode-host.md#important-tips-for-installation).
+- Run `sudo -u sashireputationd bash -c journalctl --user -u sashimono-reputationd | grep "Reporting"`, This would give you the score reporting in all the moments.
+  - Check if you are seeing frequent reports without scores which means your node is having issues with performing reputation which could happen due to following reasons.
+    - No IPv4 support - Evernode requires IPv4 support in your machines. If not, please [enable](./additional-configurations.md#configuring-ipv4-in-your-vps).
+    - Lack of minimum requirements - Find the `minimum requirement` of resources under the `Resource limits` section at [here](./evernode-host.md#important-tips-for-installation).
+    - Port connectivity issues - Check your DNS or firewall configurations to see if the [Evernode required port ranges](./evernode-host.md#firewalls-and-ports) are allowed.
+  - If you are observing `reporting without score` less often, but still your score is low.
+    - Check your reputation contract logs as mentioned above and see `****Ledger created****` records. Contact the Evernode team with your log files.
 
 ### d. Continuous failures in sending reputation.
 - Continuous failures can occur due to insufficient XAH balance in the host reputation account, preventing the invocation of the Evernode Reputation Account.
