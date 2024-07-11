@@ -26,7 +26,7 @@ Other templates available
 - blank-client
 - blank-contract
 - evernode-bootstrap-client
-- file-content
+- file-client
 - file-contract
 - npm-client
 - npl-contract
