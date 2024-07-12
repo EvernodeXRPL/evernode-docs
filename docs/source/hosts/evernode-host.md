@@ -8,7 +8,7 @@
 
 _All of the above are automated by [Sashimono](../platform/sashimono/overview), Evernode host management software which gets installed when you run the Evernode [installer](#system-requirements)._
 
-As an Evernode host, your Linux server will be registered on the [XAHAU](https://xahau.network/) network via the Evernode [Registry hook](../platform/hooks/operations.md#registry-hook). During the installation, you can choose how much system resources you wish to allocate for smart contract hosting. After everything is setup, your server will start leasing hosting space to Evernode tenants.
+As an Evernode host, your Linux server will be registered on the [XAHAU](https://xahau.network/) network via the Evernode [Registry hook](../platform/hooks/operations.md#registry-hook). During the installation, you can choose how much system resources you wish to allocate for smart contract hosting. After everything is set up, your server will start leasing hosting space to Evernode tenants.
 
 ### Evernode licence
 
@@ -28,7 +28,7 @@ To install Evernode, your server must meet the following requirements:
 #### In addition to the above, you need to possess the following:
   - At least 500 EVRs for the registration fee paid to the [registry hook](../platform/hooks/operations.md#registry-hook).
   - Sufficient XAH amount to support the reserves and ongoing transaction costs of your host
-      - You need to have enough XAH reserve at the time of registration to accommodate base reserve (1 XAH), trust line (0.2 XAH) and instance lease tokens (0.2 XAH per instance). For a host with 10 instances, you will need `1 + 0.2 + 0.2*10 = 3.2 XAH`.
+      - You need to have enough XAH reserve at the time of registration to accommodate base reserve (1 XAH), trust line (0.2 XAH), and instance lease tokens (0.2 XAH per instance). For a host with 10 instances, you will need `1 + 0.2 + 0.2*10 = 3.2 XAH`.
       - The minimum transaction cost of the host would be around 5 XAH per month but can be more depending on the leasing operations done by tenants.
       - **Example:** If you want to register a host having **10** contract instances, you need roughly **8 XAH** to accommodate initial reserves as well as to cover transaction costs for 1 month.
       - The above calculations are based on the current fees and reserve amounts set by the Xahau network.
@@ -44,7 +44,7 @@ You can use a physical or virtual (VPS) Linux server as your Evernode host. **[W
 
 You are required to have IPv4 support in your VPS to install Evernode because all the HotPocket incoming connections are made through IPv4.
 
-But it's optional to have IPv6 support. Having IPv6 support lets you to allow IPv6 outgoing connections to the clusters hosted on your Host.
+But it's optional to have IPv6 support. Having IPv6 support lets you allow IPv6 outgoing connections to the clusters hosted on your Host.
 
 Creating dApp on an IPv6-only instance would limit the contracts from connecting to the majority of IPv4 peers, which makes the host unreliable. Due to this nature if you support only IPv6 this would cause your reputation scores to sit at a lower value or even can be '0' due to the inability to reach your peers.
 
@@ -75,7 +75,7 @@ Based on the smart contracts that are hosted on your server, your server will ac
 
 Evernode software itself does not require any ports to be opened. However, SSL setup and hosted smart contracts require the following conditions to be met. Please note that Evernode automatically adds the required allow-rules for these ports to the operating system firewall. But if your host is behind an external firewall, you need to allow incoming TCP traffic for peer, user, general purpose TCP ports and UDP traffic for general purpose UDP ports yourself.
 - **User and Peer ports:** The smart contracts that are getting hosted on your host require certain ports to be opened and incoming traffic to be allowed. There are two port ranges for peer and user connections which by default start at 26201 and 22861. If your host supports `n` contract instances, the port ranges to allow would be `26201 to 26201+n` and `22861 to 22861+n`.
-- **General purpose ports:** Evernode instances additionally allocate another two port ranges for general purpose TCP and UDP connections (2 TCP and 2 UDP per instance). This requires these ports to be opened and incoming traffic to be allowed. There port ranges which by default start at 36525 and 39064. If your host supports `n` contract instances, the port ranges to allow would be `36525 to 36525+2n` and `39064 to 39064+2n`.
+- **General purpose ports:** Evernode instances additionally allocate another two port ranges for general purpose TCP and UDP connections (2 TCP and 2 UDP per instance). This requires these ports to be opened and incoming traffic to be allowed. There are port ranges that by default start at 36525 and 39064. If your host supports `n` contract instances, the port ranges to allow would be `36525 to 36525+2n` and `39064 to 39064+2n`.
 - Evernode's automatic SSL setup requires port 80 to be free and incoming traffic to be allowed to it. Without this, the initial SSL setup and subsequent SSL renewals will fail. (If you are running a web server like Apache or Nginx on the same host, they will cause the SSL setup to fail. You can stop them or configure them to not use port 80 to overcome this problem.)
 
 ### Creating Lease Offers
