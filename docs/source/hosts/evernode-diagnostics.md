@@ -125,19 +125,19 @@ Failed to retrieve the latest version data.
 - As the universe assignment is a random process, we do not have control over that, however, the model always tries to omit malfunctioning nodes.
 - But if you were to be in a "bad universe" your reputation round will be missed but the reputation score you have maintained so far won't be affected.
 - **This could also mean that you are a bad actor**, check the [below point](#c-scorenumerator-sits-at-a-very-low-value) to investigate on that.
-- Note: If you are seeing this behavior more often, it means you are having issues with running reputation contract and you'll be getting lower reputation scores. Check [this](#c-scorenumerator-sits-at-a-very-low-value) for diagnostics.
+- Note: If you are seeing this behavior more often, it means you are having issues with running the reputation contract and you'll be getting lower reputation scores. Check [this](#c-scorenumerator-sits-at-a-very-low-value) for diagnostics.
 
 ### c. `scoreNumerator` sits at a very low value
 - Check your [reputation logs](#a-health-of-reputationd-service)
-- Check if reputation contract is getting deployed in every hour.
+- Check if the reputation contract is getting deployed every hour.
 - If there's a reputation contract running on your machine (You can check by `evernode list` command).
-- Check HotPocket log by executing `cat /home/<user>/<name>/log/hp.log` command (Replace `user` and `name` respectively from the output of `evernode list`) and see it is completing consensus rounds using `****Ledger created****` log line.
+- Check the HotPocket log by executing `cat /home/<user>/<name>/log/hp.log` command (Replace `user` and `name` respectively from the output of `evernode list`) and see it is completing consensus rounds using `****Ledger created****` log line.
   - If it is reporting `Not enough peers` check whether your domain name is correct and peer ports are reachable by outside.
 - Check contract logs by `cat /home/<user>/<name>/log/contract/rw.stdout.log` and `cat /home/<user>/<name>/log/contract/rw.stderr.log`
   - `rw.stdout.log` should print logs of hash file creation and JSON containing the received scores against the peer public keys in the cluster. It will forcefully terminate if your host lacks minimum requirements.
   - Find the `minimum requirement` of resources under the `Resource limits` section at [here](./evernode-host.md#important-tips-for-installation).
 - Run `sudo -u sashireputationd bash -c journalctl --user -u sashimono-reputationd | grep "Reporting"`, This would give you the score reporting in all the moments.
-  - Check if you are seeing frequent reports without scores which means your node is having issues with performing reputation which could happen due to following reasons.
+  - Check if you are seeing frequent reports without scores which means your node is having issues with performing reputation which could happen due to the following reasons.
     - No IPv4 support - Evernode requires IPv4 support in your machines. If not, please [enable](./additional-configurations.md#configuring-ipv4-in-your-vps).
     - Lack of minimum requirements - Find the `minimum requirement` of resources under the `Resource limits` section at [here](./evernode-host.md#important-tips-for-installation).
     - Port connectivity issues - Check your DNS or firewall configurations to see if the [Evernode required port ranges](./evernode-host.md#firewalls-and-ports) are allowed.
@@ -149,9 +149,9 @@ Failed to retrieve the latest version data.
 - Ensure that the host reputation account is adequately funded to avoid this issue.
 
 ### e. Seeing `tefPAST_SEQ` (This sequence number has already passed.) too often.
-- That means that the number of reputation transactions that reputation account has to bear within reputation preparation time is high due to the high number of hosts assigned to it.
+- That means that the number of reputation transactions that the reputation account has to bear within reputation preparation time is high due to the high number of hosts assigned to it.
 - So it's hard for ReputationD to automatically randomize the transactions due to the load.
-- Solution for this is distributing the hosts with more reputation accounts.
+- Solution for this is, to distribute the hosts with more reputation accounts.
 
 ### f. No Relevant Instance Acquisition.
 - Insufficient EVR balance in the host reputation account can prevent the purchase of an instance of the host machine necessary for deploying the reputation contract.
