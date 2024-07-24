@@ -115,14 +115,11 @@ Failed to retrieve the latest version data.
   ```
 - However, these commands are integrated into the `evernode reputationd status` and `evernode log` commands in an abstract manner.
 
-### b. Issues with reputation sending every other hour.
+### b. Issues with reputation score reporting.
 - Typically, a host that registers for a reputation assessment sends the reputation scores at the end of the assessment period.
-- If the host is part of a "bad universe" (a group of underperforming hosts), the reputation contract may fail to execute correctly or reach consensus.
-- As a result, the host may be unable to send scores for that assessment round.
-- This will cause the Evernode Reputation Hook to reject the transaction, even if the host was registered for that moment.
-- Consequently, the host will not be registered for the next moment, causing it to miss that assessment as well.
-- As the universe assignment is a random process, we do not have control over that, however, the model always tries to omit malfunctioning nodes.
-- But if you were to be in a "bad universe" your reputation round will be missed but the reputation score you have maintained so far won't be affected.
+- If the host is part of a "bad universe" (a group of underperforming hosts), the reputation contract may fail to execute correctly or reach consensus or minimum required ledger completions for reputation.
+- As a result, the host may be unable to send scores for that assessment round and and it would report this as a bad universe.
+- If you were to be in a "bad universe" which is decided by the hook from the majority scores of the universe. Your reputation scores will be discarded for that moment.
 - **This could also mean that you are a bad actor**, check the [below point](#c-scorenumerator-sits-at-a-very-low-value) to investigate on that.
 - Note: If you are seeing this behavior more often, it means you are having issues with running the reputation contract and you'll be getting lower reputation scores. Check [this](#c-scorenumerator-sits-at-a-very-low-value) for diagnostics.
 
