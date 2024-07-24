@@ -72,7 +72,7 @@ Failed to retrieve the latest version data.
 - **Case 2:** Your reputation will be set to 0, if your host has less than 3 instances.
 - **Case 3:** Your reputation will be set to 0, if your host's lease fee is more than `(reward distribution for the moment / host count) * 110%`
 - **Case 4:** Your reputation will be set to 0, if you haven't upgraded to v0.8.2 within **one week**.
-- **Case 5:** Your reputation will be set to 0, if your machine is from on of the **Sanctioned Entities** mentioned in [Evernode license](https://raw.githubusercontent.com/EvernodeXRPL/evernode-test-resources/main/license/evernode-license.pdf).
+- **Case 5:** Your reputation will be set to 0, if your machine is from on of the **Sanctioned Entities** mentioned in [Evernode license](https://raw.githubusercontent.com/EvernodeXRPL/evernode-resources/main/license/evernode-license.pdf).
   
 ## 12. Lease offer creation failure
 - **Case 1:** If your lease offering failed when you run `evernode offerlease`, Executing the command again would offer the remaining leases.
@@ -91,8 +91,7 @@ Failed to retrieve the latest version data.
     - Command: `evernode config resources <ram> <swap> <disk> <instance count>`
     - Arguments are optional, You can pass `0` if you don't want to change
     - Example:
-      - Run `evernode config resources 0 0 0 5` it'll fix your instances.
-      - Then if you want, you can change it back to 6 by running `evernode config resources 0 0 0 6`
+      - Run `evernode config resources 0 0 0 6` it'll fix your instances.
     
 ## 13. Stuck installation
 - If your installation is stuck on `Checking server wss:\\....` this could indicate you have some broken package dependencies.
