@@ -156,3 +156,13 @@ Failed to retrieve the latest version data.
 
 ### g. When your host account's reputation score is zero
 - If your host account's reputation score is zero, it may lead to meeting conditions where the reputation value of the host is turned to zero. Please review the [reputation deduction criteria](./evernode-host.md#host-reputation) carefully.
+
+### f. In the logs it says `No offers available` when acquiring an instance
+- Create a cron job that checks lease inconsistencies and fix them.
+  - Execute `crontab -e`.
+  - Choose a preferred editor (nano).
+  - Add following line inside the file.
+    - `* * * * * evernode config resources 0 0 0 $(jq -r .system.max_instance_count /etc/sashimono/sa.cfg)`
+    - This will execute the re config command in every hour to fix lease inconsistencies.
+  - You can check the cron execution logs with the following command to see whether the command has executed.
+    - `grep CRON /var/log/syslog`
