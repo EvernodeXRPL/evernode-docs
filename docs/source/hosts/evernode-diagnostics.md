@@ -164,5 +164,5 @@ Failed to retrieve the latest version data.
   - Add following line inside the file.
     - `0 * * * * evernode config resources 0 0 0 $(jq -r .system.max_instance_count /etc/sashimono/sa.cfg)`
     - This will execute the re config command in every hour to fix lease inconsistencies.
-  - You can check the cron execution logs with the following command to see whether the command has executed.
+  - You can check the cron execution logs with the following command to see whether the command has been executed.
     - `grep CRON /var/log/syslog`
