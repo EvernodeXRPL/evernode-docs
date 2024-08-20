@@ -10,7 +10,7 @@ You can run `evernode update` to check and install updates to Evernode.
 
 **Note: For the Evernode 0.8.2 update `evernode update` command would not show any pending updates for your Sashimono. To update to v0.8.2, run the below command. It is recommended to use the following command for an independent Evernode update.**
 ```
-curl -fsSL https://raw.githubusercontent.com/EvernodeXRPL/evernode-resources/main/sashimono/installer/evernode.sh | sudo bash -s update
+curl -fsSL https://raw.githubusercontent.com/EvernodeXRPL/evernode-test-resources/main/sashimono/installer/evernode.sh | sudo bash -s update
 ```
 
 **Recovering from a Failed Update**
@@ -18,7 +18,7 @@ curl -fsSL https://raw.githubusercontent.com/EvernodeXRPL/evernode-resources/mai
 In the event of a failure, the secret will not be deleted and will remain at the default secret file location or the custom location you have specified. If you wish to reinstall, use the following command and transfer the registration using the same account on a separate machine. Then try re-installing on your machine.
 
 ```
-curl -fsSL https://raw.githubusercontent.com/EvernodeXRPL/evernode-resources/main/sashimono/installer/evernode.sh | sudo bash -s transfer
+curl -fsSL https://raw.githubusercontent.com/EvernodeXRPL/evernode-test-resources/main/sashimono/installer/evernode.sh | sudo bash -s transfer
 ```
 
 ## Purging bad actors
@@ -45,13 +45,13 @@ evernode transfer
 However, if you have lost access to your original host (eg. a damaged host), you can use the following command in any Linux terminal. You are required to possess the Xahau account address and secret of your original host.
 
 ```
-curl -fsSL https://raw.githubusercontent.com/EvernodeXRPL/evernode-resources/main/sashimono/installer/evernode.sh | sudo bash -s transfer
+curl -fsSL https://raw.githubusercontent.com/EvernodeXRPL/evernode-test-resources/main/sashimono/installer/evernode.sh | sudo bash -s transfer
 ```
 
 ## Deregister a host
 
 ```
-curl -fsSL https://raw.githubusercontent.com/EvernodeXRPL/evernode-resources/main/sashimono/installer/evernode.sh | sudo bash -s deregister
+curl -fsSL https://raw.githubusercontent.com/EvernodeXRPL/evernode-test-resources/main/sashimono/installer/evernode.sh | sudo bash -s deregister
 ```
 
 **_Note: If you have already installed evernode, you cannot use the deregister command. Use `evernode uninstall` to uninstall Evernode._**
