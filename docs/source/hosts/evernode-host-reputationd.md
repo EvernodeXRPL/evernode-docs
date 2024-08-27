@@ -18,7 +18,7 @@ Hosts need to maintain a separate Xahau account for Reputation Assessment. Durin
 - Please ensure the secret for this account and the host registration account are backed up to safeguard against any issues with the host machine.
 - When specifying an existing account, it will act as a delegate for the reputation assessment process.
 - If managing `multiple hosts`, a SINGLE reputation account can be used for all, with a separate `DELEGATE HOOK` integrated into the reputation account. This is not the reputation hook that manages all the host's reputations. This will be a separate lightweight hook running in the host reputation account.
-- If you are opted in as a one-to-many reputation account mode. It's recommended not to assign a large number of hosts to your reputation account as it would cause account sequence conflicts. Even though the transactions are submitted parallel for hosts in their ReputationD services, they are submitted in a randomized manner. However, since the reputation preparation happens within the last 10% of the moment, due to this small time window. The higher the number of hosts higher the possibility of getting same account sequence.
+- If you are opted in as a one-to-many reputation account mode. It's recommended not to assign a large number of hosts to your reputation account as it would cause account sequence conflicts. Even though the transactions are submitted parallel for hosts in their ReputationD services, they are submitted in a randomized manner. However, since the reputation registration preparation happens within a quarter of the moment, due to this small time window. The higher the number of hosts higher the possibility of getting same account sequence.
 - Changing the modes of existing reputation account could lead to some temporary consequences for already configured hosts which are opted in.
   - For example, if you set reputation to manage `multiple hosts`, And if you have already opted in the same reputation account for a single host there is a chance of missing the current reputation assessment of the existing host.
 - The host will be responsible for covering the cost of invoking this hook, which triggers upon a specific transaction called `ttACCOUNT_SET`.
@@ -36,7 +36,14 @@ Hosts need to maintain a separate Xahau account for Reputation Assessment. Durin
 
 Once registered, the host is assigned to a universe comprising 64 nodes. Within this universe, the host spins up a contract instance and joins the associated cluster to execute the reputation contract. The universe serves as a controlled environment where reputation assessment activities take place, ensuring a fair and consistent evaluation process.
 Since you are being assigned to a cluster with 63 other random peers there's a possibility that you are getting assigned with dud hosts that aren't actually running reputation contract instances. If the majority of the cluster is like this even though you are running a fully able host, your reputation contract will fail to execute due to lack of majority in consensus.
-If the majority in your universe is reported as the universe is dud the scores of the universe will be discarded, but the reputation score you have maintained so far won't get affected.
+When the reputation registration is received by the hook it'll update the reputation `registrationMoment` to the next moment.
+There are two conditions when determining dud universes.
+
+There are several pre checks happened before registering for reputation. 
+- Whether the host supports IPV4
+- Whether the host version is greater than the minimum version required
+- Whether the host SSL certificate is valid
+If either of above fails, host won't get registered to the next reputation round.
 
 ## Contract Execution Status
 
@@ -53,28 +60,37 @@ These updated scores are stored in a separate JSON file named `port_opinion.json
 
 ## Score Reporting
 
-Towards the end of each moment, specifically during the last 10%, the node sends the scores to the Evernode reputation hook.
+The reputation contract runs for half of the moment and records the scores that have been recorded during the time of it's execution.
+Then it sends the scores to the Evernode reputation hook in a random time during the 3rd quarter of the moment. After the score is reported the reputation contract then sends a terminate request to the host to destroy this round's reputation contract instance where then host destroys the instance reducing the chance of two instances running at the same time.
 Scores are averaged to 100% based on try/success rate. The total score is weighted as 75% for resource assessment scores and 25% for port assessment scores. The final score reported to Hook is an average per node.
 This step acknowledges the experience regarding the peers within the universe. Each host reports the scores, providing an assessment of itself and its peers.
 The Evernode reputation hook accumulates these scores for a moment, creating a comprehensive evaluation based on peer assessments. In each new moment, these scores will be averaged and kept as the last moment's averaged score and the numerator denominator used to calculate the score will be reset. Simultaneously, the host is registered for the next moment's reputation assessment process, ensuring continuous participation and evaluation.
+And note that the scores won't be updated if hook detects a dud universe.
 
 ## Evernode Reputation Hook Update
 
 The Evernode reputation hook plays a crucial role in maintaining the individual states of each host. It updates their scores based on peer responses within the universe. These scores reflect the collective experiences and interactions with each host, providing a reliable measure of their reputation. The Evernode reputation hook ensures that the scores are up-to-date and accurately represent the hosts' contributions and performance.
 
 ## Dud Universe/Node Detection
-Hosts are reported as having faulty reputation execution and their scores will be discarded if they haven't created the minimum ledgers required (20% of closed ledgers in the cluster). 
-The universe is considered faulty and the universe scoring is discarded if the minimum required number of hosts haven't reported scores (80% of the number of hosts in the universe).
+- Hosts are reported as having faulty reputation execution and their scores will be discarded if they haven't created the minimum ledgers required (20% of closed ledgers in the cluster). 
+- The universe is considered faulty and the universe scoring is discarded if the minimum required number of hosts haven't reported scores (50% of the number of hosts in the universe).
+  - If the majority in your universe is reported as the universe is dud the scores of the universe will be discarded, but the reputation score you have maintained so far won't get affected.
+- The universe is considered faulty and the universe scoring is discarded if the cluster size is less that minimum (50% of the number of maximum hosts in the universe - 64).
+  - Even though the maximum universe size is 64 actual cluster size could be less than that due to reputation instance deployment failures in the hosts.
+If hook decides the universe is a dud then it won't average the final scores of the host and the score stays unchanged.
+
+## Contract instance preparation
+Reputation account acts as a neutral tenant and acquires a contract instance which later be employed as the reputation contract for the next moment. This acquire happens randomly withing the 4th quarter of the moment. After the acquire the contract stays idle and there will be a lobby program running. Just before the moment starts reputationd finds peer instance details of the universe and send the request to the lobby program with the peer list and unl to start the contract and then lobby program will start the contract and terminates itself. For this point onwards contract runs for half of the moment.
 
 ## Performance Check
 
 Hosts can check their performance results regarding the reputation assessment using the `evernode reputationd status` command. This command displays the scores of the reputation contract execution. By running this command, hosts can gain insights into their reputation scores and understand how their contributions are perceived within the community.
 - `scoreNumerator` - accumulated score value of the moment.
 - `scoreDenominator` - number of acknowledgments received to formulate that score for the moment.
-- `score` - Averaged score of the last moment.
+- `score` - Averaged score of the last moment (Average of last score and this moments score. This won't get updated if host was in a dud universe).
 - `lastResetMoment` - The moment when scoreNumerator and scoreDenominator were last reset to 0.
-- `lastScoredMoment` - The moment when the score was last calculated.
-- `lastUniverseSize` - Size of the universe to which scoreNumerator and scoreDenominator belong.
+- `lastScoredMoment` - The moment when the score was last calculated (Won't get updated if host was in a dud universe).
+- `lastUniverseSize` - Size of the universe to which scoreNumerator and scoreDenominator belong (This is used to determine dud universes).
 - `valid` - true if the current score is calculated within the last two moments.
 
 ## Conclusion
