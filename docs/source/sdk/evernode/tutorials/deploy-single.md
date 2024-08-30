@@ -91,7 +91,7 @@ export EV_NETWORK=testnet
 
    - Run the following command to acquire. Replace `<host Xahau address>` with the host address.
      ```bash
-     evdevkit acquire <host Xahau address>
+     evdevkit acquire <host-Xahau-address>
      ```
    - This will create an Evernode instance in a random host and outputs the instance details
      ```bash
