@@ -36,7 +36,7 @@ Hosts need to maintain a separate Xahau account for Reputation Assessment. Durin
 
 Once registered, the host is assigned to a universe comprising 64 nodes. Within this universe, the host spins up a contract instance and joins the associated cluster to execute the reputation contract. The universe serves as a controlled environment where reputation assessment activities take place, ensuring a fair and consistent evaluation process.
 Since you are being assigned to a cluster with 63 other random peers there's a possibility that you are getting assigned with dud hosts that aren't actually running reputation contract instances. If the majority of the cluster is like this even though you are running a fully able host, your reputation contract will fail to execute due to lack of majority in consensus.
-When the reputation registration is received by the hook it'll update the reputation `registrationMoment` to the next moment.
+When the reputation registration is received by the hook it'll update the reputation `registeredMoment` to the next moment.
 There are two conditions when determining dud universes.
 
 There are several pre checks happened before registering for reputation. 
