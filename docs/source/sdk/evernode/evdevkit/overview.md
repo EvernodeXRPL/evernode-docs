@@ -27,11 +27,11 @@ Please note that this connects by default to `wss://xahau.network`. If you wish 
 
 This command supports following options for sorting and filtering the output.
 
-| Name      | Description                       |
-| -------------------------- | ---------------------------------- |
+| Name                        | Description                        |
+| --------------------------- | ---------------------------------- |
 | `-l, --limit [limit]`       | List limit                         |
-|  `-o, --order-by [order-by]` | Order by key                       |
-| `-d, --desc [desc] `        | Order by descending manner          |
+| `-o, --order-by [order-by]` | Order by key                       |
+| `-d, --desc [desc] `        | Order by descending manner         |
 | `-p, --props [props] `      | Comma separated properties to show |
 
 ## Acquiring instance from Evernode
@@ -41,7 +41,7 @@ You can use the Evernode developer kit to acquire instances from Evernode. This 
 - You can set `EV_NETWORK` "(mainnet|testnet)" to override the Evernode network used for instance creation, Otherwise defaults to "mainnet".
 - The following command will create an instance in the given host. Given configurations will be populated if `EV_HP_INIT_CFG_PATH` is given.
 ```
-evdevkit acquire <host Xahau address>
+evdevkit acquire <host-Xahau-address>
 ```
 - This will return the acquired instance details.
 
@@ -52,10 +52,14 @@ You can deploy your already implemented [DApp](../../../platform/hotpocket/overv
 You can package your contract using evdevkit.
 - To override Evernode instance's configurations when you are deploying (Note: Currently this supports only `contract` and `mesh.known_peers` sections). You can create a [Contract configuration](../../hotpocket/reference/configuration.md#contract) file and set its path as `EV_HP_OVERRIDE_CFG_PATH` [environment variable](#environment-variables).
 ```
-# evdevkit bundle <path to contract directory> <public key of the instance> <contract binary> -a <contract binary arguments>
+evdevkit bundle <path-to-contract-directory> <public-key-of-the-instance> <contract-binary> -a <contract-binary-arguments>
 evdevkit bundle $HOME/contract ed060a4aae0ec9183e4869e1490e908c9a9a3fd72816021c823ecd7d052e6e02d2 /usr/bin/node -a index.js
 ```
-- This will return the path to the created contract bundle.
+Note that,
+- **path-to-contract-directory:** This path should be an absolute path and it should point to the directory containing the final deployable contract files. The contents of this directory must align with your specified contract configurations.
+  - For Node.js contracts: The directory should include relevant contents that match the `bin_args` field in your contract configuration.
+  - For C contracts: The directory should contain the relevant binary file specified in the `bin_path` field.
+  - Ensure that the directory accurately reflects the deployable contents according to the contract type and configuration.
 
 ### Uploading a contract to Evernode
 You can upload your contract bundle to the Evernode instance
@@ -105,7 +109,7 @@ In order to change the tenant info you need to override the [environment variabl
 
 Execute the following command to create an Evernode cluster. 
 
-_**NOTE:** If the cluster creation process fails during execution, re-executing the same command will resume from the point of failure._
+_**NOTE:** If the cluster creation process fails during execution, re-executing the same command with `--recover` option will resume from the point of failure._
 
  ```
 evdevkit cluster-create <cluster-size > <path-to-contract-directory> <contract-binary> <preferred-hosts-file-path>
@@ -114,33 +118,34 @@ evdevkit cluster-create <cluster-size > <path-to-contract-directory> <contract-b
 
 `evdevkit cluster-create` Arguments:
 
-| Name                      | Description                                                                           |
-| ------------------------- | --------------------------------------------------------------------------            |
-| cluster-size              | Size of the cluster.                                                                  |
-| path-to-contract-directory| Absolute path to the contract directory to be bundled.                                |
-| contract-binary           | Contract binary name                                                                  |
-| preferred-hosts-file-path | File path of preferred host account list (in line-by-line format)                     |
+| Name                       | Description                                                                                                                                                                                                      |
+| -------------------------- | ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| cluster-size               | Size of the cluster.                                                                                                                                                                                             |
+| path-to-contract-directory | This path should be an absolute path and it should point to the directory containing the final deployable contract files. The contents of this directory must align with your specified contract configurations. |
+| contract-binary            | Contract binary name                                                                                                                                                                                             |
+| preferred-hosts-file-path  | File path of preferred host account list (in line-by-line format)                                                                                                                                                |
 
 `evdevkit cluster-create`  Options:
 
 
 
-|Name&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;| Description|
-|---------------------------|-----------------------------------------------------------------------------------------------------------|
-|  `-a, --contract-args`     | Contract binary arguments                                                                                 |
-| `-m, --moments`           | Life moments                                                                                              |
-| `-c, --contract-id`       | Contract id                                                                                               |
-| `-i, --image`             | Instance image                                                                                            |
-| `-l, --life-plan`         | Organize cluster node lifespans using stat (static - default), rand (random), or inc (incremental) modes. |
-| `--min-life`              | Minimum moment count to consider in randomized node life planning.                                        |
-| `--max-life`              | Maximum moment count to consider in randomized node life planning.                                        |
-| `--life-gap`              | Life gap in moments in incremental node life planning.                                                    |
-| `--signer-count`          | Number of signers for a cluster with multiple signer nodes                                                |
-| `--signers`               | JSON file path of signer details                                                                          |
-| `--signer-life`           | Life moments for the signers                                                                              |
-| `--signer-quorum`         | Quorum of the cluster with multiple signer nodes (within the valid range (0,1])                           |
-| `-e, --evr-limit`         | Maximum amount of EVRs to be spent on instance acquisitions                                               |
-|  `-h, --help`              | Display help for command                                                                                  |
+| Name&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; | Description                                                                                               |
+| ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | --------------------------------------------------------------------------------------------------------- |
+| `-a, --contract-args`                                                                                                                                                        | Contract binary arguments                                                                                 |
+| `-m, --moments`                                                                                                                                                              | Life moments                                                                                              |
+| `-c, --contract-id`                                                                                                                                                          | Contract id                                                                                               |
+| `-i, --image`                                                                                                                                                                | Instance image                                                                                            |
+| `-l, --life-plan`                                                                                                                                                            | Organize cluster node lifespans using stat (static - default), rand (random), or inc (incremental) modes. |
+| `--min-life`                                                                                                                                                                 | Minimum moment count to consider in randomized node life planning.                                        |
+| `--max-life`                                                                                                                                                                 | Maximum moment count to consider in randomized node life planning.                                        |
+| `--life-gap`                                                                                                                                                                 | Life gap in moments in incremental node life planning.                                                    |
+| `--signer-count`                                                                                                                                                             | Number of signers for a cluster with multiple signer nodes                                                |
+| `--signers`                                                                                                                                                                  | JSON file path of signer details                                                                          |
+| `--signer-life`                                                                                                                                                              | Life moments for the signers                                                                              |
+| `--signer-quorum`                                                                                                                                                            | Quorum of the cluster with multiple signer nodes (within the valid range (0,1])                           |
+| `-e, --evr-limit`                                                                                                                                                            | Maximum amount of EVRs to be spent on instance acquisitions                                               |
+| `--recover`                                                                                                                                                                  | Recover from if there are failed cluster creations.                                                       |
+| `-h, --help`                                                                                                                                                                 | Display help for command                                                                                  |
 
 An example HotPocket configuration for the instance creation:
 ```json
@@ -214,7 +219,7 @@ evdevkit audit -h <host Xahau address>
 
 | Name                    | Description                                                                              |
 | ----------------------- | ---------------------------------------------------------------------------------------- |
-| EV_TENANT_SECRET        | Tenant Xahau account secret.                                                              |
+| EV_TENANT_SECRET        | Tenant Xahau account secret.                                                             |
 | EV_USER_PRIVATE_KEY     | Private key of the contract client (Can be generated using "evdevkit keygen").           |
 | EV_HP_INIT_CFG_PATH     | (Optional) File path of the HotPocket configuration for the instance creation.           |
 | EV_HP_OVERRIDE_CFG_PATH | (Optional) File path of the HotPocket configuration for the contract bundle upload.      |
@@ -226,12 +231,12 @@ evdevkit audit -h <host Xahau address>
 
 The `evdevkit acquire-and-deploy` command is used to execute [acquire](#acquiring-instance-from-evernode), [bundle](#creating-the-deployable-contract-package) and [deploy](#uploading-a-contract-to-evernode) processes together. The arguments and options used in this command is similar to the ones used in [`evdevkit acquire`](#acquiring-instance-from-evernode) and [`evdevkit deploy`](#uploading-a-contract-to-evernode) commands.
 ```
-evdevkit acquire-and-deploy <path to contract directory> <contract binary> <host-xahau-address> -a <contract binary arguments>
+evdevkit acquire-and-deploy <path-to-contract-directory> <contract-binary> <host-Xahau-address> -a <contract-binary-arguments>
 ```
 
 ### View host info
 
-The `evdevkit host` command is used to retireve configuration information on a specific host. 
+The `evdevkit host` command is used to retrieve configuration information on a specific host. 
 ```
 evdevkit host <host-xahau-address>
 ```
