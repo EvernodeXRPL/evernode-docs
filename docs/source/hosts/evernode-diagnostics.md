@@ -64,15 +64,14 @@ Failed to retrieve the latest version data.
 - Wait for some time and try again, Your limitation will be lifted and you'll be able to successfully execute the command again.
 
 ## 10. No offered lease after installation
-- Not the Evernode installation will only mint the leases, It won't create lease offers for you.
-- You have to run `evernode offerlease` to offer the minted leases.
+- Now the Evernode installation will only mint the leases, It won't create lease offers for you.
+- It will create the lease offers in next start of the message board.
+  - You can also run `evernode offerlease` to offer the un offered leases.
 
 ## 11. No rewards even if the Host is active
-- **Case 1:** In version 0.8.2 you won't rewards if your host has unoffered leases.
+- **Case 1:** If your host has unoffered leases.
 - **Case 2:** Your reputation will be set to 0, if your host has less than 3 instances.
 - **Case 3:** Your reputation will be set to 0, if your host's lease fee is more than `(reward distribution for the moment / host count) * 110%`
-- **Case 4:** Your reputation will be set to 0, if you haven't upgraded to v0.8.2 within **one week**.
-- **Case 5:** Your reputation will be set to 0, if your machine is from on of the **Sanctioned Entities** mentioned in [Evernode license](https://raw.githubusercontent.com/EvernodeXRPL/evernode-test-resources/main/license/evernode-license.pdf).
   
 ## 12. Lease offer creation failure
 - **Case 1:** If your lease offering failed when you run `evernode offerlease`, Executing the command again would offer the remaining leases.
@@ -116,7 +115,7 @@ Failed to retrieve the latest version data.
 - However, these commands are integrated into the `evernode reputationd status` and `evernode log` commands in an abstract manner.
 
 ### b. Issues with reputation score reporting.
-- Typically, a host that registers for a reputation assessment sends the reputation scores at the end of the assessment period.
+- Typically, a host that registers for a reputation assessment and sends the reputation scores at the 3rd quarter of the moment.
 - If the host is part of a "bad universe" (a group of underperforming hosts), the reputation contract may fail to execute correctly or reach consensus or minimum required ledger completions for reputation.
 - As a result, the host may be unable to send scores for that assessment round and and it would report this as a bad universe.
 - If you were to be in a "bad universe" which is decided by the hook from the majority scores of the universe. Your reputation scores will be discarded for that moment.
@@ -143,6 +142,7 @@ Failed to retrieve the latest version data.
 ### d. Continuous failures in sending reputation.
 - Continuous failures can occur due to insufficient XAH balance in the host reputation account, preventing the invocation of the Evernode Reputation Account.
 - Ensure that the host reputation account is adequately funded to avoid this issue.
+- Ensure your host and reputation address are properly configured for one-to-one or one-to-many modes. You can fix it by running `evernode reputationd opt-in` again.
 
 ### e. Seeing `tefPAST_SEQ` (This sequence number has already passed.) too often.
 - That means that the number of reputation transactions that the reputation account has to bear within reputation preparation time is high due to the high number of hosts assigned to it.
@@ -156,13 +156,3 @@ Failed to retrieve the latest version data.
 
 ### g. When your host account's reputation score is zero
 - If your host account's reputation score is zero, it may lead to meeting conditions where the reputation value of the host is turned to zero. Please review the [reputation deduction criteria](./evernode-host.md#host-reputation) carefully.
-
-### h. In the logs it says `No offers available` when acquiring an instance
-- Create a cron job that checks lease inconsistencies and fix them.
-  - Execute `crontab -e`.
-  - Choose a preferred editor (nano).
-  - Add following line inside the file.
-    - `0 */4 * * * evernode config resources 0 0 0 $(jq -r .system.max_instance_count /etc/sashimono/sa.cfg)`
-    - This will execute the re config command in every 4 hours to fix lease inconsistencies.
-  - You can check the cron execution logs with the following command to see whether the command has been executed.
-    - `grep CRON /var/log/syslog`
