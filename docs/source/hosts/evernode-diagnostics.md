@@ -6,16 +6,16 @@ _Note: If any of the following doesn't help in your situation please send it to 
 
 ## 1. Keeps on retry loop
 - Abort and try again
-  - This won't rollback your installation. The next try will resume from where you've aborted.
+  - This won't roll back your installation. The next try will resume from where you've aborted.
 - Rolling back will clear installation files but won't deregister your account. You'll have to use [deregister command](./maintenance.md#deregister-a-host) to deregister from Evernode.
 - If this doesn't help check for the installation error log for the error and send it to the Evernode support team as a GitHub issue [here](https://github.com/EvernodeXRPL/evernode-host/issues).
 
 ## 3. Asking to re-check the balance
-- If the installer is asking `Do you want to re-check the balance`, when you are installing or transferring to a VM.
+- If the installer is asking `Do you want to re-check the balance` when you are installing or transferring to a VM.
 - This means you do not have enough balance in your Host Xahau account to install and maintain a host.
-- Please check your Host Xahau account whether it has the following XAH and EVR balances. If not, fund your account and retry.
+- Please check whether your Host Xahau account has the following XAH and EVR balances. If not, fund your account and retry.
   - You should have the minimum XAH balance in your account to maintain your host for 3 months.
-    - This is to pay your upcoming heartbeats, reserves etc, It won't be expended at the installation.
+    - This is to pay your upcoming heartbeats, reserves, etc, It won't be expended at the installation.
     - The value is at around `18 XAH` when this documentation is last updated.
   - You should have the minimum EVR balance in your account to do **register (on a fresh install)** or **re-register (on transfer install)** transactions.
     - If you are doing a register (on a fresh install) - You should have `<Registration Fee> EVRs` in your account (`500 EVRs` when this documentation is last updated).
@@ -25,7 +25,7 @@ _Note: If any of the following doesn't help in your situation please send it to 
 - If your installation is failing with `CLI_OUT: INVALID_REG`.
 - This means your host is already registered in Evernode but now you are trying to install again with different host specifications.
 - So you can [transfer](maintenance.md#transfer-the-host-registration) your registration and re-install again.
-- **Not recommended:** You can also uninstall/deregister and install again. But it will only refund you half of the registration fee, if you have already been in the Evernode network. So we recommend not to do this if you are not intending to permanently leave the network.
+- **Not recommended:** You can also uninstall or deregister and then reinstall. However, if you have already been in the Evernode network, you will only receive a refund of half of the registration fee. Therefore, we recommend avoiding this action if you do not intend to permanently leave the network.
 
 ## 5. Uninstall failure
 - If your uninstall process failed at any point you can abort it and retry again.
@@ -66,7 +66,7 @@ Failed to retrieve the latest version data.
 ## 10. No offered lease after installation
 - Now the Evernode installation will only mint the leases, It won't create lease offers for you.
 - It will create the lease offers in next start of the message board.
-  - You can also run `evernode offerlease` to offer the un offered leases.
+  - You can also run `evernode offerlease` to offer the unoffered leases.
 
 ## 11. No rewards even if the Host is active
 - **Case 1:** If your host has unoffered leases.
@@ -115,9 +115,9 @@ Failed to retrieve the latest version data.
 - However, these commands are integrated into the `evernode reputationd status` and `evernode log` commands in an abstract manner.
 
 ### b. Issues with reputation score reporting.
-- Typically, a host that registers for a reputation assessment and sends the reputation scores at the 3rd quarter of the moment.
+- Typically, a host that registers for a reputation assessment sends the reputation scores in the third quarter of the moment.
 - If the host is part of a "bad universe" (a group of underperforming hosts), the reputation contract may fail to execute correctly or reach consensus or minimum required ledger completions for reputation.
-- As a result, the host may be unable to send scores for that assessment round and and it would report this as a bad universe.
+- As a result, the host may be unable to send scores for that assessment round and it would report this as a bad universe.
 - If you were to be in a "bad universe" which is decided by the hook from the majority scores of the universe. Your reputation scores will be discarded for that moment.
 - **This could also mean that you are a bad actor**, check the [below point](#c-scorenumerator-sits-at-a-very-low-value) to investigate on that.
 - Note: If you are seeing this behavior more often, it means you are having issues with running the reputation contract and you'll be getting lower reputation scores. Check [this](#c-scorenumerator-sits-at-a-very-low-value) for diagnostics.
