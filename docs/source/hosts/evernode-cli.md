@@ -6,10 +6,10 @@ You can use the Evernode CLI to manage and monitor your Evernode host.
 - `evernode list` - Display a list of smart contracts running on your host.
 - `evernode log` - Generate Evernode log file. Requires sudo.
 - `evernode transfer` - Initiates a transfer so you can move to a new host/account or reinstall on the same host/account without having to pay the registration fee again.
-- `evernode applyssl <private key file> <cert file> <ca bundle file (optional)>` - Apply your own SSL certificates for contracts. This is not needed if you opted-in for Let's Encrypt SSL during installation. Requires sudo.
+- `evernode applyssl <private key file> <cert file> <ca bundle file>` - Apply your own SSL certificates for contracts. This is not needed if you opted-in for Let's Encrypt SSL during installation. Requires sudo.
     - `<private key file>`: Path to the tls private key file.
     - `<cert file>`: Path to the tls cert file (public key).
-    - `<ca bundle file (optional)>`: Path to the tls certificate authority file. Optional.
+    - `<ca bundle file>`: Path to the tls certificate authority file.
 - `evernode config <type> <arguments (optional)>` - View and update host configuration. Requires sudo.
     - `<type>` must be one of the configuration types: `resources`, `leaseamt`, `rippled`.
     - If you don't specify any arguments, it will print the current configuration value.
@@ -28,34 +28,34 @@ You can use the Evernode CLI to manage and monitor your Evernode host.
         - `<email address>`: Contact email address for the host (this will be published on the host registry and is publicly visible to anyone).
     - `evernode config extrafee <fee>`
         - `<fee>`: Affordable extra transaction fee amount in XAH Drops.
-    - `evernode config instance <ipv6>`
-        - `<ipv6>`: ipv6 address for the instance.
-- `evernode governance <operation_type> <arguments (optional)>` - Manages the governance candidates related to the host.
-    - `<operation_type>` must be one of the operation types: `propose`, `withdraw`, `vote`, `unvote`, `status`, `report` and `help`.
+    - `evernode config instance ipv6`
+        - ipv6 address will be asked as a user input.
+- `evernode governance <operation type> <arguments (optional)>` - Manages the governance candidates related to the host.
+    - `<operation type>` must be one of the operation types: `propose`, `withdraw`, `vote`, `unvote`, `status`, `report` and `help`.
     - `propose`, `withdraw`, `vote`, `unvote` and `report` operations require sudo.
     - `withdraw`, `vote`, and `unvote` operations apply to both new hook and dud host candidate types. 
     - Use the `propose` operation to propose new hook candidates and the `report` operation to propose dud host candidates.
     - `evernode governance propose <hash file> <short name>` - Propose a new hook candidate.
-      - `<hash file>`: Text file with the combined hashes of proposing hooks (`<governor_hook><registry_hook><heartbeat_hook>`).
+      - `<hash file>`: Text file with the combined hashes of proposing hooks (`<governor hook><registry hook><heartbeat hook>`).
     - `evernode governance withdraw <candidate id>` - Withdraw proposed governance candidate.
     - `evernode governance vote <candidate id>` - Vote for a governance candidate.
     - `evernode governance unvote <candidate id>` - Remove vote from voted governance candidate.
     - `evernode governance status` - Get governance information of the host.
-      - This also helps to find proposed and voted `candidate_id`s by the host.
+      - This also helps to find proposed and voted `candidate id`s by the host.
     - `evernode governance report <dud host address>` - Propose a dud host candidate using its Xahau account address. 
     - `evernode governance help` - Print the command information.
 
 - `evernode delete <instance name>` - Remove an existing smart contract instance and cancel the lease. Any payments made for lost lease duration are not refunded.
     - `<instance name>`: Name of the smart contract instance to be deleted. Use `evernode list` to find out the instance name.
 - `evernode update` - Apply Evernode software updates. Requires sudo.
-- `evernode regkey <operation_type>` - Manages the Regular Key of the host's Xahau account.
-    - `<operation_type>` must be either `set` or `delete`. Both of these operations require sudo.
-    - `evernode regkey set <regular_key>`: Assigns or updates the regular key associated with your host's Xahau account address.
+- `evernode regkey <operation type>` - Manages the Regular Key of the host's Xahau account.
+    - `<operation type>` must be either `set` or `delete`. Both of these operations require sudo.
+    - `evernode regkey set <regular key>`: Assigns or updates the regular key associated with your host's Xahau account address.
         - `<regular key>`: The Xahau address that indicates the regular key pair to be assigned to the host Xahau account.
     - `evernode regkey delete`: Deletes the regular key associated with your host's Xahau account address.
 - `evernode offerlease` - Create Lease offers for the instances. Requires sudo.
-- `evernode reputationd <operation_type>` - Manages the Evernode ReputationD for reward distribution.
-    - `<operation_type>` must be `opt-in`, `opt-out` or `status`. All of these operations require sudo.
+- `evernode reputationd <operation type>` - Manages the Evernode ReputationD for reward distribution.
+    - `<operation type>` must be `opt-in`, `opt-out` or `status`. All of these operations require sudo.
     - `evernode reputationd opt-in`: Opt in to the Evernode reputation for reward distribution.
     - `evernode reputationd opt-out`: Opt out from the Evernode reputation for reward distribution.
     - `evernode reputationd status`: Check the status of Evernode reputation for reward distribution.

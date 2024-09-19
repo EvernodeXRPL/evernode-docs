@@ -84,13 +84,31 @@ The reputation account acts as a neutral tenant and acquires a contract instance
 ## Performance Check
 
 Hosts can check their performance results regarding the reputation assessment using the `evernode reputationd status` command. This command displays the scores of the reputation contract execution. By running this command, hosts can gain insights into their reputation scores and understand how their contributions are perceived within the community.
-- `scoreNumerator` - accumulated score value of the moment.
-- `scoreDenominator` - number of acknowledgments received to formulate that score for the moment.
-- `score` - Averaged score of the last moment (Average of the last score and this moment's score. This won't get updated if the host was in a dud universe).
-- `lastResetMoment` - The moment when scoreNumerator and scoreDenominator were last reset to 0.
-- `lastScoredMoment` - The moment when the score was last calculated (Won't get updated if the host was in a dud universe).
-- `lastUniverseSize` - Size of the universe to which scoreNumerator and scoreDenominator belong (This is used to determine dud universes).
-- `valid` - true if the current score is calculated within the last two moments.
+
+|     |  |
+| -------- | ------- |
+| `scoreNumerator` | Accumulated score value of the moment, This value belongs to the last completed moment which will be considered in the end of current moment. This value will be reset when the moment is completed. |
+| `scoreDenominator` | Number of acknowledgments received to formulate that score for the moment, This value belongs to the last completed moment which will be considered in the end of current moment. This acts as the divider of `scoreNumerator` since it's the number of scores received. This value will be reset when the moment is completed. |
+| `score` | This is the average score value `{score + (scoreNumerator / scoreDenominator)} / 2`. `scoreNumerator` and `scoreDenominator` are the values that were there when the moment is completed. `scoreNumerator` and `scoreDenominator` will be reset when this is calculated. This won't get updated if host was in a dud universe. |
+| `lastResetMoment` | The moment when `scoreNumerator` and `scoreDenominator` were last reset to 0. This won't get updated if the host wan't assigned to a universe. |
+| `lastScoredMoment` | The moment when the score was last calculated. This won't get updated if host was in a dud universe since all the scores reported by the hosts in the universe are skipped. |
+| `lastUniverseSize` | Size of the universe to which `scoreNumerator` and `scoreDenominator` belong, Means this value belongs to the last completed moment. Universe is considered as dud if `scoreDenominator` is less than 50% of this value which means at least 50% of the hosts in the universe wasn't reliable. |
+| `valid` | This indicates whether the score value is valid. Score value is valid if it's calculated within last 2 moments which can be determined by `lastScoredMoment` |
+
+## Host Reputation for Rewards
+
+Hosts can see their reputation by running `evernode status`
+- The `reputation` value varies between **0-255**.
+- If the host reputation is equal or greater than **200** then your host is eligible for rewards. If not, you won't receive any rewards.
+- `reputation` value is calculated on the heartbeat. Above `score` and `valid` values updated by **reputationd** are considered when the `reputation` value is calculated.
+- When the host receives a heartbeat,
+  - `reputation` is set to **0** in following cases.
+    - **Case 1:** If your host has unoffered leases.
+    - **Case 2:** If your host has less than 3 instances.
+    - **Case 3:** If your host's lease fee is more than `(reward distribution for the moment / host count) * 110%`
+    - **Case 4:** If your host is not opted in for **reputationd**.
+    - **Case 5:** If there's no `score` that is `valid`.
+  - Otherwise if there's a `valid` `score`, `reputation` is set to `(score / 100) * 255`.
 
 ## Conclusion
 

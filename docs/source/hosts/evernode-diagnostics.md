@@ -69,9 +69,7 @@ Failed to retrieve the latest version data.
   - You can also run `evernode offerlease` to offer the unoffered leases.
 
 ## 11. No rewards even if the Host is active
-- **Case 1:** If your host has unoffered leases.
-- **Case 2:** Your reputation will be set to 0, if your host has less than 3 instances.
-- **Case 3:** Your reputation will be set to 0, if your host's lease fee is more than `(reward distribution for the moment / host count) * 110%`
+- Check your host lacks reputation by checking [these conditions](evernode-host-reputationd.md#host-reputation-for-rewards)
   
 ## 12. Lease offer creation failure
 - **Case 1:** If your lease offering failed when you run `evernode offerlease`, Executing the command again would offer the remaining leases.
@@ -121,6 +119,11 @@ Failed to retrieve the latest version data.
 - If you were to be in a "bad universe" which is decided by the hook from the majority scores of the universe. Your reputation scores will be discarded for that moment.
 - **This could also mean that you are a bad actor**, check the [below point](#c-scorenumerator-sits-at-a-very-low-value) to investigate on that.
 - Note: If you are seeing this behavior more often, it means you are having issues with running the reputation contract and you'll be getting lower reputation scores. Check [this](#c-scorenumerator-sits-at-a-very-low-value) for diagnostics.
+- **Common score errors.**
+  - __Not a reliable score. We are not in sync.__
+    - The contract wasn't in sync by the time of score fetching.
+  - __Not a reliable score. We haven't executed the contract minimum rounds required.__
+    - The contract hasn't completed minimum rounds required to be a reliable execution. Which means contract should be executed at lease 20% of the ledgers that the cluster has created.
 
 ### c. `scoreNumerator` sits at a very low value
 - Check your [reputation logs](#a-health-of-reputationd-service)
@@ -138,6 +141,7 @@ Failed to retrieve the latest version data.
     - Port connectivity issues - Check your DNS or firewall configurations to see if the [Evernode required port ranges](./evernode-host.md#firewalls-and-ports) are allowed.
   - If you are observing `reporting without score` less often, but still your score is low.
     - Check your reputation contract logs as mentioned above and see `****Ledger created****` records. Contact the Evernode team with your log files.
+- __Note that even if you have the minimum requirements it's better to have more since the resources are consumed not only by the contract execution itself, Resources are also consumed by docker daemon and other utilities.__
 
 ### d. Continuous failures in sending reputation.
 - Continuous failures can occur due to insufficient XAH balance in the host reputation account, preventing the invocation of the Evernode Reputation Account.
@@ -149,10 +153,25 @@ Failed to retrieve the latest version data.
 - So it's hard for ReputationD to automatically randomize the transactions due to the load.
 - Solution for this is, to distribute the hosts with more reputation accounts.
 
-### f. No Relevant Instance Acquisition.
-- Insufficient EVR balance in the host reputation account can prevent the purchase of an instance of the host machine necessary for deploying the reputation contract.
-- Ensure that the host reputation account is sufficiently funded.
-- Additionally, if the host account has not offered leases for minted lease tokens, it will be considered inactive. The reputation service cannot acquire an instance without available offers at that time. Ensure that you create offers for the lease tokens using the `evernode offerlease` command.
+### f. No relevant reputation instance.
+- Check the transactions of the reputation account and see if there are failed transactions and see the reason.
+  - Insufficient EVR balance in the host reputation account can prevent the purchase of an instance of the host machine necessary for deploying the reputation contract.
+  - Ensure that the host reputation account is sufficiently funded.
+  - Additionally, if the host account has not offered leases for minted lease tokens, it will be considered inactive. The reputation service cannot acquire an instance without available offers at that time. Ensure that you create offers for the lease tokens using the `evernode offerlease` command.
+- There are several prerequisite checks are made before creating the reputation instance.
+  - You can see the failures in the logs.
+    ```bash 
+    sudo -u sashireputationd bash -c 'journalctl --user -u sashimono-reputationd | tail -n <number of lines>'
+    ```
+  - Following are the prerequisite checks. Instance creation will be skipped, if any of them fails.
+    - Your host should support IPV4.
+      - Enable IPV4 support if not.
+    - Your host should be in the [minimum version](https://raw.githubusercontent.com/EvernodeXRPL/evernode-test-resources/main/definitions/definitions.json) required.
+      - Update the Evernode to the minimum version.
+    - Your host should have valid SSL certificates
+      - Check the validity of SSL certificates located in `/etc/sashimono/contract_template/cfg/`
+      - If they are not valid, It means they are not auto renewed (Consent is asked in the installation). Generate new certificates using `certbot renew`
+      - Then replace the new ones inside the Sashimono location with the command `evernode applyssl /etc/letsencrypt/live/<your domain>/privkey.pem /etc/letsencrypt/live/<your domain>/cert.pem /etc/letsencrypt/live/<your domain>/fullchain.pem`
 
 ### g. When your host account's reputation score is zero
 - If your host account's reputation score is zero, it may lead to meeting conditions where the reputation value of the host is turned to zero. Please review the [reputation deduction criteria](./evernode-host.md#host-reputation) carefully.
