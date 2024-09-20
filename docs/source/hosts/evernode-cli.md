@@ -7,9 +7,9 @@ You can use the Evernode CLI to manage and monitor your Evernode host.
 - `evernode log` - Generate Evernode log file. Requires sudo.
 - `evernode transfer` - Initiates a transfer so you can move to a new host/account or reinstall on the same host/account without having to pay the registration fee again.
 - `evernode applyssl <private key file> <cert file> <ca bundle file>` - Apply your own SSL certificates for contracts. This is not needed if you opted-in for Let's Encrypt SSL during installation. Requires sudo.
-    - `<private key file>`: Path to the tls private key file.
-    - `<cert file>`: Path to the tls cert file (public key).
-    - `<ca bundle file>`: Path to the tls certificate authority file.
+    - `<private key file>`: Path to the TLS private key file.
+    - `<cert file>`: Path to the TLS cert file (public key).
+    - `<ca bundle file>`: Path to the TLS certificate authority file.
 - `evernode config <type> <arguments (optional)>` - View and update host configuration. Requires sudo.
     - `<type>` must be one of the configuration types: `resources`, `leaseamt`, `rippled`.
     - If you don't specify any arguments, it will print the current configuration value.
@@ -23,7 +23,7 @@ You can use the Evernode CLI to manage and monitor your Evernode host.
     - `evernode config xahaud <server url>`
         - `<server url>`: Xahaud server websocket url (wss://) you want to use to interact with Xahau.
     - `evernode config xahaud-fallback <server url>`
-        - `<server url>`: Comma separated list of xahaud fallback server websocket urls (wss://).
+        - `<server url>`: Comma separated list of Xahaud fallback server websocket URLs (wss://).
     - `evernode config email <email address>`
         - `<email address>`: Contact email address for the host (this will be published on the host registry and is publicly visible to anyone).
     - `evernode config extrafee <fee>`
@@ -36,7 +36,7 @@ You can use the Evernode CLI to manage and monitor your Evernode host.
     - `withdraw`, `vote`, and `unvote` operations apply to both new hook and dud host candidate types. 
     - Use the `propose` operation to propose new hook candidates and the `report` operation to propose dud host candidates.
     - `evernode governance propose <hash file> <short name>` - Propose a new hook candidate.
-      - `<hash file>`: Text file with the combined hashes of proposing hooks (`<governor hook><registry hook><heartbeat hook>`).
+      - `<hash file>`: Text file with the combined hashes of proposing hooks (`<governor hook><registry hook><heartbeat hook><reputation hook>`).
     - `evernode governance withdraw <candidate id>` - Withdraw proposed governance candidate.
     - `evernode governance vote <candidate id>` - Vote for a governance candidate.
     - `evernode governance unvote <candidate id>` - Remove vote from voted governance candidate.
