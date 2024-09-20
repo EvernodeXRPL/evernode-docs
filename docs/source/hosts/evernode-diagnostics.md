@@ -65,7 +65,7 @@ Failed to retrieve the latest version data.
 
 ## 10. No offered lease after installation
 - Now the Evernode installation will only mint the leases, It won't create lease offers for you.
-- It will create the lease offers in next start of the message board.
+- It will create the lease offers at the next start of the message board.
   - You can also run `evernode offerlease` to offer the unoffered leases.
 
 ## 11. No rewards even if the Host is active
@@ -123,7 +123,7 @@ Failed to retrieve the latest version data.
   - __Not a reliable score. We are not in sync.__
     - The contract wasn't in sync by the time of score fetching.
   - __Not a reliable score. We haven't executed the contract minimum rounds required.__
-    - The contract hasn't completed minimum rounds required to be a reliable execution. This means the contract should be executed in at least 20% of the ledgers that the cluster has created.
+    - The contract hasn't completed the minimum rounds required to be a reliable execution. This means the contract should be executed in at least 20% of the ledgers that the cluster has created.
 
 ### c. `scoreNumerator` sits at a very low value
 - Check your [reputation logs](#a-health-of-reputationd-service)
@@ -170,7 +170,7 @@ Failed to retrieve the latest version data.
       - Update the Evernode to the minimum version.
     - Your host should have valid SSL certificates
       - Check the validity of SSL certificates located in `/etc/sashimono/contract_template/cfg/`
-      - If they are not valid, It means they are not auto renewed. Generate new certificates using `certbot renew`
+      - If they are not valid, It means they are not auto-renewedfin. Generate new certificates using `certbot renew`
       - Then replace the new ones inside the Sashimono location with the command `evernode applyssl /etc/letsencrypt/live/<your domain>/privkey.pem /etc/letsencrypt/live/<your domain>/cert.pem /etc/letsencrypt/live/<your domain>/fullchain.pem`
 
 ### g. When your host account's reputation score is zero
