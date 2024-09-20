@@ -170,7 +170,7 @@ Failed to retrieve the latest version data.
       - Update the Evernode to the minimum version.
     - Your host should have valid SSL certificates
       - Check the validity of SSL certificates located in `/etc/sashimono/contract_template/cfg/`
-      - If they are not valid, It means they are not auto renewed (Consent is asked in the installation). Generate new certificates using `certbot renew`
+      - If they are not valid, It means they are not auto renewed. Generate new certificates using `certbot renew`
       - Then replace the new ones inside the Sashimono location with the command `evernode applyssl /etc/letsencrypt/live/<your domain>/privkey.pem /etc/letsencrypt/live/<your domain>/cert.pem /etc/letsencrypt/live/<your domain>/fullchain.pem`
 
 ### g. When your host account's reputation score is zero
