@@ -87,7 +87,7 @@ Hosts can check their performance results regarding the reputation assessment us
 
 |     |  |
 | -------- | ------- |
-| `scoreNumerator` | Accumulated score value of the moment, This value belongs to the last completed moment which will be considered in the end of current moment. This value will be reset when the moment is completed. |
+| `scoreNumerator` | Accumulated score value of the moment, This value belongs to the last completed moment which will be considered at the end of the current moment. This value will be reset when the moment is completed. |
 | `scoreDenominator` | Number of acknowledgments received to formulate that score for the moment, This value belongs to the last completed moment which will be considered in the end of current moment. This acts as the divider of `scoreNumerator` since it's the number of scores received. This value will be reset when the moment is completed. |
 | `score` | This is the average score value `{score + (scoreNumerator / scoreDenominator)} / 2`. `scoreNumerator` and `scoreDenominator` are the values that were there when the moment is completed. `scoreNumerator` and `scoreDenominator` will be reset when this is calculated. This won't get updated if host was in a dud universe. |
 | `lastResetMoment` | The moment when `scoreNumerator` and `scoreDenominator` were last reset to 0. This won't get updated if the host wan't assigned to a universe. |

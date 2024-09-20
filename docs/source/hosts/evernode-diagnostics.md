@@ -69,7 +69,7 @@ Failed to retrieve the latest version data.
   - You can also run `evernode offerlease` to offer the unoffered leases.
 
 ## 11. No rewards even if the Host is active
-- Check your host lacks reputation by checking [these conditions](evernode-host-reputationd.md#host-reputation-for-rewards)
+- Check whether your host lacks reputation by checking [these conditions](evernode-host-reputationd.md#host-reputation-for-rewards)
   
 ## 12. Lease offer creation failure
 - **Case 1:** If your lease offering failed when you run `evernode offerlease`, Executing the command again would offer the remaining leases.
@@ -123,7 +123,7 @@ Failed to retrieve the latest version data.
   - __Not a reliable score. We are not in sync.__
     - The contract wasn't in sync by the time of score fetching.
   - __Not a reliable score. We haven't executed the contract minimum rounds required.__
-    - The contract hasn't completed minimum rounds required to be a reliable execution. Which means contract should be executed at lease 20% of the ledgers that the cluster has created.
+    - The contract hasn't completed minimum rounds required to be a reliable execution. This means the contract should be executed in at least 20% of the ledgers that the cluster has created.
 
 ### c. `scoreNumerator` sits at a very low value
 - Check your [reputation logs](#a-health-of-reputationd-service)
@@ -163,7 +163,7 @@ Failed to retrieve the latest version data.
     ```bash 
     sudo -u sashireputationd bash -c 'journalctl --user -u sashimono-reputationd | tail -n <number of lines>'
     ```
-  - Following are the prerequisite checks. Instance creation will be skipped, if any of them fails.
+  - Following are the prerequisite checks. Instance creation will be skipped if any of them fails.
     - Your host should support IPV4.
       - Enable IPV4 support if not.
     - Your host should be in the [minimum version](https://raw.githubusercontent.com/EvernodeXRPL/evernode-test-resources/main/definitions/definitions.json) required.
