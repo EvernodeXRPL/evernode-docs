@@ -110,6 +110,13 @@ Hosts can see their reputation by running `evernode status`
     - **Case 5:** If there's no `score` that is `valid`.
   - Otherwise if there's a `valid` `score`, `reputation` is set to `(score / 100) * 255`.
 
+### Reward distribution
+
+- In your stats `score` and `reputation` values aren't always correlated until your heartbeat is received. If they are different, it means your heartbeat for this moment is pending. Your reputation will be updated once heartbeat is received.
+- If you are eligible for rewards (had a reputation over **200**) when you receive a heartbeat, you will be receiving rewards in the next moment.
+- If your reputation value is less than **200** you aren't eligible for rewards and you won't receive any rewards.
+- If you earn a reputation value over **200** in this moment's heartbeat, You'll become eligible for rewards in the next moment and receive rewards in the following moment.
+
 ## Conclusion
 
 The Evernode Reputation for Rewards feature is a comprehensive and transparent system designed to identify and reward true contributors in the Evernode host community. Through a series of well-defined processes, including opt-in registration, universe assignment, contract execution, score updates, score reporting, and performance checks, Evernode ensures that hosts are fairly evaluated and recognized for their commitment. This feature not only promotes a sense of achievement and motivation among hosts but also fosters a collaborative and trustworthy community.

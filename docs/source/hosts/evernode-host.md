@@ -19,11 +19,18 @@ Please find the Evernode license [here](https://raw.githubusercontent.com/Everno
 To install Evernode, your server must meet the following requirements:
 
 - Operating system: **Ubuntu 20.04** 64 bit (M1/ARM CPUs or WSL not supported. Any other Ubuntu versions are not supported.)
-- RAM: **2 GB** minimum
-- Swap: **2 GB** minimum
-- Disk space: **4 GB** minimum free disk space for `/home`
 - [Domain name](#domain-name) for your host
 - Public [email address](#email-address) to be used as the public contact method
+- **Minimum** system requirements.
+  - CPU: **1 Core CPU**
+  - RAM: **2 GB**
+  - Swap: **2 GB**
+  - Disk space: **4 GB** free disk space for `/home`
+- **Recommended** system requirements.
+  - CPU: **3 Cores CPU**
+  - RAM: **3 GB**
+  - Swap: **3 GB**
+  - Disk space: **6 GB** free disk space for `/home`
 
 #### In addition to the above, you need to possess the following:
   - At least 500 EVRs for the registration fee paid to the [registry hook](../platform/hooks/operations.md#registry-hook).
