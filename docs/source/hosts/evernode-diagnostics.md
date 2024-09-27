@@ -166,7 +166,7 @@ Failed to retrieve the latest version data.
   - Following are the prerequisite checks. Instance creation will be skipped if any of them fails.
     - Your host should support IPV4.
       - Enable IPV4 support if not.
-    - Your host should be in the [minimum version](https://raw.githubusercontent.com/EvernodeXRPL/evernode-test-resources/main/definitions/definitions.json) required.
+    - Your host should be in the [minimum version](https://raw.githubusercontent.com/EvernodeXRPL/evernode-resources/main/definitions/definitions.json) required.
       - Update the Evernode to the minimum version.
     - Your host should have valid SSL certificates
       - Check the validity of SSL certificates located in `/etc/sashimono/contract_template/cfg/`
