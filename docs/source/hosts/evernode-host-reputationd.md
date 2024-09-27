@@ -93,7 +93,6 @@ Hosts can check their performance results regarding the reputation assessment us
 | `lastResetMoment` | The moment when `scoreNumerator` and `scoreDenominator` were last reset to 0. This won't get updated if the host isn't assigned to a universe. |
 | `lastScoredMoment` | The moment when the score was last calculated. This won't get updated if host was in a dud universe since all the scores reported by the hosts in the universe are skipped. |
 | `lastUniverseSize` | Size of the universe to which `scoreNumerator` and `scoreDenominator` belong, Means this value belongs to the last completed moment. Universe is considered as dud if `scoreDenominator` is less than 50% of this value which means at least 50% of the hosts in the universe wasn't reliable. |
-| `valid` | This indicates whether the score value is valid. Score value is valid if it's calculated within last 2 moments which can be determined by `lastScoredMoment` |
 
 ## Host Reputation for Rewards
 
@@ -107,8 +106,10 @@ Hosts can see their reputation by running `evernode status`
     - **Case 2:** If your host has less than 3 instances.
     - **Case 3:** If your host's lease fee is more than `(reward distribution for the moment / host count) * 110%`
     - **Case 4:** If your host is not opted in for **reputationd**.
-    - **Case 5:** If there's no `score` that is `valid`.
-  - Otherwise if there's a `valid` `score`, `reputation` is set to `(score / 100) * 255`.
+    - **Case 5:** If the host hasn't been in a universe for recent two moments. Which means the reputation isn't reset withing last two moments (The `lastResetMoment` isn't withing last two moments).
+  - Otherwise if the host has been in a universe for recent two moments, `reputation` is set to `(score / 100) * 255`.
+
+Note: If you have maintained a good reputation, Your rewards won't be affected if you have been assigned to a dud universe because your `score` won't get updated when you are in a dud universe and then the `reputation` will stay the same. But if you were unable to register for reputation for two moments your `reputation` will get reduced to `0` even though you have previously maintained a good `score`.
 
 ### Reward distribution
 
