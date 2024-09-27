@@ -22,12 +22,12 @@ To install Evernode, your server must meet the following requirements:
 - [Domain name](#domain-name) for your host
 - Public [email address](#email-address) to be used as the public contact method
 - To be eligible to run a reputation contract on your host, you should have the following resources. Adhering to these requirements increases your chances of obtaining a good reputation:
-  - Per contract instance requirements (configured during installation or by using the `evernode config resources <arguments>` command):
+  - Per contract instance requirements (configured during installation or by using the `evernode config resources <arguments>` command).
     - CPU: **1 Core**
     - RAM: **1 GB**
     - Swap: **1 GB**
     - Disk space: **2 GB**
-  - If you are allowing three contract instances (the minimum required to be eligible for reputation) to run on your host, you should ensure your machine has the following resources. These recommendations consider both the consumption of contract instances and host software (e.g., OS, systemd, etc.):
+  - If you are allowing three contract instances (the minimum required to be eligible for reputation) to run on your host, you should ensure your machine has the following resources. These recommendations consider both the consumption of contract instances and host software (e.g., OS, systemd, etc.).
     - CPU: **4 Cores CPU**
     - RAM: **4 GB**
     - Swap: **4 GB**
