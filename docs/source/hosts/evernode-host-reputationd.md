@@ -106,10 +106,10 @@ Hosts can see their reputation by running `evernode status`
     - **Case 2:** If your host has less than 3 instances.
     - **Case 3:** If your host's lease fee is more than `(reward distribution for the moment / host count) * 110%`
     - **Case 4:** If your host is not opted in for **reputationd**.
-    - **Case 5:** If the host hasn't been in a universe for recent two moments. Which means the reputation isn't reset withing last two moments (The `lastResetMoment` isn't withing last two moments).
+    - **Case 5:** If the host hasn't been in a universe for recent two moments. Which means the reputation isn't reset withing last two moments (The `lastResetMoment` isn't within last two moments).
   - Otherwise if the host has been in a universe for recent two moments, `reputation` is set to `(score / 100) * 255`.
 
-Note: If you have maintained a good reputation, Your rewards won't be affected if you have been assigned to a dud universe because your `score` won't get updated when you are in a dud universe and then the `reputation` will stay the same. But if you were unable to register for reputation for two moments your `reputation` will get reduced to `0` even though you have previously maintained a good `score`.
+Note: If you have maintained a good reputation, Your rewards won't be affected if you have been assigned to a dud universe because your `score` won't get updated when you are in a dud universe and then the `reputation` will stay the same. But if you were unable to register for reputation for two moments, your `reputation` will get reduced to `0` even though you have previously maintained a good `score`.
 
 ### Reward distribution
 
