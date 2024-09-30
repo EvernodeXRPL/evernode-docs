@@ -1,4 +1,4 @@
-# Everpocket JS API Documentation
+# Everpocket JS Client Documentation
 ## Classes
 
 <dl>

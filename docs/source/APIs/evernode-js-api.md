@@ -1,4 +1,4 @@
-# Evernode JS API Documentation
+# Evernode JS Client Documentation
 ## Classes
 
 <dl>

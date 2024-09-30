@@ -59,7 +59,7 @@ External resources
 .. toctree::
    :titlesonly:
    :hidden:
-   :caption: API
+   :caption: Libraries
 
    Evernode JS Client <APIs/evernode-js-api>
-   Everpocket <APIs/everpocket-api>
+   Everpocket JS Client <APIs/everpocket-api>
