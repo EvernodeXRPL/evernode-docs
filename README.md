@@ -7,13 +7,6 @@ Evernode documentation is built with [Sphinx](https://www.sphinx-doc.org/) and [
 python -m pip install --exists-action=w --no-cache-dir -r docs/requirements.txt
 ```
 
-### Updating API documentation
-
-Update the source file paths in `api-docs.js`. After that, run the following command to update the relevant files in the documentation source directories:
-```
-node api-docs.js
-```
-
 ### Local build
 
 ```
