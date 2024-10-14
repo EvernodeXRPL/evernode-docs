@@ -4,6 +4,11 @@
 
 As mentioned in [System requirements](evernode-host.md#system-requirements), you need to keep a sufficient XAH balance in the host account to cover the transaction fees for your host. Transaction feed originates from [Heartbeat](../platform/hooks/operations.md#heartbeat) transactions sent to the hook as well as instance creation replies sent back to tenants.
 
+## Evernode status and version
+
+You can run `evernode status` and see all the host status info.<br>
+Your Evernode version will be shown there in the status output. And the version's first digit reflects the Ubuntu version you are running. Check [here](./evernode-host.md#evernode-versions) to see how it's determined.
+
 ## Updating the Evernode software
 
 You can run `evernode update` to check and install updates to Evernode.

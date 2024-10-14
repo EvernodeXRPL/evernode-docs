@@ -92,6 +92,13 @@ After the installation, the `offerlease` command should be used to invoke the of
 
 _**NOTE:** Heartbeats won't be sent until all the leases are offered._
 
+## Evernode Versions
+As you can [install Evernode](#installation) on Ubuntu 20.04 and Ubuntu 24.04, There are two Evernode versions maintained to support the requirements by the OS. You are allowed only to install the respective **Evernode version** on respective **Ubuntu version**. The installers for two versions will also be different. The updates and patches will be given continuously for the both versions.
+
+***The version number can be identified by it's first digit as follows***
+- **Ubuntu 20.04** - `v0.x.x`
+- **Ubuntu 24.04** - `v1.x.x`
+
 ## Installation
 
 Make sure you read the above sections before installing. Run the following command to install Evernode on your Linux server. You need root (sudo) access for this.
