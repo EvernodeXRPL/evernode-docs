@@ -167,7 +167,7 @@ The Governance game allows eligible participants in the Evernode host network to
  
 ## Reporting issues
 
-Please report any issues and error logs [here](https://github.com/EvernodeXRPL/evernode-host/issues).
+Please report any issues and error logs [here](https://github.com/EvernodeXRPL/evernode-host/issues). Please not that when you are creating issues please label it with the Ubuntu version you are running (`Ubuntu 20.04` or `Ubuntu 24.04`).
 
 ## Global hosts dashboards
 
