@@ -8,18 +8,32 @@ As mentioned in [System requirements](evernode-host.md#system-requirements), you
 
 You can run `evernode update` to check and install updates to Evernode.
 
-**Note: For the Evernode 0.8.2 update `evernode update` command would not show any pending updates for your Sashimono. To update to v0.8.2, run the below command. It is recommended to use the following command for an independent Evernode update.**
+Or based on your OS version
+
+***Ubuntu 20.04***
 ```
 curl -fsSL https://raw.githubusercontent.com/EvernodeXRPL/evernode-resources/main/sashimono/installer/evernode.sh | sudo bash -s update
 ```
+***Ubuntu 24.04***
+```
+curl -fsSL https://raw.githubusercontent.com/EvernodeXRPL/evernode-24-resources/main/sashimono/installer/evernode.sh | sudo bash -s update
+```
 
-**Recovering from a Failed Update**
+### Recovering from a Failed Update
 
-In the event of a failure, the secret will not be deleted and will remain at the default secret file location or the custom location you have specified. If you wish to reinstall, use the following command and transfer the registration using the same account on a separate machine. Then try re-installing on your machine.
+In the event of a failure, the secret will not be deleted and will remain at the default secret file location or the custom location you have specified. If you wish to reinstall, use the following command based on your OS and transfer the registration using the same account on a separate machine. Then try re-installing on your machine.
 
+***Ubuntu 20.04***
 ```
 curl -fsSL https://raw.githubusercontent.com/EvernodeXRPL/evernode-resources/main/sashimono/installer/evernode.sh | sudo bash -s transfer
 ```
+***Ubuntu 24.04***
+```
+curl -fsSL https://raw.githubusercontent.com/EvernodeXRPL/evernode-24-resources/main/sashimono/installer/evernode.sh | sudo bash -s transfer
+```
+
+## Host machine OS Upgrade/Downgrade
+Even though Evernode supports Ubuntu 20.04 and 24.04, If you upgrade or downgrade your host machine's Ubuntu version while Evernode is installed, Your Evernode will stop working due to the compatibility issues. If you are planing to do so, You should [transfer](./maintenance.md#transfer-the-host-registration) your Evernode registration before upgrade/downgrade and [install](#installation) Evernode using the respective installer after the upgrade/downgrade.
 
 ## Purging bad actors
 
@@ -42,7 +56,7 @@ You can use the below command to initiate a transfer of the registration NFT.
 evernode transfer
 ```
 
-However, if you have lost access to your original host (eg. a damaged host), you can use the following command in any Linux terminal. You are required to possess the Xahau account address and secret of your original host.
+However, if you have lost access to your original host (eg. a damaged host), you can use the following command in any Linux terminal where **Evernode is not installed**. You are required to possess the Xahau account address and secret of your original host.
 
 ```
 curl -fsSL https://raw.githubusercontent.com/EvernodeXRPL/evernode-resources/main/sashimono/installer/evernode.sh | sudo bash -s transfer

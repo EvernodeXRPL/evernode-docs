@@ -18,7 +18,7 @@ Please find the Evernode license [here](https://raw.githubusercontent.com/Everno
 
 To install Evernode, your server must meet the following requirements:
 
-- Operating system: **Ubuntu 20.04** 64 bit (M1/ARM CPUs or WSL not supported. Any other Ubuntu versions are not supported.)
+- Operating system: **Ubuntu 20.04 or Ubuntu 20.04** 64 bit (M1/ARM CPUs or WSL not supported. Any other Ubuntu versions are not supported.)
 - [Domain name](#domain-name) for your host
 - Public [email address](#email-address) to be used as the public contact method
 - To be eligible to run a reputation contract on your host, you should have the following resources. Adhering to these requirements increases your chances of obtaining a good reputation:
@@ -96,11 +96,20 @@ _**NOTE:** Heartbeats won't be sent until all the leases are offered._
 
 Make sure you read the above sections before installing. Run the following command to install Evernode on your Linux server. You need root (sudo) access for this.
 
-**Read the above [System requirements](#system-requirements) and [Important tips](#important-tips-for-installation) even if you think you're familiar with the beta setup. Some details have changed compared to the beta.**
+**Read the above [System requirements](#system-requirements) and [Important tips](#important-tips-for-installation). There are two installer versions available for Ubuntu 20.04 and Ubuntu 24.04. Pick the installer according to your Ubuntu version on your host machine**
 
+***Ubuntu 20.04***
 ```
 curl -fsSL https://raw.githubusercontent.com/EvernodeXRPL/evernode-resources/main/sashimono/installer/evernode.sh | sudo bash -s install
 ```
+
+***Ubuntu 24.04***
+```
+curl -fsSL https://raw.githubusercontent.com/EvernodeXRPL/evernode-24-resources/main/sashimono/installer/evernode.sh | sudo bash -s install
+```
+
+## Host machine OS Upgrade/Downgrade
+If you are planing to do upgrade or downgrade your host machine OS, you should take [these](./maintenance.md#host-machine-os-upgradedowngrade) action for smooth transition of Evernode.
 
 ## Host Reputation
 - **Reputation Management:** Host reputation is dynamically adjusted based on specified guidelines, ensuring fairness and reliability within the Evernode network.
