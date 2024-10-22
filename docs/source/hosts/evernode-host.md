@@ -18,7 +18,7 @@ Please find the Evernode license [here](https://raw.githubusercontent.com/Everno
 
 To install Evernode, your server must meet the following requirements:
 
-- Operating system: **Ubuntu 20.04** 64 bit (M1/ARM CPUs or WSL not supported. Any other Ubuntu versions are not supported.)
+- Operating system: **Ubuntu 20.04 or Ubuntu 20.04** 64 bit (M1/ARM CPUs or WSL not supported. Any other Ubuntu versions are not supported.)
 - [Domain name](#domain-name) for your host
 - Public [email address](#email-address) to be used as the public contact method
 - To be eligible to run a reputation contract on your host, you should have the following resources. Adhering to these requirements increases your chances of obtaining a good reputation:
@@ -92,15 +92,31 @@ After the installation, the `offerlease` command should be used to invoke the of
 
 _**NOTE:** Heartbeats won't be sent until all the leases are offered._
 
+## Evernode Versions
+As you can [install Evernode](#installation) on Ubuntu 20.04 and Ubuntu 24.04, There are two Evernode versions maintained to support the requirements by the OS. You are allowed only to install the respective **Evernode version** on respective **Ubuntu version**. The installers for two versions will also be different. The updates and patches will be given continuously for the both versions.
+
+***The version number can be identified by it's first digit as follows***
+- **Ubuntu 20.04** - `v0.x.x`
+- **Ubuntu 24.04** - `v1.x.x`
+
 ## Installation
 
 Make sure you read the above sections before installing. Run the following command to install Evernode on your Linux server. You need root (sudo) access for this.
 
-**Read the above [System requirements](#system-requirements) and [Important tips](#important-tips-for-installation) even if you think you're familiar with the beta setup. Some details have changed compared to the beta.**
+**Read the above [System requirements](#system-requirements) and [Important tips](#important-tips-for-installation). There are two installer versions available for Ubuntu 20.04 and Ubuntu 24.04. Pick the installer according to your Ubuntu version on your host machine**
 
+***Ubuntu 20.04***
 ```
 curl -fsSL https://raw.githubusercontent.com/EvernodeXRPL/evernode-resources/main/sashimono/installer/evernode.sh | sudo bash -s install
 ```
+
+***Ubuntu 24.04***
+```
+curl -fsSL https://raw.githubusercontent.com/EvernodeXRPL/evernode-24-resources/main/sashimono/installer/evernode.sh | sudo bash -s install
+```
+
+## Host machine OS Upgrade/Downgrade
+If you are planing to do upgrade or downgrade your host machine OS, you should take [these](./maintenance.md#host-machine-os-upgradedowngrade) action for smooth transition of Evernode.
 
 ## Host Reputation
 - **Reputation Management:** Host reputation is dynamically adjusted based on specified guidelines, ensuring fairness and reliability within the Evernode network.
@@ -151,7 +167,7 @@ The Governance game allows eligible participants in the Evernode host network to
  
 ## Reporting issues
 
-Please report any issues and error logs [here](https://github.com/EvernodeXRPL/evernode-host/issues).
+Please report any issues and error logs [here](https://github.com/EvernodeXRPL/evernode-host/issues). Please not that when you are creating issues please label it with the Ubuntu version you are running (`Ubuntu 20.04` or `Ubuntu 24.04`).
 
 ## Global hosts dashboards
 

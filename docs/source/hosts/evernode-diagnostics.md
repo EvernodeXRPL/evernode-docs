@@ -2,13 +2,13 @@
 
 If you have encountered any issues while installing Evernode, Check if your error is one of the following.
 
-_Note: If any of the following doesn't help in your situation please send it to the Evernode support team as a GitHub issue [here](https://github.com/EvernodeXRPL/evernode-host/issues)._
+_Note: If any of the following doesn't help in your situation please send it to the Evernode support team as a [GitHub issue](./evernode-host.md#reporting-issues)._
 
 ## 1. Keeps on retry loop
 - Abort and try again
   - This won't roll back your installation. The next try will resume from where you've aborted.
 - Rolling back will clear installation files but won't deregister your account. You'll have to use [deregister command](./maintenance.md#deregister-a-host) to deregister from Evernode.
-- If this doesn't help check for the installation error log for the error and send it to the Evernode support team as a GitHub issue [here](https://github.com/EvernodeXRPL/evernode-host/issues).
+- If this doesn't help check for the installation error log for the error and send it to the Evernode support team as a [GitHub issue](./evernode-host.md#reporting-issues).
 
 ## 3. Asking to re-check the balance
 - If the installer is asking `Do you want to re-check the balance` when you are installing or transferring to a VM.
