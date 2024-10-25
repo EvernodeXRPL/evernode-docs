@@ -38,17 +38,34 @@ There are two classes of participants in the Governance Game.
 - Any Participant can submit a Proposal for a new Hook.
 - Proposers must collateralize their Proposal with EVR rewards equivalent to the current moment's reward quota.
 - The hooks that bear the proposed hashes must be deployed to some existing Xahau account.
+- Example
+  - If you are willing to suggest a hook change you first have to `setHook` your updated hook code to 4 new accounts.
+  - Then get the each hook's hook hash (32 byte as hex string) using a explorer and construct the hash buffer is hex format in above mentioned order.
+    - The total length of the buffer will be 128 bytes (256 characters in hex string).
+  - Then create a text file with above hex buffer string inside.
+  - After that propose the candidate with the Evernode CLI `evernode governance propose <hash file> <short name>`
+    - Ex :- `evernode governance propose ~/hooks.txt testProposal` (Short name will be a name that you can identify your proposal (Do not add white spaces in middle))
+  - **Note: You have to keep the hooks that you have proposed, inside the accounts that you have initially generated. Because if you remove or override them, the hook objects will be removed from the ledger. So you candidate will be purged even it's elected.**
 
 #### Dud Host Candidate
 - The dud host removal Proposal represents the Xahau Address of the malfunctioning host to be removed from the platform. 
 - Any Participant can submit this kind of proposal. 
 - Proposers must collateralize their Proposal with EVR rewards worth 25% of the current moment's reward quota.
+- Example
+  - If you are willing to report a dud host, You have to know the host address you are going to propose.
+  - Then report the host address with the Evernode CLI `evernode governance report <dud host address>`
+    - Ex :- `evernode governance report rwFyhJ8v5X3iC7vBcqdoxKqMQ9jr7gDATu`
 
 ### Withdrawing a Proposal
 
 - The Proposer can withdraw their Proposal at any time before it Succeeds or Purges.
 - If the Proposal is withdrawn, the proposer gets half their EVRs back.
 - Lost EVRs are added to that Epoch’s reward pool.
+- Example
+  - If you need to withdraw a proposal created by you, You have to find the Unique ID of the proposal.
+  - You can find the your candidate's Unique ID with `evernode governance status` command.
+  - Then withdraw the candidate with the Evernode CLI `evernode governance withdraw <candidate id>`
+    - Ex :- `evernode governance withdraw 0000000001ADDE77BB4F24A964B28DF299F084148F19E34B16E7BE4E5BC8E390`
 
 ### Purging a Proposal
 
@@ -62,6 +79,16 @@ There are two classes of participants in the Governance Game.
 - They either Support or Reject a Proposal.
   - Reject is the default.
   - Support is a positive vote for the Proposal.
+- Example
+  - If you are planing to support for a proposal, You first have to find the Unique ID of the proposal.
+  - Then vote for the candidate with the Evernode CLI `evernode governance vote <candidate id>`
+    - Ex :- `evernode governance vote 0000000001ADDE77BB4F24A964B28DF299F084148F19E34B16E7BE4E5BC8E390`
+  - If you have vote for a candidate, your support vote will be sent for the candidate in every heartbeat you send on that moment onwards
+  - If you need to undo your vote (remove the support vote), you can do that with the Evernode CLI `evernode governance unvote <candidate id>`
+    - Ec :- `evernode governance unvote 0000000001ADDE77BB4F24A964B28DF299F084148F19E34B16E7BE4E5BC8E390`
+  - From this moment onwards your support vote will be excluded from your heartbeats.
+  - **Note: You cannot support vote for two new hook change candidates same time. You have to unvote before you vote for another. If the candidate you have voted is elected, rejected or withdrawn you have to unvote to clear it from your governance config to discontinue voting**
+  - **Note: You can support vote for two candidates in different types (`dud host` and `new hook`) at the same time. If you have supported for two or more in different types, multiple heartbeat (vote) transactions will be sent for each candidate**
 
 ### Electing a Proposal
 
