@@ -40,12 +40,12 @@ There are two classes of participants in the Governance Game.
 - The hooks that bear the proposed hashes must be deployed to some existing Xahau account.
 - Example
   - If you are willing to suggest a hook change you first have to `setHook` your updated hook code to 4 new accounts.
-  - Then get the each hook's hook hash (32 byte as hex string) using a explorer and construct the hash buffer is hex format in above mentioned order.
+  - Then get each hook's hook hash (32 bytes as a hex string) using an explorer and construct the hash buffer in hex format in above mentioned order.
     - The total length of the buffer will be 128 bytes (256 characters in hex string).
-  - Then create a text file with above hex buffer string inside.
+  - Then create a text file with the above hex buffer string inside.
   - After that propose the candidate with the Evernode CLI `evernode governance propose <hash file> <short name>`
-    - Ex :- `evernode governance propose ~/hooks.txt testProposal` (Short name will be a name that you can identify your proposal (Do not add white spaces in middle))
-  - **Note: You have to keep the hooks that you have proposed, inside the accounts that you have initially generated. Because if you remove or override them, the hook objects will be removed from the ledger. So you candidate will be purged even it's elected.**
+    - Ex:- `evernode governance propose ~/hooks.txt testProposal` (Short name will be a name that you can identify your proposal (Do not add white spaces in middle))
+  - **Note: You have to keep the hooks that you have proposed, inside the accounts that you have initially generated. Because if you remove or override them, the hook objects will be removed from the ledger. So your candidate will be purged even if it's elected.**
 
 #### Dud Host Candidate
 - The dud host removal Proposal represents the Xahau Address of the malfunctioning host to be removed from the platform. 
@@ -63,7 +63,7 @@ There are two classes of participants in the Governance Game.
 - Lost EVRs are added to that Epoch’s reward pool.
 - Example
   - If you need to withdraw a proposal created by you, You have to find the Unique ID of the proposal.
-  - You can find the your candidate's Unique ID with `evernode governance status` command.
+  - You can find your candidate's Unique ID with `evernode governance status` command.
   - Then withdraw the candidate with the Evernode CLI `evernode governance withdraw <candidate id>`
     - Ex :- `evernode governance withdraw 0000000001ADDE77BB4F24A964B28DF299F084148F19E34B16E7BE4E5BC8E390`
 
@@ -83,12 +83,12 @@ There are two classes of participants in the Governance Game.
   - If you are planing to support for a proposal, You first have to find the Unique ID of the proposal.
   - Then vote for the candidate with the Evernode CLI `evernode governance vote <candidate id>`
     - Ex :- `evernode governance vote 0000000001ADDE77BB4F24A964B28DF299F084148F19E34B16E7BE4E5BC8E390`
-  - If you have vote for a candidate, your support vote will be sent for the candidate in every heartbeat you send on that moment onwards
+  - If you have voted for a candidate, your support vote will be sent for the candidate in every heartbeat you send from that moment onwards
   - If you need to undo your vote (remove the support vote), you can do that with the Evernode CLI `evernode governance unvote <candidate id>`
     - Ec :- `evernode governance unvote 0000000001ADDE77BB4F24A964B28DF299F084148F19E34B16E7BE4E5BC8E390`
   - From this moment onwards your support vote will be excluded from your heartbeats.
-  - **Note: You cannot support vote for two new hook change candidates same time. You have to unvote before you vote for another. If the candidate you have voted is elected, rejected or withdrawn you have to unvote to clear it from your governance config to discontinue voting**
-  - **Note: You can support vote for two candidates in different types (`dud host` and `new hook`) at the same time. If you have supported for two or more in different types, multiple heartbeat (vote) transactions will be sent for each candidate**
+  - **Note: You cannot support vote for two new hook change candidates same time. You have to unvote before you vote for another. If the candidate you have voted for is elected, rejected, or withdrawn you have to unvote to clear it from your governance config to discontinue voting**
+  - **Note: You can support vote for two candidates in different types (`dud host` and `new hook`) at the same time. If you have supported two or more in different types, multiple heartbeat (vote) transactions will be sent for each candidate**
 
 ### Electing a Proposal
 
@@ -98,15 +98,15 @@ There are two classes of participants in the Governance Game.
 
 ### Evernode Labs Special Rights
 
-- These rules apply when determining Evernode Labs vote.
+- These rules apply when determining Evernode Labs' vote.
 
   - Always Eligible: Evernode Labs is always eligible to vote.
-  - Fall-Back Option: If there are no other eligible Participants, Evernode Labs vote is determinative.
+  - Fall-Back Option: If there are no other eligible Participants, Evernode Labs' vote is determinative.
 
-- In addition, Evernode Labs vote carries special weight depending upon the status of the game.
+- In addition, Evernode Labs' vote carries special weight depending upon the status of the game.
 - The Governance Game has three statuses.
 
-  - Piloted: Evernode Labs vote determines the outcome of all Proposals.
+  - Piloted: Evernode Labs' vote determines the outcome of all Proposals.
   - Co-Piloted: No Proposal can succeed unless Evernode Labs Supports it and it fails if Evernode Labs opposes it.
   - Auto-Piloted: The standard voting rules apply with Evernode Labs being treated equally with any other Participant.
 
