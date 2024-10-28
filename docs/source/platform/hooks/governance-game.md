@@ -3,10 +3,10 @@
 ## Hooks
 There are four Hooks
 
-Governance - Handles governance game
-Registry - Handles host registrations, issuing registration tokens
-Heartbeat - Handles heartbeats and rewards
-Reputation - Handles host reputations
+- Governance - Handles governance game
+- Registry - Handles host registrations, issuing registration tokens
+- Heartbeat - Handles heartbeats and rewards
+- Reputation - Handles host reputations
 
 The account associated with each hook remains constant, while the hooks themselves can be modified according to these rules.
 
@@ -17,7 +17,7 @@ Governance Game allows eligible participants in the Evernode network to propose 
 There are two classes of participants in the Governance Game.
 
 - **Evernode Labs**: Evernode Labs always has 1 vote and has special rights in Piloted and Co-Piloted modes and has no special rights over Auto-Piloted mode.
-- **Valid Hosts**: Accounts that hold a registration token for the previous 3 continuous months and are not eligible to be pruned due to unreliability.
+- **Valid Hosts**: Reputable host accounts that are earning rewards, have held a registration token for the previous three consecutive months, and are not eligible to be pruned due to unreliability.
 
 ## Governance
 
