@@ -19,7 +19,7 @@ Hosts need to maintain a separate Xahau account for Reputation Assessment. Durin
 - When specifying an existing account, it will act as a delegate for the reputation assessment process.
 - If managing `multiple hosts`, a SINGLE reputation account can be used for all, with a separate `DELEGATE HOOK` integrated into the reputation account. This is not the reputation hook that manages all the host's reputations. This will be a separate lightweight hook running in the host reputation account.
 - If you are opted in as a one-to-many reputation account mode. It's recommended not to assign a large number of hosts to your reputation account as it would cause account sequence conflicts. Even though the transactions are submitted parallel for hosts in their ReputationD services, they are submitted in a randomized manner. However, since the reputation registration preparation happens within a quarter of the moment, due to this small time window. The higher the number of hosts higher the possibility of getting same account sequence.
-- Changing the modes of existing reputation account could lead to some temporary consequences for already configured hosts which are opted in.
+- Changing the modes of an existing reputation account could lead to some temporary consequences for already configured hosts which are opted in.
   - For example, if you set reputation to manage `multiple hosts`, And if you have already opted in the same reputation account for a single host there is a chance of missing the current reputation assessment of the existing host.
 - The host will be responsible for covering the cost of invoking this hook, which triggers upon a specific transaction called `ttACCOUNT_SET`.
 - The relationship between the host registration account address and reputation address is mapped in the `WalletLocator` field. And it's in the following format.
@@ -38,7 +38,7 @@ Once registered, the host is assigned to a universe comprising 64 nodes. Within 
 Since you are being assigned to a cluster with 63 other random peers there's a possibility that you are getting assigned with dud hosts that aren't actually running reputation contract instances. If the majority of the cluster is like this even though you are running a fully able host, your reputation contract will fail to execute due to lack of majority in consensus.
 When the reputation registration is received by the hook it'll update the reputation `registeredMoment` to the next moment.
 There are [two conditions](#dud-universenode-detection) when determining dud universes.
-There are several pre-checks happened before registering for reputation. 
+There are several pre-checks happen before registering for reputation. 
 - Whether the host supports IPV4
 - Whether the host version is greater than the minimum version required
 - Whether the host SSL certificate is valid
@@ -87,33 +87,33 @@ Hosts can check their performance results regarding the reputation assessment us
 
 |     |  |
 | -------- | ------- |
-| `scoreNumerator` | Accumulated score value of the moment, This value belongs to the last completed moment which will be considered at the end of the current moment. This value will be reset when the moment is completed. |
-| `scoreDenominator` | Number of acknowledgments received to formulate that score for the moment, This value belongs to the last completed moment which will be considered in the end of current moment. This acts as the divider of `scoreNumerator` since it's the number of scores received. This value will be reset when the moment is completed. |
-| `score` | This is the average score value `{score + (scoreNumerator / scoreDenominator)} / 2`. `scoreNumerator` and `scoreDenominator` are the values that were there when the moment is completed. `scoreNumerator` and `scoreDenominator` will be reset when this is calculated. This won't get updated if host was in a dud universe. |
+| `scoreNumerator` | Accumulated score value of the moment, This value gets incremented when scores are received from hosts (within 3rd quarter). When a new moment occurs all the score values for the previous moment are collected, So during the first half of the moment, this is the numerator belongs to the last moment. This value always resets in the 3rd quarter since new scores are received within that period. |
+| `scoreDenominator` | Number of acknowledgments received to formulate that score, This value gets incremented when scores are received from hosts (within 3rd quarter). When a new moment occurs all the score values for the previous moment are collected, So during the first half of the moment, this is the denominator that belongs to the last moment. This value always resets in the 3rd quarter since new scores are received within that period. This acts as the divider of `scoreNumerator` since it's the number of scores received. This value will be reset when the moment is completed. |
+| `score` | This is the average score value `{score + (scoreNumerator / scoreDenominator)} / 2`. `scoreNumerator` and `scoreDenominator` are the values that were there when the score values for the new moment received. `scoreNumerator` and `scoreDenominator` will be reset when this is calculated. This won't get updated if a host has been in a dud universe. |
 | `lastResetMoment` | The moment when `scoreNumerator` and `scoreDenominator` were last reset to 0. This won't get updated if the host isn't assigned to a universe. |
-| `lastScoredMoment` | The moment when the score was last calculated. This won't get updated if host was in a dud universe since all the scores reported by the hosts in the universe are skipped. |
-| `lastUniverseSize` | Size of the universe to which `scoreNumerator` and `scoreDenominator` belong, Means this value belongs to the last completed moment. Universe is considered as dud if `scoreDenominator` is less than 50% of this value which means at least 50% of the hosts in the universe wasn't reliable. |
+| `lastScoredMoment` | The moment when the score was last calculated. This won't get updated if a host has been in a dud universe since all the scores reported by the hosts in the universe are skipped. |
+| `lastUniverseSize` | Size of the reputation cluster where `scoreNumerator` and `scoreDenominator` belong. This value will be `<= 64` because there can be hosts which are failing to create reputation contracts. Universe is considered a dud if `lastUniverseSize (Cluster size) < 32 (50% of 64)` OR `scoreDenominator < 50% of lastUniverseSize`. This guarantees that at least 50% of the hosts in the universe are reliable. |
 
 ## Host Reputation for Rewards
 
 Hosts can see their reputation by running `evernode status`
 - The `reputation` value varies between **0-255**.
-- If the host reputation is equal or greater than **200** then your host is eligible for rewards. If not, you won't receive any rewards.
-- `reputation` value is calculated on the heartbeat. Above `score` and `valid` values updated by **reputationd** are considered when the `reputation` value is calculated.
+- If the host's reputation is equal to or greater than **200** then your host is eligible for rewards. If not, you won't receive any rewards.
+- `reputation` value is calculated on the heartbeat. The above `score` and `valid` values updated by **reputationd** are considered when the `reputation` value is calculated.
 - When the host receives a heartbeat,
-  - `reputation` is set to **0** in following cases.
+  - `reputation` is set to **0** in the following cases.
     - **Case 1:** If your host has unoffered leases.
     - **Case 2:** If your host has less than 3 instances.
     - **Case 3:** If your host's lease fee is more than `(reward distribution for the moment / host count) * 110%`
     - **Case 4:** If your host is not opted in for **reputationd**.
-    - **Case 5:** If the host hasn't been in a universe for recent two moments. Which means the reputation isn't reset withing last two moments (The `lastResetMoment` isn't within last two moments).
-  - Otherwise if the host has been in a universe for recent two moments, `reputation` is set to `(score / 100) * 255`.
+    - **Case 5:** If the host hasn't been in a universe for the recent moments. This means the reputation isn't reset within the last two moments (The `lastResetMoment` isn't within the last two moments).
+  - Otherwise, if the host has been in a universe for recent two moments, `reputation` is set to `(score / 100) * 255`.
 
-Note: If you have maintained a good reputation, Your rewards won't be affected if you have been assigned to a dud universe because your `score` won't get updated when you are in a dud universe and then the `reputation` will stay the same. But if you were unable to register for reputation for two moments, your `reputation` will get reduced to `0` even though you have previously maintained a good `score`.
+Note: If you have maintained a good reputation, Your rewards won't be affected if you have been assigned to a dud universe because your `score` won't get updated when you are in a dud universe and then the `reputation` will stay the same. But if you were unable to register for reputation assessment for two moments, your `reputation` will get reduced to `0` even though you have previously maintained a good `score`.
 
 ### Reward distribution
 
-- In your stats `score` and `reputation` values aren't always correlated until your heartbeat is received. If they are different, it means your heartbeat for this moment is pending. Your reputation will be updated once heartbeat is received.
+- In your stats `score` and `reputation` values aren't always correlated until your heartbeat is received. If they are different, it means your heartbeat for this moment is pending. Your reputation will be updated once a heartbeat is received.
 - If you are eligible for rewards (had a reputation over **200**) when you receive a heartbeat, you will be receiving rewards in the next moment.
 - If your reputation value is less than **200** you aren't eligible for rewards and you won't receive any rewards.
 - If you earn a reputation value over **200** in this moment's heartbeat, You'll become eligible for rewards in the next moment and receive rewards in the following moment.
