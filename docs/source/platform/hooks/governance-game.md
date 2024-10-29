@@ -44,7 +44,7 @@ There are two classes of participants in the Governance Game.
     - The total length of the buffer will be 128 bytes (256 characters in hex string).
   - Then create a text file with the above hex buffer string inside.
   - After that propose the candidate with the Evernode CLI `evernode governance propose <hash file> <short name>`
-    - Ex:- `evernode governance propose ~/hooks.txt testProposal` (Short name will be a name that you can identify your proposal. This can consist of 20 characters. In here you can include any reference to your code pull requests as well. (Do not add white spaces in middle))
+    - Ex:- `evernode governance propose ~/hooks.txt testProposal` (Short name will be a name that you can identify your proposal. This can consist of 20 characters. In here you can include any reference to your code pull requests as well. (Do not add white spaces in the middle))
   - **Note: You have to keep the hooks that you have proposed, inside the accounts that you have initially generated. Because if you remove or override them, the hook objects will be removed from the ledger. So your candidate will be purged even if it's elected.**
 
 #### Dud Host Candidate

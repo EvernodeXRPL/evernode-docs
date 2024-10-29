@@ -37,7 +37,7 @@ You can use the Evernode CLI to manage and monitor your Evernode host.
     - Use the `propose` operation to propose new hook candidates and the `report` operation to propose dud host candidates.
     - `evernode governance propose <hash file> <short name>` - Propose a new hook candidate.
       - `<hash file>`: Text file with the combined hashes of proposing hooks (`<governor hook><registry hook><heartbeat hook><reputation hook>`).
-      - `<short nam>`: Short name for the proposal candidate. This can consist of 20 characters. In here you can include any reference to your code pull requests as well. (Do not add white spaces in middle).
+      - `<short nam>`: Short name for the proposal candidate. This can consist of 20 characters. In here you can include any reference to your code pull requests as well. (Do not add white spaces in the middle).
     - `evernode governance withdraw <candidate id>` - Withdraw proposed governance candidate.
     - `evernode governance vote <candidate id>` - Vote for a governance candidate.
     - `evernode governance unvote <candidate id>` - Remove vote from voted governance candidate.
