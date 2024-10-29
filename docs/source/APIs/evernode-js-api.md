@@ -97,18 +97,18 @@ Creates an instance of BaseEvernodeClient.
 
 ### new BaseEvernodeClient(xrpAddress, xrpSecret, watchEvents, [autoSubscribe], [options])
 
-| Param | Type | Default | Description |
-| --- | --- | --- | --- |
-| xrpAddress | <code>string</code> |  | The XRP address associated with the client. |
-| xrpSecret | <code>string</code> |  | The XRP secret associated with the client. |
-| watchEvents | <code>Array.&lt;string&gt;</code> |  | An array of event names to watch. |
-| [autoSubscribe] | <code>boolean</code> | <code>false</code> | Whether to automatically subscribe to events. |
-| [options] | <code>Object</code> | <code>{}</code> | Optional configuration options. |
-| [options.governorAddress] | <code>string</code> |  | The governor address. Defaults to a predefined value if not provided. |
-| [options.xrplApi] | [<code>XrplApi</code>](#XrplApi) |  | An instance of XrplApi. If not provided, a new instance will be created. |
-| [options.rippledServer] | <code>string</code> |  | The URL of the rippled server to use if a new XrplApi instance is created. |
-| [options.config] | <code>Object</code> |  | Optional configuration settings. |
-| [options.messagePrivateKey] | <code>string</code> |  | The private key for message encryption, if required. |
+| Param                       | Type                              | Default            | Description                                                                |
+| --------------------------- | --------------------------------- | ------------------ | -------------------------------------------------------------------------- |
+| xrpAddress                  | <code>string</code>               |                    | The XRP address associated with the client.                                |
+| xrpSecret                   | <code>string</code>               |                    | The XRP secret associated with the client.                                 |
+| watchEvents                 | <code>Array.&lt;string&gt;</code> |                    | An array of event names to watch.                                          |
+| [autoSubscribe]             | <code>boolean</code>              | <code>false</code> | Whether to automatically subscribe to events.                              |
+| [options]                   | <code>Object</code>               | <code>{}</code>    | Optional configuration options.                                            |
+| [options.governorAddress]   | <code>string</code>               |                    | The governor address. Defaults to a predefined value if not provided.      |
+| [options.xrplApi]           | [<code>XrplApi</code>](#XrplApi)  |                    | An instance of XrplApi. If not provided, a new instance will be created.   |
+| [options.rippledServer]     | <code>string</code>               |                    | The URL of the rippled server to use if a new XrplApi instance is created. |
+| [options.config]            | <code>Object</code>               |                    | Optional configuration settings.                                           |
+| [options.messagePrivateKey] | <code>string</code>               |                    | The private key for message encryption, if required.                       |
 
 <a name="BaseEvernodeClient+on"></a>
 
@@ -117,9 +117,9 @@ Listens to the subscribed events. This will listen for the event without detachi
 
 **Kind**: instance method of [<code>BaseEvernodeClient</code>](#BaseEvernodeClient)  
 
-| Param | Type | Description |
-| --- | --- | --- |
-| event | <code>string</code> | The name of the event to listen for. |
+| Param   | Type                  | Description                                                                                    |
+| ------- | --------------------- | ---------------------------------------------------------------------------------------------- |
+| event   | <code>string</code>   | The name of the event to listen for.                                                           |
 | handler | <code>function</code> | The callback function to handle the event. The function takes the event object as a parameter. |
 
 <a name="BaseEvernodeClient+once"></a>
@@ -129,9 +129,9 @@ Listens to the subscribed events. This will listen only once and detach the hand
 
 **Kind**: instance method of [<code>BaseEvernodeClient</code>](#BaseEvernodeClient)  
 
-| Param | Type | Description |
-| --- | --- | --- |
-| event | <code>string</code> | Event name. |
+| Param   | Type                  | Description                            |
+| ------- | --------------------- | -------------------------------------- |
+| event   | <code>string</code>   | Event name.                            |
 | handler | <code>function</code> | Callback function to handle the event. |
 
 <a name="BaseEvernodeClient+off"></a>
@@ -141,9 +141,9 @@ Detach the listener event.
 
 **Kind**: instance method of [<code>BaseEvernodeClient</code>](#BaseEvernodeClient)  
 
-| Param | Type | Default | Description |
-| --- | --- | --- | --- |
-| event | <code>string</code> |  | Event name. |
+| Param   | Type                  | Default       | Description                                                                                                           |
+| ------- | --------------------- | ------------- | --------------------------------------------------------------------------------------------------------------------- |
+| event   | <code>string</code>   |               | Event name.                                                                                                           |
 | handler | <code>function</code> | <code></code> | (optional) Can be sent if a specific handler need to be detached. All the handlers will be detached if not specified. |
 
 <a name="BaseEvernodeClient+connect"></a>
@@ -193,8 +193,8 @@ Get the moment from the given index (timestamp).
 **Kind**: instance method of [<code>BaseEvernodeClient</code>](#BaseEvernodeClient)  
 **Returns**: The moment of the given index (timestamp) as a number. Returns the current moment if the timestamp is not provided.  
 
-| Param | Type | Default | Description |
-| --- | --- | --- | --- |
+| Param | Type                | Default       | Description                                           |
+| ----- | ------------------- | ------------- | ----------------------------------------------------- |
 | index | <code>number</code> | <code></code> | [Optional] Index (timestamp) to get the moment value. |
 
 <a name="BaseEvernodeClient+getMomentStartIndex"></a>
@@ -205,8 +205,8 @@ Get start index (timestamp) of the moment.
 **Kind**: instance method of [<code>BaseEvernodeClient</code>](#BaseEvernodeClient)  
 **Returns**: The index (timestamp) of the moment as a 'number'. Returns the current moment's start index (timestamp) if ledger index parameter is not given.  
 
-| Param | Type | Default | Description |
-| --- | --- | --- | --- |
+| Param | Type                | Default       | Description                                                 |
+| ----- | ------------------- | ------------- | ----------------------------------------------------------- |
 | index | <code>number</code> | <code></code> | [Optional] Index (timestamp) to get the moment start index. |
 
 <a name="BaseEvernodeClient+refreshConfig"></a>
@@ -224,9 +224,9 @@ Note: You need to deserialize HookParameters before passing the transaction to t
 **Kind**: instance method of [<code>BaseEvernodeClient</code>](#BaseEvernodeClient)  
 **Returns**: The event object in format `{name: string, data: Object}`. Returns `null` if the event is not handled.  
 
-| Param | Type | Description |
-| --- | --- | --- |
-| tx | <code>object</code> | The transaction object to be deserialized and extracted. |
+| Param | Type                | Description                                              |
+| ----- | ------------------- | -------------------------------------------------------- |
+| tx    | <code>object</code> | The transaction object to be deserialized and extracted. |
 
 <a name="BaseEvernodeClient+getHostInfo"></a>
 
@@ -236,8 +236,8 @@ Get the registered host information.
 **Kind**: instance method of [<code>BaseEvernodeClient</code>](#BaseEvernodeClient)  
 **Returns**: The registered host information object. Returns null if not registered.  
 
-| Param | Type | Description |
-| --- | --- | --- |
+| Param       | Type                | Description                     |
+| ----------- | ------------------- | ------------------------------- |
 | hostAddress | <code>string</code> | [Optional] Address of the host. |
 
 <a name="BaseEvernodeClient+getAllHostsFromLedger"></a>
@@ -261,8 +261,8 @@ Remove a host which is inactive for a long period. The inactivity is checked by 
 
 **Kind**: instance method of [<code>BaseEvernodeClient</code>](#BaseEvernodeClient)  
 
-| Param | Type | Description |
-| --- | --- | --- |
+| Param       | Type                | Description                            |
+| ----------- | ------------------- | -------------------------------------- |
 | hostAddress | <code>string</code> | XRPL address of the host to be pruned. |
 
 <a name="BaseEvernodeClient+getCandidateByOwner"></a>
@@ -273,8 +273,8 @@ Get proposed new hook candidate info.
 **Kind**: instance method of [<code>BaseEvernodeClient</code>](#BaseEvernodeClient)  
 **Returns**: The candidate information. Returns null if no candidate.  
 
-| Param | Type | Description |
-| --- | --- | --- |
+| Param        | Type                | Description                      |
+| ------------ | ------------------- | -------------------------------- |
 | ownerAddress | <code>string</code> | [Optional] Address of the owner. |
 
 <a name="BaseEvernodeClient+getDudHostCandidatesByOwner"></a>
@@ -285,9 +285,9 @@ Get proposed dud host candidates.
 **Kind**: instance method of [<code>BaseEvernodeClient</code>](#BaseEvernodeClient)  
 **Returns**: An array of candidate information. Returns empty array if no candidates.  
 
-| Param | Type | Description |
-| --- | --- | --- |
-| ownerAddress | <code>string</code> | | Address of the owner |
+| Param        | Type                | Description |
+| ------------ | ------------------- | ----------- |
+| ownerAddress | <code>string</code> |             | Address of the owner |
 
 <a name="BaseEvernodeClient+getCandidateById"></a>
 
@@ -297,8 +297,8 @@ Get candidate info.
 **Kind**: instance method of [<code>BaseEvernodeClient</code>](#BaseEvernodeClient)  
 **Returns**: The candidate information. Returns null if no candidate.  
 
-| Param | Type | Description |
-| --- | --- | --- |
+| Param       | Type                | Description          |
+| ----------- | ------------------- | -------------------- |
 | candidateId | <code>string</code> | Id of the candidate. |
 
 <a name="BaseEvernodeClient+getDudHostVoteInfo"></a>
@@ -309,8 +309,8 @@ Get reported dud host info.
 **Kind**: instance method of [<code>BaseEvernodeClient</code>](#BaseEvernodeClient)  
 **Returns**: The dud host candidate information. Returns null if no candidate.  
 
-| Param | Type | Description |
-| --- | --- | --- |
+| Param       | Type                | Description                         |
+| ----------- | ------------------- | ----------------------------------- |
 | hostAddress | <code>string</code> | [Optional] Address of the dud host. |
 
 <a name="BaseEvernodeClient+getPilotedModeVoteInfo"></a>
@@ -328,10 +328,10 @@ Get reputation order info of given orderedId.
 **Kind**: instance method of [<code>BaseEvernodeClient</code>](#BaseEvernodeClient)  
 **Returns**: Reputation address info object.  
 
-| Param | Type | Default | Description |
-| --- | --- | --- | --- |
-| orderedId | <code>number</code> |  | Order id of the host. |
-| moment | <code>number</code> | <code></code> | (optional) Moment to get reputation info for. |
+| Param     | Type                | Default       | Description                                   |
+| --------- | ------------------- | ------------- | --------------------------------------------- |
+| orderedId | <code>number</code> |               | Order id of the host.                         |
+| moment    | <code>number</code> | <code></code> | (optional) Moment to get reputation info for. |
 
 <a name="BaseEvernodeClient+getReputationOrderByAddress"></a>
 
@@ -341,10 +341,10 @@ Get reputation order info of given host.
 **Kind**: instance method of [<code>BaseEvernodeClient</code>](#BaseEvernodeClient)  
 **Returns**: Reputation order info object.  
 
-| Param | Type | Default | Description |
-| --- | --- | --- | --- |
-| hostAddress | <code>string</code> |  | (optional) Host address. |
-| moment | <code>number</code> | <code></code> | (optional) Moment to get reputation info for. |
+| Param       | Type                | Default       | Description                                   |
+| ----------- | ------------------- | ------------- | --------------------------------------------- |
+| hostAddress | <code>string</code> |               | (optional) Host address.                      |
+| moment      | <code>number</code> | <code></code> | (optional) Moment to get reputation info for. |
 
 <a name="BaseEvernodeClient+getReputationContractInfoByAddress"></a>
 
@@ -354,10 +354,10 @@ Get reputation contract info of given host.
 **Kind**: instance method of [<code>BaseEvernodeClient</code>](#BaseEvernodeClient)  
 **Returns**: Reputation contract info object.  
 
-| Param | Type | Description |
-| --- | --- | --- |
-| hostsAddress | <code>string</code> | Host address. |
-| moment | <code>number</code> | (optional) Moment to get reputation contract info for. |
+| Param        | Type                | Description                                            |
+| ------------ | ------------------- | ------------------------------------------------------ |
+| hostsAddress | <code>string</code> | Host address.                                          |
+| moment       | <code>number</code> | (optional) Moment to get reputation contract info for. |
 
 <a name="BaseEvernodeClient+getReputationInfoByAddress"></a>
 
@@ -367,8 +367,8 @@ Get reputation info of given host.
 **Kind**: instance method of [<code>BaseEvernodeClient</code>](#BaseEvernodeClient)  
 **Returns**: Reputation info object.  
 
-| Param | Type | Description |
-| --- | --- | --- |
+| Param        | Type                | Description   |
+| ------------ | ------------------- | ------------- |
 | hostsAddress | <code>string</code> | Host address. |
 
 <a name="FoundationClient"></a>
@@ -423,11 +423,11 @@ It extends the BaseEvernodeClient.
 Creates an instance of FoundationClient.
 
 
-| Param | Type | Default | Description |
-| --- | --- | --- | --- |
-| xrpAddress | <code>string</code> |  | The XRP address to associate with this client. |
-| xrpSecret | <code>string</code> |  | The secret (private key) associated with the XRP address. |
-| [options] | <code>Object</code> | <code>{}</code> | Additional configuration options for the FoundationClient. |
+| Param      | Type                | Default         | Description                                                |
+| ---------- | ------------------- | --------------- | ---------------------------------------------------------- |
+| xrpAddress | <code>string</code> |                 | The XRP address to associate with this client.             |
+| xrpSecret  | <code>string</code> |                 | The secret (private key) associated with the XRP address.  |
+| [options]  | <code>Object</code> | <code>{}</code> | Additional configuration options for the FoundationClient. |
 
 <a name="FoundationClient+propose"></a>
 
@@ -437,11 +437,11 @@ Propose a new hook candidate.
 **Kind**: instance method of [<code>FoundationClient</code>](#FoundationClient)  
 **Returns**: Proposed candidate id.  
 
-| Param | Type | Description |
-| --- | --- | --- |
-| hashes | <code>string</code> | Hook candidate hashes in hex format, <GOVERNOR_HASH(32)><REGISTRY_HASH(32)><HEARTBEAT_HASH(32)>. |
-| shortName | <code>string</code> | Short name for the proposal candidate. |
-| options | <code>\*</code> | [Optional] transaction options. |
+| Param     | Type                | Description                                                                                                                                         |
+| --------- | ------------------- | --------------------------------------------------------------------------------------------------------------------------------------------------- |
+| hashes    | <code>string</code> | Hook candidate hashes in hex format, <GOVERNOR_HASH(32)><REGISTRY_HASH(32)><HEARTBEAT_HASH(32)>.                                                    |
+| shortName | <code>string</code> | Short name for the proposal candidate. This can consist of 20 characters. In here you can include any reference to your code pull requests as well. |
+| options   | <code>\*</code>     | [Optional] transaction options.                                                                                                                     |
 
 <a name="FoundationClient+withdraw"></a>
 
@@ -451,10 +451,10 @@ Withdraw a hook candidate.
 **Kind**: instance method of [<code>FoundationClient</code>](#FoundationClient)  
 **Returns**: Transaction result.  
 
-| Param | Type | Description |
-| --- | --- | --- |
+| Param       | Type                | Description                        |
+| ----------- | ------------------- | ---------------------------------- |
 | candidateId | <code>string</code> | Id of the candidate in hex format. |
-| options | <code>\*</code> | [Optional] transaction options. |
+| options     | <code>\*</code>     | [Optional] transaction options.    |
 
 <a name="FoundationClient+vote"></a>
 
@@ -464,11 +464,11 @@ Vote for a hook candidate.
 **Kind**: instance method of [<code>FoundationClient</code>](#FoundationClient)  
 **Returns**: Transaction result.  
 
-| Param | Type | Description |
-| --- | --- | --- |
-| candidateId | <code>string</code> | Id of the candidate in hex format. |
-| vote | <code>int</code> | Vote value CandidateVote (0 - Reject, 1 - Support). |
-| options | <code>\*</code> | [Optional] transaction options. |
+| Param       | Type                | Description                                         |
+| ----------- | ------------------- | --------------------------------------------------- |
+| candidateId | <code>string</code> | Id of the candidate in hex format.                  |
+| vote        | <code>int</code>    | Vote value CandidateVote (0 - Reject, 1 - Support). |
+| options     | <code>\*</code>     | [Optional] transaction options.                     |
 
 <a name="FoundationClient+reportDudHost"></a>
 
@@ -478,10 +478,10 @@ Report dud host for removal.
 **Kind**: instance method of [<code>FoundationClient</code>](#FoundationClient)  
 **Returns**: Transaction result.  
 
-| Param | Type | Description |
-| --- | --- | --- |
-| hostAddress | <code>string</code> | Address of the dud host. |
-| options | <code>\*</code> | [Optional] transaction options. |
+| Param       | Type                | Description                     |
+| ----------- | ------------------- | ------------------------------- |
+| hostAddress | <code>string</code> | Address of the dud host.        |
+| options     | <code>\*</code>     | [Optional] transaction options. |
 
 <a name="FoundationClient+voteDudHost"></a>
 
@@ -491,11 +491,11 @@ Vote for a dud host.
 **Kind**: instance method of [<code>FoundationClient</code>](#FoundationClient)  
 **Returns**: Transaction result.  
 
-| Param | Type | Description |
-| --- | --- | --- |
-| hostAddress | <code>string</code> | Address of the dud host. |
-| vote | <code>int</code> | Vote value CandidateVote (0 - Reject, 1 - Support). |
-| options | <code>\*</code> | [Optional] transaction options. |
+| Param       | Type                | Description                                         |
+| ----------- | ------------------- | --------------------------------------------------- |
+| hostAddress | <code>string</code> | Address of the dud host.                            |
+| vote        | <code>int</code>    | Vote value CandidateVote (0 - Reject, 1 - Support). |
+| options     | <code>\*</code>     | [Optional] transaction options.                     |
 
 <a name="FoundationClient+votePilotedMode"></a>
 
@@ -505,10 +505,10 @@ Vote for a piloted mode.
 **Kind**: instance method of [<code>FoundationClient</code>](#FoundationClient)  
 **Returns**: Transaction result.  
 
-| Param | Type | Description |
-| --- | --- | --- |
-| vote | <code>int</code> | Vote value CandidateVote (0 - Reject, 1 - Support). |
-| options | <code>\*</code> | [Optional] transaction options. |
+| Param   | Type             | Description                                         |
+| ------- | ---------------- | --------------------------------------------------- |
+| vote    | <code>int</code> | Vote value CandidateVote (0 - Reject, 1 - Support). |
+| options | <code>\*</code>  | [Optional] transaction options.                     |
 
 <a name="FoundationClient+changeGovernanceMode"></a>
 
@@ -518,10 +518,10 @@ Change the governance mode.
 **Kind**: instance method of [<code>FoundationClient</code>](#FoundationClient)  
 **Returns**: Transaction result.  
 
-| Param | Type | Description |
-| --- | --- | --- |
-| mode | <code>int</code> | Mode  (1 - Piloted, 2 - CoPiloted, 3 - AutoPiloted). |
-| options | <code>\*</code> | [Optional] transaction options. |
+| Param   | Type             | Description                                          |
+| ------- | ---------------- | ---------------------------------------------------- |
+| mode    | <code>int</code> | Mode  (1 - Piloted, 2 - CoPiloted, 3 - AutoPiloted). |
+| options | <code>\*</code>  | [Optional] transaction options.                      |
 
 <a name="FoundationClient+updateHostReputation"></a>
 
@@ -531,11 +531,11 @@ Update the reputation of the host.
 **Kind**: instance method of [<code>FoundationClient</code>](#FoundationClient)  
 **Returns**: Transaction result.  
 
-| Param | Type | Description |
-| --- | --- | --- |
-| hostAddress | <code>string</code> | Address of the dud host. |
-| reputation | <code>number</code> | Host reputation value. |
-| options | <code>\*</code> | [Optional] transaction options. |
+| Param       | Type                | Description                     |
+| ----------- | ------------------- | ------------------------------- |
+| hostAddress | <code>string</code> | Address of the dud host.        |
+| reputation  | <code>number</code> | Host reputation value.          |
+| options     | <code>\*</code>     | [Optional] transaction options. |
 
 <a name="BaseEvernodeClient+on"></a>
 
@@ -545,9 +545,9 @@ Listens to the subscribed events. This will listen for the event without detachi
 **Kind**: instance method of [<code>FoundationClient</code>](#FoundationClient)  
 **Overrides**: [<code>on</code>](#BaseEvernodeClient+on)  
 
-| Param | Type | Description |
-| --- | --- | --- |
-| event | <code>string</code> | The name of the event to listen for. |
+| Param   | Type                  | Description                                                                                    |
+| ------- | --------------------- | ---------------------------------------------------------------------------------------------- |
+| event   | <code>string</code>   | The name of the event to listen for.                                                           |
 | handler | <code>function</code> | The callback function to handle the event. The function takes the event object as a parameter. |
 
 <a name="BaseEvernodeClient+once"></a>
@@ -558,9 +558,9 @@ Listens to the subscribed events. This will listen only once and detach the hand
 **Kind**: instance method of [<code>FoundationClient</code>](#FoundationClient)  
 **Overrides**: [<code>once</code>](#BaseEvernodeClient+once)  
 
-| Param | Type | Description |
-| --- | --- | --- |
-| event | <code>string</code> | Event name. |
+| Param   | Type                  | Description                            |
+| ------- | --------------------- | -------------------------------------- |
+| event   | <code>string</code>   | Event name.                            |
 | handler | <code>function</code> | Callback function to handle the event. |
 
 <a name="BaseEvernodeClient+off"></a>
@@ -571,9 +571,9 @@ Detach the listener event.
 **Kind**: instance method of [<code>FoundationClient</code>](#FoundationClient)  
 **Overrides**: [<code>off</code>](#BaseEvernodeClient+off)  
 
-| Param | Type | Default | Description |
-| --- | --- | --- | --- |
-| event | <code>string</code> |  | Event name. |
+| Param   | Type                  | Default       | Description                                                                                                           |
+| ------- | --------------------- | ------------- | --------------------------------------------------------------------------------------------------------------------- |
+| event   | <code>string</code>   |               | Event name.                                                                                                           |
 | handler | <code>function</code> | <code></code> | (optional) Can be sent if a specific handler need to be detached. All the handlers will be detached if not specified. |
 
 <a name="BaseEvernodeClient+connect"></a>
@@ -630,8 +630,8 @@ Get the moment from the given index (timestamp).
 **Overrides**: [<code>getMoment</code>](#BaseEvernodeClient+getMoment)  
 **Returns**: The moment of the given index (timestamp) as a number. Returns the current moment if the timestamp is not provided.  
 
-| Param | Type | Default | Description |
-| --- | --- | --- | --- |
+| Param | Type                | Default       | Description                                           |
+| ----- | ------------------- | ------------- | ----------------------------------------------------- |
 | index | <code>number</code> | <code></code> | [Optional] Index (timestamp) to get the moment value. |
 
 <a name="BaseEvernodeClient+getMomentStartIndex"></a>
@@ -643,8 +643,8 @@ Get start index (timestamp) of the moment.
 **Overrides**: [<code>getMomentStartIndex</code>](#BaseEvernodeClient+getMomentStartIndex)  
 **Returns**: The index (timestamp) of the moment as a 'number'. Returns the current moment's start index (timestamp) if ledger index parameter is not given.  
 
-| Param | Type | Default | Description |
-| --- | --- | --- | --- |
+| Param | Type                | Default       | Description                                                 |
+| ----- | ------------------- | ------------- | ----------------------------------------------------------- |
 | index | <code>number</code> | <code></code> | [Optional] Index (timestamp) to get the moment start index. |
 
 <a name="BaseEvernodeClient+refreshConfig"></a>
@@ -664,9 +664,9 @@ Note: You need to deserialize HookParameters before passing the transaction to t
 **Overrides**: [<code>extractEvernodeEvent</code>](#BaseEvernodeClient+extractEvernodeEvent)  
 **Returns**: The event object in format `{name: string, data: Object}`. Returns `null` if the event is not handled.  
 
-| Param | Type | Description |
-| --- | --- | --- |
-| tx | <code>object</code> | The transaction object to be deserialized and extracted. |
+| Param | Type                | Description                                              |
+| ----- | ------------------- | -------------------------------------------------------- |
+| tx    | <code>object</code> | The transaction object to be deserialized and extracted. |
 
 <a name="BaseEvernodeClient+getHostInfo"></a>
 
@@ -677,8 +677,8 @@ Get the registered host information.
 **Overrides**: [<code>getHostInfo</code>](#BaseEvernodeClient+getHostInfo)  
 **Returns**: The registered host information object. Returns null if not registered.  
 
-| Param | Type | Description |
-| --- | --- | --- |
+| Param       | Type                | Description                     |
+| ----------- | ------------------- | ------------------------------- |
 | hostAddress | <code>string</code> | [Optional] Address of the host. |
 
 <a name="BaseEvernodeClient+getAllHostsFromLedger"></a>
@@ -705,8 +705,8 @@ Remove a host which is inactive for a long period. The inactivity is checked by 
 **Kind**: instance method of [<code>FoundationClient</code>](#FoundationClient)  
 **Overrides**: [<code>pruneDeadHost</code>](#BaseEvernodeClient+pruneDeadHost)  
 
-| Param | Type | Description |
-| --- | --- | --- |
+| Param       | Type                | Description                            |
+| ----------- | ------------------- | -------------------------------------- |
 | hostAddress | <code>string</code> | XRPL address of the host to be pruned. |
 
 <a name="BaseEvernodeClient+getCandidateByOwner"></a>
@@ -718,8 +718,8 @@ Get proposed new hook candidate info.
 **Overrides**: [<code>getCandidateByOwner</code>](#BaseEvernodeClient+getCandidateByOwner)  
 **Returns**: The candidate information. Returns null if no candidate.  
 
-| Param | Type | Description |
-| --- | --- | --- |
+| Param        | Type                | Description                      |
+| ------------ | ------------------- | -------------------------------- |
 | ownerAddress | <code>string</code> | [Optional] Address of the owner. |
 
 <a name="BaseEvernodeClient+getDudHostCandidatesByOwner"></a>
@@ -731,9 +731,9 @@ Get proposed dud host candidates.
 **Overrides**: [<code>getDudHostCandidatesByOwner</code>](#BaseEvernodeClient+getDudHostCandidatesByOwner)  
 **Returns**: An array of candidate information. Returns empty array if no candidates.  
 
-| Param | Type | Description |
-| --- | --- | --- |
-| ownerAddress | <code>string</code> | | Address of the owner |
+| Param        | Type                | Description |
+| ------------ | ------------------- | ----------- |
+| ownerAddress | <code>string</code> |             | Address of the owner |
 
 <a name="BaseEvernodeClient+getCandidateById"></a>
 
@@ -744,8 +744,8 @@ Get candidate info.
 **Overrides**: [<code>getCandidateById</code>](#BaseEvernodeClient+getCandidateById)  
 **Returns**: The candidate information. Returns null if no candidate.  
 
-| Param | Type | Description |
-| --- | --- | --- |
+| Param       | Type                | Description          |
+| ----------- | ------------------- | -------------------- |
 | candidateId | <code>string</code> | Id of the candidate. |
 
 <a name="BaseEvernodeClient+getDudHostVoteInfo"></a>
@@ -757,8 +757,8 @@ Get reported dud host info.
 **Overrides**: [<code>getDudHostVoteInfo</code>](#BaseEvernodeClient+getDudHostVoteInfo)  
 **Returns**: The dud host candidate information. Returns null if no candidate.  
 
-| Param | Type | Description |
-| --- | --- | --- |
+| Param       | Type                | Description                         |
+| ----------- | ------------------- | ----------------------------------- |
 | hostAddress | <code>string</code> | [Optional] Address of the dud host. |
 
 <a name="BaseEvernodeClient+getPilotedModeVoteInfo"></a>
@@ -778,10 +778,10 @@ Get reputation order info of given orderedId.
 **Overrides**: [<code>getReputationAddressByOrderedId</code>](#BaseEvernodeClient+getReputationAddressByOrderedId)  
 **Returns**: Reputation address info object.  
 
-| Param | Type | Default | Description |
-| --- | --- | --- | --- |
-| orderedId | <code>number</code> |  | Order id of the host. |
-| moment | <code>number</code> | <code></code> | (optional) Moment to get reputation info for. |
+| Param     | Type                | Default       | Description                                   |
+| --------- | ------------------- | ------------- | --------------------------------------------- |
+| orderedId | <code>number</code> |               | Order id of the host.                         |
+| moment    | <code>number</code> | <code></code> | (optional) Moment to get reputation info for. |
 
 <a name="BaseEvernodeClient+getReputationOrderByAddress"></a>
 
@@ -792,10 +792,10 @@ Get reputation order info of given host.
 **Overrides**: [<code>getReputationOrderByAddress</code>](#BaseEvernodeClient+getReputationOrderByAddress)  
 **Returns**: Reputation order info object.  
 
-| Param | Type | Default | Description |
-| --- | --- | --- | --- |
-| hostAddress | <code>string</code> |  | (optional) Host address. |
-| moment | <code>number</code> | <code></code> | (optional) Moment to get reputation info for. |
+| Param       | Type                | Default       | Description                                   |
+| ----------- | ------------------- | ------------- | --------------------------------------------- |
+| hostAddress | <code>string</code> |               | (optional) Host address.                      |
+| moment      | <code>number</code> | <code></code> | (optional) Moment to get reputation info for. |
 
 <a name="BaseEvernodeClient+getReputationContractInfoByAddress"></a>
 
@@ -806,10 +806,10 @@ Get reputation contract info of given host.
 **Overrides**: [<code>getReputationContractInfoByAddress</code>](#BaseEvernodeClient+getReputationContractInfoByAddress)  
 **Returns**: Reputation contract info object.  
 
-| Param | Type | Description |
-| --- | --- | --- |
-| hostsAddress | <code>string</code> | Host address. |
-| moment | <code>number</code> | (optional) Moment to get reputation contract info for. |
+| Param        | Type                | Description                                            |
+| ------------ | ------------------- | ------------------------------------------------------ |
+| hostsAddress | <code>string</code> | Host address.                                          |
+| moment       | <code>number</code> | (optional) Moment to get reputation contract info for. |
 
 <a name="BaseEvernodeClient+getReputationInfoByAddress"></a>
 
@@ -820,8 +820,8 @@ Get reputation info of given host.
 **Overrides**: [<code>getReputationInfoByAddress</code>](#BaseEvernodeClient+getReputationInfoByAddress)  
 **Returns**: Reputation info object.  
 
-| Param | Type | Description |
-| --- | --- | --- |
+| Param        | Type                | Description   |
+| ------------ | ------------------- | ------------- |
 | hostsAddress | <code>string</code> | Host address. |
 
 <a name="HeartbeatClient"></a>
@@ -869,9 +869,9 @@ Listens to the subscribed events. This will listen for the event without detachi
 **Kind**: instance method of [<code>HeartbeatClient</code>](#HeartbeatClient)  
 **Overrides**: [<code>on</code>](#BaseEvernodeClient+on)  
 
-| Param | Type | Description |
-| --- | --- | --- |
-| event | <code>string</code> | The name of the event to listen for. |
+| Param   | Type                  | Description                                                                                    |
+| ------- | --------------------- | ---------------------------------------------------------------------------------------------- |
+| event   | <code>string</code>   | The name of the event to listen for.                                                           |
 | handler | <code>function</code> | The callback function to handle the event. The function takes the event object as a parameter. |
 
 <a name="BaseEvernodeClient+once"></a>
@@ -882,9 +882,9 @@ Listens to the subscribed events. This will listen only once and detach the hand
 **Kind**: instance method of [<code>HeartbeatClient</code>](#HeartbeatClient)  
 **Overrides**: [<code>once</code>](#BaseEvernodeClient+once)  
 
-| Param | Type | Description |
-| --- | --- | --- |
-| event | <code>string</code> | Event name. |
+| Param   | Type                  | Description                            |
+| ------- | --------------------- | -------------------------------------- |
+| event   | <code>string</code>   | Event name.                            |
 | handler | <code>function</code> | Callback function to handle the event. |
 
 <a name="BaseEvernodeClient+off"></a>
@@ -895,9 +895,9 @@ Detach the listener event.
 **Kind**: instance method of [<code>HeartbeatClient</code>](#HeartbeatClient)  
 **Overrides**: [<code>off</code>](#BaseEvernodeClient+off)  
 
-| Param | Type | Default | Description |
-| --- | --- | --- | --- |
-| event | <code>string</code> |  | Event name. |
+| Param   | Type                  | Default       | Description                                                                                                           |
+| ------- | --------------------- | ------------- | --------------------------------------------------------------------------------------------------------------------- |
+| event   | <code>string</code>   |               | Event name.                                                                                                           |
 | handler | <code>function</code> | <code></code> | (optional) Can be sent if a specific handler need to be detached. All the handlers will be detached if not specified. |
 
 <a name="BaseEvernodeClient+connect"></a>
@@ -954,8 +954,8 @@ Get the moment from the given index (timestamp).
 **Overrides**: [<code>getMoment</code>](#BaseEvernodeClient+getMoment)  
 **Returns**: The moment of the given index (timestamp) as a number. Returns the current moment if the timestamp is not provided.  
 
-| Param | Type | Default | Description |
-| --- | --- | --- | --- |
+| Param | Type                | Default       | Description                                           |
+| ----- | ------------------- | ------------- | ----------------------------------------------------- |
 | index | <code>number</code> | <code></code> | [Optional] Index (timestamp) to get the moment value. |
 
 <a name="BaseEvernodeClient+getMomentStartIndex"></a>
@@ -967,8 +967,8 @@ Get start index (timestamp) of the moment.
 **Overrides**: [<code>getMomentStartIndex</code>](#BaseEvernodeClient+getMomentStartIndex)  
 **Returns**: The index (timestamp) of the moment as a 'number'. Returns the current moment's start index (timestamp) if ledger index parameter is not given.  
 
-| Param | Type | Default | Description |
-| --- | --- | --- | --- |
+| Param | Type                | Default       | Description                                                 |
+| ----- | ------------------- | ------------- | ----------------------------------------------------------- |
 | index | <code>number</code> | <code></code> | [Optional] Index (timestamp) to get the moment start index. |
 
 <a name="BaseEvernodeClient+refreshConfig"></a>
@@ -988,9 +988,9 @@ Note: You need to deserialize HookParameters before passing the transaction to t
 **Overrides**: [<code>extractEvernodeEvent</code>](#BaseEvernodeClient+extractEvernodeEvent)  
 **Returns**: The event object in format `{name: string, data: Object}`. Returns `null` if the event is not handled.  
 
-| Param | Type | Description |
-| --- | --- | --- |
-| tx | <code>object</code> | The transaction object to be deserialized and extracted. |
+| Param | Type                | Description                                              |
+| ----- | ------------------- | -------------------------------------------------------- |
+| tx    | <code>object</code> | The transaction object to be deserialized and extracted. |
 
 <a name="BaseEvernodeClient+getHostInfo"></a>
 
@@ -1001,8 +1001,8 @@ Get the registered host information.
 **Overrides**: [<code>getHostInfo</code>](#BaseEvernodeClient+getHostInfo)  
 **Returns**: The registered host information object. Returns null if not registered.  
 
-| Param | Type | Description |
-| --- | --- | --- |
+| Param       | Type                | Description                     |
+| ----------- | ------------------- | ------------------------------- |
 | hostAddress | <code>string</code> | [Optional] Address of the host. |
 
 <a name="BaseEvernodeClient+getAllHostsFromLedger"></a>
@@ -1029,8 +1029,8 @@ Remove a host which is inactive for a long period. The inactivity is checked by 
 **Kind**: instance method of [<code>HeartbeatClient</code>](#HeartbeatClient)  
 **Overrides**: [<code>pruneDeadHost</code>](#BaseEvernodeClient+pruneDeadHost)  
 
-| Param | Type | Description |
-| --- | --- | --- |
+| Param       | Type                | Description                            |
+| ----------- | ------------------- | -------------------------------------- |
 | hostAddress | <code>string</code> | XRPL address of the host to be pruned. |
 
 <a name="BaseEvernodeClient+getCandidateByOwner"></a>
@@ -1042,8 +1042,8 @@ Get proposed new hook candidate info.
 **Overrides**: [<code>getCandidateByOwner</code>](#BaseEvernodeClient+getCandidateByOwner)  
 **Returns**: The candidate information. Returns null if no candidate.  
 
-| Param | Type | Description |
-| --- | --- | --- |
+| Param        | Type                | Description                      |
+| ------------ | ------------------- | -------------------------------- |
 | ownerAddress | <code>string</code> | [Optional] Address of the owner. |
 
 <a name="BaseEvernodeClient+getDudHostCandidatesByOwner"></a>
@@ -1055,9 +1055,9 @@ Get proposed dud host candidates.
 **Overrides**: [<code>getDudHostCandidatesByOwner</code>](#BaseEvernodeClient+getDudHostCandidatesByOwner)  
 **Returns**: An array of candidate information. Returns empty array if no candidates.  
 
-| Param | Type | Description |
-| --- | --- | --- |
-| ownerAddress | <code>string</code> | | Address of the owner |
+| Param        | Type                | Description |
+| ------------ | ------------------- | ----------- |
+| ownerAddress | <code>string</code> |             | Address of the owner |
 
 <a name="BaseEvernodeClient+getCandidateById"></a>
 
@@ -1068,8 +1068,8 @@ Get candidate info.
 **Overrides**: [<code>getCandidateById</code>](#BaseEvernodeClient+getCandidateById)  
 **Returns**: The candidate information. Returns null if no candidate.  
 
-| Param | Type | Description |
-| --- | --- | --- |
+| Param       | Type                | Description          |
+| ----------- | ------------------- | -------------------- |
 | candidateId | <code>string</code> | Id of the candidate. |
 
 <a name="BaseEvernodeClient+getDudHostVoteInfo"></a>
@@ -1081,8 +1081,8 @@ Get reported dud host info.
 **Overrides**: [<code>getDudHostVoteInfo</code>](#BaseEvernodeClient+getDudHostVoteInfo)  
 **Returns**: The dud host candidate information. Returns null if no candidate.  
 
-| Param | Type | Description |
-| --- | --- | --- |
+| Param       | Type                | Description                         |
+| ----------- | ------------------- | ----------------------------------- |
 | hostAddress | <code>string</code> | [Optional] Address of the dud host. |
 
 <a name="BaseEvernodeClient+getPilotedModeVoteInfo"></a>
@@ -1102,10 +1102,10 @@ Get reputation order info of given orderedId.
 **Overrides**: [<code>getReputationAddressByOrderedId</code>](#BaseEvernodeClient+getReputationAddressByOrderedId)  
 **Returns**: Reputation address info object.  
 
-| Param | Type | Default | Description |
-| --- | --- | --- | --- |
-| orderedId | <code>number</code> |  | Order id of the host. |
-| moment | <code>number</code> | <code></code> | (optional) Moment to get reputation info for. |
+| Param     | Type                | Default       | Description                                   |
+| --------- | ------------------- | ------------- | --------------------------------------------- |
+| orderedId | <code>number</code> |               | Order id of the host.                         |
+| moment    | <code>number</code> | <code></code> | (optional) Moment to get reputation info for. |
 
 <a name="BaseEvernodeClient+getReputationOrderByAddress"></a>
 
@@ -1116,10 +1116,10 @@ Get reputation order info of given host.
 **Overrides**: [<code>getReputationOrderByAddress</code>](#BaseEvernodeClient+getReputationOrderByAddress)  
 **Returns**: Reputation order info object.  
 
-| Param | Type | Default | Description |
-| --- | --- | --- | --- |
-| hostAddress | <code>string</code> |  | (optional) Host address. |
-| moment | <code>number</code> | <code></code> | (optional) Moment to get reputation info for. |
+| Param       | Type                | Default       | Description                                   |
+| ----------- | ------------------- | ------------- | --------------------------------------------- |
+| hostAddress | <code>string</code> |               | (optional) Host address.                      |
+| moment      | <code>number</code> | <code></code> | (optional) Moment to get reputation info for. |
 
 <a name="BaseEvernodeClient+getReputationContractInfoByAddress"></a>
 
@@ -1130,10 +1130,10 @@ Get reputation contract info of given host.
 **Overrides**: [<code>getReputationContractInfoByAddress</code>](#BaseEvernodeClient+getReputationContractInfoByAddress)  
 **Returns**: Reputation contract info object.  
 
-| Param | Type | Description |
-| --- | --- | --- |
-| hostsAddress | <code>string</code> | Host address. |
-| moment | <code>number</code> | (optional) Moment to get reputation contract info for. |
+| Param        | Type                | Description                                            |
+| ------------ | ------------------- | ------------------------------------------------------ |
+| hostsAddress | <code>string</code> | Host address.                                          |
+| moment       | <code>number</code> | (optional) Moment to get reputation contract info for. |
 
 <a name="BaseEvernodeClient+getReputationInfoByAddress"></a>
 
@@ -1144,8 +1144,8 @@ Get reputation info of given host.
 **Overrides**: [<code>getReputationInfoByAddress</code>](#BaseEvernodeClient+getReputationInfoByAddress)  
 **Returns**: Reputation info object.  
 
-| Param | Type | Description |
-| --- | --- | --- |
+| Param        | Type                | Description   |
+| ------------ | ------------------- | ------------- |
 | hostsAddress | <code>string</code> | Host address. |
 
 <a name="HookClientFactory"></a>
@@ -1166,10 +1166,10 @@ Creates a hook client from given type.
 - <code>Error</code> Will throw an error if there is an issue connecting to the GovernorClient or obtaining the necessary configuration.
 
 
-| Param | Type | Default | Description |
-| --- | --- | --- | --- |
-| hookType | <code>string</code> |  | Type of the Required Hook. (Supported Hook types 'GOVERNOR', 'REGISTRY', 'HEARTBEAT' and 'REPUTATION') |
-| [options] | <code>Object</code> | <code>{}</code> | Optional configuration for the hook client. |
+| Param     | Type                | Default         | Description                                                                                            |
+| --------- | ------------------- | --------------- | ------------------------------------------------------------------------------------------------------ |
+| hookType  | <code>string</code> |                 | Type of the Required Hook. (Supported Hook types 'GOVERNOR', 'REGISTRY', 'HEARTBEAT' and 'REPUTATION') |
+| [options] | <code>Object</code> | <code>{}</code> | Optional configuration for the hook client.                                                            |
 
 <a name="RegistryClient"></a>
 
@@ -1224,9 +1224,9 @@ Listens to the subscribed events. This will listen for the event without detachi
 **Kind**: instance method of [<code>RegistryClient</code>](#RegistryClient)  
 **Overrides**: [<code>on</code>](#BaseEvernodeClient+on)  
 
-| Param | Type | Description |
-| --- | --- | --- |
-| event | <code>string</code> | The name of the event to listen for. |
+| Param   | Type                  | Description                                                                                    |
+| ------- | --------------------- | ---------------------------------------------------------------------------------------------- |
+| event   | <code>string</code>   | The name of the event to listen for.                                                           |
 | handler | <code>function</code> | The callback function to handle the event. The function takes the event object as a parameter. |
 
 <a name="BaseEvernodeClient+once"></a>
@@ -1237,9 +1237,9 @@ Listens to the subscribed events. This will listen only once and detach the hand
 **Kind**: instance method of [<code>RegistryClient</code>](#RegistryClient)  
 **Overrides**: [<code>once</code>](#BaseEvernodeClient+once)  
 
-| Param | Type | Description |
-| --- | --- | --- |
-| event | <code>string</code> | Event name. |
+| Param   | Type                  | Description                            |
+| ------- | --------------------- | -------------------------------------- |
+| event   | <code>string</code>   | Event name.                            |
 | handler | <code>function</code> | Callback function to handle the event. |
 
 <a name="BaseEvernodeClient+off"></a>
@@ -1250,9 +1250,9 @@ Detach the listener event.
 **Kind**: instance method of [<code>RegistryClient</code>](#RegistryClient)  
 **Overrides**: [<code>off</code>](#BaseEvernodeClient+off)  
 
-| Param | Type | Default | Description |
-| --- | --- | --- | --- |
-| event | <code>string</code> |  | Event name. |
+| Param   | Type                  | Default       | Description                                                                                                           |
+| ------- | --------------------- | ------------- | --------------------------------------------------------------------------------------------------------------------- |
+| event   | <code>string</code>   |               | Event name.                                                                                                           |
 | handler | <code>function</code> | <code></code> | (optional) Can be sent if a specific handler need to be detached. All the handlers will be detached if not specified. |
 
 <a name="BaseEvernodeClient+connect"></a>
@@ -1309,8 +1309,8 @@ Get the moment from the given index (timestamp).
 **Overrides**: [<code>getMoment</code>](#BaseEvernodeClient+getMoment)  
 **Returns**: The moment of the given index (timestamp) as a number. Returns the current moment if the timestamp is not provided.  
 
-| Param | Type | Default | Description |
-| --- | --- | --- | --- |
+| Param | Type                | Default       | Description                                           |
+| ----- | ------------------- | ------------- | ----------------------------------------------------- |
 | index | <code>number</code> | <code></code> | [Optional] Index (timestamp) to get the moment value. |
 
 <a name="BaseEvernodeClient+getMomentStartIndex"></a>
@@ -1322,8 +1322,8 @@ Get start index (timestamp) of the moment.
 **Overrides**: [<code>getMomentStartIndex</code>](#BaseEvernodeClient+getMomentStartIndex)  
 **Returns**: The index (timestamp) of the moment as a 'number'. Returns the current moment's start index (timestamp) if ledger index parameter is not given.  
 
-| Param | Type | Default | Description |
-| --- | --- | --- | --- |
+| Param | Type                | Default       | Description                                                 |
+| ----- | ------------------- | ------------- | ----------------------------------------------------------- |
 | index | <code>number</code> | <code></code> | [Optional] Index (timestamp) to get the moment start index. |
 
 <a name="BaseEvernodeClient+refreshConfig"></a>
@@ -1343,9 +1343,9 @@ Note: You need to deserialize HookParameters before passing the transaction to t
 **Overrides**: [<code>extractEvernodeEvent</code>](#BaseEvernodeClient+extractEvernodeEvent)  
 **Returns**: The event object in format `{name: string, data: Object}`. Returns `null` if the event is not handled.  
 
-| Param | Type | Description |
-| --- | --- | --- |
-| tx | <code>object</code> | The transaction object to be deserialized and extracted. |
+| Param | Type                | Description                                              |
+| ----- | ------------------- | -------------------------------------------------------- |
+| tx    | <code>object</code> | The transaction object to be deserialized and extracted. |
 
 <a name="BaseEvernodeClient+getHostInfo"></a>
 
@@ -1356,8 +1356,8 @@ Get the registered host information.
 **Overrides**: [<code>getHostInfo</code>](#BaseEvernodeClient+getHostInfo)  
 **Returns**: The registered host information object. Returns null if not registered.  
 
-| Param | Type | Description |
-| --- | --- | --- |
+| Param       | Type                | Description                     |
+| ----------- | ------------------- | ------------------------------- |
 | hostAddress | <code>string</code> | [Optional] Address of the host. |
 
 <a name="BaseEvernodeClient+getAllHostsFromLedger"></a>
@@ -1384,8 +1384,8 @@ Remove a host which is inactive for a long period. The inactivity is checked by 
 **Kind**: instance method of [<code>RegistryClient</code>](#RegistryClient)  
 **Overrides**: [<code>pruneDeadHost</code>](#BaseEvernodeClient+pruneDeadHost)  
 
-| Param | Type | Description |
-| --- | --- | --- |
+| Param       | Type                | Description                            |
+| ----------- | ------------------- | -------------------------------------- |
 | hostAddress | <code>string</code> | XRPL address of the host to be pruned. |
 
 <a name="BaseEvernodeClient+getCandidateByOwner"></a>
@@ -1397,8 +1397,8 @@ Get proposed new hook candidate info.
 **Overrides**: [<code>getCandidateByOwner</code>](#BaseEvernodeClient+getCandidateByOwner)  
 **Returns**: The candidate information. Returns null if no candidate.  
 
-| Param | Type | Description |
-| --- | --- | --- |
+| Param        | Type                | Description                      |
+| ------------ | ------------------- | -------------------------------- |
 | ownerAddress | <code>string</code> | [Optional] Address of the owner. |
 
 <a name="BaseEvernodeClient+getDudHostCandidatesByOwner"></a>
@@ -1410,9 +1410,9 @@ Get proposed dud host candidates.
 **Overrides**: [<code>getDudHostCandidatesByOwner</code>](#BaseEvernodeClient+getDudHostCandidatesByOwner)  
 **Returns**: An array of candidate information. Returns empty array if no candidates.  
 
-| Param | Type | Description |
-| --- | --- | --- |
-| ownerAddress | <code>string</code> | | Address of the owner |
+| Param        | Type                | Description |
+| ------------ | ------------------- | ----------- |
+| ownerAddress | <code>string</code> |             | Address of the owner |
 
 <a name="BaseEvernodeClient+getCandidateById"></a>
 
@@ -1423,8 +1423,8 @@ Get candidate info.
 **Overrides**: [<code>getCandidateById</code>](#BaseEvernodeClient+getCandidateById)  
 **Returns**: The candidate information. Returns null if no candidate.  
 
-| Param | Type | Description |
-| --- | --- | --- |
+| Param       | Type                | Description          |
+| ----------- | ------------------- | -------------------- |
 | candidateId | <code>string</code> | Id of the candidate. |
 
 <a name="BaseEvernodeClient+getDudHostVoteInfo"></a>
@@ -1436,8 +1436,8 @@ Get reported dud host info.
 **Overrides**: [<code>getDudHostVoteInfo</code>](#BaseEvernodeClient+getDudHostVoteInfo)  
 **Returns**: The dud host candidate information. Returns null if no candidate.  
 
-| Param | Type | Description |
-| --- | --- | --- |
+| Param       | Type                | Description                         |
+| ----------- | ------------------- | ----------------------------------- |
 | hostAddress | <code>string</code> | [Optional] Address of the dud host. |
 
 <a name="BaseEvernodeClient+getPilotedModeVoteInfo"></a>
@@ -1457,10 +1457,10 @@ Get reputation order info of given orderedId.
 **Overrides**: [<code>getReputationAddressByOrderedId</code>](#BaseEvernodeClient+getReputationAddressByOrderedId)  
 **Returns**: Reputation address info object.  
 
-| Param | Type | Default | Description |
-| --- | --- | --- | --- |
-| orderedId | <code>number</code> |  | Order id of the host. |
-| moment | <code>number</code> | <code></code> | (optional) Moment to get reputation info for. |
+| Param     | Type                | Default       | Description                                   |
+| --------- | ------------------- | ------------- | --------------------------------------------- |
+| orderedId | <code>number</code> |               | Order id of the host.                         |
+| moment    | <code>number</code> | <code></code> | (optional) Moment to get reputation info for. |
 
 <a name="BaseEvernodeClient+getReputationOrderByAddress"></a>
 
@@ -1471,10 +1471,10 @@ Get reputation order info of given host.
 **Overrides**: [<code>getReputationOrderByAddress</code>](#BaseEvernodeClient+getReputationOrderByAddress)  
 **Returns**: Reputation order info object.  
 
-| Param | Type | Default | Description |
-| --- | --- | --- | --- |
-| hostAddress | <code>string</code> |  | (optional) Host address. |
-| moment | <code>number</code> | <code></code> | (optional) Moment to get reputation info for. |
+| Param       | Type                | Default       | Description                                   |
+| ----------- | ------------------- | ------------- | --------------------------------------------- |
+| hostAddress | <code>string</code> |               | (optional) Host address.                      |
+| moment      | <code>number</code> | <code></code> | (optional) Moment to get reputation info for. |
 
 <a name="BaseEvernodeClient+getReputationContractInfoByAddress"></a>
 
@@ -1485,10 +1485,10 @@ Get reputation contract info of given host.
 **Overrides**: [<code>getReputationContractInfoByAddress</code>](#BaseEvernodeClient+getReputationContractInfoByAddress)  
 **Returns**: Reputation contract info object.  
 
-| Param | Type | Description |
-| --- | --- | --- |
-| hostsAddress | <code>string</code> | Host address. |
-| moment | <code>number</code> | (optional) Moment to get reputation contract info for. |
+| Param        | Type                | Description                                            |
+| ------------ | ------------------- | ------------------------------------------------------ |
+| hostsAddress | <code>string</code> | Host address.                                          |
+| moment       | <code>number</code> | (optional) Moment to get reputation contract info for. |
 
 <a name="BaseEvernodeClient+getReputationInfoByAddress"></a>
 
@@ -1499,8 +1499,8 @@ Get reputation info of given host.
 **Overrides**: [<code>getReputationInfoByAddress</code>](#BaseEvernodeClient+getReputationInfoByAddress)  
 **Returns**: Reputation info object.  
 
-| Param | Type | Description |
-| --- | --- | --- |
+| Param        | Type                | Description   |
+| ------------ | ------------------- | ------------- |
 | hostsAddress | <code>string</code> | Host address. |
 
 <a name="HostClient"></a>
@@ -1580,11 +1580,11 @@ It extends the BaseEvernodeClient.
 Creates an instance of HostClient.
 
 
-| Param | Type | Default | Description |
-| --- | --- | --- | --- |
-| xrpAddress | <code>string</code> |  | The XRP address to associate with this client. |
-| xrpSecret | <code>string</code> |  | The secret (private key) associated with the XRP address. |
-| [options] | <code>Object</code> | <code>{}</code> | Additional configuration options for the HostClient. |
+| Param      | Type                | Default         | Description                                               |
+| ---------- | ------------------- | --------------- | --------------------------------------------------------- |
+| xrpAddress | <code>string</code> |                 | The XRP address to associate with this client.            |
+| xrpSecret  | <code>string</code> |                 | The secret (private key) associated with the XRP address. |
+| [options]  | <code>Object</code> | <code>{}</code> | Additional configuration options for the HostClient.      |
 
 <a name="HostClient+getRegistrationUriToken"></a>
 
@@ -1608,8 +1608,8 @@ Get lease token by index.
 **Kind**: instance method of [<code>HostClient</code>](#HostClient)  
 **Returns**: Lease token.  
 
-| Param | Description |
-| --- | --- |
+| Param | Description         |
+| ----- | ------------------- |
 | index | Index of the token. |
 
 <a name="HostClient+getLeases"></a>
@@ -1647,8 +1647,8 @@ Prepare the host account with account fields and trust lines.
 
 **Kind**: instance method of [<code>HostClient</code>](#HostClient)  
 
-| Param | Type | Description |
-| --- | --- | --- |
+| Param  | Type                | Description                                 |
+| ------ | ------------------- | ------------------------------------------- |
 | domain | <code>string</code> | Domain which the host machine is reachable. |
 
 <a name="HostClient+prepareReputationAccount"></a>
@@ -1658,10 +1658,10 @@ Prepare the reputation account with account fields and trust lines.
 
 **Kind**: instance method of [<code>HostClient</code>](#HostClient)  
 
-| Param | Type | Description |
-| --- | --- | --- |
+| Param             | Type                | Description                        |
+| ----------------- | ------------------- | ---------------------------------- |
 | reputationAddress | <code>string</code> | Address of the reputation account. |
-| reputationSecret | <code>string</code> | Secret of the reputation account. |
+| reputationSecret  | <code>string</code> | Secret of the reputation account.  |
 
 <a name="HostClient+setReputationContractInfo"></a>
 
@@ -1670,9 +1670,9 @@ Set the reputation contract info.
 
 **Kind**: instance method of [<code>HostClient</code>](#HostClient)  
 
-| Param | Type | Description |
-| --- | --- | --- |
-| peerPort | <code>number</code> | Peer port of the reputation contract instance. |
+| Param     | Type                | Description                                     |
+| --------- | ------------------- | ----------------------------------------------- |
+| peerPort  | <code>number</code> | Peer port of the reputation contract instance.  |
 | publicKey | <code>string</code> | Public key of the reputation contract instance. |
 
 <a name="HostClient+getReputationInfo"></a>
@@ -1683,8 +1683,8 @@ Get reputation info of this host.
 **Kind**: instance method of [<code>HostClient</code>](#HostClient)  
 **Returns**: Reputation info object.  
 
-| Param | Type | Default | Description |
-| --- | --- | --- | --- |
+| Param  | Type                | Default       | Description                                   |
+| ------ | ------------------- | ------------- | --------------------------------------------- |
 | moment | <code>number</code> | <code></code> | (optional) Moment to get reputation info for. |
 
 <a name="HostClient+prepareHostReputationScores"></a>
@@ -1695,10 +1695,10 @@ Prepare host reputation score to a common format for submission.
 **Kind**: instance method of [<code>HostClient</code>](#HostClient)  
 **Returns**: Unified reputation score buffer.  
 
-| Param | Type | Default | Description |
-| --- | --- | --- | --- |
-| scoreVersion | <code>number</code> |  | Version of the scores. |
-| clusterSize | <code>number</code> |  | Size of the cluster. |
+| Param           | Type                | Default       | Description                                        |
+| --------------- | ------------------- | ------------- | -------------------------------------------------- |
+| scoreVersion    | <code>number</code> |               | Version of the scores.                             |
+| clusterSize     | <code>number</code> |               | Size of the cluster.                               |
 | collectedScores | <code>object</code> | <code></code> | [Optional] Score object in { host: score } format. |
 
 <a name="HostClient+sendReputations"></a>
@@ -1708,8 +1708,8 @@ Send reputation scores to the reputation hook.
 
 **Kind**: instance method of [<code>HostClient</code>](#HostClient)  
 
-| Param | Type | Description |
-| --- | --- | --- |
+| Param     | Type                | Description                          |
+| --------- | ------------------- | ------------------------------------ |
 | bufferHex | <code>string</code> | Prepared score buffer as hex string. |
 
 <a name="HostClient+offerLease"></a>
@@ -1719,12 +1719,12 @@ Create a lease offer.
 
 **Kind**: instance method of [<code>HostClient</code>](#HostClient)  
 
-| Param | Type | Default | Description |
-| --- | --- | --- | --- |
-| leaseIndex | <code>number</code> |  | Index number for the lease. |
-| leaseAmount | <code>number</code> |  | Amount (EVRs) of the lease offer. |
-| tosHash | <code>string</code> |  | Hex hash of the Terms Of Service text. |
-| outboundIPAddress | <code>string</code> | <code>null</code> | Assigned IP Address. |
+| Param             | Type                | Default           | Description                            |
+| ----------------- | ------------------- | ----------------- | -------------------------------------- |
+| leaseIndex        | <code>number</code> |                   | Index number for the lease.            |
+| leaseAmount       | <code>number</code> |                   | Amount (EVRs) of the lease offer.      |
+| tosHash           | <code>string</code> |                   | Hex hash of the Terms Of Service text. |
+| outboundIPAddress | <code>string</code> | <code>null</code> | Assigned IP Address.                   |
 
 <a name="HostClient+mintLease"></a>
 
@@ -1733,12 +1733,12 @@ Mint a lease offer.
 
 **Kind**: instance method of [<code>HostClient</code>](#HostClient)  
 
-| Param | Type | Default | Description |
-| --- | --- | --- | --- |
-| leaseIndex | <code>number</code> |  | Index number for the lease. |
-| leaseAmount | <code>number</code> |  | Amount (EVRs) of the lease offer. |
-| tosHash | <code>string</code> |  | Hex hash of the Terms Of Service text. |
-| outboundIPAddress | <code>string</code> | <code>null</code> | Assigned IP Address. |
+| Param             | Type                | Default           | Description                            |
+| ----------------- | ------------------- | ----------------- | -------------------------------------- |
+| leaseIndex        | <code>number</code> |                   | Index number for the lease.            |
+| leaseAmount       | <code>number</code> |                   | Amount (EVRs) of the lease offer.      |
+| tosHash           | <code>string</code> |                   | Hex hash of the Terms Of Service text. |
+| outboundIPAddress | <code>string</code> | <code>null</code> | Assigned IP Address.                   |
 
 <a name="HostClient+offerMintedLease"></a>
 
@@ -1747,9 +1747,9 @@ Create a lease offer.
 
 **Kind**: instance method of [<code>HostClient</code>](#HostClient)  
 
-| Param | Type | Description |
-| --- | --- | --- |
-| uriTokenId | <code>number</code> | Id of the token. |
+| Param       | Type                | Description                       |
+| ----------- | ------------------- | --------------------------------- |
+| uriTokenId  | <code>number</code> | Id of the token.                  |
 | leaseAmount | <code>number</code> | Amount (EVRs) of the lease offer. |
 
 <a name="HostClient+expireLease"></a>
@@ -1759,8 +1759,8 @@ Expire the lease offer.
 
 **Kind**: instance method of [<code>HostClient</code>](#HostClient)  
 
-| Param | Type | Description |
-| --- | --- | --- |
+| Param      | Type                | Description                    |
+| ---------- | ------------------- | ------------------------------ |
 | uriTokenId | <code>string</code> | Hex URI token id of the lease. |
 
 <a name="HostClient+acceptRegToken"></a>
@@ -1771,8 +1771,8 @@ Accepts if there's an available reg token.
 **Kind**: instance method of [<code>HostClient</code>](#HostClient)  
 **Returns**: True if there were reg token and it's accepted, Otherwise false.  
 
-| Param | Type | Description |
-| --- | --- | --- |
+| Param   | Type            | Description                     |
+| ------- | --------------- | ------------------------------- |
 | options | <code>\*</code> | [Optional] transaction options. |
 
 <a name="HostClient+register"></a>
@@ -1783,20 +1783,20 @@ Register the host in the Evernode network.
 **Kind**: instance method of [<code>HostClient</code>](#HostClient)  
 **Returns**: Transaction result.  
 
-| Param | Type | Description |
-| --- | --- | --- |
-| countryCode | <code>string</code> | Upper case country code with two letters. |
-| cpuMicroSec | <code>number</code> | CPU cycle in micro seconds of the host. |
-| ramMb | <code>number</code> | Ram size in mega bytes. |
-| diskMb | <code>number</code> | Disk size in mega bytes. |
+| Param              | Type                | Description                                 |
+| ------------------ | ------------------- | ------------------------------------------- |
+| countryCode        | <code>string</code> | Upper case country code with two letters.   |
+| cpuMicroSec        | <code>number</code> | CPU cycle in micro seconds of the host.     |
+| ramMb              | <code>number</code> | Ram size in mega bytes.                     |
+| diskMb             | <code>number</code> | Disk size in mega bytes.                    |
 | totalInstanceCount | <code>number</code> | Total number of instance slots in the host. |
-| cpuModel | <code>string</code> | Model of the host CPU. |
-| cpuCount | <code>number</code> | Number of CPUs in the host. |
-| cpuSpeed | <code>number</code> | CPU MHz. |
-| description | <code>string</code> | Description about the host. |
-| emailAddress | <code>string</code> | Email address of the host. |
-| leaseAmount | <code>number</code> | Lease fee of the host. |
-| options | <code>\*</code> | [Optional] transaction options. |
+| cpuModel           | <code>string</code> | Model of the host CPU.                      |
+| cpuCount           | <code>number</code> | Number of CPUs in the host.                 |
+| cpuSpeed           | <code>number</code> | CPU MHz.                                    |
+| description        | <code>string</code> | Description about the host.                 |
+| emailAddress       | <code>string</code> | Email address of the host.                  |
+| leaseAmount        | <code>number</code> | Lease fee of the host.                      |
+| options            | <code>\*</code>     | [Optional] transaction options.             |
 
 <a name="HostClient+deregister"></a>
 
@@ -1806,10 +1806,10 @@ Deregister a host from the Evernode network.
 **Kind**: instance method of [<code>HostClient</code>](#HostClient)  
 **Returns**: Boolean whether host is registered or not.  
 
-| Param | Type | Default | Description |
-| --- | --- | --- | --- |
-| error | <code>string</code> | <code>null</code> | [Optional] Error. |
-| options | <code>\*</code> |  | [Optional] transaction options. |
+| Param   | Type                | Default           | Description                     |
+| ------- | ------------------- | ----------------- | ------------------------------- |
+| error   | <code>string</code> | <code>null</code> | [Optional] Error.               |
+| options | <code>\*</code>     |                   | [Optional] transaction options. |
 
 <a name="HostClient+updateRegInfo"></a>
 
@@ -1819,20 +1819,20 @@ Update the host registration in the Evernode network.
 **Kind**: instance method of [<code>HostClient</code>](#HostClient)  
 **Returns**: Transaction result.  
 
-| Param | Type | Default | Description |
-| --- | --- | --- | --- |
-| activeInstanceCount | <code>number</code> | <code></code> | Currently active instance count in the host. |
-| version | <code>string</code> | <code>null</code> | Sashimono version installed on the host |
-| totalInstanceCount | <code>number</code> | <code></code> | Total number of instance slots in the host. |
-| tokenID | <code>string</code> | <code>null</code> | Registration Token Id of the host. |
-| countryCode | <code>string</code> | <code>null</code> | Upper case country code with two letters. |
-| cpuMicroSec | <code>number</code> | <code></code> |  |
-| ramMb | <code>number</code> | <code></code> | Ram size in mega bytes. |
-| diskMb | <code>number</code> | <code></code> | Disk size in mega bytes. |
-| description | <code>string</code> | <code>null</code> | Description about the host. |
-| emailAddress | <code>string</code> | <code>null</code> | Email address of the host. |
-| leaseAmount | <code>number</code> | <code></code> | Lease fee of the host. |
-| options | <code>\*</code> |  | [Optional] transaction options. |
+| Param               | Type                | Default           | Description                                  |
+| ------------------- | ------------------- | ----------------- | -------------------------------------------- |
+| activeInstanceCount | <code>number</code> | <code></code>     | Currently active instance count in the host. |
+| version             | <code>string</code> | <code>null</code> | Sashimono version installed on the host      |
+| totalInstanceCount  | <code>number</code> | <code></code>     | Total number of instance slots in the host.  |
+| tokenID             | <code>string</code> | <code>null</code> | Registration Token Id of the host.           |
+| countryCode         | <code>string</code> | <code>null</code> | Upper case country code with two letters.    |
+| cpuMicroSec         | <code>number</code> | <code></code>     |                                              |
+| ramMb               | <code>number</code> | <code></code>     | Ram size in mega bytes.                      |
+| diskMb              | <code>number</code> | <code></code>     | Disk size in mega bytes.                     |
+| description         | <code>string</code> | <code>null</code> | Description about the host.                  |
+| emailAddress        | <code>string</code> | <code>null</code> | Email address of the host.                   |
+| leaseAmount         | <code>number</code> | <code></code>     | Lease fee of the host.                       |
+| options             | <code>\*</code>     |                   | [Optional] transaction options.              |
 
 <a name="HostClient+heartbeat"></a>
 
@@ -1842,10 +1842,10 @@ Send a heartbeat from the host.
 **Kind**: instance method of [<code>HostClient</code>](#HostClient)  
 **Returns**: Transaction result.  
 
-| Param | Type | Description |
-| --- | --- | --- |
-| voteInfo | <code>\*</code> | [Optional] Candidate votes if there's any `{ '<candidateId>': '{number 0|1} vote', ... }` |
-| options | <code>\*</code> | [Optional] transaction options. |
+| Param    | Type            | Description                                                              |
+| -------- | --------------- | ------------------------------------------------------------------------ |
+| voteInfo | <code>\*</code> | [Optional] Candidate votes if there's any `{ '<candidateId>': '{number 0 | 1} vote', ... }` |
+| options  | <code>\*</code> | [Optional] transaction options.                                          |
 
 <a name="HostClient+acquireSuccess"></a>
 
@@ -1855,12 +1855,12 @@ Send acquire success response to the tenant.
 **Kind**: instance method of [<code>HostClient</code>](#HostClient)  
 **Returns**: Transaction result.  
 
-| Param | Type | Description |
-| --- | --- | --- |
-| txHash | <code>string</code> | Acquire lease transaction hash in hex. |
-| tenantAddress | <code>string</code> | XRPL address of the tenant. |
-| instanceInfo | <code>string</code> | Created instance info. |
-| options | <code>\*</code> | [Optional] transaction options. |
+| Param         | Type                | Description                            |
+| ------------- | ------------------- | -------------------------------------- |
+| txHash        | <code>string</code> | Acquire lease transaction hash in hex. |
+| tenantAddress | <code>string</code> | XRPL address of the tenant.            |
+| instanceInfo  | <code>string</code> | Created instance info.                 |
+| options       | <code>\*</code>     | [Optional] transaction options.        |
 
 <a name="HostClient+acquireError"></a>
 
@@ -1870,13 +1870,13 @@ Send acquire error response to the tenant.
 **Kind**: instance method of [<code>HostClient</code>](#HostClient)  
 **Returns**: Transaction result.  
 
-| Param | Type | Description |
-| --- | --- | --- |
-| txHash | <code>string</code> | Acquire lease transaction hash in hex. |
-| tenantAddress | <code>string</code> | Xrpl address of the tenant. |
-| leaseAmount | <code>number</code> | Lease amount to be refunded. |
-| reason | <code>string</code> | Reason for the error. |
-| options | <code>\*</code> | [Optional] transaction options. |
+| Param         | Type                | Description                            |
+| ------------- | ------------------- | -------------------------------------- |
+| txHash        | <code>string</code> | Acquire lease transaction hash in hex. |
+| tenantAddress | <code>string</code> | Xrpl address of the tenant.            |
+| leaseAmount   | <code>number</code> | Lease amount to be refunded.           |
+| reason        | <code>string</code> | Reason for the error.                  |
+| options       | <code>\*</code>     | [Optional] transaction options.        |
 
 <a name="HostClient+extendSuccess"></a>
 
@@ -1886,12 +1886,12 @@ Send extend success response to the tenant.
 **Kind**: instance method of [<code>HostClient</code>](#HostClient)  
 **Returns**: Transaction result.  
 
-| Param | Type | Description |
-| --- | --- | --- |
-| txHash | <code>string</code> | Extend lease transaction hash in hex. |
-| tenantAddress | <code>string</code> | XRPL address of the tenant. |
-| expiryMoment | <code>number</code> | Moment which the instance will expire. |
-| options | <code>\*</code> | [Optional] transaction options. |
+| Param         | Type                | Description                            |
+| ------------- | ------------------- | -------------------------------------- |
+| txHash        | <code>string</code> | Extend lease transaction hash in hex.  |
+| tenantAddress | <code>string</code> | XRPL address of the tenant.            |
+| expiryMoment  | <code>number</code> | Moment which the instance will expire. |
+| options       | <code>\*</code>     | [Optional] transaction options.        |
 
 <a name="HostClient+extendError"></a>
 
@@ -1901,13 +1901,13 @@ Send extend error response to the tenant.
 **Kind**: instance method of [<code>HostClient</code>](#HostClient)  
 **Returns**: Transaction result.  
 
-| Param | Type | Description |
-| --- | --- | --- |
-| txHash | <code>string</code> | Extend lease transaction hash in hex. |
-| tenantAddress | <code>string</code> | Xrpl address of the tenant. |
-| reason | <code>string</code> | Reason for the error. |
-| refund | <code>number</code> | Amount to be refunded. |
-| options | <code>\*</code> | [Optional] transaction options. |
+| Param         | Type                | Description                           |
+| ------------- | ------------------- | ------------------------------------- |
+| txHash        | <code>string</code> | Extend lease transaction hash in hex. |
+| tenantAddress | <code>string</code> | Xrpl address of the tenant.           |
+| reason        | <code>string</code> | Reason for the error.                 |
+| refund        | <code>number</code> | Amount to be refunded.                |
+| options       | <code>\*</code>     | [Optional] transaction options.       |
 
 <a name="HostClient+refundTenant"></a>
 
@@ -1917,12 +1917,12 @@ Send refunds to the tenant.
 **Kind**: instance method of [<code>HostClient</code>](#HostClient)  
 **Returns**: Transaction result.  
 
-| Param | Type | Description |
-| --- | --- | --- |
-| txHash | <code>string</code> | Request transaction hash in hex. |
-| tenantAddress | <code>string</code> | Xrpl address of the tenant. |
-| refundAmount | <code>number</code> | Amount to be refunded. |
-| options | <code>\*</code> | [Optional] transaction options. |
+| Param         | Type                | Description                      |
+| ------------- | ------------------- | -------------------------------- |
+| txHash        | <code>string</code> | Request transaction hash in hex. |
+| tenantAddress | <code>string</code> | Xrpl address of the tenant.      |
+| refundAmount  | <code>number</code> | Amount to be refunded.           |
+| options       | <code>\*</code>     | [Optional] transaction options.  |
 
 <a name="HostClient+requestRebate"></a>
 
@@ -1932,8 +1932,8 @@ Request registration rebates from the registry.
 **Kind**: instance method of [<code>HostClient</code>](#HostClient)  
 **Returns**: Transaction result.  
 
-| Param | Type | Description |
-| --- | --- | --- |
+| Param   | Type            | Description                     |
+| ------- | --------------- | ------------------------------- |
 | options | <code>\*</code> | [Optional] transaction options. |
 
 <a name="HostClient+transfer"></a>
@@ -1943,10 +1943,10 @@ Initiate a host transfer.
 
 **Kind**: instance method of [<code>HostClient</code>](#HostClient)  
 
-| Param | Type | Description |
-| --- | --- | --- |
+| Param             | Type                | Description                                                             |
+| ----------------- | ------------------- | ----------------------------------------------------------------------- |
 | transfereeAddress | <code>string</code> | [Optional] Xrpl account address to host registration to be transferred. |
-| options | <code>\*</code> | [Optional] transaction options. |
+| options           | <code>\*</code>     | [Optional] transaction options.                                         |
 
 <a name="HostClient+isTransferee"></a>
 
@@ -1963,11 +1963,11 @@ Propose a new hook candidate.
 **Kind**: instance method of [<code>HostClient</code>](#HostClient)  
 **Returns**: Proposed candidate id.  
 
-| Param | Type | Description |
-| --- | --- | --- |
-| hashes | <code>string</code> | Hook candidate hashes in hex format, <GOVERNOR_HASH(32)><REGISTRY_HASH(32)><HEARTBEAT_HASH(32)>. |
-| shortName | <code>string</code> | Short name for the proposal candidate. |
-| options | <code>\*</code> | [Optional] transaction options. |
+| Param     | Type                | Description                                                                                                                                         |
+| --------- | ------------------- | --------------------------------------------------------------------------------------------------------------------------------------------------- |
+| hashes    | <code>string</code> | Hook candidate hashes in hex format, <GOVERNOR_HASH(32)><REGISTRY_HASH(32)><HEARTBEAT_HASH(32)>.                                                    |
+| shortName | <code>string</code> | Short name for the proposal candidate. This can consist of 20 characters. In here you can include any reference to your code pull requests as well. |
+| options   | <code>\*</code>     | [Optional] transaction options.                                                                                                                     |
 
 <a name="HostClient+withdraw"></a>
 
@@ -1977,10 +1977,10 @@ Withdraw a hook candidate.
 **Kind**: instance method of [<code>HostClient</code>](#HostClient)  
 **Returns**: Transaction result.  
 
-| Param | Type | Description |
-| --- | --- | --- |
+| Param       | Type                | Description                        |
+| ----------- | ------------------- | ---------------------------------- |
 | candidateId | <code>string</code> | Id of the candidate in hex format. |
-| options | <code>\*</code> | [Optional] transaction options. |
+| options     | <code>\*</code>     | [Optional] transaction options.    |
 
 <a name="HostClient+reportDudHost"></a>
 
@@ -1990,10 +1990,10 @@ Report dud host for removal.
 **Kind**: instance method of [<code>HostClient</code>](#HostClient)  
 **Returns**: Transaction result.  
 
-| Param | Type | Description |
-| --- | --- | --- |
-| hostAddress | <code>string</code> | Address of the dud host. |
-| options | <code>\*</code> | [Optional] transaction options. |
+| Param       | Type                | Description                     |
+| ----------- | ------------------- | ------------------------------- |
+| hostAddress | <code>string</code> | Address of the dud host.        |
+| options     | <code>\*</code>     | [Optional] transaction options. |
 
 <a name="BaseEvernodeClient+on"></a>
 
@@ -2003,9 +2003,9 @@ Listens to the subscribed events. This will listen for the event without detachi
 **Kind**: instance method of [<code>HostClient</code>](#HostClient)  
 **Overrides**: [<code>on</code>](#BaseEvernodeClient+on)  
 
-| Param | Type | Description |
-| --- | --- | --- |
-| event | <code>string</code> | The name of the event to listen for. |
+| Param   | Type                  | Description                                                                                    |
+| ------- | --------------------- | ---------------------------------------------------------------------------------------------- |
+| event   | <code>string</code>   | The name of the event to listen for.                                                           |
 | handler | <code>function</code> | The callback function to handle the event. The function takes the event object as a parameter. |
 
 <a name="BaseEvernodeClient+once"></a>
@@ -2016,9 +2016,9 @@ Listens to the subscribed events. This will listen only once and detach the hand
 **Kind**: instance method of [<code>HostClient</code>](#HostClient)  
 **Overrides**: [<code>once</code>](#BaseEvernodeClient+once)  
 
-| Param | Type | Description |
-| --- | --- | --- |
-| event | <code>string</code> | Event name. |
+| Param   | Type                  | Description                            |
+| ------- | --------------------- | -------------------------------------- |
+| event   | <code>string</code>   | Event name.                            |
 | handler | <code>function</code> | Callback function to handle the event. |
 
 <a name="BaseEvernodeClient+off"></a>
@@ -2029,9 +2029,9 @@ Detach the listener event.
 **Kind**: instance method of [<code>HostClient</code>](#HostClient)  
 **Overrides**: [<code>off</code>](#BaseEvernodeClient+off)  
 
-| Param | Type | Default | Description |
-| --- | --- | --- | --- |
-| event | <code>string</code> |  | Event name. |
+| Param   | Type                  | Default       | Description                                                                                                           |
+| ------- | --------------------- | ------------- | --------------------------------------------------------------------------------------------------------------------- |
+| event   | <code>string</code>   |               | Event name.                                                                                                           |
 | handler | <code>function</code> | <code></code> | (optional) Can be sent if a specific handler need to be detached. All the handlers will be detached if not specified. |
 
 <a name="BaseEvernodeClient+connect"></a>
@@ -2088,8 +2088,8 @@ Get the moment from the given index (timestamp).
 **Overrides**: [<code>getMoment</code>](#BaseEvernodeClient+getMoment)  
 **Returns**: The moment of the given index (timestamp) as a number. Returns the current moment if the timestamp is not provided.  
 
-| Param | Type | Default | Description |
-| --- | --- | --- | --- |
+| Param | Type                | Default       | Description                                           |
+| ----- | ------------------- | ------------- | ----------------------------------------------------- |
 | index | <code>number</code> | <code></code> | [Optional] Index (timestamp) to get the moment value. |
 
 <a name="BaseEvernodeClient+getMomentStartIndex"></a>
@@ -2101,8 +2101,8 @@ Get start index (timestamp) of the moment.
 **Overrides**: [<code>getMomentStartIndex</code>](#BaseEvernodeClient+getMomentStartIndex)  
 **Returns**: The index (timestamp) of the moment as a 'number'. Returns the current moment's start index (timestamp) if ledger index parameter is not given.  
 
-| Param | Type | Default | Description |
-| --- | --- | --- | --- |
+| Param | Type                | Default       | Description                                                 |
+| ----- | ------------------- | ------------- | ----------------------------------------------------------- |
 | index | <code>number</code> | <code></code> | [Optional] Index (timestamp) to get the moment start index. |
 
 <a name="BaseEvernodeClient+refreshConfig"></a>
@@ -2122,9 +2122,9 @@ Note: You need to deserialize HookParameters before passing the transaction to t
 **Overrides**: [<code>extractEvernodeEvent</code>](#BaseEvernodeClient+extractEvernodeEvent)  
 **Returns**: The event object in format `{name: string, data: Object}`. Returns `null` if the event is not handled.  
 
-| Param | Type | Description |
-| --- | --- | --- |
-| tx | <code>object</code> | The transaction object to be deserialized and extracted. |
+| Param | Type                | Description                                              |
+| ----- | ------------------- | -------------------------------------------------------- |
+| tx    | <code>object</code> | The transaction object to be deserialized and extracted. |
 
 <a name="BaseEvernodeClient+getHostInfo"></a>
 
@@ -2135,8 +2135,8 @@ Get the registered host information.
 **Overrides**: [<code>getHostInfo</code>](#BaseEvernodeClient+getHostInfo)  
 **Returns**: The registered host information object. Returns null if not registered.  
 
-| Param | Type | Description |
-| --- | --- | --- |
+| Param       | Type                | Description                     |
+| ----------- | ------------------- | ------------------------------- |
 | hostAddress | <code>string</code> | [Optional] Address of the host. |
 
 <a name="BaseEvernodeClient+getAllHostsFromLedger"></a>
@@ -2163,8 +2163,8 @@ Remove a host which is inactive for a long period. The inactivity is checked by 
 **Kind**: instance method of [<code>HostClient</code>](#HostClient)  
 **Overrides**: [<code>pruneDeadHost</code>](#BaseEvernodeClient+pruneDeadHost)  
 
-| Param | Type | Description |
-| --- | --- | --- |
+| Param       | Type                | Description                            |
+| ----------- | ------------------- | -------------------------------------- |
 | hostAddress | <code>string</code> | XRPL address of the host to be pruned. |
 
 <a name="BaseEvernodeClient+getCandidateByOwner"></a>
@@ -2176,8 +2176,8 @@ Get proposed new hook candidate info.
 **Overrides**: [<code>getCandidateByOwner</code>](#BaseEvernodeClient+getCandidateByOwner)  
 **Returns**: The candidate information. Returns null if no candidate.  
 
-| Param | Type | Description |
-| --- | --- | --- |
+| Param        | Type                | Description                      |
+| ------------ | ------------------- | -------------------------------- |
 | ownerAddress | <code>string</code> | [Optional] Address of the owner. |
 
 <a name="BaseEvernodeClient+getDudHostCandidatesByOwner"></a>
@@ -2189,9 +2189,9 @@ Get proposed dud host candidates.
 **Overrides**: [<code>getDudHostCandidatesByOwner</code>](#BaseEvernodeClient+getDudHostCandidatesByOwner)  
 **Returns**: An array of candidate information. Returns empty array if no candidates.  
 
-| Param | Type | Description |
-| --- | --- | --- |
-| ownerAddress | <code>string</code> | | Address of the owner |
+| Param        | Type                | Description |
+| ------------ | ------------------- | ----------- |
+| ownerAddress | <code>string</code> |             | Address of the owner |
 
 <a name="BaseEvernodeClient+getCandidateById"></a>
 
@@ -2202,8 +2202,8 @@ Get candidate info.
 **Overrides**: [<code>getCandidateById</code>](#BaseEvernodeClient+getCandidateById)  
 **Returns**: The candidate information. Returns null if no candidate.  
 
-| Param | Type | Description |
-| --- | --- | --- |
+| Param       | Type                | Description          |
+| ----------- | ------------------- | -------------------- |
 | candidateId | <code>string</code> | Id of the candidate. |
 
 <a name="BaseEvernodeClient+getDudHostVoteInfo"></a>
@@ -2215,8 +2215,8 @@ Get reported dud host info.
 **Overrides**: [<code>getDudHostVoteInfo</code>](#BaseEvernodeClient+getDudHostVoteInfo)  
 **Returns**: The dud host candidate information. Returns null if no candidate.  
 
-| Param | Type | Description |
-| --- | --- | --- |
+| Param       | Type                | Description                         |
+| ----------- | ------------------- | ----------------------------------- |
 | hostAddress | <code>string</code> | [Optional] Address of the dud host. |
 
 <a name="BaseEvernodeClient+getPilotedModeVoteInfo"></a>
@@ -2236,10 +2236,10 @@ Get reputation order info of given orderedId.
 **Overrides**: [<code>getReputationAddressByOrderedId</code>](#BaseEvernodeClient+getReputationAddressByOrderedId)  
 **Returns**: Reputation address info object.  
 
-| Param | Type | Default | Description |
-| --- | --- | --- | --- |
-| orderedId | <code>number</code> |  | Order id of the host. |
-| moment | <code>number</code> | <code></code> | (optional) Moment to get reputation info for. |
+| Param     | Type                | Default       | Description                                   |
+| --------- | ------------------- | ------------- | --------------------------------------------- |
+| orderedId | <code>number</code> |               | Order id of the host.                         |
+| moment    | <code>number</code> | <code></code> | (optional) Moment to get reputation info for. |
 
 <a name="BaseEvernodeClient+getReputationOrderByAddress"></a>
 
@@ -2250,10 +2250,10 @@ Get reputation order info of given host.
 **Overrides**: [<code>getReputationOrderByAddress</code>](#BaseEvernodeClient+getReputationOrderByAddress)  
 **Returns**: Reputation order info object.  
 
-| Param | Type | Default | Description |
-| --- | --- | --- | --- |
-| hostAddress | <code>string</code> |  | (optional) Host address. |
-| moment | <code>number</code> | <code></code> | (optional) Moment to get reputation info for. |
+| Param       | Type                | Default       | Description                                   |
+| ----------- | ------------------- | ------------- | --------------------------------------------- |
+| hostAddress | <code>string</code> |               | (optional) Host address.                      |
+| moment      | <code>number</code> | <code></code> | (optional) Moment to get reputation info for. |
 
 <a name="BaseEvernodeClient+getReputationContractInfoByAddress"></a>
 
@@ -2264,10 +2264,10 @@ Get reputation contract info of given host.
 **Overrides**: [<code>getReputationContractInfoByAddress</code>](#BaseEvernodeClient+getReputationContractInfoByAddress)  
 **Returns**: Reputation contract info object.  
 
-| Param | Type | Description |
-| --- | --- | --- |
-| hostsAddress | <code>string</code> | Host address. |
-| moment | <code>number</code> | (optional) Moment to get reputation contract info for. |
+| Param        | Type                | Description                                            |
+| ------------ | ------------------- | ------------------------------------------------------ |
+| hostsAddress | <code>string</code> | Host address.                                          |
+| moment       | <code>number</code> | (optional) Moment to get reputation contract info for. |
 
 <a name="BaseEvernodeClient+getReputationInfoByAddress"></a>
 
@@ -2278,8 +2278,8 @@ Get reputation info of given host.
 **Overrides**: [<code>getReputationInfoByAddress</code>](#BaseEvernodeClient+getReputationInfoByAddress)  
 **Returns**: Reputation info object.  
 
-| Param | Type | Description |
-| --- | --- | --- |
+| Param        | Type                | Description   |
+| ------------ | ------------------- | ------------- |
 | hostsAddress | <code>string</code> | Host address. |
 
 <a name="TenantClient"></a>
@@ -2337,11 +2337,11 @@ It extends the BaseEvernodeClient.
 Creates an instance of TenantClient.
 
 
-| Param | Type | Default | Description |
-| --- | --- | --- | --- |
-| xrpAddress | <code>string</code> |  | The XRP address to associate with this client. |
-| xrpSecret | <code>string</code> |  | The secret (private key) associated with the XRP address. |
-| [options] | <code>Object</code> | <code>{}</code> | Additional configuration options for the TenantClient. |
+| Param      | Type                | Default         | Description                                               |
+| ---------- | ------------------- | --------------- | --------------------------------------------------------- |
+| xrpAddress | <code>string</code> |                 | The XRP address to associate with this client.            |
+| xrpSecret  | <code>string</code> |                 | The secret (private key) associated with the XRP address. |
+| [options]  | <code>Object</code> | <code>{}</code> | Additional configuration options for the TenantClient.    |
 
 <a name="TenantClient+prepareAccount"></a>
 
@@ -2350,8 +2350,8 @@ Prepare the tenant account with account fields and trust lines.
 
 **Kind**: instance method of [<code>TenantClient</code>](#TenantClient)  
 
-| Param | Type | Default | Description |
-| --- | --- | --- | --- |
+| Param     | Type                | Default         | Description                                   |
+| --------- | ------------------- | --------------- | --------------------------------------------- |
 | [options] | <code>Object</code> | <code>{}</code> | Optional configuration for the account setup. |
 
 <a name="TenantClient+getLeaseHost"></a>
@@ -2366,8 +2366,8 @@ Retrieves and validates a lease host based on the given host address.
 - Will throw an error if the host is invalid, inactive, or not registered.
 
 
-| Param | Type | Description |
-| --- | --- | --- |
+| Param       | Type                | Description                         |
+| ----------- | ------------------- | ----------------------------------- |
 | hostAddress | <code>string</code> | The XRP Ledger address of the host. |
 
 <a name="TenantClient+acquireLeaseSubmit"></a>
@@ -2378,11 +2378,11 @@ Prepare and submit acquire transaction.(Single signed scenario)
 **Kind**: instance method of [<code>TenantClient</code>](#TenantClient)  
 **Returns**: The transaction result.  
 
-| Param | Type | Description |
-| --- | --- | --- |
+| Param       | Type                | Description                                    |
+| ----------- | ------------------- | ---------------------------------------------- |
 | hostAddress | <code>string</code> | XRPL address of the host to acquire the lease. |
-| requirement | <code>object</code> | The instance requirements and configuration. |
-| options | <code>object</code> | [Optional] Options for the XRPL transaction. |
+| requirement | <code>object</code> | The instance requirements and configuration.   |
+| options     | <code>object</code> | [Optional] Options for the XRPL transaction.   |
 
 <a name="TenantClient+prepareAcquireLeaseTransaction"></a>
 
@@ -2392,11 +2392,11 @@ Prepare the Acquire transaction.
 **Kind**: instance method of [<code>TenantClient</code>](#TenantClient)  
 **Returns**: Prepared Acquire transaction.  
 
-| Param | Type | Description |
-| --- | --- | --- |
+| Param       | Type                | Description                                    |
+| ----------- | ------------------- | ---------------------------------------------- |
 | hostAddress | <code>string</code> | XRPL address of the host to acquire the lease. |
-| requirement | <code>object</code> | The instance requirements and configuration. |
-| options | <code>object</code> | [Optional] Options for the XRPL transaction. |
+| requirement | <code>object</code> | The instance requirements and configuration.   |
+| options     | <code>object</code> | [Optional] Options for the XRPL transaction.   |
 
 <a name="TenantClient+watchAcquireResponse"></a>
 
@@ -2406,10 +2406,10 @@ Watch for the acquire-success response after the acquire request is made.
 **Kind**: instance method of [<code>TenantClient</code>](#TenantClient)  
 **Returns**: An object including transaction details,instance info, and acquireReference Id.  
 
-| Param | Type | Description |
-| --- | --- | --- |
-| tx | <code>object</code> | The transaction returned by the acquireLeaseSubmit function. |
-| options | <code>object</code> | [Optional] Options for the XRPL transaction. |
+| Param   | Type                | Description                                                  |
+| ------- | ------------------- | ------------------------------------------------------------ |
+| tx      | <code>object</code> | The transaction returned by the acquireLeaseSubmit function. |
+| options | <code>object</code> | [Optional] Options for the XRPL transaction.                 |
 
 <a name="TenantClient+acquireLease"></a>
 
@@ -2419,11 +2419,11 @@ Acquire an instance from a host
 **Kind**: instance method of [<code>TenantClient</code>](#TenantClient)  
 **Returns**: An object including transaction details,instance info, and acquireReference Id.  
 
-| Param | Type | Description |
-| --- | --- | --- |
+| Param       | Type                | Description                                    |
+| ----------- | ------------------- | ---------------------------------------------- |
 | hostAddress | <code>string</code> | XRPL address of the host to acquire the lease. |
-| requirement | <code>object</code> | The instance requirements and configuration. |
-| options | <code>object</code> | [Optional] Options for the XRPL transaction. |
+| requirement | <code>object</code> | The instance requirements and configuration.   |
+| options     | <code>object</code> | [Optional] Options for the XRPL transaction.   |
 
 <a name="TenantClient+extendLeaseSubmit"></a>
 
@@ -2433,12 +2433,12 @@ This function is called by a tenant client to submit the extend lease transactio
 **Kind**: instance method of [<code>TenantClient</code>](#TenantClient)  
 **Returns**: The transaction result.  
 
-| Param | Type | Description |
-| --- | --- | --- |
-| hostAddress | <code>string</code> | XRPL account address of the host. |
-| amount | <code>number</code> | Cost for the extended moments , in EVRs. |
-| tokenID | <code>string</code> | Tenant received instance name. this name can be retrieve by performing acquire Lease. |
-| options | <code>object</code> | This is an optional field and contains necessary details for the transactions. |
+| Param       | Type                | Description                                                                           |
+| ----------- | ------------------- | ------------------------------------------------------------------------------------- |
+| hostAddress | <code>string</code> | XRPL account address of the host.                                                     |
+| amount      | <code>number</code> | Cost for the extended moments , in EVRs.                                              |
+| tokenID     | <code>string</code> | Tenant received instance name. this name can be retrieve by performing acquire Lease. |
+| options     | <code>object</code> | This is an optional field and contains necessary details for the transactions.        |
 
 <a name="TenantClient+prepareExtendLeaseTransaction"></a>
 
@@ -2448,12 +2448,12 @@ This function is called to prepare an instance extension transaction for a parti
 **Kind**: instance method of [<code>TenantClient</code>](#TenantClient)  
 **Returns**: The prepared transaction.  
 
-| Param | Type | Description |
-| --- | --- | --- |
-| hostAddress | <code>string</code> | XRPL account address of the host. |
-| amount | <code>number</code> | Cost for the extended moments , in EVRs. |
-| tokenID | <code>string</code> | Tenant received instance name. this name can be retrieve by performing acquire Lease. |
-| options | <code>object</code> | This is an optional field and contains necessary details for the transactions. |
+| Param       | Type                | Description                                                                           |
+| ----------- | ------------------- | ------------------------------------------------------------------------------------- |
+| hostAddress | <code>string</code> | XRPL account address of the host.                                                     |
+| amount      | <code>number</code> | Cost for the extended moments , in EVRs.                                              |
+| tokenID     | <code>string</code> | Tenant received instance name. this name can be retrieve by performing acquire Lease. |
+| options     | <code>object</code> | This is an optional field and contains necessary details for the transactions.        |
 
 <a name="TenantClient+watchExtendResponse"></a>
 
@@ -2463,9 +2463,9 @@ This function watches for an extendlease-success response(transaction) and retur
 **Kind**: instance method of [<code>TenantClient</code>](#TenantClient)  
 **Returns**: An object including transaction details.  
 
-| Param | Type | Description |
-| --- | --- | --- |
-| tx | <code>object</code> | Response of extendLeaseSubmit. |
+| Param   | Type                | Description                                                                    |
+| ------- | ------------------- | ------------------------------------------------------------------------------ |
+| tx      | <code>object</code> | Response of extendLeaseSubmit.                                                 |
 | options | <code>object</code> | This is an optional field and contains necessary details for the transactions. |
 
 <a name="TenantClient+extendLease"></a>
@@ -2476,12 +2476,12 @@ This function is called by a tenant client to extend an available instance in ce
 **Kind**: instance method of [<code>TenantClient</code>](#TenantClient)  
 **Returns**: An object including transaction details.  
 
-| Param | Type | Description |
-| --- | --- | --- |
-| hostAddress | <code>string</code> | XRPL account address of the host. |
-| moments | <code>number</code> | 1190 ledgers (est. 1 hour). |
+| Param        | Type                | Description                                                                           |
+| ------------ | ------------------- | ------------------------------------------------------------------------------------- |
+| hostAddress  | <code>string</code> | XRPL account address of the host.                                                     |
+| moments      | <code>number</code> | 1190 ledgers (est. 1 hour).                                                           |
 | instanceName | <code>string</code> | Tenant received instance name. this name can be retrieve by performing acquire Lease. |
-| options | <code>object</code> | This is an optional field and contains necessary details for the transactions. |
+| options      | <code>object</code> | This is an optional field and contains necessary details for the transactions.        |
 
 <a name="TenantClient+terminateLease"></a>
 
@@ -2490,8 +2490,8 @@ Terminate the lease instance.
 
 **Kind**: instance method of [<code>TenantClient</code>](#TenantClient)  
 
-| Param | Type | Description |
-| --- | --- | --- |
+| Param      | Type                | Description                    |
+| ---------- | ------------------- | ------------------------------ |
 | uriTokenId | <code>string</code> | Hex URI token id of the lease. |
 
 <a name="BaseEvernodeClient+on"></a>
@@ -2502,9 +2502,9 @@ Listens to the subscribed events. This will listen for the event without detachi
 **Kind**: instance method of [<code>TenantClient</code>](#TenantClient)  
 **Overrides**: [<code>on</code>](#BaseEvernodeClient+on)  
 
-| Param | Type | Description |
-| --- | --- | --- |
-| event | <code>string</code> | The name of the event to listen for. |
+| Param   | Type                  | Description                                                                                    |
+| ------- | --------------------- | ---------------------------------------------------------------------------------------------- |
+| event   | <code>string</code>   | The name of the event to listen for.                                                           |
 | handler | <code>function</code> | The callback function to handle the event. The function takes the event object as a parameter. |
 
 <a name="BaseEvernodeClient+once"></a>
@@ -2515,9 +2515,9 @@ Listens to the subscribed events. This will listen only once and detach the hand
 **Kind**: instance method of [<code>TenantClient</code>](#TenantClient)  
 **Overrides**: [<code>once</code>](#BaseEvernodeClient+once)  
 
-| Param | Type | Description |
-| --- | --- | --- |
-| event | <code>string</code> | Event name. |
+| Param   | Type                  | Description                            |
+| ------- | --------------------- | -------------------------------------- |
+| event   | <code>string</code>   | Event name.                            |
 | handler | <code>function</code> | Callback function to handle the event. |
 
 <a name="BaseEvernodeClient+off"></a>
@@ -2528,9 +2528,9 @@ Detach the listener event.
 **Kind**: instance method of [<code>TenantClient</code>](#TenantClient)  
 **Overrides**: [<code>off</code>](#BaseEvernodeClient+off)  
 
-| Param | Type | Default | Description |
-| --- | --- | --- | --- |
-| event | <code>string</code> |  | Event name. |
+| Param   | Type                  | Default       | Description                                                                                                           |
+| ------- | --------------------- | ------------- | --------------------------------------------------------------------------------------------------------------------- |
+| event   | <code>string</code>   |               | Event name.                                                                                                           |
 | handler | <code>function</code> | <code></code> | (optional) Can be sent if a specific handler need to be detached. All the handlers will be detached if not specified. |
 
 <a name="BaseEvernodeClient+connect"></a>
@@ -2587,8 +2587,8 @@ Get the moment from the given index (timestamp).
 **Overrides**: [<code>getMoment</code>](#BaseEvernodeClient+getMoment)  
 **Returns**: The moment of the given index (timestamp) as a number. Returns the current moment if the timestamp is not provided.  
 
-| Param | Type | Default | Description |
-| --- | --- | --- | --- |
+| Param | Type                | Default       | Description                                           |
+| ----- | ------------------- | ------------- | ----------------------------------------------------- |
 | index | <code>number</code> | <code></code> | [Optional] Index (timestamp) to get the moment value. |
 
 <a name="BaseEvernodeClient+getMomentStartIndex"></a>
@@ -2600,8 +2600,8 @@ Get start index (timestamp) of the moment.
 **Overrides**: [<code>getMomentStartIndex</code>](#BaseEvernodeClient+getMomentStartIndex)  
 **Returns**: The index (timestamp) of the moment as a 'number'. Returns the current moment's start index (timestamp) if ledger index parameter is not given.  
 
-| Param | Type | Default | Description |
-| --- | --- | --- | --- |
+| Param | Type                | Default       | Description                                                 |
+| ----- | ------------------- | ------------- | ----------------------------------------------------------- |
 | index | <code>number</code> | <code></code> | [Optional] Index (timestamp) to get the moment start index. |
 
 <a name="BaseEvernodeClient+refreshConfig"></a>
@@ -2621,9 +2621,9 @@ Note: You need to deserialize HookParameters before passing the transaction to t
 **Overrides**: [<code>extractEvernodeEvent</code>](#BaseEvernodeClient+extractEvernodeEvent)  
 **Returns**: The event object in format `{name: string, data: Object}`. Returns `null` if the event is not handled.  
 
-| Param | Type | Description |
-| --- | --- | --- |
-| tx | <code>object</code> | The transaction object to be deserialized and extracted. |
+| Param | Type                | Description                                              |
+| ----- | ------------------- | -------------------------------------------------------- |
+| tx    | <code>object</code> | The transaction object to be deserialized and extracted. |
 
 <a name="BaseEvernodeClient+getHostInfo"></a>
 
@@ -2634,8 +2634,8 @@ Get the registered host information.
 **Overrides**: [<code>getHostInfo</code>](#BaseEvernodeClient+getHostInfo)  
 **Returns**: The registered host information object. Returns null if not registered.  
 
-| Param | Type | Description |
-| --- | --- | --- |
+| Param       | Type                | Description                     |
+| ----------- | ------------------- | ------------------------------- |
 | hostAddress | <code>string</code> | [Optional] Address of the host. |
 
 <a name="BaseEvernodeClient+getAllHostsFromLedger"></a>
@@ -2662,8 +2662,8 @@ Remove a host which is inactive for a long period. The inactivity is checked by 
 **Kind**: instance method of [<code>TenantClient</code>](#TenantClient)  
 **Overrides**: [<code>pruneDeadHost</code>](#BaseEvernodeClient+pruneDeadHost)  
 
-| Param | Type | Description |
-| --- | --- | --- |
+| Param       | Type                | Description                            |
+| ----------- | ------------------- | -------------------------------------- |
 | hostAddress | <code>string</code> | XRPL address of the host to be pruned. |
 
 <a name="BaseEvernodeClient+getCandidateByOwner"></a>
@@ -2675,8 +2675,8 @@ Get proposed new hook candidate info.
 **Overrides**: [<code>getCandidateByOwner</code>](#BaseEvernodeClient+getCandidateByOwner)  
 **Returns**: The candidate information. Returns null if no candidate.  
 
-| Param | Type | Description |
-| --- | --- | --- |
+| Param        | Type                | Description                      |
+| ------------ | ------------------- | -------------------------------- |
 | ownerAddress | <code>string</code> | [Optional] Address of the owner. |
 
 <a name="BaseEvernodeClient+getDudHostCandidatesByOwner"></a>
@@ -2688,9 +2688,9 @@ Get proposed dud host candidates.
 **Overrides**: [<code>getDudHostCandidatesByOwner</code>](#BaseEvernodeClient+getDudHostCandidatesByOwner)  
 **Returns**: An array of candidate information. Returns empty array if no candidates.  
 
-| Param | Type | Description |
-| --- | --- | --- |
-| ownerAddress | <code>string</code> | | Address of the owner |
+| Param        | Type                | Description |
+| ------------ | ------------------- | ----------- |
+| ownerAddress | <code>string</code> |             | Address of the owner |
 
 <a name="BaseEvernodeClient+getCandidateById"></a>
 
@@ -2701,8 +2701,8 @@ Get candidate info.
 **Overrides**: [<code>getCandidateById</code>](#BaseEvernodeClient+getCandidateById)  
 **Returns**: The candidate information. Returns null if no candidate.  
 
-| Param | Type | Description |
-| --- | --- | --- |
+| Param       | Type                | Description          |
+| ----------- | ------------------- | -------------------- |
 | candidateId | <code>string</code> | Id of the candidate. |
 
 <a name="BaseEvernodeClient+getDudHostVoteInfo"></a>
@@ -2714,8 +2714,8 @@ Get reported dud host info.
 **Overrides**: [<code>getDudHostVoteInfo</code>](#BaseEvernodeClient+getDudHostVoteInfo)  
 **Returns**: The dud host candidate information. Returns null if no candidate.  
 
-| Param | Type | Description |
-| --- | --- | --- |
+| Param       | Type                | Description                         |
+| ----------- | ------------------- | ----------------------------------- |
 | hostAddress | <code>string</code> | [Optional] Address of the dud host. |
 
 <a name="BaseEvernodeClient+getPilotedModeVoteInfo"></a>
@@ -2735,10 +2735,10 @@ Get reputation order info of given orderedId.
 **Overrides**: [<code>getReputationAddressByOrderedId</code>](#BaseEvernodeClient+getReputationAddressByOrderedId)  
 **Returns**: Reputation address info object.  
 
-| Param | Type | Default | Description |
-| --- | --- | --- | --- |
-| orderedId | <code>number</code> |  | Order id of the host. |
-| moment | <code>number</code> | <code></code> | (optional) Moment to get reputation info for. |
+| Param     | Type                | Default       | Description                                   |
+| --------- | ------------------- | ------------- | --------------------------------------------- |
+| orderedId | <code>number</code> |               | Order id of the host.                         |
+| moment    | <code>number</code> | <code></code> | (optional) Moment to get reputation info for. |
 
 <a name="BaseEvernodeClient+getReputationOrderByAddress"></a>
 
@@ -2749,10 +2749,10 @@ Get reputation order info of given host.
 **Overrides**: [<code>getReputationOrderByAddress</code>](#BaseEvernodeClient+getReputationOrderByAddress)  
 **Returns**: Reputation order info object.  
 
-| Param | Type | Default | Description |
-| --- | --- | --- | --- |
-| hostAddress | <code>string</code> |  | (optional) Host address. |
-| moment | <code>number</code> | <code></code> | (optional) Moment to get reputation info for. |
+| Param       | Type                | Default       | Description                                   |
+| ----------- | ------------------- | ------------- | --------------------------------------------- |
+| hostAddress | <code>string</code> |               | (optional) Host address.                      |
+| moment      | <code>number</code> | <code></code> | (optional) Moment to get reputation info for. |
 
 <a name="BaseEvernodeClient+getReputationContractInfoByAddress"></a>
 
@@ -2763,10 +2763,10 @@ Get reputation contract info of given host.
 **Overrides**: [<code>getReputationContractInfoByAddress</code>](#BaseEvernodeClient+getReputationContractInfoByAddress)  
 **Returns**: Reputation contract info object.  
 
-| Param | Type | Description |
-| --- | --- | --- |
-| hostsAddress | <code>string</code> | Host address. |
-| moment | <code>number</code> | (optional) Moment to get reputation contract info for. |
+| Param        | Type                | Description                                            |
+| ------------ | ------------------- | ------------------------------------------------------ |
+| hostsAddress | <code>string</code> | Host address.                                          |
+| moment       | <code>number</code> | (optional) Moment to get reputation contract info for. |
 
 <a name="BaseEvernodeClient+getReputationInfoByAddress"></a>
 
@@ -2777,8 +2777,8 @@ Get reputation info of given host.
 **Overrides**: [<code>getReputationInfoByAddress</code>](#BaseEvernodeClient+getReputationInfoByAddress)  
 **Returns**: Reputation info object.  
 
-| Param | Type | Description |
-| --- | --- | --- |
+| Param        | Type                | Description   |
+| ------------ | ------------------- | ------------- |
 | hostsAddress | <code>string</code> | Host address. |
 
 <a name="Defaults"></a>
@@ -2807,8 +2807,8 @@ Load defaults from the public definitions json.
 
 **Kind**: static method of [<code>Defaults</code>](#Defaults)  
 
-| Param | Type | Description |
-| --- | --- | --- |
+| Param   | Type                | Description                 |
+| ------- | ------------------- | --------------------------- |
 | network | <code>string</code> | Network to choose the info. |
 
 <a name="Defaults.set"></a>
@@ -2818,8 +2818,8 @@ Override Evernode default configs.
 
 **Kind**: static method of [<code>Defaults</code>](#Defaults)  
 
-| Param | Type | Description |
-| --- | --- | --- |
+| Param       | Type                | Description                                                                                                                                                                                                                                              |
+| ----------- | ------------------- | -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
 | newDefaults | <code>object</code> | Configurations to override `{ governorAddress: '{string} governor xrpl address', rippledServer: '{string} rippled server url', xrplApi: '{XrplApi} xrpl instance', stateIndexId: '{string} firestore index', networkID: '{number} rippled network id' }` |
 
 <a name="EncryptionHelper"></a>
@@ -2841,11 +2841,11 @@ Encrypts a message using the given public key.
 **Kind**: static method of [<code>EncryptionHelper</code>](#EncryptionHelper)  
 **Returns**: <code>Promise.&lt;(string\|null)&gt;</code> - A promise that resolves to the encrypted message in base64 format, or null if encryption fails.  
 
-| Param | Type | Default | Description |
-| --- | --- | --- | --- |
-| publicKey | <code>string</code> |  | The public key to use for encryption. |
-| message | <code>Object</code> |  | The message object to be encrypted. |
-| [options] | <code>Object</code> | <code>{}</code> | Optional encryption parameters. |
+| Param     | Type                | Default         | Description                           |
+| --------- | ------------------- | --------------- | ------------------------------------- |
+| publicKey | <code>string</code> |                 | The public key to use for encryption. |
+| message   | <code>Object</code> |                 | The message object to be encrypted.   |
+| [options] | <code>Object</code> | <code>{}</code> | Optional encryption parameters.       |
 
 <a name="EncryptionHelper.decrypt"></a>
 
@@ -2855,10 +2855,10 @@ Decrypts an encrypted message using the given private key.
 **Kind**: static method of [<code>EncryptionHelper</code>](#EncryptionHelper)  
 **Returns**: <code>Promise.&lt;(Object\|null)&gt;</code> - A promise that resolves to the decrypted message as an object, or null if decryption fails.  
 
-| Param | Type | Description |
-| --- | --- | --- |
+| Param      | Type                | Description                            |
+| ---------- | ------------------- | -------------------------------------- |
 | privateKey | <code>string</code> | The private key to use for decryption. |
-| encrypted | <code>string</code> | The encrypted message string. |
+| encrypted  | <code>string</code> | The encrypted message string.          |
 
 <a name="EvernodeHelpers"></a>
 
@@ -2884,8 +2884,8 @@ Retrieves URI tokens that are valid leases for the specified XRPL account.
 **Kind**: static method of [<code>EvernodeHelpers</code>](#EvernodeHelpers)  
 **Returns**: <code>Promise.&lt;Array.&lt;Object&gt;&gt;</code> - A promise that resolves to an array of URI tokens that are valid leases.  
 
-| Param | Type | Description |
-| --- | --- | --- |
+| Param   | Type                | Description              |
+| ------- | ------------------- | ------------------------ |
 | xrplAcc | <code>Object</code> | The XRPL account object. |
 
 <a name="EvernodeHelpers.getLeaseByIndex"></a>
@@ -2896,10 +2896,10 @@ Retrieves a lease by its index from the XRPL ledger.
 **Kind**: static method of [<code>EvernodeHelpers</code>](#EvernodeHelpers)  
 **Returns**: <code>Promise.&lt;(Object\|null)&gt;</code> - A promise that resolves to the lease entry or null if not found or invalid.  
 
-| Param | Type | Description |
-| --- | --- | --- |
-| xrplApi | [<code>XrplApi</code>](#XrplApi) | The XRPL API object. |
-| index | <code>string</code> | The ledger entry index. |
+| Param   | Type                             | Description             |
+| ------- | -------------------------------- | ----------------------- |
+| xrplApi | [<code>XrplApi</code>](#XrplApi) | The XRPL API object.    |
+| index   | <code>string</code>              | The ledger entry index. |
 
 <a name="EvernodeHelpers.getLeaseOffers"></a>
 
@@ -2909,8 +2909,8 @@ Retrieves all leases that have offers (i.e., an associated amount) for the speci
 **Kind**: static method of [<code>EvernodeHelpers</code>](#EvernodeHelpers)  
 **Returns**: <code>Promise.&lt;Array.&lt;Object&gt;&gt;</code> - A promise that resolves to an array of URI tokens with offers.  
 
-| Param | Type | Description |
-| --- | --- | --- |
+| Param   | Type                | Description              |
+| ------- | ------------------- | ------------------------ |
 | xrplAcc | <code>Object</code> | The XRPL account object. |
 
 <a name="EvernodeHelpers.getUnofferedLeases"></a>
@@ -2921,8 +2921,8 @@ Retrieves leases that do not have offers (i.e., no amount associated) for the sp
 **Kind**: static method of [<code>EvernodeHelpers</code>](#EvernodeHelpers)  
 **Returns**: <code>Promise.&lt;Array.&lt;Object&gt;&gt;</code> - A promise that resolves to an array of unoffered URI tokens.  
 
-| Param | Type | Description |
-| --- | --- | --- |
+| Param   | Type                | Description              |
+| ------- | ------------------- | ------------------------ |
 | xrplAcc | <code>Object</code> | The XRPL account object. |
 
 <a name="EvernodeHelpers.getNFTPageAndLocation"></a>
@@ -2933,12 +2933,12 @@ Finds the NFT page and location of a specific NFToken in the XRPL ledger.
 **Kind**: static method of [<code>EvernodeHelpers</code>](#EvernodeHelpers)  
 **Returns**: <code>Promise.&lt;(Buffer\|Object)&gt;</code> - A promise that resolves to either a buffer with the NFT page and location or an object with page and location details.  
 
-| Param | Type | Default | Description |
-| --- | --- | --- | --- |
-| nfTokenId | <code>string</code> |  | The ID of the NFToken. |
-| xrplAcc | <code>Object</code> |  | The XRPL account object. |
-| xrplApi | <code>Object</code> |  | The XRPL API object. |
-| [buffer] | <code>boolean</code> | <code>true</code> | Whether to return the result as a buffer. |
+| Param     | Type                 | Default           | Description                               |
+| --------- | -------------------- | ----------------- | ----------------------------------------- |
+| nfTokenId | <code>string</code>  |                   | The ID of the NFToken.                    |
+| xrplAcc   | <code>Object</code>  |                   | The XRPL account object.                  |
+| xrplApi   | <code>Object</code>  |                   | The XRPL API object.                      |
+| [buffer]  | <code>boolean</code> | <code>true</code> | Whether to return the result as a buffer. |
 
 <a name="EvernodeHelpers.getEpochRewardQuota"></a>
 
@@ -2948,9 +2948,9 @@ Calculates the reward quota for a specific epoch.
 **Kind**: static method of [<code>EvernodeHelpers</code>](#EvernodeHelpers)  
 **Returns**: <code>number</code> - The calculated reward quota for the specified epoch.  
 
-| Param | Type | Description |
-| --- | --- | --- |
-| epoch | <code>number</code> | The epoch number. |
+| Param                 | Type                | Description                           |
+| --------------------- | ------------------- | ------------------------------------- |
+| epoch                 | <code>number</code> | The epoch number.                     |
 | firstEpochRewardQuota | <code>number</code> | The reward quota for the first epoch. |
 
 <a name="EvernodeHelpers.isValidURI"></a>
@@ -2961,10 +2961,10 @@ Checks if a given URI is valid based on a pattern and token category.
 **Kind**: static method of [<code>EvernodeHelpers</code>](#EvernodeHelpers)  
 **Returns**: <code>boolean</code> - Returns true if the URI is valid, false otherwise.  
 
-| Param | Type | Default | Description |
-| --- | --- | --- | --- |
-| uri | <code>string</code> |  | The URI to validate. |
-| pattern | <code>string</code> |  | The pattern to match the URI against. |
+| Param           | Type                | Default                                                | Description                                        |
+| --------------- | ------------------- | ------------------------------------------------------ | -------------------------------------------------- |
+| uri             | <code>string</code> |                                                        | The URI to validate.                               |
+| pattern         | <code>string</code> |                                                        | The pattern to match the URI against.              |
 | [tokenCategory] | <code>string</code> | <code>&quot;URITokenTypes.LEASE_URI_TOKEN&quot;</code> | The token category (default is a lease URI token). |
 
 <a name="StateHelpers"></a>
@@ -3011,10 +3011,10 @@ Retrieves the state data for a specific key from an array of states.
 **Kind**: static method of [<code>StateHelpers</code>](#StateHelpers)  
 **Returns**: <code>Object</code> \| <code>null</code> - The state data or null if not found.  
 
-| Param | Type | Description |
-| --- | --- | --- |
-| states | <code>Array</code> | Array of state objects. |
-| key | <code>string</code> | Key for the state data. |
+| Param  | Type                | Description             |
+| ------ | ------------------- | ----------------------- |
+| states | <code>Array</code>  | Array of state objects. |
+| key    | <code>string</code> | Key for the state data. |
 
 <a name="StateHelpers.decodeReputationHostAddressState"></a>
 
@@ -3024,9 +3024,9 @@ Decodes reputation host address state from buffers.
 **Kind**: static method of [<code>StateHelpers</code>](#StateHelpers)  
 **Returns**: <code>Object</code> - Decoded state data including host address and reputation metrics.  
 
-| Param | Type | Description |
-| --- | --- | --- |
-| stateKeyBuf | <code>Buffer</code> | Buffer containing the state key. |
+| Param        | Type                | Description                       |
+| ------------ | ------------------- | --------------------------------- |
+| stateKeyBuf  | <code>Buffer</code> | Buffer containing the state key.  |
 | stateDataBuf | <code>Buffer</code> | Buffer containing the state data. |
 
 <a name="StateHelpers.decodeReputationHostOrderAddressState"></a>
@@ -3037,9 +3037,9 @@ Decodes reputation host order address state from buffers.
 **Kind**: static method of [<code>StateHelpers</code>](#StateHelpers)  
 **Returns**: <code>Object</code> - Decoded state data including moment and ordered ID.  
 
-| Param | Type | Description |
-| --- | --- | --- |
-| stateKeyBuf | <code>Buffer</code> | Buffer containing the state key. |
+| Param        | Type                | Description                       |
+| ------------ | ------------------- | --------------------------------- |
+| stateKeyBuf  | <code>Buffer</code> | Buffer containing the state key.  |
 | stateDataBuf | <code>Buffer</code> | Buffer containing the state data. |
 
 <a name="StateHelpers.decodeReputationHostOrderedIdState"></a>
@@ -3050,9 +3050,9 @@ Decodes reputation host ordered ID state from buffers.
 **Kind**: static method of [<code>StateHelpers</code>](#StateHelpers)  
 **Returns**: <code>Object</code> - Decoded state data including moment and ordered ID.  
 
-| Param | Type | Description |
-| --- | --- | --- |
-| stateKeyBuf | <code>Buffer</code> | Buffer containing the state key. |
+| Param        | Type                | Description                       |
+| ------------ | ------------------- | --------------------------------- |
+| stateKeyBuf  | <code>Buffer</code> | Buffer containing the state key.  |
 | stateDataBuf | <code>Buffer</code> | Buffer containing the state data. |
 
 <a name="StateHelpers.decodeReputationHostCountState"></a>
@@ -3063,9 +3063,9 @@ Decodes reputation host count state from buffers.
 **Kind**: static method of [<code>StateHelpers</code>](#StateHelpers)  
 **Returns**: <code>Object</code> - Decoded state data including moment and count.  
 
-| Param | Type | Description |
-| --- | --- | --- |
-| stateKeyBuf | <code>Buffer</code> | Buffer containing the state key. |
+| Param        | Type                | Description                       |
+| ------------ | ------------------- | --------------------------------- |
+| stateKeyBuf  | <code>Buffer</code> | Buffer containing the state key.  |
 | stateDataBuf | <code>Buffer</code> | Buffer containing the state data. |
 
 <a name="StateHelpers.decodeHostAddressState"></a>
@@ -3076,9 +3076,9 @@ Decodes a host address state from buffers.
 **Kind**: static method of [<code>StateHelpers</code>](#StateHelpers)  
 **Returns**: <code>Object</code> - The decoded host address state.  
 
-| Param | Type | Description |
-| --- | --- | --- |
-| stateKeyBuf | <code>Buffer</code> | The buffer containing the state key. |
+| Param        | Type                | Description                           |
+| ------------ | ------------------- | ------------------------------------- |
+| stateKeyBuf  | <code>Buffer</code> | The buffer containing the state key.  |
 | stateDataBuf | <code>Buffer</code> | The buffer containing the state data. |
 
 <a name="StateHelpers.decodeTokenIdState"></a>
@@ -3089,8 +3089,8 @@ Decodes a token ID state from a buffer.
 **Kind**: static method of [<code>StateHelpers</code>](#StateHelpers)  
 **Returns**: <code>Object</code> - The decoded token ID state.  
 
-| Param | Type | Description |
-| --- | --- | --- |
+| Param        | Type                | Description                           |
+| ------------ | ------------------- | ------------------------------------- |
 | stateDataBuf | <code>Buffer</code> | The buffer containing the state data. |
 
 <a name="StateHelpers.decodeTransfereeAddrState"></a>
@@ -3101,9 +3101,9 @@ Decodes a transferee address state from buffers.
 **Kind**: static method of [<code>StateHelpers</code>](#StateHelpers)  
 **Returns**: <code>Object</code> - The decoded transferee address state.  
 
-| Param | Type | Description |
-| --- | --- | --- |
-| stateKeyBuf | <code>Buffer</code> | The buffer containing the state key. |
+| Param        | Type                | Description                           |
+| ------------ | ------------------- | ------------------------------------- |
+| stateKeyBuf  | <code>Buffer</code> | The buffer containing the state key.  |
 | stateDataBuf | <code>Buffer</code> | The buffer containing the state data. |
 
 <a name="StateHelpers.decodeCandidateOwnerState"></a>
@@ -3114,9 +3114,9 @@ Decodes a candidate owner state from buffers.
 **Kind**: static method of [<code>StateHelpers</code>](#StateHelpers)  
 **Returns**: <code>Object</code> - The decoded candidate owner state.  
 
-| Param | Type | Description |
-| --- | --- | --- |
-| stateKeyBuf | <code>Buffer</code> | The buffer containing the state key. |
+| Param        | Type                | Description                           |
+| ------------ | ------------------- | ------------------------------------- |
+| stateKeyBuf  | <code>Buffer</code> | The buffer containing the state key.  |
 | stateDataBuf | <code>Buffer</code> | The buffer containing the state data. |
 
 <a name="StateHelpers.decodeCandidateIdState"></a>
@@ -3127,8 +3127,8 @@ Decodes a candidate ID state from a buffer.
 **Kind**: static method of [<code>StateHelpers</code>](#StateHelpers)  
 **Returns**: <code>Object</code> - The decoded candidate ID state.  
 
-| Param | Type | Description |
-| --- | --- | --- |
+| Param        | Type                | Description                           |
+| ------------ | ------------------- | ------------------------------------- |
 | stateDataBuf | <code>Buffer</code> | The buffer containing the state data. |
 
 <a name="StateHelpers.decodeStateData"></a>
@@ -3139,9 +3139,9 @@ Decodes state data based on the state key and state data buffers.
 **Kind**: static method of [<code>StateHelpers</code>](#StateHelpers)  
 **Returns**: <code>Object</code> - The decoded state data with type information.  
 
-| Param | Type | Description |
-| --- | --- | --- |
-| stateKey | <code>Buffer</code> | The buffer containing the state key. |
+| Param     | Type                | Description                           |
+| --------- | ------------------- | ------------------------------------- |
+| stateKey  | <code>Buffer</code> | The buffer containing the state key.  |
 | stateData | <code>Buffer</code> | The buffer containing the state data. |
 
 <a name="StateHelpers.decodeStateKey"></a>
@@ -3156,8 +3156,8 @@ Decodes a state key into a type and key.
 - <code>Object</code> Throws a Validation Error if the state key is invalid.
 
 
-| Param | Type | Description |
-| --- | --- | --- |
+| Param    | Type                | Description                          |
+| -------- | ------------------- | ------------------------------------ |
 | stateKey | <code>Buffer</code> | The buffer containing the state key. |
 
 <a name="StateHelpers.generateTokenIdStateKey"></a>
@@ -3168,8 +3168,8 @@ Generates a state key for a token ID.
 **Kind**: static method of [<code>StateHelpers</code>](#StateHelpers)  
 **Returns**: <code>string</code> - The generated state key as a hexadecimal string.  
 
-| Param | Type | Description |
-| --- | --- | --- |
+| Param    | Type                | Description                          |
+| -------- | ------------------- | ------------------------------------ |
 | uriToken | <code>string</code> | The URI token in hexadecimal format. |
 
 <a name="StateHelpers.generateHostAddrStateKey"></a>
@@ -3180,8 +3180,8 @@ Generates a state key for a host address.
 **Kind**: static method of [<code>StateHelpers</code>](#StateHelpers)  
 **Returns**: <code>string</code> - The generated state key as a hexadecimal string.  
 
-| Param | Type | Description |
-| --- | --- | --- |
+| Param   | Type                | Description       |
+| ------- | ------------------- | ----------------- |
 | address | <code>string</code> | The host address. |
 
 <a name="StateHelpers.generateReputationHostAddrStateKey"></a>
@@ -3192,8 +3192,8 @@ Generates a state key for a reputation host address.
 **Kind**: static method of [<code>StateHelpers</code>](#StateHelpers)  
 **Returns**: <code>string</code> - The generated state key as a hexadecimal string.  
 
-| Param | Type | Description |
-| --- | --- | --- |
+| Param   | Type                | Description                  |
+| ------- | ------------------- | ---------------------------- |
 | address | <code>string</code> | The reputation host address. |
 
 <a name="StateHelpers.generateReputationHostOrderAddressStateKey"></a>
@@ -3204,10 +3204,10 @@ Generates a state key for a reputation host order address.
 **Kind**: static method of [<code>StateHelpers</code>](#StateHelpers)  
 **Returns**: <code>string</code> - The generated state key as a hexadecimal string.  
 
-| Param | Type | Description |
-| --- | --- | --- |
+| Param   | Type                | Description                  |
+| ------- | ------------------- | ---------------------------- |
 | address | <code>string</code> | The reputation host address. |
-| moment | <code>number</code> | The moment timestamp. |
+| moment  | <code>number</code> | The moment timestamp.        |
 
 <a name="StateHelpers.generateReputationHostOrderedIdStateKey"></a>
 
@@ -3217,10 +3217,10 @@ Generates a state key for a reputation host ordered ID.
 **Kind**: static method of [<code>StateHelpers</code>](#StateHelpers)  
 **Returns**: <code>string</code> - The generated state key as a hexadecimal string.  
 
-| Param | Type | Description |
-| --- | --- | --- |
-| orderedId | <code>string</code> | The ordered ID. |
-| moment | <code>number</code> | The moment timestamp. |
+| Param     | Type                | Description           |
+| --------- | ------------------- | --------------------- |
+| orderedId | <code>string</code> | The ordered ID.       |
+| moment    | <code>number</code> | The moment timestamp. |
 
 <a name="StateHelpers.generateReputationHostCountStateKey"></a>
 
@@ -3230,8 +3230,8 @@ Generates a state key for a reputation host count.
 **Kind**: static method of [<code>StateHelpers</code>](#StateHelpers)  
 **Returns**: <code>string</code> - The generated state key as a hexadecimal string.  
 
-| Param | Type | Description |
-| --- | --- | --- |
+| Param  | Type                | Description           |
+| ------ | ------------------- | --------------------- |
 | moment | <code>number</code> | The moment timestamp. |
 
 <a name="StateHelpers.generateReputationContractInfoStateKey"></a>
@@ -3242,8 +3242,8 @@ Generates a state key for reputation contract information.
 **Kind**: static method of [<code>StateHelpers</code>](#StateHelpers)  
 **Returns**: <code>string</code> - The generated state key as a hexadecimal string.  
 
-| Param | Type | Description |
-| --- | --- | --- |
+| Param   | Type                | Description           |
+| ------- | ------------------- | --------------------- |
 | address | <code>string</code> | The contract address. |
 
 <a name="StateHelpers.generateTransfereeAddrStateKey"></a>
@@ -3254,8 +3254,8 @@ Generates a state key for a transferee address.
 **Kind**: static method of [<code>StateHelpers</code>](#StateHelpers)  
 **Returns**: <code>string</code> - The generated state key as a hexadecimal string.  
 
-| Param | Type | Description |
-| --- | --- | --- |
+| Param   | Type                | Description             |
+| ------- | ------------------- | ----------------------- |
 | address | <code>string</code> | The transferee address. |
 
 <a name="StateHelpers.generateCandidateIdStateKey"></a>
@@ -3266,8 +3266,8 @@ Generates a state key for a candidate ID.
 **Kind**: static method of [<code>StateHelpers</code>](#StateHelpers)  
 **Returns**: <code>string</code> - The generated state key as a hexadecimal string.  
 
-| Param | Type | Description |
-| --- | --- | --- |
+| Param    | Type                | Description              |
+| -------- | ------------------- | ------------------------ |
 | uniqueId | <code>string</code> | The unique candidate ID. |
 
 <a name="StateHelpers.generateCandidateOwnerStateKey"></a>
@@ -3278,8 +3278,8 @@ Generates a state key for a candidate owner.
 **Kind**: static method of [<code>StateHelpers</code>](#StateHelpers)  
 **Returns**: <code>string</code> - The generated state key as a hexadecimal string.  
 
-| Param | Type | Description |
-| --- | --- | --- |
+| Param | Type                | Description                  |
+| ----- | ------------------- | ---------------------------- |
 | owner | <code>string</code> | The candidate owner address. |
 
 <a name="StateHelpers.getHookStateIndex"></a>
@@ -3290,11 +3290,11 @@ Gets the hook state index for a specific hook account and state key.
 **Kind**: static method of [<code>StateHelpers</code>](#StateHelpers)  
 **Returns**: <code>string</code> - The hook state index as a hexadecimal string.  
 
-| Param | Type | Default | Description |
-| --- | --- | --- | --- |
-| hookAccount | <code>string</code> |  | The hook account address. |
-| stateKey | <code>string</code> |  | The state key as a hexadecimal string. |
-| [hookNamespace] | <code>string</code> | <code>&quot;EvernodeConstants.HOOK_NAMESPACE&quot;</code> | The hook namespace. |
+| Param           | Type                | Default                                                   | Description                            |
+| --------------- | ------------------- | --------------------------------------------------------- | -------------------------------------- |
+| hookAccount     | <code>string</code> |                                                           | The hook account address.              |
+| stateKey        | <code>string</code> |                                                           | The state key as a hexadecimal string. |
+| [hookNamespace] | <code>string</code> | <code>&quot;EvernodeConstants.HOOK_NAMESPACE&quot;</code> | The hook namespace.                    |
 
 <a name="StateHelpers.getNewHookCandidateId"></a>
 
@@ -3304,8 +3304,8 @@ Generates a new hook candidate ID based on hash buffers.
 **Kind**: static method of [<code>StateHelpers</code>](#StateHelpers)  
 **Returns**: <code>string</code> - The generated candidate ID as a hexadecimal string.  
 
-| Param | Type | Description |
-| --- | --- | --- |
+| Param     | Type                | Description                          |
+| --------- | ------------------- | ------------------------------------ |
 | hashesBuf | <code>Buffer</code> | The buffer containing the hash data. |
 
 <a name="StateHelpers.getPilotedModeCandidateId"></a>
@@ -3323,8 +3323,8 @@ Generates a candidate ID for a dud host.
 **Kind**: static method of [<code>StateHelpers</code>](#StateHelpers)  
 **Returns**: <code>string</code> - The generated candidate ID as a hexadecimal string.  
 
-| Param | Type | Description |
-| --- | --- | --- |
+| Param       | Type                | Description       |
+| ----------- | ------------------- | ----------------- |
 | hostAddress | <code>string</code> | The host address. |
 
 <a name="StateHelpers.getCandidateType"></a>
@@ -3335,8 +3335,8 @@ Retrieves the candidate type from a candidate ID.
 **Kind**: static method of [<code>StateHelpers</code>](#StateHelpers)  
 **Returns**: <code>number</code> - The candidate type.  
 
-| Param | Type | Description |
-| --- | --- | --- |
+| Param       | Type                | Description                               |
+| ----------- | ------------------- | ----------------------------------------- |
 | candidateId | <code>string</code> | The candidate ID as a hexadecimal string. |
 
 <a name="TransactionHelper"></a>
@@ -3362,8 +3362,8 @@ Converts an array of memos from the internal format to the XRPL library format.
 **Kind**: static method of [<code>TransactionHelper</code>](#TransactionHelper)  
 **Returns**: <code>Array.&lt;Object&gt;</code> - An array of memo objects in the XRPL library format.  
 
-| Param | Type | Description |
-| --- | --- | --- |
+| Param | Type                              | Description                                      |
+| ----- | --------------------------------- | ------------------------------------------------ |
 | memos | <code>Array.&lt;Object&gt;</code> | An array of memo objects in the internal format. |
 
 <a name="TransactionHelper.deserializeMemos"></a>
@@ -3374,8 +3374,8 @@ Converts an array of memos from the XRPL library format to the internal format.
 **Kind**: static method of [<code>TransactionHelper</code>](#TransactionHelper)  
 **Returns**: <code>Array.&lt;Object&gt;</code> - An array of memo objects in the internal format.  
 
-| Param | Type | Description |
-| --- | --- | --- |
+| Param | Type                              | Description                                          |
+| ----- | --------------------------------- | ---------------------------------------------------- |
 | memos | <code>Array.&lt;Object&gt;</code> | An array of memo objects in the XRPL library format. |
 
 <a name="TransactionHelper.formatHookParams"></a>
@@ -3386,8 +3386,8 @@ Converts an array of hook parameters from the internal format to the XRPL librar
 **Kind**: static method of [<code>TransactionHelper</code>](#TransactionHelper)  
 **Returns**: <code>Array.&lt;Object&gt;</code> - An array of hook parameter objects in the XRPL library format.  
 
-| Param | Type | Description |
-| --- | --- | --- |
+| Param  | Type                              | Description                                                |
+| ------ | --------------------------------- | ---------------------------------------------------------- |
 | params | <code>Array.&lt;Object&gt;</code> | An array of hook parameter objects in the internal format. |
 
 <a name="TransactionHelper.deserializeHookParams"></a>
@@ -3398,8 +3398,8 @@ Converts an array of hook parameters from the XRPL library format to the interna
 **Kind**: static method of [<code>TransactionHelper</code>](#TransactionHelper)  
 **Returns**: <code>Array.&lt;Object&gt;</code> - An array of hook parameter objects in the internal format.  
 
-| Param | Type | Description |
-| --- | --- | --- |
+| Param  | Type                              | Description                                                    |
+| ------ | --------------------------------- | -------------------------------------------------------------- |
 | params | <code>Array.&lt;Object&gt;</code> | An array of hook parameter objects in the XRPL library format. |
 
 <a name="TransactionHelper.hexToASCII"></a>
@@ -3410,9 +3410,9 @@ Converts a hexadecimal string to an ASCII string.
 **Kind**: static method of [<code>TransactionHelper</code>](#TransactionHelper)  
 **Returns**: <code>string</code> - The resulting ASCII string.  
 
-| Param | Type | Description |
-| --- | --- | --- |
-| hex | <code>string</code> | The hexadecimal string to be converted. |
+| Param | Type                | Description                             |
+| ----- | ------------------- | --------------------------------------- |
+| hex   | <code>string</code> | The hexadecimal string to be converted. |
 
 <a name="TransactionHelper.asciiToHex"></a>
 
@@ -3422,9 +3422,9 @@ Converts an ASCII string to a hexadecimal string.
 **Kind**: static method of [<code>TransactionHelper</code>](#TransactionHelper)  
 **Returns**: <code>string</code> - The resulting hexadecimal string.  
 
-| Param | Type | Description |
-| --- | --- | --- |
-| str | <code>string</code> | The ASCII string to be converted. |
+| Param | Type                | Description                       |
+| ----- | ------------------- | --------------------------------- |
+| str   | <code>string</code> | The ASCII string to be converted. |
 
 <a name="UtilHelpers"></a>
 
@@ -3447,8 +3447,8 @@ Decodes a lease token URI into its integrant parts.
 **Kind**: static method of [<code>UtilHelpers</code>](#UtilHelpers)  
 **Returns**: <code>Object</code> - An object containing the decoded lease token URI's version, leaseIndex, halfTos, leaseAmount, identifier, and outboundIP  
 
-| Param | Type | Description |
-| --- | --- | --- |
+| Param  | Type                | Description                                |
+| ------ | ------------------- | ------------------------------------------ |
 | hexUri | <code>string</code> | The lease token URI in hexadecimal format. |
 
 <a name="UtilHelpers.getCurrentUnixTime"></a>
@@ -3459,8 +3459,8 @@ Gets the current Unix time.
 **Kind**: static method of [<code>UtilHelpers</code>](#UtilHelpers)  
 **Returns**: <code>number</code> - The current Unix time in the specified format.  
 
-| Param | Type | Default | Description |
-| --- | --- | --- | --- |
+| Param    | Type                | Default                                    | Description                                                                                                 |
+| -------- | ------------------- | ------------------------------------------ | ----------------------------------------------------------------------------------------------------------- |
 | [format] | <code>string</code> | <code>&quot;\&quot;sec\&quot;&quot;</code> | The format of the time. If "sec", returns the time in seconds; otherwise, returns the time in milliseconds. |
 
 <a name="UtilHelpers.deriveKeypair"></a>
@@ -3471,8 +3471,8 @@ Derives a keypair from a given secret.
 **Kind**: static method of [<code>UtilHelpers</code>](#UtilHelpers)  
 **Returns**: <code>Object</code> - An object containing the derived keypair.  
 
-| Param | Type | Description |
-| --- | --- | --- |
+| Param  | Type                | Description                            |
+| ------ | ------------------- | -------------------------------------- |
 | secret | <code>string</code> | The secret used to derive the keypair. |
 
 <a name="UtilHelpers.deriveAddress"></a>
@@ -3483,8 +3483,8 @@ Derives an address from a given public key.
 **Kind**: static method of [<code>UtilHelpers</code>](#UtilHelpers)  
 **Returns**: <code>string</code> - The derived address.  
 
-| Param | Type | Description |
-| --- | --- | --- |
+| Param     | Type                | Description                                |
+| --------- | ------------------- | ------------------------------------------ |
 | publicKey | <code>string</code> | The public key used to derive the address. |
 
 <a name="XflHelpers"></a>
@@ -3513,9 +3513,9 @@ Retrieves the exponent of the XFL float number.
 - <code>string</code> Throws an error if the XFL float number is negative.
 
 
-| Param | Type | Description |
-| --- | --- | --- |
-| xfl | <code>bigint</code> | The XFL float number. |
+| Param | Type                | Description           |
+| ----- | ------------------- | --------------------- |
+| xfl   | <code>bigint</code> | The XFL float number. |
 
 <a name="XflHelpers.getMantissa"></a>
 
@@ -3529,9 +3529,9 @@ Retrieves the mantissa of the XFL float number.
 - <code>string</code> Throws an error if the XFL float number is negative.
 
 
-| Param | Type | Description |
-| --- | --- | --- |
-| xfl | <code>bigint</code> | The XFL float number. |
+| Param | Type                | Description           |
+| ----- | ------------------- | --------------------- |
+| xfl   | <code>bigint</code> | The XFL float number. |
 
 <a name="XflHelpers.isNegative"></a>
 
@@ -3545,9 +3545,9 @@ Checks if the XFL float number is negative.
 - <code>string</code> Throws an error if the XFL float number is negative.
 
 
-| Param | Type | Description |
-| --- | --- | --- |
-| xfl | <code>bigint</code> | The XFL float number. |
+| Param | Type                | Description           |
+| ----- | ------------------- | --------------------- |
+| xfl   | <code>bigint</code> | The XFL float number. |
 
 <a name="XflHelpers.toString"></a>
 
@@ -3561,9 +3561,9 @@ Converts an XFL float number to its string representation.
 - <code>string</code> Throws an error if the XFL float number is negative.
 
 
-| Param | Type | Description |
-| --- | --- | --- |
-| xfl | <code>bigint</code> | The XFL float number. |
+| Param | Type                | Description           |
+| ----- | ------------------- | --------------------- |
+| xfl   | <code>bigint</code> | The XFL float number. |
 
 <a name="XflHelpers.getXfl"></a>
 
@@ -3573,8 +3573,8 @@ Converts a string representation of a float number to an XFL float number.
 **Kind**: static method of [<code>XflHelpers</code>](#XflHelpers)  
 **Returns**: <code>bigint</code> - The XFL float number.  
 
-| Param | Type | Description |
-| --- | --- | --- |
+| Param    | Type                | Description                                    |
+| -------- | ------------------- | ---------------------------------------------- |
 | floatStr | <code>string</code> | The string representation of the float number. |
 
 <a name="XrplAccount"></a>
@@ -3654,11 +3654,11 @@ Represents an XRP Ledger account and provides methods for account management.
 Constructs an XrplAccount instance.
 
 
-| Param | Type | Default | Description |
-| --- | --- | --- | --- |
+| Param   | Type                                     | Default           | Description                     |
+| ------- | ---------------------------------------- | ----------------- | ------------------------------- |
 | address | <code>string</code> \| <code>null</code> | <code>null</code> | The account address (optional). |
-| secret | <code>string</code> \| <code>null</code> | <code>null</code> | The secret key (optional). |
-| options | <code>Object</code> |  | Additional options (optional). |
+| secret  | <code>string</code> \| <code>null</code> | <code>null</code> | The secret key (optional).      |
+| options | <code>Object</code>                      |                   | Additional options (optional).  |
 
 <a name="XrplAccount+on"></a>
 
@@ -3667,9 +3667,9 @@ Adds an event listener for the specified event.
 
 **Kind**: instance method of [<code>XrplAccount</code>](#XrplAccount)  
 
-| Param | Type | Description |
-| --- | --- | --- |
-| event | <code>string</code> | The name of the event. |
+| Param   | Type                  | Description                 |
+| ------- | --------------------- | --------------------------- |
+| event   | <code>string</code>   | The name of the event.      |
 | handler | <code>function</code> | The event handler function. |
 
 <a name="XrplAccount+once"></a>
@@ -3679,9 +3679,9 @@ Adds a one-time event listener for the specified event.
 
 **Kind**: instance method of [<code>XrplAccount</code>](#XrplAccount)  
 
-| Param | Type | Description |
-| --- | --- | --- |
-| event | <code>string</code> | The name of the event. |
+| Param   | Type                  | Description                 |
+| ------- | --------------------- | --------------------------- |
+| event   | <code>string</code>   | The name of the event.      |
 | handler | <code>function</code> | The event handler function. |
 
 <a name="XrplAccount+off"></a>
@@ -3691,9 +3691,9 @@ Removes an event listener for the specified event.
 
 **Kind**: instance method of [<code>XrplAccount</code>](#XrplAccount)  
 
-| Param | Type | Default | Description |
-| --- | --- | --- | --- |
-| event | <code>string</code> |  | The name of the event. |
+| Param   | Type                                       | Default       | Description                            |
+| ------- | ------------------------------------------ | ------------- | -------------------------------------- |
+| event   | <code>string</code>                        |               | The name of the event.                 |
 | handler | <code>function</code> \| <code>null</code> | <code></code> | The event handler function (optional). |
 
 <a name="XrplAccount+deriveKeypair"></a>
@@ -3771,10 +3771,10 @@ Retrieves the trust lines for the account, filtered by currency and issuer.
 **Kind**: instance method of [<code>XrplAccount</code>](#XrplAccount)  
 **Returns**: <code>Promise.&lt;Array.&lt;Object&gt;&gt;</code> - The list of trust lines, filtered if a currency is specified.  
 
-| Param | Type | Description |
-| --- | --- | --- |
-| [currency] | <code>string</code> | The currency to filter by. |
-| issuer | <code>string</code> | The issuer of the trust lines. |
+| Param      | Type                | Description                    |
+| ---------- | ------------------- | ------------------------------ |
+| [currency] | <code>string</code> | The currency to filter by.     |
+| issuer     | <code>string</code> | The issuer of the trust lines. |
 
 <a name="XrplAccount+getChecks"></a>
 
@@ -3784,8 +3784,8 @@ Retrieves the checks for the specified account.
 **Kind**: instance method of [<code>XrplAccount</code>](#XrplAccount)  
 **Returns**: <code>Promise.&lt;Array.&lt;Object&gt;&gt;</code> - The list of checks.  
 
-| Param | Type | Description |
-| --- | --- | --- |
+| Param       | Type                | Description                                |
+| ----------- | ------------------- | ------------------------------------------ |
 | fromAccount | <code>string</code> | The account from which to retrieve checks. |
 
 <a name="XrplAccount+getNfts"></a>
@@ -3817,9 +3817,9 @@ Retrieves a specific NFT by its URI.
 **Kind**: instance method of [<code>XrplAccount</code>](#XrplAccount)  
 **Returns**: <code>Promise.&lt;(Object\|null)&gt;</code> - The NFT object or null if not found.  
 
-| Param | Type | Default | Description |
-| --- | --- | --- | --- |
-| uri | <code>string</code> |  | The URI of the NFT to retrieve. |
+| Param      | Type                 | Default            | Description                               |
+| ---------- | -------------------- | ------------------ | ----------------------------------------- |
+| uri        | <code>string</code>  |                    | The URI of the NFT to retrieve.           |
 | [isHexUri] | <code>boolean</code> | <code>false</code> | Whether the URI is in hexadecimal format. |
 
 <a name="XrplAccount+getAccountObjects"></a>
@@ -3830,8 +3830,8 @@ Retrieves account objects for the account with the specified options.
 **Kind**: instance method of [<code>XrplAccount</code>](#XrplAccount)  
 **Returns**: <code>Promise.&lt;Array.&lt;Object&gt;&gt;</code> - The list of account objects.  
 
-| Param | Type | Description |
-| --- | --- | --- |
+| Param   | Type                | Description                                 |
+| ------- | ------------------- | ------------------------------------------- |
 | options | <code>Object</code> | The options for retrieving account objects. |
 
 <a name="XrplAccount+getNamespaceEntries"></a>
@@ -3842,10 +3842,10 @@ Retrieves namespace entries for the account.
 **Kind**: instance method of [<code>XrplAccount</code>](#XrplAccount)  
 **Returns**: <code>Promise.&lt;Array.&lt;Object&gt;&gt;</code> - The list of namespace entries.  
 
-| Param | Type | Default | Description |
-| --- | --- | --- | --- |
-| namespaceId | <code>string</code> |  | The ID of the namespace to retrieve entries for. |
-| [options] | <code>Object</code> | <code>{}</code> | The options for retrieving namespace entries. |
+| Param       | Type                | Default         | Description                                      |
+| ----------- | ------------------- | --------------- | ------------------------------------------------ |
+| namespaceId | <code>string</code> |                 | The ID of the namespace to retrieve entries for. |
+| [options]   | <code>Object</code> | <code>{}</code> | The options for retrieving namespace entries.    |
 
 <a name="XrplAccount+getFlags"></a>
 
@@ -3862,11 +3862,11 @@ Retrieves account transactions within a specified ledger range.
 **Kind**: instance method of [<code>XrplAccount</code>](#XrplAccount)  
 **Returns**: <code>Promise.&lt;Array&gt;</code> - The list of transactions.  
 
-| Param | Type | Default | Description |
-| --- | --- | --- | --- |
-| [minLedgerIndex] | <code>number</code> | <code>-1</code> | The minimum ledger index to retrieve transactions from. |
-| [maxLedgerIndex] | <code>number</code> | <code>-1</code> | The maximum ledger index to retrieve transactions from. |
-| [isForward] | <code>boolean</code> | <code>true</code> | Whether to retrieve transactions in forward order. |
+| Param            | Type                 | Default           | Description                                             |
+| ---------------- | -------------------- | ----------------- | ------------------------------------------------------- |
+| [minLedgerIndex] | <code>number</code>  | <code>-1</code>   | The minimum ledger index to retrieve transactions from. |
+| [maxLedgerIndex] | <code>number</code>  | <code>-1</code>   | The maximum ledger index to retrieve transactions from. |
+| [isForward]      | <code>boolean</code> | <code>true</code> | Whether to retrieve transactions in forward order.      |
 
 <a name="XrplAccount+hasValidKeyPair"></a>
 
@@ -3883,9 +3883,9 @@ Sets account fields.
 **Kind**: instance method of [<code>XrplAccount</code>](#XrplAccount)  
 **Returns**: <code>Promise.&lt;Object&gt;</code> - The transaction result.  
 
-| Param | Type | Description |
-| --- | --- | --- |
-| fields | <code>Object</code> | The fields to set. |
+| Param   | Type                | Description                                |
+| ------- | ------------------- | ------------------------------------------ |
+| fields  | <code>Object</code> | The fields to set.                         |
 | options | <code>Object</code> | Additional transaction options (optional). |
 
 <a name="XrplAccount+prepareSetAccountFields"></a>
@@ -3900,10 +3900,10 @@ Prepares an AccountSet transaction with the specified fields and options.
 - Will throw an error if no fields are provided and `allowEmptyAccountSet` is not true.
 
 
-| Param | Type | Default | Description |
-| --- | --- | --- | --- |
-| fields | <code>Object</code> |  | The fields to set for the account.  Example: { Domain: "www.mydomain.com", Flags: { asfDefaultRipple: false, asfDisableMaster: true } } |
-| [options] | <code>Object</code> | <code>{}</code> | Additional options for the transaction. Can include hook parameters. |
+| Param     | Type                | Default         | Description                                                                                                                             |
+| --------- | ------------------- | --------------- | --------------------------------------------------------------------------------------------------------------------------------------- |
+| fields    | <code>Object</code> |                 | The fields to set for the account.  Example: { Domain: "www.mydomain.com", Flags: { asfDefaultRipple: false, asfDisableMaster: true } } |
+| [options] | <code>Object</code> | <code>{}</code> | Additional options for the transaction. Can include hook parameters.                                                                    |
 
 <a name="XrplAccount+setSignerList"></a>
 
@@ -3913,10 +3913,10 @@ Sets the signer list for the account.
 **Kind**: instance method of [<code>XrplAccount</code>](#XrplAccount)  
 **Returns**: <code>Promise.&lt;Object&gt;</code> - The result of the sign and submit operation.  
 
-| Param | Type | Default | Description |
-| --- | --- | --- | --- |
-| signerList | <code>Array</code> |  | The list of signers to set for the account. |
-| [options] | <code>Object</code> | <code>{}</code> | Additional options for setting the signer list. |
+| Param      | Type                | Default         | Description                                     |
+| ---------- | ------------------- | --------------- | ----------------------------------------------- |
+| signerList | <code>Array</code>  |                 | The list of signers to set for the account.     |
+| [options]  | <code>Object</code> | <code>{}</code> | Additional options for setting the signer list. |
 
 <a name="XrplAccount+prepareSetSignerList"></a>
 
@@ -3926,10 +3926,10 @@ Set the signer list to the account. Setting signerQuorum = 0 in options, will re
 **Kind**: instance method of [<code>XrplAccount</code>](#XrplAccount)  
 **Returns**: <code>Promise.&lt;Object&gt;</code> - Prepared transaction.  
 
-| Param | Type | Description |
-| --- | --- | --- |
+| Param      | Type            | Description                                                                                      |
+| ---------- | --------------- | ------------------------------------------------------------------------------------------------ |
 | signerList | <code>\*</code> | (optional) An array of signers. Ex:  [ {account:"ras24cvffvfbvfbbt5or4332", weight: 1}, {}, ...] |
-| options | <code>\*</code> | Ex:  {signerQuorum: 1, sequence: 6543233} |
+| options    | <code>\*</code> | Ex:  {signerQuorum: 1, sequence: 6543233}                                                        |
 
 <a name="XrplAccount+invoke"></a>
 
@@ -3939,11 +3939,11 @@ Invokes a transaction to a specified address.
 **Kind**: instance method of [<code>XrplAccount</code>](#XrplAccount)  
 **Returns**: <code>Promise.&lt;Object&gt;</code> - The result of the sign and submit operation.  
 
-| Param | Type | Default | Description |
-| --- | --- | --- | --- |
-| toAddr | <code>string</code> |  | The destination address. |
-| [blobObj] | <code>Object</code> \| <code>null</code> | <code></code> | Optional blob object with data and its format. |
-| [options] | <code>Object</code> | <code>{}</code> | Additional options for the transaction. |
+| Param     | Type                                     | Default         | Description                                    |
+| --------- | ---------------------------------------- | --------------- | ---------------------------------------------- |
+| toAddr    | <code>string</code>                      |                 | The destination address.                       |
+| [blobObj] | <code>Object</code> \| <code>null</code> | <code></code>   | Optional blob object with data and its format. |
+| [options] | <code>Object</code>                      | <code>{}</code> | Additional options for the transaction.        |
 
 <a name="XrplAccount+prepareInvoke"></a>
 
@@ -3953,11 +3953,11 @@ Prepares an invoke transaction.
 **Kind**: instance method of [<code>XrplAccount</code>](#XrplAccount)  
 **Returns**: <code>Promise.&lt;Object&gt;</code> - The prepared invoke transaction.  
 
-| Param | Type | Default | Description |
-| --- | --- | --- | --- |
-| toAddr | <code>string</code> |  | The destination address. |
-| [blobObj] | <code>Object</code> \| <code>null</code> | <code></code> | Blob object containing data and whether it's in hex. |
-| [options] | <code>Object</code> | <code>{}</code> | Additional options for the transaction. |
+| Param     | Type                                     | Default         | Description                                          |
+| --------- | ---------------------------------------- | --------------- | ---------------------------------------------------- |
+| toAddr    | <code>string</code>                      |                 | The destination address.                             |
+| [blobObj] | <code>Object</code> \| <code>null</code> | <code></code>   | Blob object containing data and whether it's in hex. |
+| [options] | <code>Object</code>                      | <code>{}</code> | Additional options for the transaction.              |
 
 <a name="XrplAccount+makePayment"></a>
 
@@ -3967,14 +3967,14 @@ Makes a payment to the specified address.
 **Kind**: instance method of [<code>XrplAccount</code>](#XrplAccount)  
 **Returns**: <code>Promise.&lt;Object&gt;</code> - The result of the sign and submit operation.  
 
-| Param | Type | Default | Description |
-| --- | --- | --- | --- |
-| toAddr | <code>string</code> |  | The destination address. |
-| amount | <code>number</code> \| <code>string</code> |  | The amount to send. |
-| [currency] | <code>string</code> \| <code>null</code> | <code>null</code> | Optional currency code. |
-| [issuer] | <code>string</code> \| <code>null</code> | <code>null</code> | Optional issuer for non-XRP currencies. |
-| [memos] | <code>Array</code> \| <code>null</code> | <code></code> | Optional memos to attach to the transaction. |
-| [options] | <code>Object</code> | <code>{}</code> | Additional options for the transaction. |
+| Param      | Type                                       | Default           | Description                                  |
+| ---------- | ------------------------------------------ | ----------------- | -------------------------------------------- |
+| toAddr     | <code>string</code>                        |                   | The destination address.                     |
+| amount     | <code>number</code> \| <code>string</code> |                   | The amount to send.                          |
+| [currency] | <code>string</code> \| <code>null</code>   | <code>null</code> | Optional currency code.                      |
+| [issuer]   | <code>string</code> \| <code>null</code>   | <code>null</code> | Optional issuer for non-XRP currencies.      |
+| [memos]    | <code>Array</code> \| <code>null</code>    | <code></code>     | Optional memos to attach to the transaction. |
+| [options]  | <code>Object</code>                        | <code>{}</code>   | Additional options for the transaction.      |
 
 <a name="XrplAccount+prepareMakePayment"></a>
 
@@ -3984,14 +3984,14 @@ Prepares a payment transaction.
 **Kind**: instance method of [<code>XrplAccount</code>](#XrplAccount)  
 **Returns**: <code>Promise.&lt;Object&gt;</code> - The prepared payment transaction.  
 
-| Param | Type | Default | Description |
-| --- | --- | --- | --- |
-| toAddr | <code>string</code> |  | The destination address. |
-| amount | <code>number</code> \| <code>string</code> |  | The amount to send. |
-| [currency] | <code>string</code> \| <code>null</code> | <code>null</code> | Optional currency code. |
-| [issuer] | <code>string</code> \| <code>null</code> | <code>null</code> | Optional issuer for non-XRP currencies. |
-| [memos] | <code>Array</code> \| <code>null</code> | <code></code> | Optional memos to attach to the transaction. |
-| [options] | <code>Object</code> | <code>{}</code> | Additional options for the transaction. |
+| Param      | Type                                       | Default           | Description                                  |
+| ---------- | ------------------------------------------ | ----------------- | -------------------------------------------- |
+| toAddr     | <code>string</code>                        |                   | The destination address.                     |
+| amount     | <code>number</code> \| <code>string</code> |                   | The amount to send.                          |
+| [currency] | <code>string</code> \| <code>null</code>   | <code>null</code> | Optional currency code.                      |
+| [issuer]   | <code>string</code> \| <code>null</code>   | <code>null</code> | Optional issuer for non-XRP currencies.      |
+| [memos]    | <code>Array</code> \| <code>null</code>    | <code></code>     | Optional memos to attach to the transaction. |
+| [options]  | <code>Object</code>                        | <code>{}</code>   | Additional options for the transaction.      |
 
 <a name="XrplAccount+setTrustLine"></a>
 
@@ -4001,14 +4001,14 @@ Sets a trust line with the specified parameters.
 **Kind**: instance method of [<code>XrplAccount</code>](#XrplAccount)  
 **Returns**: <code>Promise.&lt;Object&gt;</code> - The result of the sign and submit operation.  
 
-| Param | Type | Default | Description |
-| --- | --- | --- | --- |
-| currency | <code>string</code> |  | The currency code for the trust line. |
-| issuer | <code>string</code> |  | The issuer of the currency. |
-| limit | <code>string</code> |  | The limit for the trust line. |
-| [allowRippling] | <code>boolean</code> | <code>false</code> | Whether to allow rippling. |
-| [memos] | <code>Array</code> \| <code>null</code> | <code></code> | Optional memos to attach to the transaction. |
-| [options] | <code>Object</code> | <code>{}</code> | Additional options for the transaction. |
+| Param           | Type                                    | Default            | Description                                  |
+| --------------- | --------------------------------------- | ------------------ | -------------------------------------------- |
+| currency        | <code>string</code>                     |                    | The currency code for the trust line.        |
+| issuer          | <code>string</code>                     |                    | The issuer of the currency.                  |
+| limit           | <code>string</code>                     |                    | The limit for the trust line.                |
+| [allowRippling] | <code>boolean</code>                    | <code>false</code> | Whether to allow rippling.                   |
+| [memos]         | <code>Array</code> \| <code>null</code> | <code></code>      | Optional memos to attach to the transaction. |
+| [options]       | <code>Object</code>                     | <code>{}</code>    | Additional options for the transaction.      |
 
 <a name="XrplAccount+prepareSetTrustLine"></a>
 
@@ -4018,14 +4018,14 @@ Prepares a trust line transaction.
 **Kind**: instance method of [<code>XrplAccount</code>](#XrplAccount)  
 **Returns**: <code>Promise.&lt;Object&gt;</code> - The prepared trust line transaction.  
 
-| Param | Type | Default | Description |
-| --- | --- | --- | --- |
-| currency | <code>string</code> |  | The currency code for the trust line. |
-| issuer | <code>string</code> |  | The issuer of the currency. |
-| limit | <code>string</code> |  | The limit for the trust line. |
-| [allowRippling] | <code>boolean</code> | <code>false</code> | Whether to allow rippling. |
-| [memos] | <code>Array</code> \| <code>null</code> | <code></code> | Optional memos to attach to the transaction. |
-| [options] | <code>Object</code> | <code>{}</code> | Additional options for the transaction. |
+| Param           | Type                                    | Default            | Description                                  |
+| --------------- | --------------------------------------- | ------------------ | -------------------------------------------- |
+| currency        | <code>string</code>                     |                    | The currency code for the trust line.        |
+| issuer          | <code>string</code>                     |                    | The issuer of the currency.                  |
+| limit           | <code>string</code>                     |                    | The limit for the trust line.                |
+| [allowRippling] | <code>boolean</code>                    | <code>false</code> | Whether to allow rippling.                   |
+| [memos]         | <code>Array</code> \| <code>null</code> | <code></code>      | Optional memos to attach to the transaction. |
+| [options]       | <code>Object</code>                     | <code>{}</code>    | Additional options for the transaction.      |
 
 <a name="XrplAccount+setRegularKey"></a>
 
@@ -4035,11 +4035,11 @@ Sets the regular key for the account.
 **Kind**: instance method of [<code>XrplAccount</code>](#XrplAccount)  
 **Returns**: <code>Promise.&lt;Object&gt;</code> - The result of the sign and submit operation.  
 
-| Param | Type | Default | Description |
-| --- | --- | --- | --- |
-| regularKey | <code>string</code> |  | The regular key to set. |
-| [memos] | <code>Array</code> \| <code>null</code> | <code></code> | Optional memos to attach to the transaction. |
-| [options] | <code>Object</code> | <code>{}</code> | Additional options for the transaction. |
+| Param      | Type                                    | Default         | Description                                  |
+| ---------- | --------------------------------------- | --------------- | -------------------------------------------- |
+| regularKey | <code>string</code>                     |                 | The regular key to set.                      |
+| [memos]    | <code>Array</code> \| <code>null</code> | <code></code>   | Optional memos to attach to the transaction. |
+| [options]  | <code>Object</code>                     | <code>{}</code> | Additional options for the transaction.      |
 
 <a name="XrplAccount+prepareSetRegularKey"></a>
 
@@ -4049,11 +4049,11 @@ Prepares a transaction to set the regular key for the account.
 **Kind**: instance method of [<code>XrplAccount</code>](#XrplAccount)  
 **Returns**: <code>Promise.&lt;Object&gt;</code> - The prepared regular key transaction.  
 
-| Param | Type | Default | Description |
-| --- | --- | --- | --- |
-| regularKey | <code>string</code> |  | The regular key to set. |
-| [memos] | <code>Array</code> \| <code>null</code> | <code></code> | Optional memos to attach to the transaction. |
-| [options] | <code>Object</code> | <code>{}</code> | Additional options for the transaction. |
+| Param      | Type                                    | Default         | Description                                  |
+| ---------- | --------------------------------------- | --------------- | -------------------------------------------- |
+| regularKey | <code>string</code>                     |                 | The regular key to set.                      |
+| [memos]    | <code>Array</code> \| <code>null</code> | <code></code>   | Optional memos to attach to the transaction. |
+| [options]  | <code>Object</code>                     | <code>{}</code> | Additional options for the transaction.      |
 
 <a name="XrplAccount+prepareCashCheck"></a>
 
@@ -4063,9 +4063,9 @@ Cashes a check for the account.
 **Kind**: instance method of [<code>XrplAccount</code>](#XrplAccount)  
 **Returns**: <code>Promise.&lt;Object&gt;</code> - The result of the sign and submit operation.  
 
-| Param | Type | Default | Description |
-| --- | --- | --- | --- |
-| check | <code>Object</code> |  | The check object with details. |
+| Param     | Type                | Default         | Description                             |
+| --------- | ------------------- | --------------- | --------------------------------------- |
+| check     | <code>Object</code> |                 | The check object with details.          |
 | [options] | <code>Object</code> | <code>{}</code> | Additional options for the transaction. |
 
 <a name="XrplAccount+offerSell"></a>
@@ -4076,17 +4076,17 @@ Creates an offer to sell assets.
 **Kind**: instance method of [<code>XrplAccount</code>](#XrplAccount)  
 **Returns**: <code>Promise.&lt;Object&gt;</code> - The result of the sign and submit operation.  
 
-| Param | Type | Default | Description |
-| --- | --- | --- | --- |
-| sellAmount | <code>number</code> \| <code>string</code> |  | The amount to sell. |
-| sellCurrency | <code>string</code> |  | The currency code of the asset to sell. |
-| sellIssuer | <code>string</code> |  | The issuer of the asset to sell. |
-| forAmount | <code>number</code> \| <code>string</code> |  | The amount to receive. |
-| forCurrency | <code>string</code> |  | The currency code of the asset to receive. |
-| [forIssuer] | <code>string</code> \| <code>null</code> | <code>null</code> | The issuer of the asset to receive. |
-| [expiration] | <code>number</code> | <code>4294967295</code> | The expiration time for the offer. |
-| [memos] | <code>Array</code> \| <code>null</code> | <code></code> | Optional memos to attach to the transaction. |
-| [options] | <code>Object</code> | <code>{}</code> | Additional options for the transaction. |
+| Param        | Type                                       | Default                 | Description                                  |
+| ------------ | ------------------------------------------ | ----------------------- | -------------------------------------------- |
+| sellAmount   | <code>number</code> \| <code>string</code> |                         | The amount to sell.                          |
+| sellCurrency | <code>string</code>                        |                         | The currency code of the asset to sell.      |
+| sellIssuer   | <code>string</code>                        |                         | The issuer of the asset to sell.             |
+| forAmount    | <code>number</code> \| <code>string</code> |                         | The amount to receive.                       |
+| forCurrency  | <code>string</code>                        |                         | The currency code of the asset to receive.   |
+| [forIssuer]  | <code>string</code> \| <code>null</code>   | <code>null</code>       | The issuer of the asset to receive.          |
+| [expiration] | <code>number</code>                        | <code>4294967295</code> | The expiration time for the offer.           |
+| [memos]      | <code>Array</code> \| <code>null</code>    | <code></code>           | Optional memos to attach to the transaction. |
+| [options]    | <code>Object</code>                        | <code>{}</code>         | Additional options for the transaction.      |
 
 <a name="XrplAccount+prepareOfferSell"></a>
 
@@ -4096,17 +4096,17 @@ Prepares a transaction to sell assets.
 **Kind**: instance method of [<code>XrplAccount</code>](#XrplAccount)  
 **Returns**: <code>Promise.&lt;Object&gt;</code> - The prepared offer sell transaction.  
 
-| Param | Type | Default | Description |
-| --- | --- | --- | --- |
-| sellAmount | <code>number</code> \| <code>string</code> |  | The amount to sell. |
-| sellCurrency | <code>string</code> |  | The currency code of the asset to sell. |
-| sellIssuer | <code>string</code> |  | The issuer of the asset to sell. |
-| forAmount | <code>number</code> \| <code>string</code> |  | The amount to receive. |
-| forCurrency | <code>string</code> |  | The currency code of the asset to receive. |
-| [forIssuer] | <code>string</code> \| <code>null</code> | <code>null</code> | The issuer of the asset to receive. |
-| [expiration] | <code>number</code> | <code>4294967295</code> | The expiration time for the offer. |
-| [memos] | <code>Array</code> \| <code>null</code> | <code></code> | Optional memos to attach to the transaction. |
-| [options] | <code>Object</code> | <code>{}</code> | Additional options for the transaction. |
+| Param        | Type                                       | Default                 | Description                                  |
+| ------------ | ------------------------------------------ | ----------------------- | -------------------------------------------- |
+| sellAmount   | <code>number</code> \| <code>string</code> |                         | The amount to sell.                          |
+| sellCurrency | <code>string</code>                        |                         | The currency code of the asset to sell.      |
+| sellIssuer   | <code>string</code>                        |                         | The issuer of the asset to sell.             |
+| forAmount    | <code>number</code> \| <code>string</code> |                         | The amount to receive.                       |
+| forCurrency  | <code>string</code>                        |                         | The currency code of the asset to receive.   |
+| [forIssuer]  | <code>string</code> \| <code>null</code>   | <code>null</code>       | The issuer of the asset to receive.          |
+| [expiration] | <code>number</code>                        | <code>4294967295</code> | The expiration time for the offer.           |
+| [memos]      | <code>Array</code> \| <code>null</code>    | <code></code>           | Optional memos to attach to the transaction. |
+| [options]    | <code>Object</code>                        | <code>{}</code>         | Additional options for the transaction.      |
 
 <a name="XrplAccount+offerBuy"></a>
 
@@ -4116,17 +4116,17 @@ Creates an offer to buy assets.
 **Kind**: instance method of [<code>XrplAccount</code>](#XrplAccount)  
 **Returns**: <code>Promise.&lt;Object&gt;</code> - The result of the sign and submit operation.  
 
-| Param | Type | Default | Description |
-| --- | --- | --- | --- |
-| buyAmount | <code>number</code> \| <code>string</code> |  | The amount to buy. |
-| buyCurrency | <code>string</code> |  | The currency code of the asset to buy. |
-| buyIssuer | <code>string</code> |  | The issuer of the asset to buy. |
-| forAmount | <code>number</code> \| <code>string</code> |  | The amount to give in exchange. |
-| forCurrency | <code>string</code> |  | The currency code of the asset to give in exchange. |
-| [forIssuer] | <code>string</code> \| <code>null</code> | <code>null</code> | The issuer of the asset to give in exchange. |
-| [expiration] | <code>number</code> | <code>4294967295</code> | The expiration time for the offer. |
-| [memos] | <code>Array</code> \| <code>null</code> | <code></code> | Optional memos to attach to the transaction. |
-| [options] | <code>Object</code> | <code>{}</code> | Additional options for the transaction. |
+| Param        | Type                                       | Default                 | Description                                         |
+| ------------ | ------------------------------------------ | ----------------------- | --------------------------------------------------- |
+| buyAmount    | <code>number</code> \| <code>string</code> |                         | The amount to buy.                                  |
+| buyCurrency  | <code>string</code>                        |                         | The currency code of the asset to buy.              |
+| buyIssuer    | <code>string</code>                        |                         | The issuer of the asset to buy.                     |
+| forAmount    | <code>number</code> \| <code>string</code> |                         | The amount to give in exchange.                     |
+| forCurrency  | <code>string</code>                        |                         | The currency code of the asset to give in exchange. |
+| [forIssuer]  | <code>string</code> \| <code>null</code>   | <code>null</code>       | The issuer of the asset to give in exchange.        |
+| [expiration] | <code>number</code>                        | <code>4294967295</code> | The expiration time for the offer.                  |
+| [memos]      | <code>Array</code> \| <code>null</code>    | <code></code>           | Optional memos to attach to the transaction.        |
+| [options]    | <code>Object</code>                        | <code>{}</code>         | Additional options for the transaction.             |
 
 <a name="XrplAccount+prepareOfferBuy"></a>
 
@@ -4136,17 +4136,17 @@ Prepares an offer to buy assets.
 **Kind**: instance method of [<code>XrplAccount</code>](#XrplAccount)  
 **Returns**: <code>Promise.&lt;Object&gt;</code> - The prepared offer buy transaction.  
 
-| Param | Type | Default | Description |
-| --- | --- | --- | --- |
-| buyAmount | <code>number</code> \| <code>string</code> |  | The amount to buy. |
-| buyCurrency | <code>string</code> |  | The currency code of the asset to buy. |
-| buyIssuer | <code>string</code> |  | The issuer of the asset to buy. |
-| forAmount | <code>number</code> \| <code>string</code> |  | The amount to give in exchange. |
-| forCurrency | <code>string</code> |  | The currency code of the asset to give in exchange. |
-| [forIssuer] | <code>string</code> \| <code>null</code> | <code>null</code> | The issuer of the asset to give in exchange. |
-| [expiration] | <code>number</code> | <code>4294967295</code> | The expiration time for the offer. |
-| [memos] | <code>Array</code> \| <code>null</code> | <code></code> | Optional memos to attach to the transaction. |
-| [options] | <code>Object</code> | <code>{}</code> | Additional options for the transaction. |
+| Param        | Type                                       | Default                 | Description                                         |
+| ------------ | ------------------------------------------ | ----------------------- | --------------------------------------------------- |
+| buyAmount    | <code>number</code> \| <code>string</code> |                         | The amount to buy.                                  |
+| buyCurrency  | <code>string</code>                        |                         | The currency code of the asset to buy.              |
+| buyIssuer    | <code>string</code>                        |                         | The issuer of the asset to buy.                     |
+| forAmount    | <code>number</code> \| <code>string</code> |                         | The amount to give in exchange.                     |
+| forCurrency  | <code>string</code>                        |                         | The currency code of the asset to give in exchange. |
+| [forIssuer]  | <code>string</code> \| <code>null</code>   | <code>null</code>       | The issuer of the asset to give in exchange.        |
+| [expiration] | <code>number</code>                        | <code>4294967295</code> | The expiration time for the offer.                  |
+| [memos]      | <code>Array</code> \| <code>null</code>    | <code></code>           | Optional memos to attach to the transaction.        |
+| [options]    | <code>Object</code>                        | <code>{}</code>         | Additional options for the transaction.             |
 
 <a name="XrplAccount+cancelOffer"></a>
 
@@ -4156,11 +4156,11 @@ Cancels an existing offer.
 **Kind**: instance method of [<code>XrplAccount</code>](#XrplAccount)  
 **Returns**: <code>Promise.&lt;Object&gt;</code> - The result of the sign and submit operation.  
 
-| Param | Type | Default | Description |
-| --- | --- | --- | --- |
-| offerSequence | <code>number</code> |  | The sequence number of the offer to cancel. |
-| [memos] | <code>Array</code> \| <code>null</code> | <code></code> | Optional memos to attach to the transaction. |
-| [options] | <code>Object</code> | <code>{}</code> | Additional options for the transaction. |
+| Param         | Type                                    | Default         | Description                                  |
+| ------------- | --------------------------------------- | --------------- | -------------------------------------------- |
+| offerSequence | <code>number</code>                     |                 | The sequence number of the offer to cancel.  |
+| [memos]       | <code>Array</code> \| <code>null</code> | <code></code>   | Optional memos to attach to the transaction. |
+| [options]     | <code>Object</code>                     | <code>{}</code> | Additional options for the transaction.      |
 
 <a name="XrplAccount+prepareCancelOffer"></a>
 
@@ -4170,11 +4170,11 @@ Prepares a transaction to cancel an offer.
 **Kind**: instance method of [<code>XrplAccount</code>](#XrplAccount)  
 **Returns**: <code>Promise.&lt;Object&gt;</code> - The prepared offer cancel transaction.  
 
-| Param | Type | Default | Description |
-| --- | --- | --- | --- |
-| offerSequence | <code>number</code> |  | The sequence number of the offer to cancel. |
-| [memos] | <code>Array</code> \| <code>null</code> | <code></code> | Optional memos to attach to the transaction. |
-| [options] | <code>Object</code> | <code>{}</code> | Additional options for the transaction. |
+| Param         | Type                                    | Default         | Description                                  |
+| ------------- | --------------------------------------- | --------------- | -------------------------------------------- |
+| offerSequence | <code>number</code>                     |                 | The sequence number of the offer to cancel.  |
+| [memos]       | <code>Array</code> \| <code>null</code> | <code></code>   | Optional memos to attach to the transaction. |
+| [options]     | <code>Object</code>                     | <code>{}</code> | Additional options for the transaction.      |
 
 <a name="XrplAccount+subscribe"></a>
 
@@ -4197,8 +4197,8 @@ Submits a signed raw transaction.
 **Kind**: instance method of [<code>XrplAccount</code>](#XrplAccount)  
 **Returns**: <code>Promise.&lt;Object&gt;</code> - Result of the transaction submission.  
 
-| Param | Type | Description |
-| --- | --- | --- |
+| Param  | Type                | Description                                     |
+| ------ | ------------------- | ----------------------------------------------- |
 | txBlob | <code>string</code> | Signed and encoded transaction as a hex string. |
 
 <a name="XrplAccount+sign"></a>
@@ -4209,9 +4209,9 @@ Signs the given transaction and returns the signed blob and its hash.
 **Kind**: instance method of [<code>XrplAccount</code>](#XrplAccount)  
 **Returns**: <code>Object</code> - The signed transaction hash and blob. Format: {hash: string, tx_blob: string}  
 
-| Param | Type | Default | Description |
-| --- | --- | --- | --- |
-| tx | <code>Object</code> |  | Transaction object. |
+| Param         | Type                 | Default            | Description                                  |
+| ------------- | -------------------- | ------------------ | -------------------------------------------- |
+| tx            | <code>Object</code>  |                    | Transaction object.                          |
 | [isMultiSign] | <code>boolean</code> | <code>false</code> | Whether the transaction is for multisigning. |
 
 <a name="XrplAccount+mintURIToken"></a>
@@ -4222,12 +4222,12 @@ Mints a URI token.
 **Kind**: instance method of [<code>XrplAccount</code>](#XrplAccount)  
 **Returns**: <code>Promise.&lt;Object&gt;</code> - Result of the mint transaction.  
 
-| Param | Type | Default | Description |
-| --- | --- | --- | --- |
-| uri | <code>string</code> |  | The URI to mint as a token. |
-| [digest] | <code>string</code> \| <code>null</code> | <code>null</code> | The optional digest for the token. |
-| [flags] | <code>Object</code> | <code>{}</code> | Flags to control token properties (e.g., isBurnable). |
-| [options] | <code>Object</code> | <code>{}</code> | Additional options for the transaction. |
+| Param     | Type                                     | Default           | Description                                           |
+| --------- | ---------------------------------------- | ----------------- | ----------------------------------------------------- |
+| uri       | <code>string</code>                      |                   | The URI to mint as a token.                           |
+| [digest]  | <code>string</code> \| <code>null</code> | <code>null</code> | The optional digest for the token.                    |
+| [flags]   | <code>Object</code>                      | <code>{}</code>   | Flags to control token properties (e.g., isBurnable). |
+| [options] | <code>Object</code>                      | <code>{}</code>   | Additional options for the transaction.               |
 
 <a name="XrplAccount+prepareMintURIToken"></a>
 
@@ -4237,12 +4237,12 @@ Prepares the minting of a URI token.
 **Kind**: instance method of [<code>XrplAccount</code>](#XrplAccount)  
 **Returns**: <code>Promise.&lt;Object&gt;</code> - The prepared mint transaction.  
 
-| Param | Type | Default | Description |
-| --- | --- | --- | --- |
-| uri | <code>string</code> |  | The URI to mint as a token. |
-| [digest] | <code>string</code> \| <code>null</code> | <code>null</code> | The optional digest for the token. |
-| [flags] | <code>Object</code> | <code>{}</code> | Flags to control token properties. |
-| [options] | <code>Object</code> | <code>{}</code> | Additional options for the transaction. |
+| Param     | Type                                     | Default           | Description                             |
+| --------- | ---------------------------------------- | ----------------- | --------------------------------------- |
+| uri       | <code>string</code>                      |                   | The URI to mint as a token.             |
+| [digest]  | <code>string</code> \| <code>null</code> | <code>null</code> | The optional digest for the token.      |
+| [flags]   | <code>Object</code>                      | <code>{}</code>   | Flags to control token properties.      |
+| [options] | <code>Object</code>                      | <code>{}</code>   | Additional options for the transaction. |
 
 <a name="XrplAccount+burnURIToken"></a>
 
@@ -4252,10 +4252,10 @@ Burns a URI token.
 **Kind**: instance method of [<code>XrplAccount</code>](#XrplAccount)  
 **Returns**: <code>Promise.&lt;Object&gt;</code> - Result of the burn transaction.  
 
-| Param | Type | Default | Description |
-| --- | --- | --- | --- |
-| uriTokenID | <code>string</code> |  | The ID of the URI token to burn. |
-| [options] | <code>Object</code> | <code>{}</code> | Additional options for the transaction. |
+| Param      | Type                | Default         | Description                             |
+| ---------- | ------------------- | --------------- | --------------------------------------- |
+| uriTokenID | <code>string</code> |                 | The ID of the URI token to burn.        |
+| [options]  | <code>Object</code> | <code>{}</code> | Additional options for the transaction. |
 
 <a name="XrplAccount+prepareBurnURIToken"></a>
 
@@ -4265,10 +4265,10 @@ Prepares the burning of a URI token.
 **Kind**: instance method of [<code>XrplAccount</code>](#XrplAccount)  
 **Returns**: <code>Promise.&lt;Object&gt;</code> - The prepared burn transaction.  
 
-| Param | Type | Default | Description |
-| --- | --- | --- | --- |
-| uriTokenID | <code>string</code> |  | The ID of the URI token to burn. |
-| [options] | <code>Object</code> | <code>{}</code> | Additional options for the transaction. |
+| Param      | Type                | Default         | Description                             |
+| ---------- | ------------------- | --------------- | --------------------------------------- |
+| uriTokenID | <code>string</code> |                 | The ID of the URI token to burn.        |
+| [options]  | <code>Object</code> | <code>{}</code> | Additional options for the transaction. |
 
 <a name="XrplAccount+sellURIToken"></a>
 
@@ -4278,15 +4278,15 @@ Creates a sell offer for a URI token.
 **Kind**: instance method of [<code>XrplAccount</code>](#XrplAccount)  
 **Returns**: <code>Promise.&lt;Object&gt;</code> - Result of the sell transaction.  
 
-| Param | Type | Default | Description |
-| --- | --- | --- | --- |
-| uriTokenID | <code>string</code> |  | The ID of the URI token to sell. |
-| amount | <code>string</code> \| <code>number</code> |  | The amount to sell the token for. |
-| currency | <code>string</code> |  | The currency code for the sale. |
-| [issuer] | <code>string</code> \| <code>null</code> | <code>null</code> | The issuer of the currency. |
-| [toAddr] | <code>string</code> \| <code>null</code> | <code>null</code> | The address of the buyer. |
-| [memos] | <code>Array</code> \| <code>null</code> | <code></code> | Optional memos to attach to the transaction. |
-| [options] | <code>Object</code> | <code>{}</code> | Additional options for the transaction. |
+| Param      | Type                                       | Default           | Description                                  |
+| ---------- | ------------------------------------------ | ----------------- | -------------------------------------------- |
+| uriTokenID | <code>string</code>                        |                   | The ID of the URI token to sell.             |
+| amount     | <code>string</code> \| <code>number</code> |                   | The amount to sell the token for.            |
+| currency   | <code>string</code>                        |                   | The currency code for the sale.              |
+| [issuer]   | <code>string</code> \| <code>null</code>   | <code>null</code> | The issuer of the currency.                  |
+| [toAddr]   | <code>string</code> \| <code>null</code>   | <code>null</code> | The address of the buyer.                    |
+| [memos]    | <code>Array</code> \| <code>null</code>    | <code></code>     | Optional memos to attach to the transaction. |
+| [options]  | <code>Object</code>                        | <code>{}</code>   | Additional options for the transaction.      |
 
 <a name="XrplAccount+prepareSellURIToken"></a>
 
@@ -4296,15 +4296,15 @@ Prepares a sell offer for a URI token.
 **Kind**: instance method of [<code>XrplAccount</code>](#XrplAccount)  
 **Returns**: <code>Promise.&lt;Object&gt;</code> - The prepared sell offer transaction.  
 
-| Param | Type | Default | Description |
-| --- | --- | --- | --- |
-| uriTokenID | <code>string</code> |  | The ID of the URI token to sell. |
-| amount | <code>string</code> \| <code>number</code> |  | The amount to sell the token for. |
-| currency | <code>string</code> |  | The currency code for the sale. |
-| [issuer] | <code>string</code> \| <code>null</code> | <code>null</code> | The issuer of the currency. |
-| [toAddr] | <code>string</code> \| <code>null</code> | <code>null</code> | The address of the buyer. |
-| [memos] | <code>Array</code> \| <code>null</code> | <code></code> | Optional memos to attach to the transaction. |
-| [options] | <code>Object</code> | <code>{}</code> | Additional options for the transaction. |
+| Param      | Type                                       | Default           | Description                                  |
+| ---------- | ------------------------------------------ | ----------------- | -------------------------------------------- |
+| uriTokenID | <code>string</code>                        |                   | The ID of the URI token to sell.             |
+| amount     | <code>string</code> \| <code>number</code> |                   | The amount to sell the token for.            |
+| currency   | <code>string</code>                        |                   | The currency code for the sale.              |
+| [issuer]   | <code>string</code> \| <code>null</code>   | <code>null</code> | The issuer of the currency.                  |
+| [toAddr]   | <code>string</code> \| <code>null</code>   | <code>null</code> | The address of the buyer.                    |
+| [memos]    | <code>Array</code> \| <code>null</code>    | <code></code>     | Optional memos to attach to the transaction. |
+| [options]  | <code>Object</code>                        | <code>{}</code>   | Additional options for the transaction.      |
 
 <a name="XrplAccount+buyURIToken"></a>
 
@@ -4314,11 +4314,11 @@ Buys a URI token.
 **Kind**: instance method of [<code>XrplAccount</code>](#XrplAccount)  
 **Returns**: <code>Promise.&lt;Object&gt;</code> - Result of the buy transaction.  
 
-| Param | Type | Default | Description |
-| --- | --- | --- | --- |
-| uriToken | <code>Object</code> |  | The URI token object to buy. |
-| [memos] | <code>Array</code> \| <code>null</code> | <code></code> | Optional memos to attach to the transaction. |
-| [options] | <code>Object</code> | <code>{}</code> | Additional options for the transaction. |
+| Param     | Type                                    | Default         | Description                                  |
+| --------- | --------------------------------------- | --------------- | -------------------------------------------- |
+| uriToken  | <code>Object</code>                     |                 | The URI token object to buy.                 |
+| [memos]   | <code>Array</code> \| <code>null</code> | <code></code>   | Optional memos to attach to the transaction. |
+| [options] | <code>Object</code>                     | <code>{}</code> | Additional options for the transaction.      |
 
 <a name="XrplAccount+prepareBuyURIToken"></a>
 
@@ -4328,11 +4328,11 @@ Prepares a buy offer for a URI token.
 **Kind**: instance method of [<code>XrplAccount</code>](#XrplAccount)  
 **Returns**: <code>Promise.&lt;Object&gt;</code> - The prepared buy offer transaction.  
 
-| Param | Type | Default | Description |
-| --- | --- | --- | --- |
-| uriToken | <code>Object</code> |  | The URI token object to buy. |
-| [memos] | <code>Array</code> \| <code>null</code> | <code></code> | Optional memos to attach to the transaction. |
-| [options] | <code>Object</code> | <code>{}</code> | Additional options for the transaction. |
+| Param     | Type                                    | Default         | Description                                  |
+| --------- | --------------------------------------- | --------------- | -------------------------------------------- |
+| uriToken  | <code>Object</code>                     |                 | The URI token object to buy.                 |
+| [memos]   | <code>Array</code> \| <code>null</code> | <code></code>   | Optional memos to attach to the transaction. |
+| [options] | <code>Object</code>                     | <code>{}</code> | Additional options for the transaction.      |
 
 <a name="XrplAccount+clearURITokenOffer"></a>
 
@@ -4342,10 +4342,10 @@ Clears a sell offer for a URI token.
 **Kind**: instance method of [<code>XrplAccount</code>](#XrplAccount)  
 **Returns**: <code>Promise.&lt;Object&gt;</code> - Result of the clear offer transaction.  
 
-| Param | Type | Default | Description |
-| --- | --- | --- | --- |
-| uriTokenID | <code>string</code> |  | The ID of the URI token offer to clear. |
-| [options] | <code>Object</code> | <code>{}</code> | Additional options for the transaction. |
+| Param      | Type                | Default         | Description                             |
+| ---------- | ------------------- | --------------- | --------------------------------------- |
+| uriTokenID | <code>string</code> |                 | The ID of the URI token offer to clear. |
+| [options]  | <code>Object</code> | <code>{}</code> | Additional options for the transaction. |
 
 <a name="XrplAccount+prepareClearURITokenOffer"></a>
 
@@ -4355,10 +4355,10 @@ Prepares the clearing of a sell offer for a URI token.
 **Kind**: instance method of [<code>XrplAccount</code>](#XrplAccount)  
 **Returns**: <code>Promise.&lt;Object&gt;</code> - The prepared clear offer transaction.  
 
-| Param | Type | Default | Description |
-| --- | --- | --- | --- |
-| uriTokenID | <code>string</code> |  | The ID of the URI token offer to clear. |
-| [options] | <code>Object</code> | <code>{}</code> | Additional options for the transaction. |
+| Param      | Type                | Default         | Description                             |
+| ---------- | ------------------- | --------------- | --------------------------------------- |
+| uriTokenID | <code>string</code> |                 | The ID of the URI token offer to clear. |
+| [options]  | <code>Object</code> | <code>{}</code> | Additional options for the transaction. |
 
 <a name="XrplAccount+getURITokens"></a>
 
@@ -4368,8 +4368,8 @@ Retrieves all URI tokens associated with the account.
 **Kind**: instance method of [<code>XrplAccount</code>](#XrplAccount)  
 **Returns**: <code>Promise.&lt;Array&gt;</code> - List of URI tokens.  
 
-| Param | Type | Description |
-| --- | --- | --- |
+| Param   | Type                | Description                           |
+| ------- | ------------------- | ------------------------------------- |
 | options | <code>Object</code> | Additional options for the retrieval. |
 
 <a name="XrplAccount+getURITokenByUri"></a>
@@ -4380,9 +4380,9 @@ Retrieves a URI token by its URI.
 **Kind**: instance method of [<code>XrplAccount</code>](#XrplAccount)  
 **Returns**: <code>Promise.&lt;Object&gt;</code> - The URI token object.  
 
-| Param | Type | Default | Description |
-| --- | --- | --- | --- |
-| uri | <code>string</code> |  | The URI of the token to retrieve. |
+| Param      | Type                 | Default            | Description                       |
+| ---------- | -------------------- | ------------------ | --------------------------------- |
+| uri        | <code>string</code>  |                    | The URI of the token to retrieve. |
 | [isHexUri] | <code>boolean</code> | <code>false</code> | Whether the URI is in hex format. |
 
 <a name="XrplAccount+generateIssuedURITokenId"></a>
@@ -4393,10 +4393,10 @@ Generates the issued URI token ID from a given URI.
 **Kind**: instance method of [<code>XrplAccount</code>](#XrplAccount)  
 **Returns**: <code>string</code> - The generated URI token ID.  
 
-| Param | Type | Default | Description |
-| --- | --- | --- | --- |
-| uri | <code>string</code> |  | The URI to generate the token ID from. |
-| [isHexUri] | <code>boolean</code> | <code>false</code> | Whether the URI is in hex format. |
+| Param      | Type                 | Default            | Description                            |
+| ---------- | -------------------- | ------------------ | -------------------------------------- |
+| uri        | <code>string</code>  |                    | The URI to generate the token ID from. |
+| [isHexUri] | <code>boolean</code> | <code>false</code> | Whether the URI is in hex format.      |
 
 <a name="XrplAccount+signAndSubmit"></a>
 
@@ -4406,10 +4406,10 @@ Sign and submit prepared transaction.
 **Kind**: instance method of [<code>XrplAccount</code>](#XrplAccount)  
 **Returns**: <code>Promise.&lt;Object&gt;</code> - result of the submitted transaction.  
 
-| Param | Type | Description |
-| --- | --- | --- |
-| preparedTransaction | <code>object</code> | Prepared transaction. |
-| submissionRef | <code>object</code> | [Optional] Reference object to take submission references. |
+| Param               | Type                | Description                                                |
+| ------------------- | ------------------- | ---------------------------------------------------------- |
+| preparedTransaction | <code>object</code> | Prepared transaction.                                      |
+| submissionRef       | <code>object</code> | [Optional] Reference object to take submission references. |
 
 <a name="XrplAccount+submitMultisigned"></a>
 
@@ -4419,9 +4419,9 @@ Submit a multi-singed transaction.
 **Kind**: instance method of [<code>XrplAccount</code>](#XrplAccount)  
 **Returns**: <code>Promise.&lt;Object&gt;</code> - Result of the transaction.  
 
-| Param | Type | Description |
-| --- | --- | --- |
-| tx | <code>object</code> | Signed transaction. |
+| Param | Type                | Description         |
+| ----- | ------------------- | ------------------- |
+| tx    | <code>object</code> | Signed transaction. |
 
 <a name="XrplApi"></a>
 
@@ -4469,13 +4469,13 @@ Class representing an XRPL API client.
 
 ### new XrplApi(rippledServer, [options])
 
-| Param | Type | Default | Description |
-| --- | --- | --- | --- |
-| rippledServer | <code>string</code> \| <code>null</code> | <code>null</code> | The URL of the primary rippled server or null if not used. |
-| [options] | <code>Object</code> | <code>{}</code> | Optional configuration options. |
-| [options.fallbackRippledServers] | <code>Array.&lt;string&gt;</code> | <code>[]</code> | List of fallback server URLs. |
-| [options.xrplClientOptions] | <code>Object</code> | <code>{}</code> | Options for the xrpl client. |
-| [options.autoReconnect] | <code>boolean</code> | <code>true</code> | Whether to automatically reconnect. |
+| Param                            | Type                                     | Default           | Description                                                |
+| -------------------------------- | ---------------------------------------- | ----------------- | ---------------------------------------------------------- |
+| rippledServer                    | <code>string</code> \| <code>null</code> | <code>null</code> | The URL of the primary rippled server or null if not used. |
+| [options]                        | <code>Object</code>                      | <code>{}</code>   | Optional configuration options.                            |
+| [options.fallbackRippledServers] | <code>Array.&lt;string&gt;</code>        | <code>[]</code>   | List of fallback server URLs.                              |
+| [options.xrplClientOptions]      | <code>Object</code>                      | <code>{}</code>   | Options for the xrpl client.                               |
+| [options.autoReconnect]          | <code>boolean</code>                     | <code>true</code> | Whether to automatically reconnect.                        |
 
 <a name="XrplApi+on"></a>
 
@@ -4484,9 +4484,9 @@ Adds an event listener for a specified event.
 
 **Kind**: instance method of [<code>XrplApi</code>](#XrplApi)  
 
-| Param | Type | Description |
-| --- | --- | --- |
-| event | <code>string</code> | The event to listen for. |
+| Param   | Type                  | Description                                 |
+| ------- | --------------------- | ------------------------------------------- |
+| event   | <code>string</code>   | The event to listen for.                    |
 | handler | <code>function</code> | The function to call when the event occurs. |
 
 <a name="XrplApi+once"></a>
@@ -4496,9 +4496,9 @@ Adds a one-time event listener for a specified event.
 
 **Kind**: instance method of [<code>XrplApi</code>](#XrplApi)  
 
-| Param | Type | Description |
-| --- | --- | --- |
-| event | <code>string</code> | The event to listen for. |
+| Param   | Type                  | Description                                 |
+| ------- | --------------------- | ------------------------------------------- |
+| event   | <code>string</code>   | The event to listen for.                    |
 | handler | <code>function</code> | The function to call when the event occurs. |
 
 <a name="XrplApi+off"></a>
@@ -4508,9 +4508,9 @@ Removes an event listener for a specified event.
 
 **Kind**: instance method of [<code>XrplApi</code>](#XrplApi)  
 
-| Param | Type | Default | Description |
-| --- | --- | --- | --- |
-| event | <code>string</code> |  | The event to stop listening for. |
+| Param     | Type                  | Default       | Description                                            |
+| --------- | --------------------- | ------------- | ------------------------------------------------------ |
+| event     | <code>string</code>   |               | The event to stop listening for.                       |
 | [handler] | <code>function</code> | <code></code> | The function to remove or null to remove all handlers. |
 
 <a name="XrplApi+connect"></a>
@@ -4533,10 +4533,10 @@ Checks if the given public key is valid for the specified address.
 **Kind**: instance method of [<code>XrplApi</code>](#XrplApi)  
 **Returns**: <code>Promise.&lt;boolean&gt;</code> - Returns true if the public key is valid for the address.  
 
-| Param | Type | Description |
-| --- | --- | --- |
-| publicKey | <code>string</code> | The public key to check. |
-| address | <code>string</code> | The address to check against. |
+| Param     | Type                | Description                   |
+| --------- | ------------------- | ----------------------------- |
+| publicKey | <code>string</code> | The public key to check.      |
+| address   | <code>string</code> | The address to check against. |
 
 <a name="XrplApi+isAccountExists"></a>
 
@@ -4546,8 +4546,8 @@ Checks if an account exists at the specified address.
 **Kind**: instance method of [<code>XrplApi</code>](#XrplApi)  
 **Returns**: <code>Promise.&lt;boolean&gt;</code> - Returns true if the account exists.  
 
-| Param | Type | Description |
-| --- | --- | --- |
+| Param   | Type                | Description          |
+| ------- | ------------------- | -------------------- |
 | address | <code>string</code> | The account address. |
 
 <a name="XrplApi+getServerState"></a>
@@ -4558,8 +4558,8 @@ Gets the server state at the specified ledger index.
 **Kind**: instance method of [<code>XrplApi</code>](#XrplApi)  
 **Returns**: <code>Promise.&lt;string&gt;</code> - The server state.  
 
-| Param | Type | Default | Description |
-| --- | --- | --- | --- |
+| Param       | Type                | Default                                        | Description                            |
+| ----------- | ------------------- | ---------------------------------------------- | -------------------------------------- |
 | [ledgerIdx] | <code>string</code> | <code>&quot;\&quot;current\&quot;&quot;</code> | The ledger index to get the state for. |
 
 <a name="XrplApi+getAccountInfo"></a>
@@ -4570,8 +4570,8 @@ Gets account information for a specified address.
 **Kind**: instance method of [<code>XrplApi</code>](#XrplApi)  
 **Returns**: <code>Promise.&lt;Object&gt;</code> - The account information.  
 
-| Param | Type | Description |
-| --- | --- | --- |
+| Param   | Type                | Description          |
+| ------- | ------------------- | -------------------- |
 | address | <code>string</code> | The account address. |
 
 <a name="XrplApi+getServerDefinition"></a>
@@ -4596,9 +4596,9 @@ Gets account objects for a specified address.
 **Kind**: instance method of [<code>XrplApi</code>](#XrplApi)  
 **Returns**: <code>Promise.&lt;Array.&lt;Object&gt;&gt;</code> - The account objects.  
 
-| Param | Type | Default | Description |
-| --- | --- | --- | --- |
-| address | <code>string</code> |  | The account address. |
+| Param     | Type                | Default         | Description                          |
+| --------- | ------------------- | --------------- | ------------------------------------ |
+| address   | <code>string</code> |                 | The account address.                 |
 | [options] | <code>Object</code> | <code>{}</code> | Optional parameters for the request. |
 
 <a name="XrplApi+getNamespaceEntries"></a>
@@ -4609,11 +4609,11 @@ Gets namespace entries for a specified address and namespace ID.
 **Kind**: instance method of [<code>XrplApi</code>](#XrplApi)  
 **Returns**: <code>Promise.&lt;Array.&lt;Object&gt;&gt;</code> - The namespace entries.  
 
-| Param | Type | Default | Description |
-| --- | --- | --- | --- |
-| address | <code>string</code> |  | The account address. |
-| namespaceId | <code>string</code> |  | The namespace ID. |
-| [options] | <code>Object</code> | <code>{}</code> | Optional parameters for the request. |
+| Param       | Type                | Default         | Description                          |
+| ----------- | ------------------- | --------------- | ------------------------------------ |
+| address     | <code>string</code> |                 | The account address.                 |
+| namespaceId | <code>string</code> |                 | The namespace ID.                    |
+| [options]   | <code>Object</code> | <code>{}</code> | Optional parameters for the request. |
 
 <a name="XrplApi+getNftOffers"></a>
 
@@ -4623,9 +4623,9 @@ Gets NFT offers for a specified address.
 **Kind**: instance method of [<code>XrplApi</code>](#XrplApi)  
 **Returns**: <code>Promise.&lt;Array.&lt;Object&gt;&gt;</code> - The NFT offers.  
 
-| Param | Type | Default | Description |
-| --- | --- | --- | --- |
-| address | <code>string</code> |  | The account address. |
+| Param     | Type                | Default         | Description                          |
+| --------- | ------------------- | --------------- | ------------------------------------ |
+| address   | <code>string</code> |                 | The account address.                 |
 | [options] | <code>Object</code> | <code>{}</code> | Optional parameters for the request. |
 
 <a name="XrplApi+getTrustlines"></a>
@@ -4636,9 +4636,9 @@ Gets trustlines for a specified address.
 **Kind**: instance method of [<code>XrplApi</code>](#XrplApi)  
 **Returns**: <code>Promise.&lt;Array.&lt;Object&gt;&gt;</code> - The trustlines.  
 
-| Param | Type | Default | Description |
-| --- | --- | --- | --- |
-| address | <code>string</code> |  | The account address. |
+| Param     | Type                | Default         | Description                          |
+| --------- | ------------------- | --------------- | ------------------------------------ |
+| address   | <code>string</code> |                 | The account address.                 |
 | [options] | <code>Object</code> | <code>{}</code> | Optional parameters for the request. |
 
 <a name="XrplApi+getAccountTrx"></a>
@@ -4649,9 +4649,9 @@ Gets account transactions for a specified address.
 **Kind**: instance method of [<code>XrplApi</code>](#XrplApi)  
 **Returns**: <code>Promise.&lt;Array.&lt;Object&gt;&gt;</code> - The account transactions.  
 
-| Param | Type | Default | Description |
-| --- | --- | --- | --- |
-| address | <code>string</code> |  | The account address. |
+| Param     | Type                | Default         | Description                          |
+| --------- | ------------------- | --------------- | ------------------------------------ |
+| address   | <code>string</code> |                 | The account address.                 |
 | [options] | <code>Object</code> | <code>{}</code> | Optional parameters for the request. |
 
 <a name="XrplApi+getNfts"></a>
@@ -4662,9 +4662,9 @@ Gets NFTs for a specified address.
 **Kind**: instance method of [<code>XrplApi</code>](#XrplApi)  
 **Returns**: <code>Promise.&lt;Array.&lt;Object&gt;&gt;</code> - The NFTs.  
 
-| Param | Type | Default | Description |
-| --- | --- | --- | --- |
-| address | <code>string</code> |  | The account address. |
+| Param     | Type                | Default         | Description                          |
+| --------- | ------------------- | --------------- | ------------------------------------ |
+| address   | <code>string</code> |                 | The account address.                 |
 | [options] | <code>Object</code> | <code>{}</code> | Optional parameters for the request. |
 
 <a name="XrplApi+getOffers"></a>
@@ -4675,9 +4675,9 @@ Gets offers for a specified address.
 **Kind**: instance method of [<code>XrplApi</code>](#XrplApi)  
 **Returns**: <code>Promise.&lt;Array.&lt;Object&gt;&gt;</code> - The offers.  
 
-| Param | Type | Default | Description |
-| --- | --- | --- | --- |
-| address | <code>string</code> |  | The account address. |
+| Param     | Type                | Default         | Description                          |
+| --------- | ------------------- | --------------- | ------------------------------------ |
+| address   | <code>string</code> |                 | The account address.                 |
 | [options] | <code>Object</code> | <code>{}</code> | Optional parameters for the request. |
 
 <a name="XrplApi+getSellOffers"></a>
@@ -4688,9 +4688,9 @@ Gets sell offers for a specified NFT token ID.
 **Kind**: instance method of [<code>XrplApi</code>](#XrplApi)  
 **Returns**: <code>Promise.&lt;Array.&lt;Object&gt;&gt;</code> - The sell offers.  
 
-| Param | Type | Default | Description |
-| --- | --- | --- | --- |
-| nfTokenId | <code>string</code> |  | The NFT token ID. |
+| Param     | Type                | Default         | Description                          |
+| --------- | ------------------- | --------------- | ------------------------------------ |
+| nfTokenId | <code>string</code> |                 | The NFT token ID.                    |
 | [options] | <code>Object</code> | <code>{}</code> | Optional parameters for the request. |
 
 <a name="XrplApi+getBuyOffers"></a>
@@ -4701,9 +4701,9 @@ Gets buy offers for a specified NFT token ID.
 **Kind**: instance method of [<code>XrplApi</code>](#XrplApi)  
 **Returns**: <code>Promise.&lt;Array.&lt;Object&gt;&gt;</code> - The buy offers.  
 
-| Param | Type | Default | Description |
-| --- | --- | --- | --- |
-| nfTokenId | <code>string</code> |  | The NFT token ID. |
+| Param     | Type                | Default         | Description                          |
+| --------- | ------------------- | --------------- | ------------------------------------ |
+| nfTokenId | <code>string</code> |                 | The NFT token ID.                    |
 | [options] | <code>Object</code> | <code>{}</code> | Optional parameters for the request. |
 
 <a name="XrplApi+getLedgerEntry"></a>
@@ -4714,9 +4714,9 @@ Gets ledger entry by index.
 **Kind**: instance method of [<code>XrplApi</code>](#XrplApi)  
 **Returns**: <code>Promise.&lt;(Object\|null)&gt;</code> - The ledger entry or null if not found.  
 
-| Param | Type | Default | Description |
-| --- | --- | --- | --- |
-| index | <code>string</code> |  | The ledger index. |
+| Param     | Type                | Default         | Description                          |
+| --------- | ------------------- | --------------- | ------------------------------------ |
+| index     | <code>string</code> |                 | The ledger index.                    |
 | [options] | <code>Object</code> | <code>{}</code> | Optional parameters for the request. |
 
 <a name="XrplApi+getURITokenByIndex"></a>
@@ -4727,8 +4727,8 @@ Gets the URI token by index.
 **Kind**: instance method of [<code>XrplApi</code>](#XrplApi)  
 **Returns**: <code>Promise.&lt;(Object\|null)&gt;</code> - The URI token entry or null if not found.  
 
-| Param | Type | Description |
-| --- | --- | --- |
+| Param | Type                | Description                 |
+| ----- | ------------------- | --------------------------- |
 | index | <code>string</code> | The index of the URI token. |
 
 <a name="XrplApi+getTxnInfo"></a>
@@ -4739,9 +4739,9 @@ Gets transaction information.
 **Kind**: instance method of [<code>XrplApi</code>](#XrplApi)  
 **Returns**: <code>Promise.&lt;Object&gt;</code> - The transaction information.  
 
-| Param | Type | Description |
-| --- | --- | --- |
-| txnHash | <code>string</code> | The hash of the transaction. |
+| Param   | Type                | Description                          |
+| ------- | ------------------- | ------------------------------------ |
+| txnHash | <code>string</code> | The hash of the transaction.         |
 | options | <code>Object</code> | Optional parameters for the request. |
 
 <a name="XrplApi+subscribeToAddress"></a>
@@ -4751,9 +4751,9 @@ Subscribes to address updates.
 
 **Kind**: instance method of [<code>XrplApi</code>](#XrplApi)  
 
-| Param | Type | Description |
-| --- | --- | --- |
-| address | <code>string</code> | The address to subscribe to. |
+| Param   | Type                  | Description                               |
+| ------- | --------------------- | ----------------------------------------- |
+| address | <code>string</code>   | The address to subscribe to.              |
 | handler | <code>function</code> | The handler function for address updates. |
 
 <a name="XrplApi+unsubscribeFromAddress"></a>
@@ -4763,10 +4763,10 @@ Unsubscribes from address updates.
 
 **Kind**: instance method of [<code>XrplApi</code>](#XrplApi)  
 
-| Param | Type | Description |
-| --- | --- | --- |
-| address | <code>string</code> | The address to unsubscribe from. |
-| handler | <code>function</code> | The handler function to remove. |
+| Param   | Type                  | Description                      |
+| ------- | --------------------- | -------------------------------- |
+| address | <code>string</code>   | The address to unsubscribe from. |
+| handler | <code>function</code> | The handler function to remove.  |
 
 <a name="XrplApi+getTransactionFee"></a>
 
@@ -4776,8 +4776,8 @@ Gets the transaction fee.
 **Kind**: instance method of [<code>XrplApi</code>](#XrplApi)  
 **Returns**: <code>Promise.&lt;number&gt;</code> - The transaction fee.  
 
-| Param | Type | Description |
-| --- | --- | --- |
+| Param  | Type                | Description           |
+| ------ | ------------------- | --------------------- |
 | txBlob | <code>string</code> | The transaction blob. |
 
 <a name="XrplApi+getTransactionValidatedResults"></a>
@@ -4788,8 +4788,8 @@ Get the transaction results if validated.
 **Kind**: instance method of [<code>XrplApi</code>](#XrplApi)  
 **Returns**: Validated results of the transaction.  
 
-| Param | Type | Description |
-| --- | --- | --- |
+| Param  | Type                | Description                       |
+| ------ | ------------------- | --------------------------------- |
 | txHash | <code>string</code> | Hash of the transaction to check. |
 
 <a name="XrplApi+submitMultisignedAndWait"></a>
@@ -4800,9 +4800,9 @@ Submit a multi-signature transaction and wait for validation.
 **Kind**: instance method of [<code>XrplApi</code>](#XrplApi)  
 **Returns**: response object of the validated transaction.  
 
-| Param | Type | Description |
-| --- | --- | --- |
-| tx | <code>object</code> | Multi-signed transaction object. |
+| Param         | Type                | Description                                                |
+| ------------- | ------------------- | ---------------------------------------------------------- |
+| tx            | <code>object</code> | Multi-signed transaction object.                           |
 | submissionRef | <code>object</code> | [Optional] Reference object to take submission references. |
 
 <a name="XrplApi+submitMultisigned"></a>
@@ -4813,9 +4813,9 @@ Only submit a multi-signature transaction.
 **Kind**: instance method of [<code>XrplApi</code>](#XrplApi)  
 **Returns**: response object of the submitted transaction.  
 
-| Param | Type | Description |
-| --- | --- | --- |
-| tx | <code>object</code> | Multi-signed transaction object. |
+| Param | Type                | Description                      |
+| ----- | ------------------- | -------------------------------- |
+| tx    | <code>object</code> | Multi-signed transaction object. |
 
 <a name="XrplApi+submitAndWait"></a>
 
@@ -4825,9 +4825,9 @@ Submit a single-signature transaction.
 **Kind**: instance method of [<code>XrplApi</code>](#XrplApi)  
 **Returns**: response object of the validated transaction.  
 
-| Param | Type | Description |
-| --- | --- | --- |
-| tx_blob | <code>string</code> | Signed transaction object. |
+| Param         | Type                | Description                                                |
+| ------------- | ------------------- | ---------------------------------------------------------- |
+| tx_blob       | <code>string</code> | Signed transaction object.                                 |
 | submissionRef | <code>object</code> | [Optional] Reference object to take submission references. |
 
 <a name="XrplApi+submit"></a>
@@ -4838,8 +4838,8 @@ Only submit a single-signature transaction.
 **Kind**: instance method of [<code>XrplApi</code>](#XrplApi)  
 **Returns**: response object of the submitted transaction.  
 
-| Param | Type | Description |
-| --- | --- | --- |
+| Param   | Type                | Description                |
+| ------- | ------------------- | -------------------------- |
 | tx_blob | <code>string</code> | Signed transaction object. |
 
 <a name="XrplApi+multiSign"></a>
@@ -4855,7 +4855,7 @@ For more details: https://js.xrpl.org/functions/multisign.html
 - <code>Error</code> If the transactions array is empty.
 
 
-| Param | Type | Description |
-| --- | --- | --- |
+| Param        | Type                                        | Description                                                                                                                              |
+| ------------ | ------------------------------------------- | ---------------------------------------------------------------------------------------------------------------------------------------- |
 | transactions | <code>Array.&lt;(string\|object)&gt;</code> | An array of signed transactions, either as serialized strings or transaction objects, to combine into a single multi-signed transaction. |
 
