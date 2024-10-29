@@ -31,13 +31,13 @@ You can use the Evernode CLI to manage and monitor your Evernode host.
     - `evernode config instance ipv6`
         - ipv6 address will be asked as a user input.
 - `evernode governance <operation type> <arguments (optional)>` - Manages the governance candidates related to the host.
-    - `<operation type>` must be one of the operation types: `propose`, `withdraw`, `vote`, `unvote`, `status`, `report` and `help`.
-    - `propose`, `withdraw`, `vote`, `unvote` and `report` operations require sudo.
+    - `<operation type>` must be one of the operation types: `propose`, `withdraw`, `vote`, `unvote`, `status`, `report`, and `help`.
+    - `propose`, `withdraw`, `vote`, `unvote`, and `report` operations require sudo.
     - `withdraw`, `vote`, and `unvote` operations apply to both new hook and dud host candidate types. 
     - Use the `propose` operation to propose new hook candidates and the `report` operation to propose dud host candidates.
     - `evernode governance propose <hash file> <short name>` - Propose a new hook candidate.
       - `<hash file>`: Text file with the combined hashes of proposing hooks (`<governor hook><registry hook><heartbeat hook><reputation hook>`).
-      - `<short nam>`: Short name for the proposal candidate. This can consist of 20 characters. In here you can include any reference to your code pull requests as well. (Do not add white spaces in the middle).
+      - `<short nam>`: Short name for the proposal candidate. This can consist of 20 characters. Here you can include any reference to your code pull requests as well. (Do not add white spaces in the middle).
     - `evernode governance withdraw <candidate id>` - Withdraw proposed governance candidate.
     - `evernode governance vote <candidate id>` - Vote for a governance candidate.
     - `evernode governance unvote <candidate id>` - Remove vote from voted governance candidate.
@@ -56,8 +56,8 @@ You can use the Evernode CLI to manage and monitor your Evernode host.
     - `evernode regkey delete`: Deletes the regular key associated with your host's Xahau account address.
 - `evernode offerlease` - Create Lease offers for the instances. Requires sudo.
 - `evernode reputationd <operation type>` - Manages the Evernode ReputationD for reward distribution.
-    - `<operation type>` must be `opt-in`, `opt-out` or `status`. All of these operations require sudo.
-    - `evernode reputationd opt-in`: Opt in to the Evernode reputation for reward distribution.
+    - `<operation type>` must be `opt-in`, `opt-out`, or `status`. All of these operations require sudo.
+    - `evernode reputationd opt-in`: Opt into the Evernode reputation for reward distribution.
     - `evernode reputationd opt-out`: Opt out from the Evernode reputation for reward distribution.
     - `evernode reputationd status`: Check the status of Evernode reputation for reward distribution.
 - `evernode uninstall` - Uninstall and deregister from Evernode. Requires sudo.
