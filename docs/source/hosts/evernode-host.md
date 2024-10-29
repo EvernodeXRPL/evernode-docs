@@ -18,7 +18,7 @@ Please find the Evernode license [here](https://raw.githubusercontent.com/Everno
 
 To install Evernode, your server must meet the following requirements:
 
-- Operating system: **Ubuntu 20.04 or Ubuntu 20.04** 64 bit (M1/ARM CPUs or WSL not supported. Any other Ubuntu versions are not supported.)
+- Operating system: **Ubuntu 20.04 or Ubuntu 24.04** 64 bit (M1/ARM CPUs or WSL not supported. Any other Ubuntu versions are not supported.)
 - [Domain name](#domain-name) for your host
 - Public [email address](#email-address) to be used as the public contact method
 - To be eligible to run a reputation contract on your host, you should have the following resources. Adhering to these requirements increases your chances of obtaining a good reputation:
