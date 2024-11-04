@@ -49,8 +49,9 @@ Following types of valid participants can only propose one new hook proposal at 
 - New Hook candidate Proposal represents the hashes `<governance_hooks_hash><registry_hook_hash><heartbeat_hook_hash><reputation_hook_hash>` of the new Hook to replace an existing Hook.
 - Any valid participant for proposing can submit a Proposal for a new Hook.
 - Proposers must collateralize their Proposal with EVR rewards equivalent to the current moment's reward quota.
-- The hooks that bear the proposed hashes must be deployed to some existing Xahau account.
+- If proposing to update only one hook or subset of hooks, They should still keep the hashes in above order and place the existing hook hashes for the ones they aren't going to update.
 - Example
+- The hooks that bear the proposed hashes must be deployed to some existing Xahau account.
   - If you are willing to suggest a hook change you first have to `setHook` your updated hook code to 4 new accounts.
   - Then get each hook's hook hash (32 bytes as a hex string) using an explorer and construct the hash buffer in hex format in above mentioned order.
     - The total length of the buffer will be 128 bytes (256 characters in hex string).
@@ -123,7 +124,8 @@ Voting is same for all three types of proposals, Withing above eligibility rules
 
 ### Electing a Proposal
 
-- A Proposal succeeds if it is continuously Supported by at least 80% of possible Participants for 2 weeks.
+- A Proposal succeeds if it is continuously Supported by more than 80% of [eligible participants](#voting) for 2 weeks.
+- Eligible participant consideration will be based on the current governance mode. The voting rules of each mode is mentioned [here](#evernode-labs-special-rights)
 - If a Proposal succeeds all other existing Proposals for that Hook are Purged and their staked EVRs are added to the Epoch’s reward pool.
 - The Proposer of the successful proposal gets all their staked EVRs back.
 - This 2 weeks period and 80% votes thresholds are defined in the governance configuration which is in hook states.
@@ -132,8 +134,8 @@ Voting is same for all three types of proposals, Withing above eligibility rules
 
 - Evernode Labs has a the full control over changing the mode from Piloted to Co-Piloted or Auto-Piloted
 - When the network is in Co-Piloted or Auto-Piloted modes, The piloted mode candidate is created automatically and standard voting rules in the current mode are considered for it's election.
-- This candidate doesn't have a expiry it life is indefinite.
-- When this candidate gets elected the mode is changed to Piloted and Evernode Labs gains the full control over the governance.
+- This candidate doesn't have a expiry, it's life is indefinite.
+- When this candidate gets elected, the mode is changed to Piloted and Evernode Labs gains the full control over the governance.
 
 ### Evernode Labs Special Rights
 
