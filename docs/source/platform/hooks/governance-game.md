@@ -18,13 +18,13 @@ Governance Game allows eligible participants in the Evernode network to propose 
 
 - Proposal for a New Hook Candidate (All three hooks will be affected).
   - The Participant can submit a Proposal with new Hook hashes of above mentioned 4 Hooks. Once that Proposal is continuously supported by 80% of eligible Participants for 2 weeks, the existing hooks will be replaced by the proposed hooks.
-  - One owner can only have one new hook candidate at a time.
+  - One owner can have only one new hook candidate at a time.
   - Only one new hook candidate will get elected at a time.
-  - One participant can only vote for one new hook candidate at a time.
+  - One participant can vote for only one new hook candidate at a time.
 - Proposal for removing a Dud Host.
   - The Participant can submit a Proposal with the Xahau address of the host which is determined as a dud.
   - One owner can have multiple dud host candidate at a time.
-  - Multiple dud host candidates will get elected at a time.
+  - Multiple dud host candidates can get elected at a time.
   - One participant can vote for multiple dud host candidates at a time.
 - Proposal for changing the governance mode to piloted. 
   - This proposal type will be created and handled automatically inside the hooks according to the current governing mode (if co piloted or auto piloted).
@@ -37,12 +37,11 @@ There are two classes of participants in the Governance Game. Certain set of eli
 
 ### Submitting a proposal
 
-Following types of valid participants can only propose one new hook proposal at a time and can propose multiple dud host proposals.
+Any type of valid participants can propose only one new hook proposal at a time but they can propose multiple dud host proposals.
 - **Evernode Labs**
   - Evernode Labs account.
 - **Hosts**
-  - Host accounts that are earning rewards, have held a registration token for the previous three consecutive months, and demonstrate active participation through consistent heartbeats for 10 days.
-  - These three month and 10 days thresholds are configured in hook states
+  - Host accounts that are earning rewards, have held a registration token for the previous three consecutive months, and demonstrate active participation through consistent heartbeats for 10 days. (These thresholds are configured in hook states)
 
 #### New Hook Candidate
 
@@ -50,8 +49,8 @@ Following types of valid participants can only propose one new hook proposal at 
 - Any valid participant for proposing can submit a Proposal for a new Hook.
 - Proposers must collateralize their Proposal with EVR rewards equivalent to the current moment's reward quota.
 - If proposing to update only one hook or subset of hooks, They should still keep the hashes in above order and place the existing hook hashes for the ones they aren't going to update.
-- Example
 - The hooks that bear the proposed hashes must be deployed to some existing Xahau account.
+- Example
   - If you are willing to suggest a hook change you first have to `setHook` your updated hook code to 4 new accounts.
   - Then get each hook's hook hash (32 bytes as a hex string) using an explorer and construct the hash buffer in hex format in above mentioned order.
     - The total length of the buffer will be 128 bytes (256 characters in hex string).
@@ -91,26 +90,23 @@ Following types of valid participants can only propose one new hook proposal at 
 
 ### Voting
 
-Following types of valid participants can only vote for one new hook or piloted mode proposal at a time and can vote for multiple dud host proposals.
+Any type of valid participants can vote only for one new hook or piloted mode proposal at a time but they can vote for multiple dud host proposals.
 - **Evernode Labs**
   - Evernode Labs always has 1 vote and has special rights in Piloted and Co-Piloted modes and has no special rights over Auto-Piloted mode.
 - **Hosts**
-  - Reputable host accounts that are earning rewards, have held a registration token for the previous three consecutive months, and demonstrate active participation through consistent heartbeats for 10 days.
-  - These three month and 10 days thresholds are configured in hook states
+  - Reputable host accounts that are earning rewards, have held a registration token for the previous three consecutive months, and demonstrate active participation through consistent heartbeats for 10 days. (These thresholds are configured in hook states)
 
-Voting is same for all three types of proposals, Withing above eligibility rules participants can vote for proposals.
+Voting is same for all three types of proposals, Participants can vote for proposals adhering to the above eligibility criteria.
 - Hosts can make their choice of voting via Evernode-Cli.
 - Participant's vote is captured via their heartbeat, which is managed by Evernode software installed on the host.
 - They either Support or Reject a Proposal.
   - Reject is the default.
   - Support is a positive vote for the Proposal.
-- When a vote is received to a proposal it's positive vote count is increased.
-  - Positive vote count is a property of every candidate.
-  - This positive vote count will get reset in each moment after updating the current status of the proposal.
-- There's vote base count which is the numerator when considering the election votes.
-  - This value is the count of all the eligible participants in voting.
+- When a vote is received to a proposal its' positive vote count is increased.
+  - Positive vote count is kept under candidates' state as a property and get reset in each moment after updating the current status of the proposal.
+- There's vote base count which is incremented when an eligible participant has sent the heartbeat and used to determine the support average.
   - This vote base count will get reset in each moment after updating the current status of the proposal.
-  - Vote base count in stored in governance info.
+  - Vote base count is stored in governance info state.
 - Example
   - If you are planing to support for a proposal, You first have to find the Unique ID of the proposal.
   - Then vote for the candidate with the Evernode CLI `evernode governance vote <candidate id>`
@@ -125,16 +121,15 @@ Voting is same for all three types of proposals, Withing above eligibility rules
 ### Electing a Proposal
 
 - A Proposal succeeds if it is continuously Supported by more than 80% of [eligible participants](#voting) for 2 weeks.
-- Eligible participant consideration will be based on the current governance mode. The voting rules of each mode is mentioned [here](#evernode-labs-special-rights)
+- Consideration of support average for an election is based on the current governance mode. The voting rules of each mode is mentioned [here](#evernode-labs-special-rights). (Thess thresholds are kept in hook states in the governance configuration.)
 - If a Proposal succeeds all other existing Proposals for that Hook are Purged and their staked EVRs are added to the Epoch’s reward pool.
 - The Proposer of the successful proposal gets all their staked EVRs back.
-- This 2 weeks period and 80% votes thresholds are defined in the governance configuration which is in hook states.
 
 ### Governance mode changing
 
-- Evernode Labs has a the full control over changing the mode from Piloted to Co-Piloted or Auto-Piloted
-- When the network is in Co-Piloted or Auto-Piloted modes, The piloted mode candidate is created automatically and standard voting rules in the current mode are considered for it's election.
-- This candidate doesn't have a expiry, it's life is indefinite.
+- Evernode Labs has the authority to change the mode from Piloted to Co-Piloted or Auto-Piloted
+- When the network is in Co-Piloted or Auto-Piloted modes, The piloted mode candidate is created automatically and standard voting rules in the current mode are considered for its' election.
+- This candidate doesn't have a expiry, its' life is indefinite.
 - When this candidate gets elected, the mode is changed to Piloted and Evernode Labs gains the full control over the governance.
 
 ### Evernode Labs Special Rights
