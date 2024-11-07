@@ -17,7 +17,7 @@ Governance Game allows eligible participants in the Evernode network to propose 
 ### Types of proposals
 
 - Proposal for a New Hook Candidate (All three hooks will be affected).
-  - The Participant can submit a Proposal with new Hook hashes of above mentioned 4 Hooks. Once that Proposal is continuously supported by 80% of eligible Participants for 2 weeks, the existing hooks will be replaced by the proposed hooks.
+  - The Participant can submit a Proposal with new Hook hashes of above mentioned 4 Hooks. Once that Proposal is continuously supported by 80% of eligible Participants for 5 days, the existing hooks will be replaced by the proposed hooks.
   - One owner can have only one new hook candidate at a time.
   - Only one new hook candidate will get elected at a time.
   - One participant can vote for only one new hook candidate at a time.
@@ -120,7 +120,7 @@ Voting is same for all three types of proposals, Participants can vote for propo
 
 ### Electing a Proposal
 
-- A Proposal succeeds if it is continuously Supported by more than 80% of [eligible participants](#voting) for 2 weeks.
+- A Proposal succeeds if it is continuously Supported by more than 80% of [eligible participants](#voting) for 5 days.
 - Consideration of support average for an election is based on the current governance mode. The voting rules of each mode is mentioned [here](#evernode-labs-special-rights). (Thess thresholds are kept in hook states in the governance configuration.)
 - If a Proposal succeeds all other existing Proposals for that Hook are Purged and their staked EVRs are added to the Epoch’s reward pool.
 - The Proposer of the successful proposal gets all their staked EVRs back.

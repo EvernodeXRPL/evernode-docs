@@ -34,8 +34,8 @@ Evernode has a set of configurations that a predefined on the hooks deployment.
   - Maturity period in seconds (3 months) for a host to be part of the network to get eligible for the governance game.
 - **Candidate life period - 7884000**
   - Lifetime in seconds (3 months) of a governance candidate.
-- **Candidate election period - 1209600**
-  - Period in seconds (2 weeks) for a candidate to have consecutive support vote average to get elected.
+- **Candidate election period - 432000**
+  - Period in seconds (5 days) for a candidate to have consecutive support vote average to get elected.
 - **Candidate support average - 80**
   - Percentage (80%) of votes to consider a candidate as supported.
 - **Accumulated reward frequency - 24**
