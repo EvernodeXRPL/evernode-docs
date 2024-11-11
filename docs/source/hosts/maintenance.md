@@ -47,15 +47,18 @@ It cannot be avoided that some DApp instances running on your host will misbehav
 ## Transfer the host registration
 
 If you need to transfer existing registration to another Xahau account or replace your host, you can use this. This is useful in several scenarios:
-    - Upgrading the hardware of your host
-    - Moving your registration to a different host
-    - Reinstalling the host OS
-    - Replacing a damaged host.
-    - Transferring the ownership to a different Xahau account.
+- Upgrading the hardware of your host
+- Moving your registration to a different host
+- Reinstalling the host OS
+- Replacing a damaged host.
+- Transferring the ownership to a different Xahau account.
 
 In the above cases, you can initiate an evernode transfer from your original account and then install Evernode on the new Host using the transfer information. The re-installation will not cost the regular host registration fee. It will just be a 1 Now(1*10<sup>-8</sup> EVRs)).
 
-You can use the below command to initiate a transfer of the registration NFT.
+### Transfer Process Steps
+
+#### 1. Initiate the Transfer
+You can use the below command to initiate a transfer of the registration token.
 
 ```
 evernode transfer
@@ -65,6 +68,13 @@ However, if you have lost access to your original host (eg. a damaged host), you
 
 ```
 curl -fsSL https://raw.githubusercontent.com/EvernodeXRPL/evernode-resources/main/sashimono/installer/evernode.sh | sudo bash -s transfer
+```
+
+#### 2. Reinstall Evernode
+Once the transfer is initiated, reinstall Evernode on the new host. Use the standard installation command, and provide the Xahau account and secret of the original host during installation.
+
+```
+curl -fsSL https://raw.githubusercontent.com/EvernodeXRPL/evernode-resources/main/sashimono/installer/evernode.sh | sudo bash -s install
 ```
 
 ## Deregister a host

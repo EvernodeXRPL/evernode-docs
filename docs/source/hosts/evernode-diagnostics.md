@@ -38,6 +38,16 @@ _Note: If any of the following doesn't help in your situation please send it to 
 ## 6. Transfer failure
 - In the normal transfer process, If you have previous failed/partial registration, It would first complete the registration and then start the transfer.
 - If your transfer process fails at any point aborting it and retrying would start the process from the point of failure.
+- ### Common Transfer Failures and Solutions
+  - `tecHOOK_REJECTED` error during transfer initiation:
+    - Retry the the [transfer initiation](./maintenance.md#initiate-the-transfer). If the transfer initiation fails repeatedly with `tecHOOK_REJECTED`, ensure the host is active and sending heartbeats.
+
+  - `INVALID_REG` error during reinstallation:
+     - This error occurs when Evernote installation is tried without properly initiating a transfer. Retry the [transfer initiation](./maintenance.md#initiate-the-transfer).
+
+  - `Pending sell offer found. Host is not registered` error during transfer initiation:
+     - This means a transfer has already been successfully initiated. Try [Evernode reinstallation](./maintenance.md#reinstall-evernode) on the destination host using the host's Xahau account credentials.
+
   
 ## 7. Deregistration failure
 - In the normal deregister process, If you have previous failed/partial registration, It would complete the registration and then start the deregister.
