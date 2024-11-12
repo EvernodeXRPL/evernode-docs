@@ -11,7 +11,7 @@ You can use the Evernode CLI to manage and monitor your Evernode host.
     - `<cert file>`: Path to the TLS cert file (public key).
     - `<ca bundle file>`: Path to the TLS certificate authority file.
 - `evernode config <type> <arguments (optional)>` - View and update host configuration. Requires sudo.
-    - `<type>` must be one of the configuration types: `resources`, `leaseamt`, `xahaud`, `xahaud-fallback`, `email`, `instance [ipv6]`, `extrafee`.
+    - `<type>` must be one of the configuration types: `resources`, `leaseamt`, `xahaud`, `xahaud-fallback`, `email`, `instance ipv6`, `extrafee`.
     - If you don't specify any arguments, it will print the current configuration value.
     - `evernode config resources <ram> <swap> <disk> <Instance count>`: Configure hardware resource allocation for contracts.
         - `<ram>`: Total RAM to use for contracts in MegaBytes.
@@ -28,7 +28,7 @@ You can use the Evernode CLI to manage and monitor your Evernode host.
         - `<email address>`: Contact email address for the host (this will be published on the host registry and is publicly visible to anyone).
     - `evernode config extrafee <fee>`
         - `<fee>`: Affordable extra transaction fee amount in XAH Drops.
-    - `evernode config instance [ipv6]`
+    - `evernode config instance ipv6`
         - ipv6 address will be asked as a user input.
 - `evernode governance <operation type> <arguments (optional)>` - Manages the governance candidates related to the host.
     - `<operation type>` must be one of the operation types: `propose`, `withdraw`, `vote`, `unvote`, `status`, `report`, and `help`.
