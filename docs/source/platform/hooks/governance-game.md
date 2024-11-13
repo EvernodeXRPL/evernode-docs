@@ -121,7 +121,7 @@ Voting is same for all three types of proposals, Participants can vote for propo
 ### Electing a Proposal
 
 - A Proposal succeeds if it is continuously Supported by more than 80% of [eligible participants](#voting) for 5 days.
-- Consideration of support average for an election is based on the current governance mode. The voting rules of each mode is mentioned [here](#evernode-labs-special-rights). (Thess thresholds are kept in hook states in the governance configuration.)
+- Consideration of support average for an election is based on the current governance mode. The voting rules of each mode is mentioned [here](#evernode-labs-special-rights). (These thresholds are kept in hook states in the governance configuration.)
 - If a Proposal succeeds all other existing Proposals for that Hook are Purged and their staked EVRs are added to the Epoch’s reward pool.
 - The Proposer of the successful proposal gets all their staked EVRs back.
 

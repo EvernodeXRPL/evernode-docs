@@ -2,7 +2,7 @@
 
 [Evernode](https://evernode.org/) enables HotPocket smart contracts to be hosted on a global network of decentralized hosts through [XRP Hooks](https://hooks.xrpl.org/).
 
-- Anyone can become an **Evernode host** by installing the Evernode setup on their compatible Linux server.
+- Anyone can become an **Evernode host** by installing the Evernode setup on a compatible Linux server.
 - Hosts register on the **Evernode registry**, a well-known Xahau account published by Evernode Labs.
 - Hosts lease smart contract hosting to **Evernode tenants** in exchange for **Evers (EVR)**.
 
@@ -56,11 +56,11 @@ But it's optional to have IPv6 support. Having IPv6 support lets you allow IPv6 
 
 Creating dApp on an IPv6-only instance would limit the contracts from connecting to the majority of IPv4 peers, which makes the host unreliable. Due to this nature if you support only IPv6 this would cause your reputation scores to sit at a lower value or even can be '0' due to the inability to reach your peers.
 
-If you don't have IPv4 support in your Host please follow [this guild](./additional-configurations.md#enabling-ipv4-support) to set up IPv4.
+If you don't have IPv4 support in your Host please follow [this guide](./additional-configurations.md#enabling-ipv4-support) to set up IPv4.
 
 ### Domain name
 
-You must possess a domain name (eg. `myhost.myhosting.com`) which is used to reach your host. This is required for proper SSL support for communicating with smart contracts hosted in your host. Evernode uses [Let's Encrypt](https://letsencrypt.org/) for automatic free SSL setup for your domain name. Domain names that map to multiple IP addresses (round-robin DNS) should not be used.
+You must possess a domain name (eg. `myhost.myhosting.com`) that is used to reach your host. This is required for proper SSL support for communicating with smart contracts hosted in your host. Evernode uses [Let's Encrypt](https://letsencrypt.org/) for an automatic free SSL setup for your domain name. Domain names that map to multiple IP addresses (round-robin DNS) should not be used.
 
 ### Email address
 You must provide an email address during the installation of your host. The email address will be published on your host registration entry on the Hook which makes it **publicly visible to anyone**. It is put on display at the [Community Dashboards](https://dashboard.evernode.org/). There are two purposes for this email address:
@@ -70,10 +70,10 @@ You must provide an email address during the installation of your host. The emai
 ### Resource limits
 - Resource limits are specified as a cumulative figure for all the instances configured on your machine.
 - The minimum resource requirements per instance should be calculated as `mentioned minimum requirement / maximum instance count` to properly run the reputation contract.
-- Find the `mentioned minimum requirement` at [here](#system-requirements)
+- Find the `mentioned minimum requirement` [here](#system-requirements)
 
 ### Xahau accounts and secret keys
-As the [System requirements](#system-requirements) specifies, you need sufficient EVR and XAH funds to register and keep running a host. The exact account address and secret of your host will be generated inside your host during the setup. You are given the ability to send the funds you possess to the generated host account via a QR code mechanism during the setup. Any income your host earns will arrive at this account. **It is your responsibility to manage the funds in the host account and safeguard its secret key** (by default, the secret key is stored at `/home/sashimbxrpl/.evernode-host/.host-account-secret.key` on your host). If this file is lost due to any reason (operating system or software bugs, or hardware failures of the host) you will lose access to your host account including any funds in it. NO ONE can recover it. Therefore it'd be best to keep a backup copy of the secret key in your possession in a secure manner.
+As the [System requirements](#system-requirements) specify, you need sufficient EVR and XAH funds to register and keep running a host. The exact account address and secret of your host will be generated inside your host during the setup. You are given the ability to send the funds you possess to the generated host account via a QR code mechanism during the setup. Any income your host earns will arrive at this account. **It is your responsibility to manage the funds in the host account and safeguard its secret key** (by default, the secret key is stored at `/home/sashimbxrpl/.evernode-host/.host-account-secret.key` on your host). If this file is lost due to any reason (operating system or software bugs, or hardware failures of the host) you will lose access to your host account including any funds in it. NO ONE can recover it. Therefore it'd be best to keep a backup copy of the secret key in your possession in a secure manner.
 
 ### Network usage and costs
 
@@ -93,9 +93,9 @@ After the installation, the `offerlease` command should be used to invoke the of
 _**NOTE:** Heartbeats won't be sent until all the leases are offered._
 
 ## Evernode Versions
-As you can [install Evernode](#installation) on Ubuntu 20.04 and Ubuntu 24.04, There are two Evernode versions maintained to support the requirements by the OS. You are allowed only to install the respective **Evernode version** on respective **Ubuntu version**. The installers for two versions will also be different. The updates and patches will be given continuously for the both versions.
+As you can [install Evernode](#installation) on Ubuntu 20.04 and Ubuntu 24.04, There are two Evernode versions maintained to support the requirements of the OS. You are allowed only to install the respective **Evernode version** on the respective **Ubuntu version**. The installers for the two versions will also be different. The updates and patches will be given continuously for both versions.
 
-***The version number can be identified by it's first digit as follows***
+***The version number can be identified by its first digit as follows***
 - **Ubuntu 20.04** - `v0.x.x`
 - **Ubuntu 24.04** - `v1.x.x`
 
@@ -116,7 +116,7 @@ curl -fsSL https://raw.githubusercontent.com/EvernodeXRPL/evernode-24-resources/
 ```
 
 ## Host machine OS Upgrade/Downgrade
-If you are planing to do upgrade or downgrade your host machine OS, you should take [these](./maintenance.md#host-machine-os-upgradedowngrade) action for smooth transition of Evernode.
+If you are planning to upgrade or downgrade your host machine OS, you should take [these](./maintenance.md#host-machine-os-upgradedowngrade) actions for a smooth transition of Evernode.
 
 ## Host Reputation
 - **Reputation Management:** Host reputation is dynamically adjusted based on specified guidelines, ensuring fairness and reliability within the Evernode network.
@@ -167,7 +167,7 @@ The Governance game allows eligible participants in the Evernode host network to
  
 ## Reporting issues
 
-Please report any issues and error logs [here](https://github.com/EvernodeXRPL/evernode-host/issues). Please not that when you are creating issues please label it with the Ubuntu version you are running (`Ubuntu 20.04` or `Ubuntu 24.04`).
+Please report any issues and error logs [here](https://github.com/EvernodeXRPL/evernode-host/issues). Please note that when you are creating issues please label it with the Ubuntu version you are running (`Ubuntu 20.04` or `Ubuntu 24.04`).
 
 ## Global hosts dashboards
 
