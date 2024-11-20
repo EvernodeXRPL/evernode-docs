@@ -9,7 +9,7 @@ In Evernode, a DApp cluster should usually go through the following activities.
 
 The above activities can be managed in different ways based on the usage purpose and the business model of the DApp. Evernode does not enforce you to stick to any particular way of doing things. But, the following patterns can become useful in deciding the management strategies of your DApp.
 
-`Note: Due to the trustless nature of Evernode hosting, it is recommended to purchase the hosting leases in shorter intervals and keep extending the lease before the expiry of the lease as required.`
+`Note: Due to the trustless nature of Evernode hosts, it is recommended to purchase the hosting leases in shorter intervals and keep extending the lease before the expiry of the lease as required.`
 
 ## Centralized model
 
