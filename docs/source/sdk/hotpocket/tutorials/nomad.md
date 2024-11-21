@@ -3,7 +3,6 @@
 ## overview
 The nomad contract gives [Nomad behaviour](../..patterns/dapp-cluster-models.md#nomad-model) to a cluster.
 Here the initial bootstrapping (Leasing the inital nodes and Deploying the DApp) has to be done by the stakeholders of the DApp. After that the DApp takes control over the cluster.
-
 Since the acquiring has to happen from an existing test network, The developer might not be able to test all the nomad functionality locally (hpdevkit cluster).
 
 Note:- The given nomad contract only gives the nomnd functionality. Hence it does not provide a complete DApp. Developers can build the rest of their DApp logic based on the given contract.
@@ -51,13 +50,53 @@ const nomadOptions = {
 
 Note: To choose the preferredHosts you can use the `getActiveHostsFromLedger()` function in the `evernode-js-library`. For the testnet you can also use evdevkit cli command to retrieve hosts details. (`evdevkit list`). The details are also available in  [ community dashboards](https://dashboard.evernode.org/).
 
+uncomment below line 
+```
+   () => runNomadContract(nomadContext),
+```
+
 For this tutorial, to demonstrate the DApp Logic, we will add the [echo contract](https://github.com/EvernodeXRPL/hp-nodejs-contract/blob/main/example/echo-contract.js) logic to the [nomad contract](https://github.com/EvernodeXRPL/everpocket-nodejs-contract/blob/main/test/contract/src/contract.js).
 
+
+
 ```
 
 ```
+
+While testing the nomad contract, you can keep the following multisigner preparing related code commented as it is. 
+```
+        ///////// TODO: This part is temporary for preparing multisig. /////////
+        // if (!fs.existsSync('multisig')) {
+        //     const isSigner = !nonSigners.includes(hpContext.publicKey);
+
+        //     await prepareMultiSigner(new evp.XrplContext(hpContext, masterAddress, masterSecret, { network: "testnet" }), signerCount, isSigner, quorum);
+
+        //     fs.writeFileSync('multisig', '');
+        // }
+        ////////////////////////////////////////////////////////////////////////
+```
+note:- Make sure to uncomment when deploying to a live cluster as explained in [nomand contract deployment tutorial](../../evernode/tutorials/deploy-nomad.md)
+
 ## Deploying the contract into a local cluster
-To deploy the contract to local dev environment (hpdevkit cluster) use `npm Sstart` command. The start command includes the build and deploy commands. (see package.json)
+To deploy the contract to local dev environment (hpdevkit cluster) use `npm start` command. The start command includes the build and deploy commands. (see package.json)
+
+## creating a client
+
+`everpocket-nodejs-contract` also has a pre-implemented client for your multisig-contract. Execute `hpdevkit gen nodejs multisig-client myclient`. It will create a directory named `myclient` with client files.
+
+This is a very basic client which has a readline to take user inputs. According to inputs it will prepare the contract input with the type `makePayment` and send it to the contract.
+
+It also listens to contract output and logs them in the console.
+
+## Building the client binary
+
+Go inside the `myclient` directory and execute `npm i` and this will install all the required dependencies.
+
+## Testing the client
+
+Inside the `myclient` directory, run `node myclient.js`. This will start the client program and start to listen to user inputs.
 
 ## Cleanup the cluster
 To remove the local cluster after testing, use `hpdevkit clean` command.
+
+Next: [Running standalone HotPocket node](standalone)
