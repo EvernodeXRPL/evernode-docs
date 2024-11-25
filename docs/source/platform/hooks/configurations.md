@@ -36,8 +36,8 @@ Evernode has a set of configurations that a predefined on the hooks deployment.
   - Lifetime in seconds (3 months) of a governance candidate.
 - **Candidate election period - 432000**
   - Period in seconds (5 days) for a candidate to have consecutive support vote average to get elected.
-- **Candidate support average - 80**
-  - Percentage (80%) of votes to consider a candidate as supported.
+- **Candidate support average - 66**
+  - Percentage (66%) of votes to consider a candidate as supported.
 - **Accumulated reward frequency - 24**
   - Frequency in moments a host will receive accumulated rewards. Even though a host is eligible for rewards it won't receive rewards straight away, rewards will be accumulated and sent at once.
 - **Network busyness detect period - 604800**
