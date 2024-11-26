@@ -2,27 +2,31 @@
 
 ## Prepare the contract
 
-make sure to uncomment the lines in the `contract.js` related to preparing the signers.
-```
-        if (!fs.existsSync('multisig')) {
-            const isSigner = !nonSigners.includes(hpContext.publicKey);
+While deploying, the 'masterSecret' constant in the `contract.js` should be the same as tenant secret.
 
-            await prepareMultiSigner(new evp.XrplContext(hpContext, masterAddress, masterSecret, { network: "testnet" }), signerCount, isSigner, quorum);
+make sure to keep the following multisigner preparing related code in `contract.js` commented as it is.
+```javascript
+        ///////// TODO: This part is temporary for preparing multisig. /////////
+        // if (!fs.existsSync('multisig')) {
+        //     const isSigner = !nonSigners.includes(hpContext.publicKey);
 
-            fs.writeFileSync('multisig', '');
-        }
+        //     await prepareMultiSigner(new evp.XrplContext(hpContext, masterAddress, masterSecret, { network: "testnet" }), signerCount, isSigner, quorum);
+
+        //     fs.writeFileSync('multisig', '');
+        // }
+        ////////////////////////////////////////////////////////////////////////
 ```
 
 Using the Evernode developer kit, you can create an [everpocket-nodejs-contract](https://www.npmjs.com/package/everpocket-nodejs-contract) supported multi-signing enabled instance cluster in Evernode and deploy your nomad smart contract, as you did locally in ["HotPocket tutorial - Nomad behavior Enabled Contract"](../../hotpocket/tutorials/nomad.md).
 
 - This will create an Evernode cluster with the given specs.
-- Then, as it did in [hpdevkit](../../hotpocket/hpdevkit/overview.md), this will also generate a signer list for the provided master account and upload them to each node in the cluster 
-
+- Then, as it did in [hpdevkit](../../hotpocket/hpdevkit/overview.md), this will also generate a signer list for the provided master account and upload them to each node in the cluster.
 
 
 ## Deploy smart contract
 
 **Note:** For the following steps you can choose either `mainnet` or `testnet`. The default will be `mainnet`, If you want to change you need to set the environment variable as follows.
+
 ```bash
 # Windows (command prompt)
 set EV_NETWORK=testnet
