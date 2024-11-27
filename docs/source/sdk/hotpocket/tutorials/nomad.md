@@ -2,10 +2,10 @@
 
 ## Overview
 The nomad contract gives [Nomad behaviour](../..patterns/dapp-cluster-models.md#nomad-model) to a cluster.
-Here the initial bootstrapping (Leasing the inital nodes and Deploying the DApp) has to be done by the stakeholders of the DApp. After that the DApp takes control over the cluster.
+Here the initial bootstrapping (Leasing the initial nodes and Deploying the DApp) has to be done by the stakeholders of the DApp. After that the DApp takes control over the cluster.
 Since the acquiring has to happen from an existing test network, The developer might not be able to test all the nomad functionality locally (hpdevkit cluster).
 
-Note:- The given nomad contract only gives the nomnd functionality. Hence it does not provide a complete DApp. Developers can build the rest of their DApp logic based on the given contract.
+**Note:** The given nomad contract only gives the nomad functionality. Hence it does not provide a complete DApp. Developers can build the rest of their DApp logic based on the given contract.
 
 ## Project Setup
 
@@ -48,7 +48,7 @@ const nomadOptions = {
 
 ```
 
-Note: To choose the preferredHosts you can use the `getActiveHostsFromLedger()` function in the `evernode-js-library`. For the testnet you can also use evdevkit cli command to retrieve hosts details. (`evdevkit list`). The details are also available in  [ community dashboards](https://dashboard.evernode.org/).
+**Note:** To choose the preferredHosts you can use the `getActiveHostsFromLedger()` function in the `evernode-js-library`. For the testnet you can also use evdevkit cli command to retrieve hosts details. (`evdevkit list`). The details are also available in  [ community dashboards](https://dashboard.evernode.org/).
 
 uncomment below line 
 ```javascript
@@ -85,7 +85,7 @@ While testing the nomad contract, make sure to uncomment the lines in the `contr
         }
 ```
 
-note:- Make sure to comment when deploying to a live cluster as explained in [nomand contract deployment tutorial](../../evernode/tutorials/deploy-nomad.md)
+**Note:** Make sure to remove above lines when deploying to a live cluster as explained in [nomand contract deployment tutorial](../../evernode/tutorials/deploy-nomad.md)
 
 ## Deploying the contract into a local cluster
 To deploy the contract to local dev environment (hpdevkit cluster) use `npm start` command. The start command includes the build and deploy commands. (see package.json)
