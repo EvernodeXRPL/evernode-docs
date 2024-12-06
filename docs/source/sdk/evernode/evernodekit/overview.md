@@ -355,7 +355,6 @@ evernodecli audit -h <host Xahau address>
 ## Environment variables
 `evernodecli` CLI supports the following environment variables:
 
-Here's the corrected table, now properly displaying the third column:
 
 | Name                    | Description                                                                                                                                     | Default Value                                |
 | ----------------------- | ----------------------------------------------------------------------------------------------------------------------------------------------- | -------------------------------------------- |
