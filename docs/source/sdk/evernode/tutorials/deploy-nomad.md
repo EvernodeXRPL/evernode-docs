@@ -1,13 +1,34 @@
-# Deploying a smart contract with Xahau transactions to an Evernode cluster
+# Deploying a smart contract with Nomad behavior to an Evernode cluster
 
-Using the Evernode developer kit, you can create an [everpocket-nodejs-contract](https://www.npmjs.com/package/everpocket-nodejs-contract) supported multi-signing enabled instance cluster in Evernode and deploy your smart contract with Xahau transactions, as you did locally in ["HotPocket tutorial - Xahau transactions"](../../hotpocket/tutorials/multisig.md).
+## Prepare the contract
+
+While deploying, the 'masterSecret' constant in the `contract.js` should be the same as the tenant secret (`EV_TENANT_SECRET`).
+
+Make sure to keep the following multisigner preparing related code in `contract.js` commented as it is.
+```javascript
+        ///////// TODO: This part is temporary for preparing multisig. /////////
+        // if (!fs.existsSync('multisig')) {
+        //     const isSigner = !nonSigners.includes(hpContext.publicKey);
+
+        //     await prepareMultiSigner(new evp.XrplContext(hpContext, masterAddress, masterSecret, { network: "testnet" }), signerCount, isSigner, quorum);
+
+        //     fs.writeFileSync('multisig', '');
+        // }
+        ////////////////////////////////////////////////////////////////////////
+```
+
+**Note:** You can uncomment the above lines when deploying to a local cluster as explained in [Nomad Contract development tutorial](../../hotpocket/tutorials/nomad.md)
+
+Using the Evernode developer kit, you can create an [everpocket-nodejs-contract](https://www.npmjs.com/package/everpocket-nodejs-contract) supported multi-signing enabled instance cluster in Evernode and deploy your nomad smart contract, as you did locally in ["HotPocket tutorial - Nomad behavior Enabled Contract"](../../hotpocket/tutorials/nomad.md).
 
 - This will create an Evernode cluster with the given specs.
-- Then, as it did in [hpdevkit](../../hotpocket/hpdevkit/overview.md), this will also generate a signer list for the provided master account and upload them to each node in the cluster 
+- Then, as it did in [hpdevkit](../../hotpocket/hpdevkit/overview.md), this will also generate a signer list for the provided master account and upload it to each node in the cluster.
+
 
 ## Deploy smart contract
 
 **Note:** For the following steps you can choose either `mainnet` or `testnet`. The default will be `mainnet`, If you want to change you need to set the environment variable as follows.
+
 ```bash
 # Windows (command prompt)
 set EV_NETWORK=testnet
@@ -30,7 +51,7 @@ Same as cluster deployment, follow the [1-5] steps in the cluster deployment [tu
      ```bash
      evdevkit cluster-create 3 $HOME/contract /usr/bin/node $HOME/hosts.txt -a index.js --signer-count 3
      ```
-   - Note:
+   - **Note:**
      - `3` Is the cluster size.
      - `--signer-count 3` option specifies that you are creating 5 signers inside the cluster.
      - Replace `$HOME/contract` with your contract directory path (Path to build a directory of contract binaries).
@@ -111,6 +132,6 @@ Same as cluster deployment, follow the [1-5] steps in the cluster deployment [tu
      ```bash
      evdevkit cluster-create --help
      ```
-2. At this point, you have created an Evernode cluster successfully and you have details of all the instances including public key, IP, ports, etc. Now you can test the uploaded contract by implementing a user client same as you did in the [hpdevkit Xahau transaction tutorial](../../hotpocket/tutorials/multisig.md#testing-the-client). You will need to point your client to one of the resulting cluster nodes.
+2. At this point, you have created an Evernode cluster successfully and you have details of all the instances including public key, IP, ports, etc. Now you can test the uploaded contract by implementing a user client same as you did in the ["HotPocket tutorial - Nomad behavior Enabled Contract"](../../hotpocket/tutorials/nomad.md). You will need to point your client to one of the resulting cluster nodes.
 
-Next: [Deploying a Nomad behaviour enabled cluster](deploy-nomad)
+Next: [Deploying contract instances with a custom Docker image](custom-docker)

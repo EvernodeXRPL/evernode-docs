@@ -11,4 +11,5 @@ HotPocket Tutorials
    instance-sync
    contract-context
    multisig
+   nomad
    standalone

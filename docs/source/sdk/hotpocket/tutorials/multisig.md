@@ -141,3 +141,4 @@ In the client console, you'll get an output like follows if the transaction succ
 }
 ```
 
+Next: [Nomad Contract](nomad)
