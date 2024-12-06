@@ -370,7 +370,7 @@ evernodecli audit -h <host Xahau address>
 | EV_TENANT_SECRET        | Tenant Xahau account secret.                                                                                                                    |                                              |
 | EV_HP_INIT_CFG_PATH     | (Optional) File path of the HotPocket configuration for the instance creation.                                                                  |                                              |
 | EV_HP_OVERRIDE_CFG_PATH | (Optional) File path of the HotPocket configuration for the contract bundle upload.                                                             |                                              |
-| EV_NETWORK              | (Optional) Evernode network to be used `(mainnet\|testnet)`.                                                        |  mainnet                                            |
+| EV_NETWORK              | (Optional) Evernode network to be used `(mainnet\|testnet)`.                                                        |  `mainnet`                                            |
 
 ## Advanced usage
 
