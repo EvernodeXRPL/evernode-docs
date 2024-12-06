@@ -27,12 +27,18 @@ evernodecli help
 
 ## Creating a HotPocket smart contract
 
-You can use the HotPocket developer kit to generate smart contract projects such that everything is pre-configured. Here, we are creating a NodeJs smart contract (This assumes you have prior experience with developing NodeJs applications):
+You can use the `evernodecli` to generate smart contract projects such that everything is pre-configured. Here, we are creating a NodeJs smart contract (This assumes you have prior experience with developing NodeJs applications):
 
 ```
 evernodecli hp-gen nodejs starter-contract myproj
 cd myproj
 npm install
+```
+
+**Note:** Modify the `start` script in your `package.json` file to `evernodecli hp-deploy dist` instead of `hpdevkit deploy dist`. It is because currently the `hpdevkit` Docker image is being used. Make this change whenever you run the `evernodecli hp-gen` command.
+
+Then run;
+```
 npm start
 ```
 
@@ -66,7 +72,7 @@ _**NOTE:** This will delete the running app cluster. you will lose the app data.
 
 ## Creating HotPocket client application
 
-You can use the HotPocket developer kit to generate a HotPocket client application such that everything is pre-configured. Here, we are creating a NodeJs client (This assumes you have prior experience with developing NodeJs applications):
+You can use the `evernodecli` to generate a HotPocket client application such that everything is pre-configured. Here, we are creating a NodeJs client (This assumes you have prior experience with developing NodeJs applications):
 
 ```
 evernodecli hp-gen nodejs blank-client myclient
@@ -96,8 +102,8 @@ evernodecli hp-deploy <contract-files-directory>
 - `<contract-files-directory>` should contain the path of the contract directory to be deployed.
 - The following options can be specified with this command:
 
-  | Name                              | Description                         |
-  | --------------------------------- | ----------------------------------- |
+  | Name                              | Description                       |
+  | --------------------------------- | --------------------------------- |
   | `-m, --multi-sig [multi-sig]`     | Multi-signing enabled.            |
   | `-a, --master-addr [master-addr]` | Master address for multi-signing. |
   | `-s, --master-sec [master-sec]`   | Master secret for multi-signing.  |
@@ -127,7 +133,7 @@ evernodecli hp-spawn
 
 If the contract files directory also contains a file named `hp.cfg.override`, it will be used to override the hp.cfg of all nodes. This can be used to set contract-specific parameters like 'bin_path' and 'bin_args'
 
-An example `hp.cfg.override` file for a NodeJs application (the HotPocket developer kit NodeJs starter contract automatically includes this file for you):
+An example `hp.cfg.override` file for a NodeJs application (When you create a stater contract via `evernodecli`, it automatically includes this file for you):
 
 ```
 {
