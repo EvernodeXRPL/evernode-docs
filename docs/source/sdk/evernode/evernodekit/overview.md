@@ -109,7 +109,7 @@ evernodecli hp-deploy <contract-files-directory>
   | `-s, --master-sec [master-sec]`   | Master secret for multi-signing.  |
 
 
-## Advanced usage
+## Cluster operations
 
 ```
 # Stop and clean-up everything (required for changing cluster size)
@@ -150,7 +150,13 @@ You can inspect the files of all the nodes of the cluster using Docker Desktop.
 ![hpdevkit volume](../../../assets/hpdevkit-vol.png)
 
 
-## Get Host Details
+<br/>
+<hr/>
+
+
+> Here onwards Evernode operations related commands are being discussed.
+
+## Get Host Details on Evernode
 
 You can use the `evernodecli host-info` command to get the details of a one particular host or a set of given hosts on Evernode.
 ```
@@ -349,8 +355,10 @@ evernodecli audit -h <host Xahau address>
 ## Environment variables
 `evernodecli` CLI supports the following environment variables:
 
-| Name                    | Description                                                                                                                                     |
-| ----------------------- | ----------------------------------------------------------------------------------------------------------------------------------------------- |
+Here's the corrected table, now properly displaying the third column:
+
+| Name                    | Description                                                                                                                                     | Default Value                                |
+| ----------------------- | ----------------------------------------------------------------------------------------------------------------------------------------------- | -------------------------------------------- |
 | HP_CLUSTER_SIZE         | The number of nodes in the cluster. This only takes effect with a fresh cluster.                                                                | `3`                                          |
 | HP_DEFAULT_NODE         | The node which the 'deploy' command uses to display logs.                                                                                       | `1`                                          |
 | HP_DEVKIT_IMAGE         | The Docker image to be used for devkit cluster management.                                                                                      | `evernode/hpdevkit`                          |
@@ -363,7 +371,7 @@ evernodecli audit -h <host Xahau address>
 | EV_TENANT_SECRET        | Tenant Xahau account secret.                                                                                                                    |                                              |
 | EV_HP_INIT_CFG_PATH     | (Optional) File path of the HotPocket configuration for the instance creation.                                                                  |                                              |
 | EV_HP_OVERRIDE_CFG_PATH | (Optional) File path of the HotPocket configuration for the contract bundle upload.                                                             |                                              |
-| EV_NETWORK              | (Optional) Evernode network to be used `(mainnet\|testnet)`. Default would be `mainnet`.                                                        |                                              |
+| EV_NETWORK              | (Optional) Evernode network to be used `(mainnet\|testnet)`.                                                        |  mainnet                                            |
 
 ## Advanced usage
 
